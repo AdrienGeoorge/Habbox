@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
+{% set k = 0 %}
 <div class="page-content">
     <div class="flex-team">
         <div class="flex-team-left">
@@ -8,9 +9,13 @@
             <div class="box">
                 <div class="box-title">
                     {{employee.rank_name}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/team/{{k}}.svg" alt="{{employee.rank_name}}" class="team-title-badge">
+                    </div>
                 </div>
 
                 <div class="team-users">
+                    {% if employee.users %}
                     {% for user in employee.users %}
                     <a href="/profile/{{user.username}}" class="team-user">
                         <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
@@ -23,8 +28,12 @@
                         <p class="team-user-role">{{user.settings.role}}</p>
                     </a>
                     {% endfor %}
+                    {% else %}
+                    <p>{{locale.no_users}}</p>
+                    {% endif %}
                 </div>
             </div>
+            {% set k = k + 1 %}
             {% endfor %}
         </div>
         <div class="flex-team-right">
@@ -33,51 +42,38 @@
                 <p class="team-description">{{locale.content_1}}</p>
                 <p class="team-description">{{locale.content_2}}</p>
             </div>
+
+            {% for employee in data|slice(4,7) %}
+            <div class="box">
+                <div class="box-title">
+                    {{employee.rank_name}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/team/{{k}}.svg" alt="{{employee.rank_name}}" class="team-title-badge">
+                    </div>
+                </div>
+
+                <div class="team-users">
+                    {% if employee.users %}
+                    {% for user in employee.users %}
+                    <a href="/profile/{{user.username}}" class="team-user">
+                        <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
+                            <div class="team-avatar-round_2">
+                                <img src="{{site.fpath}}/avatarimage?figure={{user.look}}&head_direction=3&headonly=1"
+                                     alt="{{user.username}}" class="team-avatar-image">
+                            </div>
+                        </div>
+                        <p>{{user.username}}</p>
+                        <p class="team-user-role">{{user.settings.role}}</p>
+                    </a>
+                    {% endfor %}
+                    {% else %}
+                    <p>{{locale.no_users}}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% set k = k + 1 %}
+            {% endfor %}
         </div>
     </div>
-    <!--<div class="left-side">
-        {% for employee in data %}
-        {% if employee.users is not empty %}
-        <article class="default-section">
-              <div class="aside-title-content">{{employee.rank_name}}</div>
-              {% if action == "team" %}<div class="aside-desc-content">{{employee.rank_description}}</div>{% endif %}
-              <div class="aside-content">
-
-              <div class="members-container">
-                  {% for user in employee.users %}
-                  <div class="member-container">
-                      <a href="/profile/{{user.username}}" class="member-content flex-container flex-vertical-center">
-                          <div class="member-avatar flex-container flex-vertical-center flex-horizontal-center">
-                              <img src="{{site.fpath}}/avatarimage?figure={{user.look}}&gesture=sml&headonly=1" alt="{{user.username}}" class="pixelated">
-                          </div>
-                          <div class="member-details">
-                              <div class="details-username">{{user.username}}</div>
-                              <div class="details-function">{{user.settings.role}}</div>
-                              <div class="details-motto">{{user.motto}}</div>
-                          </div>
-                          <div class="member-status flex-container flex-vertical-center flex-horizontal-center">
-                              <span class="status-icon {% if user.settings.hide_online == 0 %}{% if user.online %}online{% endif %}{% endif %}"></span>
-                          </div>
-                      </a>
-                  </div>
-                  {% endfor %}
-              </div>
-          </div>
-        </article>
-        {% endif %}
-        {% endfor %}
-    </div>
-
-    <div class="right-side">
-        <article class="default-section">
-            <h3 class="aside-title-content">{{locale.title}}</h3>
-            <div class="aside-content">
-                <div class="sides-container">
-                    <img src="/assets/images/web/pages/staff/staff.gif" style="float:right">
-                    {{locale.content_1}}<br>{{locale.content_2}}
-                </div>
-          </div>
-        </article>
-    </div>-->
 </div>
 {% endblock %}

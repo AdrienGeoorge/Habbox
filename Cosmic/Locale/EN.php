@@ -230,7 +230,8 @@ $GLOBALS['language'] = array (
             'title'       => 'How do I become staff at ' . Config::site['shortname'] . ' ?',
             'desc'        => 'Our staff is here to help and guide you within this hotel!',
             'content_1'   => 'Of course everyone dreams of being staff at ' . Config::site['shortname'] . ' , but unfortunately this is not for everyone. To become staff at ' . Config::site['shortname'] . '  you must apply.',
-            'content_2'   => 'This is only possible at times when we have vacancies, when we have this, this is mentioned in the news.'
+            'content_2'   => 'This is only possible at times when we have vacancies, when we have this, this is mentioned in the news.',
+            'no_users'    => 'There is no one in this category'
         ),
         'community_value' => array (
             'title_header'      => 'Catalogue marketplace',

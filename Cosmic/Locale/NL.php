@@ -227,7 +227,8 @@ $GLOBALS['language'] = array (
             'title'       => 'Hoe word ik '. Config::site['shortname'] . ' Staff?',
             'desc'        => 'Zij vertegenwoordigen het officiele team dat verantwoordelijk is voor de goede werking van het hotel.',
             'content_1'   => 'Natuurlijk droomt iedereen wel van zo\'n plaats als '. Config::site['shortname'] . ' Stafflid, maar helaas is dit niet voor iedereen weggelegd. Om '. Config::site['shortname'] . ' Staff te kunnen worden moet je solliciteren.',
-            'content_2'   => 'Dit kan alleen op momenten wanneer wij vacatures hebben, wanneer we dit hebben, wordt dit vermeldt in het nieuws.'
+            'content_2'   => 'Dit kan alleen op momenten wanneer wij vacatures hebben, wanneer we dit hebben, wordt dit vermeldt in het nieuws.',
+            'no_users'    => 'Er is niemand in deze categorie'
         ),
         'community_value' => array (
             'title_header'      => 'Ruilwaardes',

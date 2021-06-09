@@ -5903,7 +5903,7 @@ input:-webkit-autofill {
 
 .left-nav-menu-wrapper {
     position: absolute;
-    top: 37%;
+    top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
 }
@@ -6041,7 +6041,7 @@ input:-webkit-autofill {
 
 .navigation-top-menu-wrapper {
     position: absolute;
-    top: 37%;
+    top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
 }
@@ -6150,7 +6150,7 @@ input:-webkit-autofill {
     column-gap: 1em;
     width: 100%;
     font-size: 12px;
-    margin-top: 2em;
+    margin-top: 4em;
 }
 
 .footer-box {
@@ -6239,6 +6239,26 @@ input:-webkit-autofill {
     row-gap: 2em;
 }
 
+.team-title-round {
+    background: #212131;
+    border: 5px solid #3b3c4a;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5em;
+    height: 5em;
+    border-radius: 2em;
+}
+
+.team-title-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
 .team-description{
     font-weight: 300;
 }
@@ -6248,12 +6268,13 @@ input:-webkit-autofill {
 }
 
 .team-user{
+    color: #FCF2E8;
     display: inline-block;
     position: relative;
     text-decoration: none;
-    color: #FCF2E8;
     text-align: center;
     vertical-align: top;
+    font-weight: 200;
 }
 
 .team-user p{
@@ -6315,6 +6336,7 @@ input:-webkit-autofill {
     border-radius: 15px;
     width: 100%;
     padding: 1em 2em;
+    position: relative;
 }
 
 .title{

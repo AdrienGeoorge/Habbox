@@ -165,7 +165,7 @@
 <div class="left-nav">
     <div class="absolute-menu">
         <div class="left-nav-menu">
-            <span class="left-nav-menu-wrapper">X</span>
+            <img src="/assets/icons/croix.svg" alt="close" class="left-nav-menu-wrapper">
         </div>
     </div>
     <div class="habbox-logo">
@@ -190,21 +190,13 @@
                 <img src="/assets/icons/credits.svg" alt="credits"> {{player.credits}}
             </div>
         </div>
+        {% for currency in player_currency %}
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/duckets.svg" alt="duckets"> {{player.credits}}
+                <img src="/assets/icons/{{currency.currency}}.svg" alt="{{currency.currency}}"> {{currency.amount}}
             </div>
         </div>
-        <div class="user-infos-moneys_one">
-            <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/diamonds.svg" alt="diamonds"> {{player.credits}}
-            </div>
-        </div>
-        <div class="user-infos-moneys_one">
-            <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/gamepoints.svg" alt="game points"> {{player.credits}}
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <div class="navigation-links">
@@ -321,7 +313,7 @@
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">
             <div class="navigation-top-menu">
-                <span class="navigation-top-menu-wrapper">...</span>
+                <img src="/assets/icons/points.svg" alt="close" class="navigation-top-menu-wrapper">
             </div>
         </div>
         {% if player %}

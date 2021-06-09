@@ -230,7 +230,8 @@ $GLOBALS['language'] = array (
             'title'       => 'Comment devenir membre de l\'équipe sur ' . Config::site['shortname'] . ' ?',
             'desc'        => 'Notre équipe est présente pour vous aider et vous guider dans l\'hôtel si besoin afin de vous offrir la meilleure expérience de jeu possible!',
             'content_1'   => 'Evidemment, tout le monde rêve de devenir staff, mais malheureusement ce n\'est pas donné à tout le monde. Pour devenir staff un jour sur ' . Config::site['shortname'] . '  tu devras postuler sur la page recrutement du site.',
-            'content_2'   => 'Cela sera possible lorsque des places seront vacantes, nous t\'invitons à lire nos articles régulièrement afin de rester à l\'affut concernant la période de recrutement.'
+            'content_2'   => 'Cela sera possible lorsque des places seront vacantes, nous t\'invitons à lire nos articles régulièrement afin de rester à l\'affut concernant la période de recrutement.',
+            'no_users'    => 'Il n\'y a personne dans cette catégorie'
         ),
         'community_value' => array (
             'title_header'      => 'Marché des mobis du catalogue',
