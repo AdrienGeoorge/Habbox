@@ -246,7 +246,7 @@ function WebPagesManagerInterface() {
         this.current_page_interface.assign_interface();
 
         if (this.current_page_url === "") {
-            this.current_page_url = "home";
+            this.current_page_url = "index";
         }
 
         if (this.current_page_url.match(/^hotel/) && User.is_logged) {
@@ -259,7 +259,7 @@ function WebPagesManagerInterface() {
 
             if (self.current_page_url !== url) {
                 if (url === "/") {
-                    self.load("home", null, false, null, false);
+                    self.load("index", null, false, null, false);
                 } else {
                     self.load("/" + url, null, false, null, false);
                 }
@@ -274,12 +274,12 @@ function WebPagesManagerInterface() {
     this.push = function (url, title, history_replace) {
         url = url.replace(/^\/|\/$/g, "");
         this.current_page_url = url;
-  
+
         if (this.current_page_url.indexOf('profile') > -1) {
         } else {
              $(".page-container").removeAttr('style')
         }
-      
+
         if (!history_replace) {
             History.pushState(null, title ? title : Site.name, "/" + url);
         } else {
@@ -308,7 +308,7 @@ function WebPagesManagerInterface() {
         var body = $("body");
 
         if (url === "")
-            url = "home";
+            url = "index";
 
         if (url.charAt(0) !== "/") {
             url = "/" + url;
@@ -410,32 +410,34 @@ function WebPageInterface(manager, type, scroll, page_data) {
         self.manager.page_container.attr("data-page", this.type).html(this.page_data.content);
 
         // Update navigation
-        var navigation_container = $(".navigation-container");
+        var navigation_container = $(".navigation-links");
 
-        // Set category
-        var category = this.type.substr(0, this.type.lastIndexOf("_"));
-        if (isEmpty(category))
-            category = this.type;
-
-        navigation_container.find(".navigation-item.selected:not([data-category='" + category + "'])").removeClass("selected");
-        navigation_container.find(".navigation-item[data-category='" + category + "']").addClass("selected");
+        console.log(self.page_data.id)
+        navigation_container.find("div.selected:not([data-page='" + self.page_data.id + "'])").removeClass("selected");
+        navigation_container.find("div[data-page='" + self.page_data.id + "']").addClass("selected");
 
         if (this.manager.current_page_url.indexOf("forum") >= 0) {} else {
             if (this.scroll)
                 $("html, body").animate({
-                    scrollTop: navigation_container.offset().top
+                    scrollTop: 0
                 }, 300);
         }
 
         // Custom page interface
         this.assign_interface();
+
+        if (window.matchMedia('(max-width: 1024px)').matches) {
+            $('.left-nav').hide();
+        }
     };
 
     /*
      * Custom interface
      * */
     this.assign_interface = function () {
-        if (this.type === "home")
+        if (this.type === "index")
+            this.page_interface = new WebPageIndexInterface(this);
+        else if (this.type === "home")
             this.page_interface = new WebPageHomeInterface(this);
         else if (this.type === "registration")
             this.page_interface = new WebPageRegistrationInterface(this);
@@ -469,8 +471,8 @@ function WebPageInterface(manager, type, scroll, page_data) {
             this.page_interface = new WebPageForumInterface(this);
         else if (this.type === "shop_history")
             this.page_interface = new WebPageBadgeInterface(this);
-      
-      
+
+
         if (this.page_interface !== null)
             this.page_interface.init();
     };
@@ -822,3 +824,19 @@ function WebDialogManagerInterface() {
     };
 
 }
+
+$( window ).resize(function() {
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+        $('.left-nav').hide();
+    }else{
+        $('.left-nav').show();
+    }
+});
+
+$('.navigation-top-menu').on('click', () => {
+    $('.left-nav').show();
+})
+
+$('.left-nav-menu').on('click', () => {
+    $('.left-nav').hide();
+})

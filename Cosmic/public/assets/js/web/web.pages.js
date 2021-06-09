@@ -949,6 +949,17 @@ function WebPageCommunityPhotosInterface(main_page) {
     };
 }
 
+function WebPageIndexInterface(main_page) {
+    this.main_page = main_page;
+
+    /*
+     * Generic function
+     * */
+    this.init = function() {
+        var self = this;
+        var page_container = this.main_page.get_page_container();
+    };
+}
 
 function WebPageHomeInterface(main_page) {
     this.main_page = main_page;

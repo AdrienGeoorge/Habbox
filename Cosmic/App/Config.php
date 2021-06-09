@@ -37,12 +37,12 @@ class Config
     const site = [
       "domain"      => "https://cosmicproject.online",
       "cpath"       => "https://client.circinus.dev/assets",
-      "fpath"       => "https://habbo.com.br/habbo-imaging",
-      "shortname"   => "Cosmic",
-      "sitename"    => "Cosmic"
+      "fpath"       => "https://images.habbox.fr/habbox-imaging",
+      "shortname"   => "Habbox",
+      "sitename"    => "Habbox Hôtel"
     ];
       
-    const language = "EN";
+    const language = "FR";
     const region = "Europe/Amsterdam";
     const SECRET_TOKEN = "COSMIC-shdl3w5rvb4ef141spbed";
 

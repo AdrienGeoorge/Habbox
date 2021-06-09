@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Cosmic/vendor/composer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/pecee/simple-router" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/rakit/validation" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/geoip2/geoip2" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/paypal/paypalhttp" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/paypal/paypal-checkout-sdk" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/maxmind/web-service-common" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/calcinai/php-imagick" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/originphp/socket" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/jenssegers/date" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/maxmind-db/reader" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/usmanhalalit/pixie" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/usmanhalalit/viocon" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/sonata-project/google-authenticator" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+</project>

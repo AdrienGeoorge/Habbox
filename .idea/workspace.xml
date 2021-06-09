@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Cosmic/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/Controllers/Community/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Controllers/Community/Staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/Controllers/Home/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Controllers/Home/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/Models/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Models/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/Core/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Core/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/Locale/EN.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Locale/EN.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/Locale/NL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Locale/NL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.core.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.pages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/tmp/1aff360c13b13c1319283015b68b6624.cache" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/Cosmic/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/Cosmic/vendor/composer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/pecee/simple-router" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/rakit/validation" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/geoip2/geoip2" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/paypal/paypalhttp" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/paypal/paypal-checkout-sdk" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/maxmind/web-service-common" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/calcinai/php-imagick" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/originphp/socket" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/jenssegers/date" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/maxmind-db/reader" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/usmanhalalit/pixie" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/usmanhalalit/viocon" />
+      <path value="$PROJECT_DIR$/Cosmic/vendor/sonata-project/google-authenticator" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1tcyQGgiFDBaoCih67CwVkeEWVk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Cosmic/App/Controllers/Home" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Cosmic/App/Controllers/Home" />
+      <recent name="$PROJECT_DIR$/Cosmic" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="" />
+      <created>1623082657206</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623082657206</updated>
+      <workItem from="1623082665918" duration="1060000" />
+      <workItem from="1623094406256" duration="731000" />
+      <workItem from="1623110913798" duration="24237000" />
+      <workItem from="1623190055415" duration="30442000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

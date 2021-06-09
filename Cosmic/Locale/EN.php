@@ -15,7 +15,7 @@ $GLOBALS['language'] = array (
             'nav_team'              => 'Team',
             'nav_exchange'          => 'Marketplace',
 
-            'nav_shop'              => 'shop',
+            'nav_shop'              => 'Shop',
             'nav_buy_points'        => Config::site['shortname'] . ' Shop',
             'nav_buy_club'          => 'Purchase ' . Config::site['shortname'] . ' Club',
             'nav_purchasehistory'   => 'Purchase history',
@@ -50,14 +50,17 @@ $GLOBALS['language'] = array (
 
             'user_to'               => 'To',
             'user_profile'          => 'My profile',
-            'user_settings'         => 'settings',
+            'user_settings'         => 'Settings',
+            'user_stats'            => 'My statistics',
             'user_logout'           => 'Log out',
+            'user_hotel'            => 'Hotel',
 
             'header_slogan'         => 'Virtual world for young people!',
             'header_slogan2'        => 'Join our community and make new friends',
             'header_login'          => 'Login',
             'header_register'       => 'Register for free!',
             'header_to'             => 'To',
+            'search'                => 'Search...',
 
             'footer_helptool'       => 'Help Tool',
             'footer_rules'          => 'The ' . Config::site['shortname'] . ' Rules',

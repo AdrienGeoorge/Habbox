@@ -1,0 +1,20 @@
+{% if player is empty %}
+<div class="articles-container">
+    {% for news in news %}
+    <div class="article-container" data-id="{{news.id}}">
+        <a href="/article/{{news.id}}-{{news.slug}}" class="article-content pixelated" style="background-image: url({{news.header}});">
+            <div class="article-header">
+                <div class="article-category">{{news.category}}</div>
+                <div class="article-separation" style="background-color: #8f8c8c;"></div>
+                <div class="article-title title" data-id="{{news.id}}">{{news.title}}</div>
+                <div class="article-title title-sub" data-id="{{news.id}}" style="display:none">{{news.short_story}}</div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<div class="load-more-button">
+    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
+    <button class="rounded-button">{{locale.load_news}}</button>
+</div>
+{% endif %}

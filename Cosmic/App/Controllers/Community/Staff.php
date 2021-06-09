@@ -34,19 +34,19 @@ class Staff
         ]);
     }
   
-    public function team()
-    {
-        $ranks = Permission::getTeams();
-      
-        foreach($ranks as $row) {
-            $row->users = Player::getByExtraRank($row->id);
-        }
-      
-        View::renderTemplate('Community/staff.html', [
-            'title' => Locale::get('core/title/community/staff'),
-            'page'  => 'community_staff',
-            'action' => 'team',
-            'data'  => $ranks
-        ]);
-    }
+//    public function team()
+//    {
+//        $ranks = Permission::getTeams();
+//
+//        foreach($ranks as $row) {
+//            $row->users = Player::getByExtraRank($row->id);
+//        }
+//
+//        View::renderTemplate('Community/staff.html', [
+//            'title' => Locale::get('core/title/community/staff'),
+//            'page'  => 'community_staff',
+//            'action' => 'team',
+//            'data'  => $ranks
+//        ]);
+//    }
 }

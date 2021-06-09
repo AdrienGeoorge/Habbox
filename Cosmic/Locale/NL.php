@@ -51,13 +51,16 @@ $GLOBALS['language'] = array (
             'user_to'               => 'Naar',
             'user_profile'          => 'Mijn profiel',
             'user_settings'         => 'instellingen',
+            'user_stats'            => 'Mijn statistieken',
             'user_logout'           => 'Log uit',
+            'user_hotel'            => 'Hotel',
 
             'header_slogan'         => 'Virtuele wereld voor jongeren!',
             'header_slogan2'        => 'Word lid van onze community en maak nieuwe vrienden',
             'header_login'          => 'Inloggen',
             'header_register'       => 'Meld je gratis aan!',
             'header_to'             => 'Naar',
+            'search'                => 'Zoeker...',
 
             'footer_helptool'       => 'Help Tool',
             'footer_rules'          => 'De '. Config::site['shortname'] . ' Regels',
