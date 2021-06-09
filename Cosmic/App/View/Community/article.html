@@ -1,24 +1,58 @@
 {% extends "base.html" %}
 {% block title %}{{article.title}}{% endblock %}
 {% block body %}
-<header class="page-header flex-container flex-vertical-center" style="background-size: 100%;width: 100%;background-image: url({{article.header}}); background-color: #8f8c8c;">
-    <div class="page-header-content">
-        <h1>{{article.title}}</h1>
-        {{article.short_story}}
-    </div>
-</header>
+<!--{{article.short_story}}-->
 
 <div class="page-content">
-    <div class="left-side">
-        <article class="default-section">
-            <div class="aside-title-content">{{article.title}}</div>
-            <div class="aside-desc-content">{{article.short_story}}</div>
-            <div class="aside-content">
-                {% if article.images is not empty %}
-                <img src="{{article.images}}" style="float:right">
+    <div class="flex-body">
+        <div class="flex-body-left">
+            <div class="box">
+                {% if article.category == 'nouveautés' %}
+                <img src="/assets/icons/articles/nouveaute.svg" class="article-category">
+                {% elseif article.category == 'concours' %}
+                <img src="/assets/icons/articles/concours.svg" class="article-category">
+                {% elseif article.category == 'évènements' %}
+                <img src="/assets/icons/articles/evenement.svg" class="article-category">
+                {% else %}
+                <img src="/assets/icons/articles/blabla.svg" class="article-category">
                 {% endif %}
-                {{article.full_story|raw}}
+                <div class="image-banner" style="background-image: url({{article.header}})"></div>
+                <div class="box-title text-center">
+                    {{article.title}}
+                </div>
+                {% if article.short_story %}
+                <p class="short-description">
+                    {{article.short_story}}
+                </p>
+                {% endif %}
+                <div class="article-body">
+                    {{article.full_story|raw}}
+                </div>
+                <div class="article-author-infos">
+                    <div class="article-author-image">
+                        {% if article.author == '0' %}
+                        <img src="/assets/images/web/avatar-frank.png" alt="Hotel Management" class="article-frank">
+                        {% else %}
+                        <a href="/profile/{{article.author.username}}">
+                            <img src="{{site.fpath}}/avatarimage?figure={{article.author.look}}&head_direction=3&gesture=sml&size=l&headonly=1"
+                                 alt="{{article.author.username}}">
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% if article.author == "0" %}
+                    Hotel Management
+                    {% else %}
+                    <a href="/profile/{{article.author.username}}" class="article-author-name">{{article.author.username}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="flex-body-right">
 
+        </div>
+    </div>
+    <!--<div class="left-side">
+        <article class="default-section">
                 <div class="article-author flex-container flex-vertical-center">
                     <div class="author-image">
                         {% if article.author == "0" %}
@@ -110,6 +144,6 @@
                 </div>
             </div>
         </aside>
-    </div>
+    </div>-->
 </div>
 {% endblock %}

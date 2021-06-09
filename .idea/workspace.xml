@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="">
+    <list default="true" id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="Page staffs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/Models/Community.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Models/Community.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Community/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Community/article.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/Locale/EN.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Locale/EN.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/Locale/FR.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Locale/FR.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/Locale/NL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/Locale/NL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/tmp/1aff360c13b13c1319283015b68b6624.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/tmp/1aff360c13b13c1319283015b68b6624.cache" afterDir="false" />
@@ -97,8 +96,16 @@
       <workItem from="1623082665918" duration="1060000" />
       <workItem from="1623094406256" duration="731000" />
       <workItem from="1623110913798" duration="24237000" />
-      <workItem from="1623190055415" duration="34649000" />
+      <workItem from="1623190055415" duration="39815000" />
     </task>
+    <task id="LOCAL-00001" summary="Page staffs">
+      <created>1623271024326</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623271024326</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +122,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Page staffs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page staffs" />
   </component>
 </project>

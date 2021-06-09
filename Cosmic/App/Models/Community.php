@@ -49,7 +49,9 @@ class Community
 
     public static function getArticleById($id)
     {
-        return QueryBuilder::table('website_news')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->find($id);
+        $article = QueryBuilder::table('website_news')->select('website_news.*')->select('website_news_categories.category')->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->leftJoin('website_news_categories', 'website_news_categories.id', '=', 'website_news.category')->where('website_news.hidden', '0')->limit(1)->orderBy('website_news.timestamp', 'desc')->get();
+        return $article[0];
     }
 
     public static function getPostsArticleById($id)

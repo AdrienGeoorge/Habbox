@@ -5,10 +5,6 @@
     {% if player %}
     <div class="my-friends">
         <div class="scroll">
-<!--            <div class="one-friend me">-->
-<!--                <img src="{{site.fpath}}/avatarimage?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="user">-->
-<!--            </div>-->
-
             {% set i = 1 %}
             {% for friend in friends %}
             <a href="/profile/{{friend.username}}" class="one-friend tooltip">
@@ -20,6 +16,19 @@
         </div>
     </div>
     {% endif %}
+
+    <div class="flex-body">
+        <div class="flex-body-left">
+            <div class="box">
+
+            </div>
+        </div>
+        <div class="flex-body-right">
+            <div class="box">
+
+            </div>
+        </div>
+    </div>
 
     <!--{% if player %}
     <div class="left-side" style="height: auto !important;">

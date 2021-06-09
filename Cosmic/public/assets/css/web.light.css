@@ -6163,6 +6163,7 @@ input:-webkit-autofill {
     background-color: #E2C6AB;
     height: 105px;
     padding: 1em;
+    margin-bottom: 2em;
 }
 
 .my-friends .scroll {
@@ -6188,10 +6189,6 @@ input:-webkit-autofill {
     border: 3px solid #efd6c0;
 }
 
-.one-friend .me {
-    background-color: #DEB48E;
-}
-
 .one-friend .user {
     width: 70px;
     position: absolute;
@@ -6207,21 +6204,21 @@ input:-webkit-autofill {
 
 /* PAGE STAFFS */
 
-.flex-team {
+.flex-body {
     display: flex;
     flex-direction: row;
     column-gap: 2em;
     padding: 0 3em;
 }
 
-.flex-team-left {
+.flex-body-left {
     flex: 2;
     display: flex;
     flex-direction: column;
     row-gap: 2em;
 }
 
-.flex-team-right {
+.flex-body-right {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -6317,6 +6314,7 @@ input:-webkit-autofill {
     background: #FCF2E8;
     border-radius: 30px;
     padding: 1.5em;
+    position: relative;
 }
 
 .box-title {
@@ -6331,6 +6329,70 @@ input:-webkit-autofill {
 .title {
     font-weight: 500;
     font-size: 18px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* ARTICLE */
+
+.image-banner{
+    background-size: cover;
+    background-position: center;
+    height: 170px;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+
+.short-description{
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.article-category{
+    position: absolute;
+    right: -1em;
+    top: -1em;
+    width: 4em;
+}
+
+.article-body{
+    margin-bottom: 3em;
+}
+
+.article-author-infos{
+    background-color: #ebd4bd;
+    display: inline-block;
+    padding: 1em 2em 1em 5em;
+    border-radius: 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 200;
+    font-size: 18px;
+    color: #75583a;
+}
+
+.article-frank{
+    width: 3em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.article-author-image{
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 5em;
+}
+
+.article-author-name{
+    color: #75583a;
+    text-decoration: none;
 }
 
 /* MOBILE */
@@ -6384,16 +6446,17 @@ input:-webkit-autofill {
         display: block !important;
     }
 
-    .flex-team {
+    .flex-body {
         flex-flow: wrap;
+        padding: 0 2em;
     }
 
-    .flex-team-left {
+    .flex-body-left {
         flex: 100%;
         margin-bottom: 2em;
     }
 
-    .flex-team-right {
+    .flex-body-right {
         flex: 100%;
     }
 }

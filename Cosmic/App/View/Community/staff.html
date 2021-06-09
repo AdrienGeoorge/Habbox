@@ -3,8 +3,8 @@
 {% block body %}
 {% set k = 0 %}
 <div class="page-content">
-    <div class="flex-team">
-        <div class="flex-team-left">
+    <div class="flex-body">
+        <div class="flex-body-left">
             {% for employee in data|slice(0, 4) %}
             <div class="box">
                 <div class="box-title">
@@ -36,7 +36,7 @@
             {% set k = k + 1 %}
             {% endfor %}
         </div>
-        <div class="flex-team-right">
+        <div class="flex-body-right">
             <div class="box">
                 <div class="title">{{locale.title}}</div>
                 <p class="team-description">{{locale.content_1}}</p>
