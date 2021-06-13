@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{article.title}}{% endblock %}
 {% block body %}
-<!--{{article.short_story}}-->
 
 <div class="page-content">
     <div class="flex-body">
@@ -46,65 +45,41 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
-        <div class="flex-body-right">
-
-        </div>
-    </div>
-    <!--<div class="left-side">
-        <article class="default-section">
-                <div class="article-author flex-container flex-vertical-center">
-                    <div class="author-image">
-                        {% if article.author == "0" %}
-                        <img src="/assets/images/web/avatar-frank.png" alt="Hotel Management">
-                        {% else %}
-                        <img src="{{site.fpath}}/avatarimage?figure={{article.author.look}}&direction=2&head_direction=3&gesture=sml&size=b&headonly=1" alt="{{article.author.username}}">
-                        {% endif %}
-                    </div>
-
-                    <div class="author-details">
-                        {% if article.author == "0" %}
-                        <div class="author-name">Hotel Management</div>
-                        {% else %}
-                        <div class="author-name"><a href="/profile/{{article.author.username}}" class="related-article-container">{{article.author.username}}</a></div>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </article>
-    </div>
-
-    <div class="right-side">
-
-       <aside class="default-section">
-            <div class="aside-title-content">{{locale.reactions}}</div>
-            <div class="aside-content">
-            <div class="nano has-scrollbar related-articles-container" style="height: 250px;">
-                <div class="nano-content" tabindex="0">
-                    <div class="nano-pane" style="display: block;">
-                        <div class="nano-slider" style="height: 0px; transform: translate(0px, 0px);"></div>
-                    </div>
-                    {% if posts == null  %}
-                    <p class="nopost">
-                        {{locale.reactions_empty}}
-                    </p>
-                    {% endif %}
+            <div class="box">
+                <img src="/assets/icons/articles/comment.svg" alt="{{locale.reactions}}" class="article-category">
+                <div class="title">{{locale.reactions}}</div>
+                {% if posts == null %}
+                <p>
+                    {{locale.reactions_empty}}
+                </p>
+                {% else %}
+                <div class="comments">
                     {% for post in posts %}
                     {% if post.hidden != 1 or 'housekeeping_moderation_tools' in permissions %}
-                    <div class="ac-item" data-id="{{post.id}}" style="margin-bottom: 5px;border-radius: 10px; padding: 10px 8px 2px; {% if post.hidden == 1 %}filter: grayscale(100%);{% endif %}">
-                            <div style="float: left; vertical-align: middle; ">
-                                <img style="margin-top: -5px;" src="{{site.fpath}}/avatarimage?figure={{post.author.look}}&direction=2&head_direction=3&gesture=sml&size=s&headonly=1" alt="">
-                            </div>
-                        <strong>
-                            <a href="/profile/{{post.author.username}}">
+                    <div class="flex-body comment" data-id="{{post.id}}">
+                        <div class="comment-avatar-flex">
+                            <a href="/profile/{{post.author.username}}" class="comment-avatar">
+                                <img src="{{site.fpath}}/avatarimage?figure={{post.author.look}}&head_direction=3&size=m&headonly=1"
+                                     alt="" class="flex_1">
+                            </a>
+                        </div>
+                        <div class="flex_5 comment-user-flex">
+                            <a href="/profile/{{post.author.username}}" class="comment-user">
                                 {{post.author.username}}
                             </a>
-                        </strong>: {{post.message|raw}}
-
+                            <span>
+                                {{post.message|raw}}
+                            </span>
+                        </div>
                         {% if 'housekeeping_moderation_tools' in permissions %}
-                        <div style="float: right">
-                            <a href="#" style="float: right">
-                                <i class="fa {% if post.hidden == 0 %}fa-times{% else %}fa-eye{% endif %}" data-id="{{post.id}}" style="color: #7B7777;"></i>
+                        <div class="flex_1 comment-user-flex comment-icon">
+                            <a href="#">
+                                {% if post.hidden == 0 %}
+                                <img src="/assets/icons/articles/hide.svg" alt="" data-id="{{post.id}}"
+                                     class="fa-times">
+                                {% else %}
+                                <img src="/assets/icons/articles/show.svg" alt="" data-id="{{post.id}}" class="fa-eye">
+                                {% endif %}
                             </a>
                         </div>
                         {% endif %}
@@ -112,38 +87,47 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-                {% if data.posts != null  %}
-                <div class="nano-pane" style="display: block;"><div class="nano-slider" style="height: 57px; transform: translate(0px, 0px);"></div></div>
+                {% endif %}
+                {% if player %}
+                <div class="input-group reaction-reply">
+                    <input type="text" id="reply-message"
+                           placeholder="{{locale.reactions_fill}}" required>
+                    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
+                    <button type="submit" class="myBtn article-reply" data-csrf="{{csrf_token}}"
+                            data-id="{{article.id}}">{{locale.reactions_post}}
+                    </button>
+                </div>
                 {% endif %}
             </div>
+        </div>
+        <div class="flex-body-right">
+            <div class="box">
+                <div class="title">{{locale.latest_news}}</div>
+                {% for item in latest_news %}
+                <a href="/article/{{item.id}}-{{item.slug}}" class="lastNews flex-body">
+                    {% if item.category == 'nouveautés' %}
+                    <img src="/assets/icons/articles/nouveaute.svg" class="iconNews">
+                    {% elseif item.category == 'concours' %}
+                    <img src="/assets/icons/articles/concours.svg" class="iconNews">
+                    {% elseif item.category == 'évènements' %}
+                    <img src="/assets/icons/articles/evenement.svg" class="iconNews">
+                    {% else %}
+                    <img src="/assets/icons/articles/blabla.svg" class="iconNews">
+                    {% endif %}
+                    <div class="flex_1">
+                        <div class="imageBox" style="background-image: url({{item.header}});"></div>
+                    </div>
+                    <div class="flex_4 infosNews">
+                        <span>{{item.title}}</span>
+                        <span class="descNews">
+                            {{ item.short_story|length > 50 ? item.short_story|slice(0,50) ~ '...' :
+                            item.short_story }}
+                        </span>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
-            {% if player %}
-            <div class="input-group reaction-reply">
-                <input type="text" class="form-control" id="reply-message" placeholder="{{locale.reactions_fill}}" required>
-                <span class="input-group-btn">
-                    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <button type="submit" class="btn btn-primary article-reply" data-csrf="{{csrf_token}}" data-id="{{article.id}}" style="width:64px">{{locale.reactions_post}}</button>
-                </span>
-            </div>
-            {% endif %}
-        </aside>
-
-        <aside class="default-section">
-            <div class="aside-title-content">{{locale.latest_news}}</div>
-            <div class="aside-content">
-                <div class="related-articles-container">
-                    {% for item in latest_news %}
-                    <a href="/article/{{item.id}}-{{item.slug}}" class="related-article-container">
-                        <div class="related-article-thumbnail" style="background-image: url({{item.header}});"></div>
-                        <div class="related-article-details">
-                            <div class="related-article-title">{{item.title}} </div>
-                            <div class="related-article-date">{{item.timestamp|date("d-M H:i")}}</div>
-                        </div>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </aside>
-    </div>-->
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -38,7 +38,7 @@ function WebHotelManagerInterface() {
         if (arguments !== undefined) {
             parse_str(arguments, actions);
         }
-      
+
         var argument = arguments;
         var body = $("body");
 
@@ -55,7 +55,7 @@ function WebHotelManagerInterface() {
                 container.find("iframe").remove();
             }
         }
-      
+
         if (!body.hasClass("hotel-visible")) {
             Web.ajax_manager.get("/api/vote", function(result) {
 
@@ -64,7 +64,7 @@ function WebHotelManagerInterface() {
                 } else {
                     if (container.find(".client-frame").length === 0)
 
-                    if(argument == '/=beta' || argument == 'hotel=beta') {  
+                    if(argument == '/=beta' || argument == 'hotel=beta') {
                         Web.ajax_manager.get("/api/ssoTicket", function(result) {
                             container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
                         });
@@ -86,7 +86,7 @@ function WebHotelManagerInterface() {
         }
     };
 
-  
+
     /*
      * LeetFM Player
      * */
@@ -194,18 +194,36 @@ function WebPageArticleInterface(main_page) {
         var self = this;
         var page_container = this.main_page.get_page_container();
 
-        this.reaction_tmp = [
-            '<div class="ac-item" style="border-radius: 10px;">\n' +
-            '   <div style="float: left; vertical-align: middle; ">\n' +
-            '         <img style="margin-top: -30px; margin-bottom: -60px;" src="' + Site.figure_url + '/avatarimage?figure={{figure}}}&direction=2&head_direction=3&gesture=sml&size=b&headonly=1" alt="">\n' +
+        // this.reaction_tmp = [
+        //     '<div class="ac-item" style="border-radius: 10px;">\n' +
+        //     '   <div style="float: left; vertical-align: middle; ">\n' +
+        //     '         <img style="margin-top: -30px; margin-bottom: -60px;" src="' + Site.figure_url + '/avatarimage?figure={{figure}}}&direction=2&head_direction=3&gesture=sml&size=b&headonly=1" alt="">\n' +
+        //     '    </div>\n' +
+        //     '   <strong> <a href="/profile/' + User.username + '">' + User.username + '</a></strong>: {{message}} \n' +
+        //     '</div>'
+        // ].join("");
+        this.reaction_tmp =
+            ['<div class="flex-body comment" data-id="{{post.id}}">\n' +
+            '    <div class="comment-avatar-flex">\n' +
+            '       <a href="/profile/' + User.username + '" class="comment-avatar">\n' +
+            '           <img src="' + Site.figure_url + '/avatarimage?figure={{figure}}&head_direction=3&size=m&headonly=1"\n' +
+            '                                     alt="" class="flex_1">\n' +
+            '       </a>\n' +
             '    </div>\n' +
-            '   <strong> <a href="/profile/' + User.username + '">' + User.username + '</a></strong>: {{message}} \n' +
-            '</div>'
-        ].join("");
+            '    <div class="flex_5 comment-user-flex">\n' +
+            '       <a href="/profile/' + User.username + '" class="comment-user">\n' +
+                      User.username + '\n' +
+            '       </a>\n' +
+            '       <span>\n' +
+            '          {{message}}\n' +
+            '       </span>\n' +
+            '     </div>\n' +
+            '  <div class="flex_1 comment-user-flex comment-icon"></div>\n' +
+            '</div>'].join("");
 
         page_container.find(".fa-times, .fa-eye").click(function() {
             var csrftoken = $("[name=csrftoken]").val();
-          
+
             if (User.is_logged == true && User.is_staff == true) {
                 var id = $(this).attr("data-id");
                 Web.ajax_manager.post("/community/articles/hide", {
@@ -214,11 +232,9 @@ function WebPageArticleInterface(main_page) {
                 }, function(result) {
                     if (result.status === "success") {
                         if (result.is_hidden === "hide") {
-                            $(".fa-times[data-id=" + id + "]").attr('class', 'fa fa-eye');
-                            $(".ac-item[data-id=" + id + "]").css("filter", "grayscale(100%)");
+                            $(".fa-times[data-id=" + id + "]").attr('class', 'fa-eye').attr('src', '/assets/icons/articles/show.svg');
                         } else {
-                            $(".fa-eye[data-id=" + id + "]").attr('class', 'fa fa-times');
-                            $(".ac-item[data-id=" + id + "]").css("filter", "");
+                            $(".fa-eye[data-id=" + id + "]").attr('class', 'fa-times').attr('src', '/assets/icons/articles/hide.svg');
                         }
                     }
                 });
@@ -230,7 +246,7 @@ function WebPageArticleInterface(main_page) {
                 var id = $(this).attr("data-id");
                 var reply = $('#reply-message').val();
                 var csrftoken = $('.article-reply').data('csrf');
-              
+
                 Web.ajax_manager.post("/community/articles/add", {
                     articleid: id,
                     message: reply,
@@ -238,10 +254,9 @@ function WebPageArticleInterface(main_page) {
                 }, function(result) {
                     if (result.status === "success") {
                         var reaction = urlReplace(result.bericht);
-                        var reactions_template = $(self.reaction_tmp.replace(/{{figure}}/g, result.figure).replace(/{{message}}/g, reaction));
+                        var reactions_template = $(self.reaction_tmp.replace(/{{figure}}/g, result.figure).replace(/{{message}}/g, reaction).replace(/{{post.id}}/g, result.id));
 
-                        page_container.find(".nano-pane").append(reactions_template);
-                        page_container.find(".reaction-reply").remove();
+                        page_container.find(".comments").append(reactions_template);
                         page_container.find(".nopost").remove();
                     }
                 });
@@ -269,7 +284,7 @@ function WebPageSettingsNamechangeInterface(main_page) {
 
             var givenString = namechange.val();
             var csrftokenString = csrftoken.val();
-           
+
             if (givenString.length > 0) {
                 Web.ajax_manager.post("/settings/namechange/availability", {
                     username: givenString,
@@ -493,7 +508,7 @@ function WebPageProfileInterface(main_page) {
     this.init = function() {
         var self = this;
         var page_container = this.main_page.get_page_container();
-      
+
         var csrftoken = $("[name=csrftoken]").val();
 
         // Init photos gallery
@@ -553,7 +568,7 @@ function WebPageProfileInterface(main_page) {
             var userId = $(this).attr("data-id");
             var countdivs = $('.feed-item').length;
             var csrftoken = $("[name=csrftoken]").val();
-          
+
             Web.ajax_manager.post("/community/feeds/more", {
                 current_page: self.current_page,
                 player_id: userId,
@@ -654,7 +669,7 @@ function WebPageProfileInterface(main_page) {
                 var top = $(this).attr('data-top');
                 var left = $(this).attr('data-left');
                 var skin = $(this).attr('data-skin');
-                var type = $(this).attr('data-type'); 
+                var type = $(this).attr('data-type');
 
                 arr.push([id, top, left, skin, type]);
             });
@@ -714,7 +729,7 @@ function WebPageProfileInterface(main_page) {
                     type: 'inline'
                 }
             });
-            
+
             Web.ajax_manager.post("/home/profile/store", {
                 data: 'w',
                 type: null,
@@ -906,7 +921,7 @@ function WebPageCommunityPhotosInterface(main_page) {
 
         // Load more photos
         page_container.find(".load-more-button button").click(function() {
-          
+
             var csrftoken = $("[name=csrftoken]").val();
             var countdivs = $('.photo-container').length;
             Web.ajax_manager.post("/community/photos/more", {
@@ -1076,7 +1091,7 @@ function WebPageRegistrationInterface(main_page) {
               'sitekey' : Configuration.recaptcha_public
             });
         }
-      
+
     }
 
     this.username_availability = function(username) {
@@ -1202,27 +1217,27 @@ function WebPageShopInterface(main_page) {
 
         page_container.find(".offer-content").click(function() {
             $("#editor").css("height", "320px");
-          
+
             page_container.find(".offers-container").css({"width": "50%", "margin-left": "150px"});
             page_container.find(".offer-container").css({"margin-left": "70px"});
-          
+
             var orderId = $(this).data("id");
             var amount = $(this).data("amount");
             var currency = $(this).data("type");
             var description = $(this).data("description");
-          
+
             var csrftoken = page_container.find("[name=csrftoken]").val();
-            
+
             page_container.find(".offer-container").hide();
             page_container.find("#offer-" + orderId).show();
             page_container.find(".left-side .aside-title-content").html(amount + ' ' + currency);
-          
+
             page_container.find(".right-side .aside-content").html(description);
 
             if (page_container.find(".paypal-buttons")[0]){
                 return;
             }
-          
+
             paypal.Buttons({
                 createOrder: function(data, actions) {
                     return fetch('/shop/offers/createorder', {
@@ -1243,19 +1258,19 @@ function WebPageShopInterface(main_page) {
                 onError: function (err) {
                   $(".payment-decline").show();
                   $(".payment-loader").hide();
-                  
+
                   Web.ajax_manager.post("/shop/offers/status", {
                       status: 'FAILED',
                       orderId: data.orderID,
                       csrftoken: csrftoken
                   });
-                  
+
                   Web.notifications_manager.create("error", err, 'Error..');
                 },
                 onCancel: function(data) {
                     $(".payment-decline").show();
                     $(".payment-loader").hide();
-                  
+
                      Web.ajax_manager.post("/shop/offers/status", {
                         status: 'CANCELD',
                         orderId: data.orderID,
@@ -1273,11 +1288,11 @@ function WebPageShopInterface(main_page) {
                     }).then(function(res) {
                         return res.json();
                     }).then(function(orderData) {
-         
+
                         var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
 
                         if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
-                            return actions.restart(); 
+                            return actions.restart();
                         }
 
                         if (errorDetail) {
@@ -1288,10 +1303,10 @@ function WebPageShopInterface(main_page) {
                             orderId: orderData.id,
                             csrftoken: csrftoken
                         });
-                      
+
                         $(".payment-accept").show();
                         $(".payment-loader").hide();
-                        
+
                         var myAudio = new Audio('/assets/images/cash.mp3');
                         myAudio.play();
                     });
@@ -1660,7 +1675,7 @@ function WebPageForumInterface(main_page) {
         page_container.find(".topicreply").click(function() {
             var post_id = $(this).data("id");
             var csrftoken = $("[name=csrftoken]").val();
-          
+
             Web.ajax_manager.post("/community/forum/edit", {
                 id: post_id,
                 action: "view",

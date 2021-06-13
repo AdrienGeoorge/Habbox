@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="Page staffs">
+    <list default="true" id="1c1158a0-5593-4215-82c7-8e51b446c1fb" name="Default Changelist" comment="Début page article">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/App/Models/Community.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/Models/Community.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Community/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Community/article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Community/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/App/View/Home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.dark.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/css/web.light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/assets/js/web/web.pages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cosmic/public/tmp/1aff360c13b13c1319283015b68b6624.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cosmic/public/tmp/1aff360c13b13c1319283015b68b6624.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +95,7 @@
       <workItem from="1623082665918" duration="1060000" />
       <workItem from="1623094406256" duration="731000" />
       <workItem from="1623110913798" duration="24237000" />
-      <workItem from="1623190055415" duration="39815000" />
+      <workItem from="1623190055415" duration="52900000" />
     </task>
     <task id="LOCAL-00001" summary="Page staffs">
       <created>1623271024326</created>
@@ -105,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623271024326</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Début page article">
+      <created>1623277462232</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623277462232</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Page staffs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page staffs" />
+    <MESSAGE value="Début page article" />
+    <option name="LAST_COMMIT_MESSAGE" value="Début page article" />
   </component>
 </project>
