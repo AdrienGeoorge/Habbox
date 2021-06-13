@@ -84,6 +84,11 @@ $GLOBALS['language'] = array (
             'web_dialog_validate'                           => 'Valideren',
             'web_dialog_confirm'                            => 'Bevestig uw keuze',
 
+            'web_forum_first'                               => 'Eerste',
+            'web_forum_previous'                            => 'Vorige',
+            'web_forum_last'                                => 'Laatste',
+            'web_forum_next'                                => 'Volgende',
+
             'web_hotel_backto'                              => 'Terug naar '. Config::site['shortname'] . ' Hotel',
 
             'web_fill_pincode'                              => 'Vul de pincode in die je hebt opgegeven tijdens het aanmaken van de extra beveiliging op jouw account. Nou, ik ben deze vergeten? Neem dan contact op via de '. Config::site['shortname'] . ' Help Tool',

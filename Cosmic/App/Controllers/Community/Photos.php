@@ -41,7 +41,7 @@ class Photos
         response()->json(['photos' => $this->data->photos]);
     }
 
-    public function index($offset = null, $request = false)
+    public function index($offset = 0, $request = false)
     {
         if(is_array($offset)) {
             $photos = Community::getPhotos(12);

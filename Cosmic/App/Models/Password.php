@@ -8,8 +8,8 @@ use App\Token;
 use Core\Locale;
 use Core\View;
 
+use Core\QueryBuilder;
 use PDO;
-use QueryBuilder;
 
 class Password
 {
@@ -20,12 +20,12 @@ class Password
             $token = $token->getHash();
         }
 
-        return QueryBuilder::table('website_password_reset')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('token', $token)->first();
+        return QueryBuilder::connection()->table('website_password_reset')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('token', $token)->first();
     }
 
     public static function deleteToken($email)
     {
-        return QueryBuilder::table('website_password_reset')->where('email', $email)->delete();
+        return QueryBuilder::connection()->table('website_password_reset')->where('email', $email)->delete();
     }
 
     public static function createToken($player_id, $username, $email)
@@ -41,7 +41,7 @@ class Password
             'timestamp'     => time() + 7200
         );
 
-        QueryBuilder::table('website_password_reset')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        QueryBuilder::connection()->table('website_password_reset')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
 
         return self::sendMail($username, $email, $token->getValue());
     }

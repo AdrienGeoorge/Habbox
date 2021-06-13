@@ -1710,10 +1710,10 @@ function WebPageForumInterface(main_page) {
             visiblePages: 10,
             pageVariable: 'page',
             href: true,
-            first: 'Eerste',
-            prev: 'Vorige',
-            last: 'Laatste',
-            next: 'Volgende'
+            first: Locale.web_forum_first,
+            prev: Locale.web_forum_previous,
+            last: Locale.web_forum_last,
+            next: Locale.web_forum_next
         });
     };
 

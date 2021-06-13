@@ -4,8 +4,8 @@ namespace App\Models;
 use App\Config;
 use App\Models\Admin;
 
+use Core\QueryBuilder;
 use PDO;
-use QueryBuilder;
 
 class Value
 {
@@ -14,46 +14,46 @@ class Value
   
     public static function myItems($user_id)
     {
-        return QueryBuilder::table('items')->select(QueryBuilder::raw('COUNT(*) as count'))->select('items.item_id')->select('catalog_items.catalog_name')
+        return QueryBuilder::connection()->table('items')->select(QueryBuilder::connection()->raw('COUNT(*) as count'))->select('items.item_id')->select('catalog_items.catalog_name')
                   ->join('items_base', 'items.item_id', '=', 'items_base.id')->join('catalog_items', 'items.item_id', '=', 'catalog_items.id')
                   ->where('items_base.allow_marketplace_sell', '1')->where('items.user_id', $user_id)->groupBy('items.item_id')->get();
     }
   
     public static function mySales($user_id)
     {
-        return QueryBuilder::table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.catalog_name')
+        return QueryBuilder::connection()->table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.catalog_name')
                   ->join('catalog_items', 'catalog_items.id', '=', 'website_marketplace.item_id')->where('website_marketplace.user_id', $user_id)->get();
     }
   
     public static function deleteOffer($item_id)
     {
-        return QueryBuilder::table('website_marketplace')->where('id', $item_id)->delete();
+        return QueryBuilder::connection()->table('website_marketplace')->where('id', $item_id)->delete();
     }
   
     public static function getFirstItem($item_id, $user_id)
     {
-        return QueryBuilder::table('items')->where('item_id', $item_id)->where('user_id', $user_id)->first();
+        return QueryBuilder::connection()->table('items')->where('item_id', $item_id)->where('user_id', $user_id)->first();
     }
   
     public static function deleteItem($id)
     {
-        return QueryBuilder::table('items')->where('id', $id)->delete();
+        return QueryBuilder::connection()->table('items')->where('id', $id)->delete();
     }
   
     public static function allSellItems()
     {
-        return QueryBuilder::table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.*')->select('website_marketplace.id')
+        return QueryBuilder::connection()->table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.*')->select('website_marketplace.id')
                   ->join('catalog_items', 'catalog_items.id', '=', 'website_marketplace.item_id')->get();
     }
   
     public static function ifCurrencyExists($currency) 
     {
-        return QueryBuilder::table('website_settings_currencys')->find($currency, 'type');
+        return QueryBuilder::connection()->table('website_settings_currencys')->find($currency, 'type');
     }
   
     public static function searchFurni($name)
     {
-        return QueryBuilder::table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.catalog_name')
+        return QueryBuilder::connection()->table('website_marketplace')->select('website_marketplace.*')->select('catalog_items.catalog_name')
                 ->join('catalog_items', 'catalog_items.id', '=', 'website_marketplace.item_id')
                 ->where('catalog_items.catalog_name', 'LIKE ', '%' . $name . '%')->get();
     }
@@ -69,57 +69,57 @@ class Value
             'timestamp_expire'  => strtotime('+7 days', time())
         );
       
-        return QueryBuilder::table('website_marketplace')->insert($data);
+        return QueryBuilder::connection()->table('website_marketplace')->insert($data);
     }
   
     public static function ifItemExists($item_id) 
     {
-        return QueryBuilder::table('items_base')->where('id', $item_id)->count();
+        return QueryBuilder::connection()->table('items_base')->where('id', $item_id)->count();
     }
   
     public static function ifMyItemExists($item_id, $user_id) 
     {
-        return QueryBuilder::table('website_marketplace')->where('item_id', $item_id)->where('user_id', $user_id)->count();
+        return QueryBuilder::connection()->table('website_marketplace')->where('item_id', $item_id)->where('user_id', $user_id)->count();
     }
   
     public static function getOfferById($id) 
     {
-        return QueryBuilder::table('website_marketplace')->where('id', $id)->first();
+        return QueryBuilder::connection()->table('website_marketplace')->where('id', $id)->first();
     }
   
     public static function getItem($id)
     {
-        return QueryBuilder::table('catalog_items')->where('id', $id)->first();
+        return QueryBuilder::connection()->table('catalog_items')->where('id', $id)->first();
     }
   
     public static function getValueCategorys()
     {
-        return QueryBuilder::table('website_rare_values')->get();
+        return QueryBuilder::connection()->table('website_rare_values')->get();
     }
   
     public static function getFirstRare()
     {
-        return QueryBuilder::table('website_rare_values')->first();
+        return QueryBuilder::connection()->table('website_rare_values')->first();
     }
   
     public static function getValueCategoryById($id)
     {
-        return QueryBuilder::table('website_rare_values')->where('id', $id)->first();
+        return QueryBuilder::connection()->table('website_rare_values')->where('id', $id)->first();
     }
  
     public static function ifSubpageExists($id)
     {
-        return QueryBuilder::query("SELECT id from catalog_pages WHERE parent_id = " . $id)->first();
+        return QueryBuilder::connection()->query("SELECT id from catalog_pages WHERE parent_id = " . $id)->first();
     }
   
     public static function getCatalogItemsByParentId($id)
     {
-        return QueryBuilder::query("SELECT id from catalog_pages WHERE parent_id IN ($id)")->get();
+        return QueryBuilder::connection()->query("SELECT id from catalog_pages WHERE parent_id IN ($id)")->get();
     }
   
     public static function getAllCatalogItems($page_id)
     {
-        return QueryBuilder::query("SELECT DISTINCT catalog_items.*, (SELECT COUNT(*) FROM items WHERE item_id = catalog_items.id) AS amount FROM catalog_items WHERE page_id IN ($page_id)")->get();
+        return QueryBuilder::connection()->query("SELECT DISTINCT catalog_items.*, (SELECT COUNT(*) FROM items WHERE item_id = catalog_items.id) AS amount FROM catalog_items WHERE page_id IN ($page_id)")->get();
     }
   
     public static function getValues($values, $transform = false)

@@ -2,11 +2,10 @@
 namespace App\Models;
 
 use App\Core;
-
 use Core\Session;
 
+use Core\QueryBuilder;
 use PDO;
-use QueryBuilder;
 
 class Log
 {
@@ -20,7 +19,7 @@ class Log
             'timestamp' => time()
         );
 
-        return QueryBuilder::table('player_logs_email')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        return QueryBuilder::connection()->table('player_logs_email')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
 
     public static function addStaffLog($target_id, $value, $player_id, $type)
@@ -33,7 +32,7 @@ class Log
             'target'    => $target_id
         );
 
-        return QueryBuilder::table('website_staff_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        return QueryBuilder::connection()->table('website_staff_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
   
     public static function addNamechangeLog($user_id, $old_name, $new_name)
@@ -45,7 +44,7 @@ class Log
             'timestamp'      => time()
         );
 
-        return QueryBuilder::table('namechange_log')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        return QueryBuilder::connection()->table('namechange_log')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
 
     public static function addHelpTicketLog($player_id, $type, $target, $value)
@@ -58,7 +57,7 @@ class Log
             'timestamp' => time()
         );
 
-        return QueryBuilder::table('website_helptool_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        return QueryBuilder::connection()->table('website_helptool_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
 
     public static function addPurchaseLog($player_id, $order_id)
@@ -68,6 +67,6 @@ class Log
             'order_id'  => $order_id
         );
 
-        return QueryBuilder::table('website_paypal_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        return QueryBuilder::connection()->table('website_paypal_logs')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
 }

@@ -3,7 +3,6 @@
         "php": ">=7.4.6",
         "twig/twig": "~2.0",
         "twig/extensions": "^1.5",
-        "usmanhalalit/pixie": "2.*@dev",
         "rakit/validation": "^1.2",
         "swiftmailer/swiftmailer": "^6.0",
         "jenssegers/date": "^3.3.1",
@@ -18,7 +17,8 @@
         "calcinai/php-imagick": "^0.1.2",
         "pecee/simple-router": "^4.3.5.0",
         "paypal/paypal-checkout-sdk": "1.0.1",
-        "originphp/socket": "^2.0"
+        "originphp/socket": "^2.0",
+        "pecee/pixie": "^4.15"
     },
     "autoload": {
         "psr-4": {

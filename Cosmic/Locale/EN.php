@@ -84,6 +84,11 @@ $GLOBALS['language'] = array (
             'web_dialog_validate'                           => 'Validate',
             'web_dialog_confirm'                            => 'Confirm your choice',
 
+            'web_forum_first'                               => 'First',
+            'web_forum_previous'                            => 'Previous',
+            'web_forum_last'                                => 'Last',
+            'web_forum_next'                                => 'Next',
+
             'web_hotel_backto'                              => 'Back to ' . Config::site['shortname'] . ' Hotel',
 
             'web_fill_pincode'                              => 'Enter the pin code that you specified when creating the extra security on your account. Well, I forgot this one? Then contact us via the ' . Config::site['shortname'] . ' Help Tool',
