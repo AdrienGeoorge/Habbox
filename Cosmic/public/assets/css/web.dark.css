@@ -2122,6 +2122,7 @@ input:-webkit-autofill {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    padding-bottom: 7em;
 }
 
 .page-container .page-header {
@@ -5693,7 +5694,7 @@ input:-webkit-autofill {
 
 /* Footer */
 .footer-container {
-    position: inherit;
+    position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: row;
@@ -6151,14 +6152,13 @@ input:-webkit-autofill {
 /* Footer */
 
 .footer-container {
-    position: inherit;
+    position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: row;
     column-gap: 1em;
     width: 100%;
     font-size: 12px;
-    margin-top: 4em;
 }
 
 .footer-box {
@@ -6376,19 +6376,21 @@ input:focus, input:hover{
 }
 
 .myBtn {
-    margin: 1em auto;
+    margin: 1em;
     padding: 0.75em 2em;
-    background: #2f2f3e;
+    background: #212131;
     border-radius: 2em;
     cursor: pointer;
     border: none;
     color: #c0c1ce;
     font-size: 15px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .myBtn:hover {
-    background: #22222f;
+    background: #191926;
     color: #fff;
 }
 
@@ -6492,7 +6494,7 @@ input:focus, input:hover{
 .lastNews{
     background: #212131;
     border-radius: 10px;
-    padding: 0.5em;
+    padding: 0.5em !important;
     margin-top: 1em;
     display: flex;
     flex-direction: row;
@@ -6525,12 +6527,27 @@ input:focus, input:hover{
     font-weight: 200;
 }
 
+.error404{
+    margin: 0 10em;
+}
+
+.error404 p{
+    color: #fff;
+    font-size: 18px;
+    font-family: "Nunito";
+}
+
+.error404 .choices{
+    margin-top: 2em;
+}
+
 /* MOBILE */
 
 @media (max-width: 1024px) {
     .left-nav {
         display: none;
         width: 100vw;
+        overflow-y: scroll;
     }
 
     .navigation-links {
@@ -6572,6 +6589,18 @@ input:focus, input:hover{
         display: none;
     }
 
+    .navigation-bottom{
+        text-align: center;
+        left: unset;
+        transform: none;
+        display: block;
+        position: unset;
+    }
+
+    .navigation-bottom a{
+        text-decoration: none;
+    }
+
     .left-nav-menu {
         display: block !important;
     }
@@ -6588,5 +6617,9 @@ input:focus, input:hover{
 
     .flex-body-right {
         flex: 100%;
+    }
+
+    .error404{
+        margin: 0 2em;
     }
 }
