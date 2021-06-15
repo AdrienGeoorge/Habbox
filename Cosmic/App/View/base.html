@@ -161,7 +161,7 @@
 </div>
 {% endif %}
 
-{% if player or page != 'home' %}
+
 <div class="left-nav">
     <div class="absolute-menu">
         <div class="left-nav-menu">
@@ -187,13 +187,13 @@
     <div class="user-infos-moneys">
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/credits.svg" alt="credits"> {{player.credits}}
+                <img src="/assets/icons/credits.svg" alt="credits"> {{player.credits >= 1000 ? (player.credits/1000)|round(1) ~ 'K' : player.credits}}
             </div>
         </div>
         {% for currency in player_currency %}
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/{{currency.currency}}.svg" alt="{{currency.currency}}"> {{currency.amount}}
+                <img src="/assets/icons/{{currency.currency}}.svg" alt="{{currency.currency}}"> {{currency.amount >= 1000 ? (currency.amount/1000)|round(1) ~ 'K' : currency.amount}}
             </div>
         </div>
         {% endfor %}
@@ -266,7 +266,6 @@
     </div>
     {% endif %}
 </div>
-{% endif %}
 
 <!--<nav class="navigation-container">
     <ul class="navigation-menu flex-container">
@@ -308,8 +307,7 @@
         </li>
     </ul>
 </nav>-->
-<section class="body-container{% if player or page != 'home' %} margin-body{% endif %}">
-    {% if player or page != 'home' %}
+<section class="body-container margin-body">
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">
             <div class="navigation-top-menu">
@@ -347,7 +345,6 @@
         </div>
         {% endif %}
     </div>
-    {% endif %}
     <div class="page-container" data-page="{% if page is empty %}lost{% else %}{{page}}{% endif %}">
         {% block body %} {% endblock %}
     </div>
