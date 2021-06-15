@@ -1,45 +1,233 @@
 {% extends "base.html" %}
 {% block body %}
-<header class="page-header flex-container flex-vertical-center">
-   <div class="page-header-content">
-      <h1>{{locale.title}} {{data.player.username}} <a onclick="openSearch()" style="border: none;color:#000; cursor: pointer"><i class="fa fa-search"></i></a></h1>
-      {% if player.username == data.player.username %}
-      {% if data.type != "edit" %}<a href="#" class="editProfile button">Edit profile</a>{% endif %}
-      <div class="editActive" {% if data.type != "edit" %}style="display: none" {% endif %}>
-         <a href="#" class="saveProfile button">Save profile</a>
-         <a href="#" class="changeBg button">Change background</a>
-         <a href="#" class="addSticker button">Add sticker</a>
-         <a href="#" class="addWidget button">Add widgets</a>
-         <input type="hidden" name="csrftoken" value="{{csrf_token}}" />
-      </div>
-      {% endif %}
-      
-   </div>
-</header>
-<div id="searchOverlay" class="overlay">
-   <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-   <div class="overlay-content">
-      <form action="profile/search">
-         <input type="text" placeholder="Wie zoek je?" name="search">
-         <button type="submit" onclick="closeSearch()"><i class="fa fa-search"></i></button>
-      </form>
-   </div>
+<div class="page-content">
+    <div class="flex-body profile">
+        <div class="profile-avatar">
+            <img src="{{site.fpath}}/avatarimage?figure={{data.player.look}}&direction=2&gesture=sml&size=l"
+                 alt="{{data.player.username}}" class="pixelated">
+        </div>
+        <div class="box flex_3 profile-user-infos">
+            <div class="profile-infos-center">
+                <div class="profile-username"><span class="profile-status {% if data.player.online %}online{% endif %}"></span>{{data.player.username}}</div>
+                <span class="profile-motto">{{data.player.motto}}</span>
+            </div>
+            <div class="profile-badges">
+                {% set i = 1 %}
+                {% for badge in data.player.profileBadges %}
+                <div class="profile-badge">
+                    <img src="{{site.cpath}}/c_images/album1584/{{badge.badge_code}}.gif" alt="{{badge.badge_code}}"
+                         class="pixelated">
+                </div>
+                {% set i = i + 1 %}
+                {% endfor %}
+                {% for n in i..5 %}
+                <div class="profile-badge"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="box flex_2 profile-connect-infos">
+            <div>
+                <img src="/assets/icons/profile/register.svg" alt="" width="25">
+                <b class="profile-connect-title">{{locale.since}}</b>
+                <div class="profile-connect-info">{{data.player.account_created|date("d-m-Y")}}</div>
+            </div>
+            <div>
+                <img src="/assets/icons/profile/last_visit.svg" alt="" width="25">
+                <b class="profile-connect-title">{{locale.last_visit}}</b>
+                <div class="profile-connect-info">
+                    {% if data.player.settings.hide_last_online == 0 or 'housekeeping' in permissions %}
+                    {% if data.player.last_online == 0 %}
+                    {{locale.never_online}}
+                    {% else %}
+                    {{data.player.last_online|date("d-m-Y H:i")}}
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-body profile mt_2">
+        <div class="flex_1">
+            <div class="box h-100">
+                <div class="box-title">
+                    {{locale.badges_title}} - <small>{{locale.badges_label}}</small>
+                    <div class="team-title-round">
+                        <img src="/assets/icons/profile/badges.svg" alt="" class="team-title-badge"
+                             style="width: 45%;">
+                    </div>
+                </div>
+
+                <div class="profile-badges">
+                    {% if data.player.badges %}
+                    {% set i = 1 %}
+                    {% for badge in data.player.badges %}
+                    <div class="profile-badge">
+                        <img src="{{site.cpath}}/c_images/album1584/{{badge.badge_code}}.gif" alt="{{badge.badge_code}}"
+                             class="pixelated">
+                    </div>
+                    {% set i = i + 1 %}
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-center w-100">{{locale.badges_empty}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box h-100">
+                <div class="box-title">
+                    {{locale.groups_title}} - <small>{{locale.groups_label}}</small>
+                    <div class="team-title-round">
+                        <img src="/assets/icons/profile/badges.svg" alt="" class="team-title-badge"
+                             style="width: 45%;">
+                    </div>
+                </div>
+
+                <div class="profile-badges">
+                    {% if data.player.groups %}
+                    {% set i = 1 %}
+                    {% for group in data.player.groups %}
+                    <a href="/hotel?room={{group.room_id}}" class="item-container">
+                        <div class="profile-badge tooltip">
+                            <img src="https://habbox.fr/habbo-imaging/badge/{{group.badge}}.png" alt="" class="pixelated">
+                            <span class="text">{{group.name}}</span>
+                        </div>
+                    </a>
+                    {% set i = i + 1 %}
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-center w-100">{{locale.groups_empty}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="right-side">
+       <div class="guestbook"></div>
+       <article class="default-section">
+          <div class="aside-title-content">
+             {{locale.guestbook_title}}
+          </div>
+          <div class="aside-desc-content">{{locale.guestbook_label}}</div>
+          <div class="aside-content">
+             {% if player %}
+             <div class="form-group has-feedback">
+                <input type="text"  class="rounded-input blue-active addfeedreaction" placeholder="{% if data.player.username == player.username %}{{locale.guestbook_input}} {{data.player.username}}? {% else %}{{locale.guestbook_input_1}} {{data.player.username}} {{locale.guestbook_input_2}}{% endif %}" maxlength="50">
+                &lt;!&ndash;<span class="fas fa-camera feedback" aria-hidden="true"></span>!&ndash;&gt;
+             </div>
+             {% endif %}
+
+             <style>
+                a {
+                   text-decoration: none;
+                }
+             </style>
+             <div class="profile-content" style="margin-top: 20px">
+                <div class="feeds">
+                   {% for feed in data.player.feeds %}
+                   <div class="feed-item" data-id="{{feed.id}}" id="{{feed.id}}">
+                      <div class="fi-avatar logo" style="margin-right: 0;height: 60px; margin-top: -7px;">
+                         <div style="background: url({{site.fpath}}/avatarimage?figure={{feed.look}}.&amp;direction=3&amp;headonly=1) no-repeat center; width: 48px; height: 87px;"></div>
+                      </div>
+                      <div class="fi-content">
+                         <div class="fc-user">
+                            <div class="user-style"><span class="user-style black"><span class="user-icon cog"></span><a href="/profile/{{feed.username}}">{{feed.username}}</a></span></div>
+                            -
+                            <span data-toggle="tooltip" data-placement="right" title="" data-original-title="{{feed.timestamp}}"><small>{{feed.timestamp}}</small></span>
+                         </div>
+                         <div class="fc-content">{{feed.message}}</div>
+                         <div class="fc-tools" data-id="{{feed.id}}">
+                            <a href="#" class="likes-count fc-like" data-id="{{feed.id}}">{{feed.likes}}</a> <a href="#" class="fc-like" data-id="{{feed.id}}" style="margin-right:10px;">
+                            <i class="fa fa-heart"  data-id="{{feed.id}}" style="color: #D67979;"></i>
+                         </a>
+
+                            {% if player.id == data.player.id %}
+                            <a href="#"><i class="fa fa-remove" data-id="{{feed.id}}" style="color: #7B7777;"></i></a>&nbsp;
+                            {% else %}
+                            <a href="#"><i class="fa fa-flag" data-id="{{feed.id}}" data-report="feed" style="color: #7B7777;"></i></a>&nbsp;
+                            {% endif %}
+                         </div>
+                      </div>
+                   </div>
+                   {% endfor %}
+                </div>
+             </div>
+             <input type="hidden" name="userid" value="{{data.player.id}}">
+             {% if data.player.feeds|length >= 4 %}
+             <div class="load-more-button" style="margin: 0 auto;">
+                <button class="rounded-button" data-id="{{data.player.id}}">{{locale.load_more}}</button>
+             </div>
+             {% endif %}
+          </div>
+       </article>
+    </div>
+
+    <div class="left-side">
+       <div class="friends"></div>
+       <article class="default-section" data-section="friends">
+          <div class="aside-title-content">
+             {{locale.friends_title}}
+          </div>
+          <div class="aside-desc-content">{{locale.friends_label}}</div>
+          <div class="aside-content">
+             <div class="items-container">
+                {% if data.player.friends %}
+                {% for row in data.player.friends %}
+                <a href="/profile/{{row.username}}" class="item-container">
+                   <div class="item-icon pixelated" style="background-image: url({{site.fpath}}/avatarimage?figure={{row.look}}&direction=2);"></div>
+                   <div class="item-name">{{row.username}}</div>
+                </a>
+                {% endfor %}
+                {% else %}
+                <p>{{locale.friends_empty}}</p>
+                {% endif %}
+             </div>
+          </div>
+       </article>
+
+       <div class="rooms"></div>
+       <article class="default-section" data-section="rooms">
+          <div class="aside-title-content">
+             {{locale.rooms_title}}
+          </div>
+          <div class="aside-desc-content">{{locale.rooms_label}}</div>
+          <div class="aside-content">
+             <div class="items-container">
+                {% if data.player.rooms %}
+                {% for row in data.player.rooms %}
+                <a href="/hotel?room={{row.id}}" class="item-container">
+                   <div class="item-icon pixelated" style="background-image: url({{site.cpath}}/camera/thumbnails/{{row.id}}.png);"></div>
+                   <div class="item-name">{{row.name}}</div>
+                </a>
+                {% endfor %}
+                {% else %}
+                <p>{{locale.rooms_empty}}</p>
+                {% endif %}
+             </div>
+          </div>
+       </article>
+
+       <div class="photos"></div>
+       <article class="default-section" data-section="photos">
+          <div class="aside-title-content">
+             {{locale.photos_title}}
+          </div>
+          <div class="aside-desc-content">{{locale.photos_label}}</div>
+          <div class="aside-content">
+             <div class="items-container">
+                {% if data.player.photos %}
+                {% for row in data.player.photos %}
+                <a href="{{row.url}}" class="item-container photos" target="_blank" data-title="{{row.timestamp|date("d-M H:i")}}" data-player="{{row.user_id}}" data-id="{{row.id}}">
+                <div class="item-icon pixelated" style="background-image: url({{row.url}});"></div>
+                </a>
+                {% endfor %}
+                {% else %}
+                <p>{{locale.photos_empty}}</p>
+                {% endif %}
+             </div>
+          </div>
+       </article>
+    </div>-->
 </div>
-{% if data.player.widgets %}
-<div class="page-content" {% if data.player.background.name is not empty%} data-background="{{data.player.background.name}}" {% endif %}>
-{% for widget in data.player.widgets %} 
-{% include "Home/Profile/widgets.html" %}
-{% endfor %}
-{% for widget in data.player.notes %} 
-{% include "Home/Profile/notes.html" %}
-{% endfor %}
-{% for sticker in data.player.widgets %}
-{% if sticker.type == "s" %}
-{% include "Home/Profile/stickers.html" %}
-{% endif %}
-{% endfor %}
-{% else %}
-{% include "Home/Profile/home.html" %}
-{% endif %}
-</div>
+
 {% endblock %}

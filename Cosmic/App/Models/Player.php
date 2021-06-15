@@ -152,6 +152,11 @@ class Player
         return QueryBuilder::connection()->table('users_badges')->where('user_id', $user_id)->orderBy('slot_id', 'DESC')->limit($limit)->get();
     }
 
+    public static function getProfileBadges($user_id)
+    {
+        return QueryBuilder::connection()->table('users_badges')->where('user_id', $user_id)->where('slot_id', '!=', 0)->orderBy('slot_id', 'ASC')->get();
+    }
+
     public static function getFriends($user_id, $limit = 5)
     {
         return QueryBuilder::connection()->query('SELECT u.look, u.username, mf.relation, u.online FROM messenger_friendships mf JOIN users u ON mf.user_one_id = u.id WHERE mf.user_two_id = "' . $user_id .'" ORDER BY u.online DESC, u.last_online DESC, u.username ASC')->get();

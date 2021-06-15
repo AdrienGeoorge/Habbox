@@ -36,7 +36,7 @@ class Config
 
     const site = [
       "domain"      => "https://cosmicproject.online",
-      "cpath"       => "https://client.circinus.dev/assets",
+      "cpath"       => "https://habbox.fr/nitro",
       "fpath"       => "https://images.habbox.fr/habbox-imaging",
       "shortname"   => "Habbox",
       "sitename"    => "Habbox Hôtel"

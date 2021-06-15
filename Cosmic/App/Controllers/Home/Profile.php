@@ -43,6 +43,7 @@ class Profile
         $this->data->player->settings = Player::getSettings($player->id);
 
         $this->data->player->badges = Player::getBadges($player->id);
+        $this->data->player->profileBadges = Player::getProfileBadges($player->id);
         $this->data->player->friends = Player::getFriends($player->id);
 
         $this->data->player->groups = Player::getGroups($player->id);
