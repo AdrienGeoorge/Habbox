@@ -103,12 +103,12 @@ class Community
         return QueryBuilder::connection()->table('website_feeds')->where('is_hidden', 0)->where('id', $feedid)->first();
     }
   
-    public static function getFeedsByUserid($userid, $limit = 5)
+    public static function getFeedsByUserid($userid)
     {
         return QueryBuilder::connection()->table('website_feeds')->select('website_feeds.*')->select('users.username')->select('users.look')
                 ->join('users', 'website_feeds.from_user_id', '=', 'users.id')
                 ->where('to_user_id', $userid)->where('is_hidden', 0)
-                ->orderBy('id', 'desc')->limit($limit)->get();
+                ->orderBy('id', 'desc')->get();
     }
 
     public static function getFeedsByUserIdOffset($offset, $user_id, $limit = 10)

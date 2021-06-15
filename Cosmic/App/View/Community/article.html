@@ -30,7 +30,8 @@
                 <div class="article-author-infos">
                     <div class="article-author-image">
                         {% if article.author == '0' %}
-                        <img src="/assets/images/web/avatar-frank.png" alt="Hotel Management" class="article-frank pixelated">
+                        <img src="/assets/images/web/avatar-frank.png" alt="Hotel Management"
+                             class="article-frank pixelated">
                         {% else %}
                         <a href="/profile/{{article.author.username}}">
                             <img src="{{site.fpath}}/avatarimage?figure={{article.author.look}}&head_direction=3&gesture=sml&size=l&headonly=1"
@@ -48,12 +49,12 @@
             <div class="box">
                 <img src="/assets/icons/articles/comment.svg" alt="{{locale.reactions}}" class="article-category">
                 <div class="title">{{locale.reactions}}</div>
-                {% if posts == null %}
-                <p>
-                    {{locale.reactions_empty}}
-                </p>
-                {% else %}
                 <div class="comments">
+                    {% if posts == null %}
+                    <p class="nopost">
+                        {{locale.reactions_empty}}
+                    </p>
+                    {% else %}
                     {% for post in posts %}
                     {% if post.hidden != 1 or 'housekeeping_moderation_tools' in permissions %}
                     <div class="flex-body comment" data-id="{{post.id}}">
@@ -86,8 +87,8 @@
                     </div>
                     {% endif %}
                     {% endfor %}
+                    {% endif %}
                 </div>
-                {% endif %}
                 {% if player %}
                 <div class="input-group reaction-reply">
                     <input type="text" id="reply-message"

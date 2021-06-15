@@ -42,28 +42,16 @@ class Profile
         $this->data->player->last_online = $this->data->player->last_online;
         $this->data->player->settings = Player::getSettings($player->id);
 
-        $this->data->player->badges = Player::getBadges($player->id);
+        $this->data->player->badges = Player::getBadges($player->id, 7);
         $this->data->player->profileBadges = Player::getProfileBadges($player->id);
         $this->data->player->friends = Player::getFriends($player->id);
 
-        $this->data->player->groups = Player::getGroups($player->id);
+        $this->data->player->groups = Player::getGroups($player->id, 7);
         $this->data->player->rooms = Player::getRooms($player->id);
         $this->data->player->photos = Player::getPhotos($player->id);
 
-        $this->data->player->badgeCount = count($this->data->player->badges);
-        $this->data->player->friendCount = count($this->data->player->friends);
-        $this->data->player->groupCount = count($this->data->player->groups);
-        $this->data->player->roomCount = count($this->data->player->rooms);
-        $this->data->player->photoCount = count($this->data->player->photos);
-
         $this->data->player->feeds = Community::getFeedsByUserid($player->id);
-        $this->data->player->feedCount = count($this->data->player->feeds);
-        $this->data->player->feedCountTotal = count($this->data->player->feeds);
-      
-        $this->data->player->widgets = Profiles::getWidgets($player->id);
-        $this->data->player->background = Profiles::getBackground($player->id);
-        $this->data->player->notes = Profiles::getNotes($player->id);
-      
+
         foreach ($this->data->player->feeds as $row) {
             $row->likes = Community::getLikes($row->id);
         }

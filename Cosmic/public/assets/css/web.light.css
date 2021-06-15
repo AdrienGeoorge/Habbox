@@ -5986,15 +5986,15 @@ input:-webkit-autofill {
 
 /* TOP NAVIGATION */
 
-.w-100{
+.w-100 {
     width: 100%;
 }
 
-.h-100{
+.h-100 {
     height: 100%;
 }
 
-.mt_2{
+.mt_2 {
     margin-top: 2em;
 }
 
@@ -6010,7 +6010,7 @@ input:-webkit-autofill {
     flex: 3;
 }
 
-.flex_4{
+.flex_4 {
     flex: 4;
 }
 
@@ -6473,6 +6473,7 @@ input:focus, input:hover {
 
 .comment-user-flex {
     align-self: center;
+    overflow-wrap: anywhere;
 }
 
 .comment-user {
@@ -6488,7 +6489,7 @@ input:focus, input:hover {
     margin-right: 1em;
 }
 
-.lastNews{
+.lastNews {
     background: #ebd4bd;
     border-radius: 10px;
     padding: 0.5em !important;
@@ -6502,40 +6503,40 @@ input:focus, input:hover {
     position: relative;
 }
 
-.lastNews .imageBox{
+.lastNews .imageBox {
     width: 100%;
     height: 100%;
     border-radius: 0.5em;
     background-position: center;
 }
 
-.lastNews .iconNews{
+.lastNews .iconNews {
     width: 2em;
     position: absolute;
     right: -0.5em;
     top: -0.5em;
 }
 
-.lastNews .infosNews{
+.lastNews .infosNews {
     align-self: center;
 }
 
-.lastNews .descNews{
+.lastNews .descNews {
     display: block;
     font-weight: 200;
 }
 
-.error404{
+.error404 {
     margin: 0 10em;
 }
 
-.error404 p{
+.error404 p {
     color: #fff;
     font-size: 18px;
     font-family: "Nunito";
 }
 
-.error404 .choices{
+.error404 .choices {
     margin-top: 2em;
 }
 
@@ -6545,24 +6546,24 @@ input:focus, input:hover {
     row-gap: 2em;
 }
 
-.profile-avatar{
+.profile-avatar {
     background: #fcf2e8;
     border-radius: 30px;
     height: 15.5em;
     overflow: hidden;
 }
 
-.profile-user-infos{
+.profile-user-infos {
     display: flex;
     flex-wrap: wrap;
 }
 
-.profile-infos-center{
+.profile-infos-center {
     text-align: center;
     flex: 100%;
 }
 
-.profile-status{
+.profile-status {
     background-color: #c71d1d;
     border-radius: 9px;
     width: 10px;
@@ -6571,21 +6572,21 @@ input:focus, input:hover {
     margin-right: 0.5em;
 }
 
-.profile-status.online{
+.profile-status.online {
     background-color: #38b54a;
 }
 
-.profile-username{
+.profile-username {
     font-weight: 500;
     font-size: 20px;
 }
 
-.profile-motto{
+.profile-motto {
     font-weight: 200;
     font-size: 15px;
 }
 
-.profile-badges{
+.profile-badges {
     display: flex;
     flex-direction: row;
     column-gap: 1em;
@@ -6595,7 +6596,7 @@ input:focus, input:hover {
     margin-top: 2em;
 }
 
-.profile-badge{
+.profile-badge {
     background: #ebd4bd;
     height: 70px;
     width: 70px;
@@ -6603,14 +6604,14 @@ input:focus, input:hover {
     position: relative;
 }
 
-.profile-badge img{
+.profile-badge img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.profile-connect-infos{
+.profile-connect-infos {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -6619,13 +6620,56 @@ input:focus, input:hover {
     justify-content: center;
 }
 
-.profile-connect-title{
+.profile-connect-title {
     font-weight: 500;
     display: block;
 }
 
-.profile-connect-info{
+.profile-connect-info {
     font-weight: 200;
+}
+
+.profile-feeds {
+    margin-top: 0.5em;
+}
+
+.profile-feeds-scroll {
+    overflow-y: scroll;
+    max-height: 20em;
+    padding-right: 1em;
+    scrollbar-width: 5px;
+}
+
+.profile-feeds-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.profile-feeds-scroll::-webkit-scrollbar-track {
+    margin-top: 2em;
+    background: transparent;
+}
+
+.profile-feeds-scroll::-webkit-scrollbar-thumb {
+    background-color: #2f2f3e;
+    border-radius: 20px;
+    border: 3px solid transparent;
+}
+
+.profile-feed{
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-feed-reactions{
+    text-align: right;
+}
+
+.profile-feed-reactions a{
+    text-decoration: none;
+    font-size: 15px;
+    vertical-align: top;
+    font-family: "Nunito";
+    color: #75583a;
 }
 
 /* MOBILE */
@@ -6676,7 +6720,7 @@ input:focus, input:hover {
         display: none;
     }
 
-    .navigation-bottom{
+    .navigation-bottom {
         text-align: center;
         left: unset;
         transform: none;
@@ -6684,7 +6728,7 @@ input:focus, input:hover {
         position: unset;
     }
 
-    .navigation-bottom a{
+    .navigation-bottom a {
         text-decoration: none;
     }
 
@@ -6706,20 +6750,20 @@ input:focus, input:hover {
         flex: 100%;
     }
 
-    .error404{
+    .error404 {
         margin: 0 2em;
     }
 
-    .flex_1, .flex_2, .flex_3, .flex_4,.flex_5 {
+    .flex_1, .flex_2, .flex_3, .flex_4, .flex_5 {
         flex: 100%;
     }
 
-    .profile-avatar{
+    .profile-avatar {
         flex: 100%;
         text-align: center;
     }
 
-    .profile-badges{
+    .profile-badges {
         flex-wrap: wrap;
         width: 100%;
         padding: 1em;
