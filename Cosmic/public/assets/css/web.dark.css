@@ -6343,6 +6343,7 @@ input:-webkit-autofill {
     border-radius: 30px;
     padding: 1.5em;
     position: relative;
+    box-shadow: 3px 3px 5px #242531;
 }
 
 .box-title {
@@ -6454,7 +6455,7 @@ input:focus, input:hover {
     position: absolute;
     top: 70%;
     transform: translateY(-50%);
-    left: 0;
+    left: -1em;
     width: 5em;
 }
 
@@ -6481,6 +6482,11 @@ input:focus, input:hover {
     position: absolute;
     top: 85%;
     transform: translateY(-50%);
+}
+
+.comment-avatar img{
+    margin-left: -1em;
+    width: 8em;
 }
 
 .comment-user-flex {
@@ -6562,6 +6568,7 @@ input:focus, input:hover {
     border-radius: 30px;
     height: 15.5em;
     overflow: hidden;
+    box-shadow: 3px 3px 5px #242531;
 }
 
 .profile-user-infos {

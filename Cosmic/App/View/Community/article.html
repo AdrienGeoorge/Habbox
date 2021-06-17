@@ -35,7 +35,7 @@
                         {% else %}
                         <a href="/profile/{{article.author.username}}">
                             <img src="{{site.fpath}}/avatarimage?figure={{article.author.look}}&head_direction=3&gesture=sml&size=l&headonly=1"
-                                 alt="{{article.author.username}}" width="100" class="pixelated">
+                                 alt="{{article.author.username}}" width="125" class="pixelated">
                         </a>
                         {% endif %}
                     </div>
@@ -60,7 +60,7 @@
                     <div class="flex-body comment" data-id="{{post.id}}">
                         <div class="comment-avatar-flex">
                             <a href="/profile/{{post.author.username}}" class="comment-avatar">
-                                <img src="{{site.fpath}}/avatarimage?figure={{post.author.look}}&head_direction=3&size=m&headonly=1"
+                                <img src="{{site.fpath}}/avatarimage?figure={{post.author.look}}&head_direction=3&size=l&headonly=1"
                                      alt="" class="flex_1 pixelated">
                             </a>
                         </div>
