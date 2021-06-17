@@ -41,11 +41,15 @@ class Password
         Player::resetPassword(request()->player->id, $this->data->newpin);
         Session::destroy();
 
-        response()->json(["status" => "success", "message" => Locale::get('settings/password_saved'), "pagetime" => "/home"]);
+        response()->json(["status" => "success", "message" => Locale::get('settings/password_saved'), "pagetime" => "/"]);
     }
 
     public function index()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }
+
         View::renderTemplate('Settings/password.html', [
             'title' => Locale::get('core/title/settings/password'),
             'page'  => 'settings_password',

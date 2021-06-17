@@ -37,6 +37,10 @@ class Email
 
     public function index()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }
+
         View::renderTemplate('Settings/email.html', [
             'title' => Locale::get('core/title/settings/email'),
             'page'  => 'settings_email'

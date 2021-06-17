@@ -70,6 +70,10 @@ class Verification
 
     public function index()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }
+
         View::renderTemplate('Settings/verification.html', [
             'title' => Locale::get('core/title/settings/index'),
             'page'  => 'settings_verification',

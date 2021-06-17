@@ -481,12 +481,14 @@ $GLOBALS['language'] = array (
             'hotelalerts_title'   => 'Alerte dans l\'hôtel',
             'hotelalerts_label'   => 'Je ne veux pas recevoir de notifications',
             'chat_title'          => 'Paramètres du tchat',
-            'chat_label'          => 'Je veux utiliser l\'ancien tchat'
+            'chat_label'          => 'Je veux utiliser l\'ancien tchat',
+            'dark_mode'           => 'Souhaitez-vous utiliser le mode sombre?'
         ),
         'settings_verification' => array (
             'title'                 => 'Sécuriser mon compte',
             'help'                  => 'Cette vérification augmente la sécurité de ton compte. Lorsque tu te connecteras, tu devras, en fonction de tes préférences, répondre aux questions de sécurité avec tes réponses que tu auras défini au préalable ou saisir le code généré par l\'application Google.',
-            'password_title'        => 'Entre ton mot de passe',
+            'password_title'        => 'Mot de passe',
+            'fill_password'         => 'Entre ton mot de passe actuel...',
             'auth_title'            => 'Vérification en deux étapes',
             'auth_label'            => 'Sécurise ton compte avec la méthode de vérification en deux étapes',
             'method_title'          => 'Méthode de vérification',

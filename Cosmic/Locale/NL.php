@@ -480,12 +480,14 @@ $GLOBALS['language'] = array (
             'hotelalerts_title'   => 'Hotel alerts',
             'hotelalerts_label'   => 'Ik wil geen hotelmeldingen ontvangen',
             'chat_title'          => 'Chat instellingen',
-            'chat_label'          => 'Ik wil gebruik maken van de oude chat'
+            'chat_label'          => 'Ik wil gebruik maken van de oude chat',
+            'dark_mode'           => 'Wilt u de donkere modus gebruiken?'
         ),
         'settings_verification' => array (
             'title'                 => 'Beveilig jouw account',
             'help'                  => 'Deze controle verhoogt de beveiliging van uw account. Wanneer u inlogt, moet u, afhankelijk van uw voorkeuren, de beveiligingsvragen beantwoorden die u hebt gedefinieerd of een code invoeren die door uw toepassing is gegenereerd.',
-            'password_title'        => 'Vul je wachtwoord in',
+            'password_title'            => 'Wachtwoord',
+            'fill_password'             => 'Vul je huidig wachtwoord in...',
             'auth_title'            => 'Twee-staps verificatie',
             'auth_label'            => 'Beveilig je account met twee-staps verificatie',
             'method_title'          => 'Verificatie methode',

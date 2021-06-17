@@ -412,7 +412,6 @@ function WebPageInterface(manager, type, scroll, page_data) {
         // Update navigation
         var navigation_container = $(".navigation-links");
 
-        console.log(self.page_data.id)
         navigation_container.find("div.selected:not([data-page='" + self.page_data.id + "'])").removeClass("selected");
         navigation_container.find("div[data-page='" + self.page_data.id + "']").addClass("selected");
 

@@ -76,6 +76,10 @@ class Namechange
 
     public function index()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }
+
         $currency = Settings::getCurrencyByType($this->settings->namechange_currency_type)->currency;
       
         View::renderTemplate('Settings/namechange.html', [

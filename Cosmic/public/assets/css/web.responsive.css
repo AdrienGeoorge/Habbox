@@ -147,13 +147,10 @@
     }
 
     .page-container[data-page^="settings_"] .settings-panel{
-        top: -41px;
-        left: 20px;
-        right: 20px;
-        width: initial;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
+        position: unset;
+        margin-top: 1em;
+        flex-wrap: wrap;
+        row-gap: 0.5em;
     }
 
     .page-container[data-page^="settings_"] .settings-panel a{

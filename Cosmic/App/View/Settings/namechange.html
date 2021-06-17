@@ -2,26 +2,32 @@
 {% set nav = "namechange" %}
 {% block body %}
 <div class="page-content">
-    <article class="default-section">
-
+    <h3 class="settingsTitle">
+        {{locale.title}}
         {% include "Settings/panel.html" %}
+    </h3>
 
-        <h3 class="aside-title">{{locale.title}}</h3>
-        <div class="form-help">
-            {{locale.help_1}} <strong>{{price}} {{currency}}</strong> {{locale.help_2}}
-        </div>
-
-        <form action="settings/namechange/validate" method="post">
-            <div class="row">
-                <div class="column-2">
-                    <input type="text" name="username" class="rounded-input purple-active newpin" id="username" placeholder="{{locale.fill_username}}" maxlength="15" autocomplete="off" required>
-                </div>
-                <div class="column-1">
+    <div class="flex-body mt_3">
+        <div class="flex-body-left">
+            <div class="box">
+                <form action="settings/namechange/validate" method="post">
+                    <input type="text" name="username" class="newpin" id="username"
+                           placeholder="{{locale.fill_username}}" maxlength="15" autocomplete="off" required>
                     <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <p class="submit-button"><button type="submit" id="changeButton" class="rounded-button purple submit-password" disabled>{{locale.request}}</button></p>
-                </div>
+                    <div class="text-center">
+                        <button type="submit" id="changeButton" class="myBtn submit-password" style="margin-bottom: 0;"
+                                disabled>
+                            {{locale.request}}
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </article>
+        </div>
+        <div class="flex-body-right">
+            <div class="box" style="height: 100%;">
+                {{locale.help_1}} <strong>{{price}} {{currency}}</strong> {{locale.help_2}}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -574,9 +574,7 @@ input:-webkit-autofill {
 
 .radio-container.rounded-radio .radio-button,
 .switch-container .switch-button {
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
-    border-radius: 13px;
+    border-radius: 8px;
 }
 
 .switch-container .switch-button {
@@ -599,9 +597,7 @@ input:-webkit-autofill {
 
 .radio-container.rounded-radio .radio-button:before,
 .switch-container .switch-button:before {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .switch-container .switch-button:before {
@@ -615,7 +611,7 @@ input:-webkit-autofill {
 
 .radio-container.purple input:checked ~ .radio-button:before,
 .switch-container.purple input:checked ~ .switch-button:before {
-    background-color: #8c45a9;
+    background-color: #deb48e;
 }
 
 .radio-container.brown input:checked ~ .radio-button:before,
@@ -2147,8 +2143,8 @@ input:-webkit-autofill {
 .page-container .page-content {
     width: 100%;
     max-width: 1055px;
-    margin: 2em auto;
-    font-family: "Ubuntu Habbo", "Poppins", Arial, sans-serif;
+    margin: 1em auto;
+    font-family: "Nunito", sans-serif;
 }
 
 .page-container .page-content .not-habbo-icons {
@@ -4211,24 +4207,19 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page ^="settings_"] .settings-panel {
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #8c45a9;
-    width: 82px;
-    padding: 10px 0;
     position: absolute;
-    top: 35px;
-    left: -41px;
+    right: 2em;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+    height: 100%;
+    align-items: center;
+    text-align: center;
 }
 
 .page-container[data-page ^="settings_"] .settings-panel a {
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    color: #fff;
-    display: block;
-    position: relative;
+    color: #333333;
 }
 
 .page-container[data-page ^="settings_"] .settings-panel a:not(.selected):before {
@@ -4241,9 +4232,10 @@ input:-webkit-autofill {
 
 .page-container[data-page ^="settings_"] .settings-panel a:before {
     font-family: "Flaticon", sans-serif;
-    font-size: 27px;
+    font-size: 24px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
     display: inline-block;
+    vertical-align: bottom;
 }
 
 .page-container[data-page ^="settings_"] .settings-panel a.preferences:before {
@@ -4274,31 +4266,8 @@ input:-webkit-autofill {
     content: "";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a:after {
-    background-color: #8c45a9;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    padding: 5px 10px;
-    font-size: 12px;
-    color: #fff;
-    position: absolute;
-    top: 17px;
-    left: 105%;
-    z-index: 3;
-    content: attr(data-label);
-    line-height: normal;
-    white-space: nowrap;
-    display: none;
-}
-
-.page-container[data-page ^="settings_"] .settings-panel a:hover:after {
-    display: block;
-}
-
 .page-container[data-page ^="settings_"] .switch-label {
     display: block;
-    margin-bottom: 30px;
     padding-right: 65px;
     cursor: pointer;
     position: relative;
@@ -4307,7 +4276,7 @@ input:-webkit-autofill {
 .page-container[data-page ^="settings_"] .switch-label .switch-container {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -1.5em;
     bottom: 0;
     margin: auto 0;
     height: 26px;
@@ -5994,8 +5963,16 @@ input:-webkit-autofill {
     height: 100%;
 }
 
+.mt_1 {
+    margin-top: 1em;
+}
+
 .mt_2 {
     margin-top: 2em;
+}
+
+.mt_3 {
+    margin-top: 3em;
 }
 
 .flex_1 {
@@ -6224,7 +6201,7 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     column-gap: 2em;
-    padding: 0 3em;
+    padding: 0 2em;
     flex-wrap: wrap;
 }
 
@@ -6679,9 +6656,53 @@ input:focus, input:hover {
     color: #75583a;
 }
 
+/* SETTINGS */
+
+.settingsTitle{
+    background: #f2e3d4;
+    color: #333333;
+    width: 100%;
+    padding: 1em 2em;
+    font-family: "Nunito";
+    font-weight: 500;
+    position: relative;
+}
+
+.settingsMenu{
+    background: #ebd4bd;
+    padding: 0.5em 0.75em;
+    border-radius: 10px;
+}
+
+.settingBox{
+    background: #FCF2E8;
+    margin-top: 1.5em;
+    border-radius: 15px;
+    padding: 1.5em;
+    position: relative;
+    box-shadow: 3px 3px 5px #d6bea6;
+    min-height: 7.5em;
+}
+
+.settingBox .centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 88%;
+}
+
+.QRCode{
+    border-radius: 1em;
+    margin-top: 1em;
+}
+
 /* MOBILE */
 
 @media (max-width: 1024px) {
+    .page-container{
+        padding-bottom: 9em;
+    }
+
     .left-nav {
         display: none;
         width: 100vw;
@@ -6728,11 +6749,12 @@ input:focus, input:hover {
     }
 
     .navigation-bottom {
-        text-align: center;
         left: unset;
         transform: none;
-        display: block;
+        display: flex;
         position: unset;
+        justify-content: center;
+        margin-top: 1em;
     }
 
     .navigation-bottom a {
@@ -6745,7 +6767,6 @@ input:focus, input:hover {
 
     .flex-body {
         flex-flow: wrap;
-        padding: 0 2em;
     }
 
     .flex-body-left {
@@ -6775,5 +6796,18 @@ input:focus, input:hover {
         width: 100%;
         padding: 1em;
         justify-content: center;
+    }
+
+    .lastNews .imageBox{
+        height: 5em;
+        margin-bottom: 0.5em;
+    }
+
+    .settingsBox{
+        min-height: 11.5em;
+    }
+
+    .page-container[data-page ^="settings_"] .switch-label .switch-container {
+        right: 0;
     }
 }

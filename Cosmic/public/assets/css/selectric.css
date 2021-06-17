@@ -265,11 +265,9 @@
 
 /* Web theme */
 .selectric-theme-web .selectric {
-    -webkit-border-radius: 23px;
-    -moz-border-radius: 23px;
-    border-radius: 23px;
+    margin-top: 0.5em;
+    border-radius: 10px;
     background: #fff;
-    border: 1px solid #c1c1c1;
 }
 
 .selectric-theme-web .selectric .label {

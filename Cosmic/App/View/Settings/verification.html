@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 {% set nav = "verification" %}
 {% block body %}
-        <div class="page-content">
-            <article class="default-section">
-                
-                {% include "Settings/panel.html" %}
-                
-                <h3 class="aside-title">{{locale.title}}</h3>
-                <form action="" method="post" class="default-prevent">
-                    <input type="hidden" id="verification_enabled" value="{% if auth_enabled %}{% if player.secret_key is not null %}app{% endif %}{% if player.pincode is not null %}pincode{% endif %}{% else %}{% endif %}">
-                    <p>{{locale.help}}</p>
+<div class="page-content">
+    <h3 class="settingsTitle">
+        {{locale.title}}
+        {% include "Settings/panel.html" %}
+    </h3>
+    <form action="" method="post" class="default-prevent">
+        <input type="hidden" id="verification_enabled"
+               value="{% if auth_enabled %}{% if player.secret_key is not null %}app{% endif %}{% if player.pincode is not null %}pincode{% endif %}{% else %}{% endif %}">
 
-                    <h4>{{locale.password_title}}</h4>
-                    <div class="row" style="margin-bottom: 30px;">
-                        <div class="column-2">
-                            <input type="password" name="current_password" class="rounded-input purple-active">
-                        </div>
-                    </div>
+        <div class="flex-body mt_3">
+            <div class="flex-body-left">
+                <div class="box">
+                    <h4 class="form-subcategory">{{locale.password_title}}</h4>
+                    <input type="password" name="current_password" placeholder="{{locale.fill_password}}">
 
-                    <label class="switch-label" for="enable-verification-target">
-                        <span class="switch-container rounded-radio purple">
-                            <input type="checkbox" name="enable_verification" id="enable-verification-target" value="{% if auth_enabled %}1{% else %}0{% endif %}" {% if auth_enabled %}checked{% endif %}>
+                    <label class="switch-label mt_2" for="enable-verification-target">
+                        <span class="switch-container rounded-radio purple" style="right: 0;">
+                            <input type="checkbox" name="enable_verification" id="enable-verification-target"
+                                   value="{% if auth_enabled %}1{% else %}0{% endif %}" {% if auth_enabled %}checked{%
+                                   endif %}>
                             <span class="switch-button"></span>
                         </span>
                         <h4 class="label-title">{{locale.auth_title}}</h4>
                         <span class="label-description">{{locale.auth_label}}</span>
                     </label>
-                  
-                    <div class="verification-container" style="display:none;">
+
+                    <div class="verification-container mt_2" style="display:none;">
                         <div class="verification-select">
                             <h4>{{locale.method_title}}</h4>
                             <select name="twosteps_login_type" class="selectric type-select">
@@ -36,15 +36,13 @@
                                 <option value="app">{{locale.method_auth_app}}</option>
                             </select>
                         </div>
+
                         <div class="verification-selected" data-method="pincode" style="display:none;">
-                           <h4>{{locale.pincode_title}}</h4>
+                            <h4>{{locale.pincode_title}}</h4>
                             <p>{{locale.pincode_label}}</p>
-                            <div class="row">
-                                <div class="column-2">
-                                    <input type="password" name="twosteps_login_pincode" class="rounded-input purple-active" placeholder="{{locale.fill_pincode}}">
-                                </div>
-                            </div>
+                            <input type="password" name="twosteps_login_pincode" placeholder="{{locale.fill_pincode}}">
                         </div>
+
                         <div class="verification-selected" data-method="app" style="display: none">
                             <h4>{{locale.generate_auth}}</h4>
                             <p>{{locale.generate_auth_label}}</p>
@@ -52,14 +50,24 @@
                             <p>{{locale.link_account_label}}</p>
                             <p style="text-align: center;">
                                 <input type="hidden" id="twosteps_login_data_code" value="{{token}}">
-                                 
-                                <img src="https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2F{{site.shortname}}%3A{{player.username}}%3Fsecret%3D{{token}}%26issuer%3D{{site.shortname}}" alt="{{site.shortname}}">
+
+                                <img src="https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2F{{site.shortname}}%3A{{player.username}}%3Fsecret%3D{{token}}%26issuer%3D{{site.shortname}}"
+                                     alt="{{site.shortname}}" class="QRCode">
                             </p>
                         </div>
                     </div>
                     <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <p class="submit-button"><button type="submit" class="rounded-button purple">{{locale.save}}</button></p>
-                </form>
-            </article>
+                    <div class="text-center mt_1">
+                        <button type="submit" class="myBtn">{{locale.save}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-body-right">
+                <div class="box">
+                    <p>{{locale.help}}</p>
+                </div>
+            </div>
         </div>
+    </form>
+</div>
 {% endblock %}

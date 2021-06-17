@@ -81,6 +81,7 @@ class Routes extends Router
                 parent::get('/shop', 'Shop\Shop@index');
                 parent::get('/shop/club', 'Shop\Club@index');
                 parent::get('/shop/drawbadge', 'Shop\Drawbadge@index');
+                parent::get('/shop/history', 'Shop\History@index');
                 parent::get('/shop/order/view/{orderId}', 'Shop\History@order');
 
                 parent::get('/guilds/{slug}', 'Community\Guilds\Category@index', ['defaultParameterRegex' => '[\w\-]+'])->addMiddleware(GuildMiddleware::class);
@@ -128,7 +129,7 @@ class Routes extends Router
                 parent::get('/settings/password', 'Settings\Password@index');
                 parent::get('/settings/namechange', 'Settings\Namechange@index');
                 parent::get('/settings/preferences', 'Settings\Preferences@index');
-                parent::get('/settsings/verification', 'Settings\Verification@index');
+                parent::get('/settings/verification', 'Settings\Verification@index');
 
                 parent::get('/help/requests/view', 'Help\Requests@index');
                 parent::get('/help/requests/new', 'Help\Ticket@index');

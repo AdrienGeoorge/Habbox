@@ -1,26 +1,34 @@
 {% extends "base.html" %}
 {% set nav = "email" %}
 {% block body %}
-        <div class="page-content">
-            <article class="default-section">
-
-                {% include "Settings/panel.html" %}
-
-                <h3 class="aside-title">{{locale.title}}</h3>
-                <form action="settings/email/validate" method="post">
-                    <h4 class="form-subcategory">{{locale.email_title}}</h4>
+<div class="page-content">
+    <h3 class="settingsTitle">
+        {{locale.title}}
+        {% include "Settings/panel.html" %}
+    </h3>
+    <form action="settings/email/validate" method="post">
+        <div class="flex-body mt_3">
+            <div class="flex_1">
+                <div class="box">
                     <div class="row">
-                        <input type="email" name="email" class="rounded-input purple-active" value="{{player.email}}" maxlength="72" autofocus required>
-                    </div>
-                    <div class="form-help">{{locale.email_label}}</div>
-
-                    <h4 class="form-subcategory">{{locale.password_title}}</h4>
-                    <div class="row">
-                        <input type="password" name="current_password" class="rounded-input purple-active" placeholder="{{locale.fill_password}}" maxlength="32" autocomplete="off" required>
+                        <div class="column-2">
+                            <h4>{{locale.email_title}}</h4>
+                            <input type="email" name="email" value="{{player.mail}}" maxlength="72" autofocus required>
+                            <div class="form-help mt_1">{{locale.email_label}}</div>
+                        </div>
+                        <div class="column-2">
+                            <h4>{{locale.password_title}}</h4>
+                            <input type="password" name="current_password" placeholder="{{locale.fill_password}}"
+                                   maxlength="32" autocomplete="off" required>
+                        </div>
                     </div>
                     <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <p class="submit-button"><button type="submit" class="rounded-button purple">{{locale.save}}</button></p>
-                </form>
-            </article>
+                    <div class="text-center mt_1">
+                        <button type="submit" class="myBtn">{{locale.save}}</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </form>
+</div>
 {% endblock %}
