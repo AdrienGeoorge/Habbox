@@ -762,14 +762,14 @@ function WebDialogManagerInterface() {
 
         var dialog = $(template);
 
-        dialog.find(".buttons-container").append('<button class="rounded-button ' + (this.type === "confirm" ? 'red' : 'lightblue') + ' cancel">' + this.buttons.cancel + '</button>');
+        dialog.find(".buttons-container").append('<button class="rounded-button light cancel">' + this.buttons.cancel + '</button>');
 
         if (this.input !== null) {
-            dialog.find(".input-container").append('<br /><input type="text" class="' + this.input + ' rounded-input purple-active dialog-input">');
+            dialog.find(".input-container").append('<br /><input type="text" class="' + this.input + ' dialog-input">');
         }
 
         if (this.type === "confirm")
-            dialog.find(".buttons-container").append('<button class="rounded-button red plain confirm">' + this.buttons.confirm + '</button>');
+            dialog.find(".buttons-container").append('<button class="rounded-button light plain confirm">' + this.buttons.confirm + '</button>');
 
         $.magnificPopup.open({
             modal: this.type === "confirm",
