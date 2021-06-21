@@ -4213,7 +4213,7 @@ input:-webkit-autofill {
     margin-top: 0;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel {
+.settings-panel {
     position: absolute;
     right: 2em;
     top: 0;
@@ -4225,19 +4225,19 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a {
+.settings-panel a {
     color: #fff;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a:not(.selected):before {
+.settings-panel a:not(.selected):before {
     opacity: 0.5;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a:not(.selected):hover:before {
+.settings-panel a:not(.selected):hover:before {
     opacity: 0.8;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a:before {
+.settings-panel a:before {
     font-family: "Flaticon", sans-serif;
     font-size: 24px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
@@ -4245,31 +4245,31 @@ input:-webkit-autofill {
     vertical-align: bottom;
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.preferences:before {
+.settings-panel a.preferences:before {
     content: "";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.password:before {
+.settings-panel a.password:before {
     content: "";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.verification:before {
+.settings-panel a.verification:before {
     content: "";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.email:before {
+.settings-panel a.email:before {
     content: "";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.changename:before {
+.settings-panel a.changename:before {
     content: " \f201";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.history:before {
+.settings-panel a.history:before {
     content: " \f208";
 }
 
-.page-container[data-page ^="settings_"] .settings-panel a.songdisk:before {
+.settings-panel a.songdisk:before {
     content: "";
 }
 
@@ -5816,13 +5816,25 @@ input:-webkit-autofill {
     padding: 0.5em 1em;
     margin: 5px;
     width: 100%;
+    height: 2.5em;
     color: #fff;
     text-align: center;
+    position: relative;
+}
+
+.user-infos-moneys_one--box > p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 60%;
 }
 
 .user-infos-moneys_one--box > img {
-    margin-right: 5px;
-    width: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1em;
 }
 
 /* TOOLTIP */
@@ -5894,7 +5906,7 @@ input:-webkit-autofill {
 }
 
 .navigation-links {
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

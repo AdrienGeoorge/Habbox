@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers\Games;
+namespace App\Controllers\Ranking;
 
 use App\Config;
 
@@ -10,14 +10,15 @@ use App\Models\Community;
 use Core\Locale;
 use Core\View;
 
-class Ranking
+class Games
 {
     public function index()
     {
         $currencys = array();
+
         foreach(Core::getCurrencys() as $type) 
         {
-            $highscores = Community::getCurrencyHighscores($type->type, 6);
+            $highscores = Community::getCurrencyHighscores($type->type, 10);
             $type = $type->currency;
             
             foreach($highscores as $highscore) {
@@ -26,39 +27,32 @@ class Ranking
           
             $currencys[$type] = $highscores;
         }
-      
-        $credits = Community::getCredits(6);
-        foreach ($credits as $item) 
-        {
-            $item->player = Player::getDataById($item->id, array('username', 'look'));
-        }
-      
-        $achievements = Community::getAchievement(6);
+
+        $achievements = Community::getAchievement(10);
         foreach ($achievements as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));
         }
      
-        $respectreceived = Community::getRespectsReceived(6);
+        $respectreceived = Community::getRespectsReceived(10);
         foreach ($respectreceived as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));
         }
         
-        $onlinetime = Community::getOnlineTime(6);
+        $onlinetime = Community::getOnlineTime(10);
         foreach ($onlinetime as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));
         }
         
-        View::renderTemplate('Games/ranking.html', [
+        View::renderTemplate('Ranking/games.html', [
             'title' => Locale::get('core/title/games/ranking'),
             'page'  => 'games_ranking',
             'achievements' => $achievements,
-            'credits' => $credits,
             'respects' => $respectreceived,
             'online' => $onlinetime,
-            'currencys'  => $currencys
+            'currencys'  => $currencys['GOTW']
         ]);
     }
 }

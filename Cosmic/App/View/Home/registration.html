@@ -21,6 +21,14 @@
                                placeholder="{{locale.username_fill}}" maxlength="15" autocomplete="off" required>
                     </div>
                 </div>
+                {% if referral %}
+                <div class="box mt_2">
+                    <div class="row">
+                        <h5>{{locale.referral}}</h5>
+                        <input type="text" name="referral" value="{{referral.username}}" readonly>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="box mt_2">
                     <div class="row">
                         <h5>{{locale.sex}}</h5>
@@ -210,15 +218,6 @@
                         </select>
                     </div>
                 </div>
-                {% if referral %}
-                <div class="box mt_2">
-                    <div class="row">
-                        <h5>Your referral:</h5>
-                        <input type="text" name="referral" class="rounded-input blue-active"
-                               value="{{referral.username}}" readonly>
-                    </div>
-                </div>
-                {% endif %}
                 {% if publickey %}
                 <div class="box mt_2">
                     <div class="row">

@@ -187,13 +187,15 @@
     <div class="user-infos-moneys">
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/credits.svg" alt="credits"> {{player.credits >= 1000 ? (player.credits/1000)|round(1) ~ 'K' : player.credits}}
+                <img src="/assets/icons/credits.svg" alt="credits">
+                <p>{{player.credits >= 1000 ? (player.credits/1000)|round(1) ~ 'K' : player.credits}}</p>
             </div>
         </div>
         {% for currency in player_currency %}
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
-                <img src="/assets/icons/{{currency.currency}}.svg" alt="{{currency.currency}}"> {{currency.amount >= 1000 ? (currency.amount/1000)|round(1) ~ 'K' : currency.amount}}
+                <img src="/assets/icons/{{currency.currency}}.svg" alt="{{currency.currency}}">
+                <p>{{currency.amount >= 1000 ? (currency.amount/1000)|round(1) ~ 'K' : currency.amount}}</p>
             </div>
         </div>
         {% endfor %}
@@ -201,8 +203,8 @@
 
     <div class="navigation-links">
         <div class="navigation-item">
-            <a href="/games/ranking">
-                <div class="nav-highscore {% if 'ranking' in page %}selected {% endif %} navigation-link tooltip" data-page="games_ranking">
+            <a href="/ranking/wealth">
+                <div class="nav-highscore {% if 'ranking' in page %}selected {% endif %} navigation-link tooltip" data-page="ranking_wealth">
                     <span class="text">{{locale_base.nav_highscores}}</span>
                 </div>
             </a>

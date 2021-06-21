@@ -388,7 +388,8 @@ $GLOBALS['language'] = array (
             'male'                  => 'Boy',
             'female'                => 'Girl',
             'register'              => 'Register',
-            'header_slogan2'        => 'Join our community and make new friends'
+            'header_slogan2'        => 'Join our community and make new friends',
+            'referral'              => 'Your referral'
         ),
 
         /*     App/View/Jobs     */

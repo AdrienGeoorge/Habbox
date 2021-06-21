@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set nav = "wealth" %}
+{% block body %}
+<div class="page-content">
+    <h3 class="settingsTitle">
+        {{locale.title}}
+        <div class="settings-panel">
+            <a href="/ranking/wealth" class="settingsMenu email {% if nav == " wealth" %}selected{% endif %}"
+            data-label="{{locale.email}}"></a>
+            <a href="/ranking/games" class="settingsMenu changename {% if nav == " games" %}selected{% endif %}"
+            data-label="{{locale.namechange}}"></a>
+        </div>
+    </h3>
+    <div class="flex-body mt_3">
+        <div class="flex_1">
+            <div class="box">
+                <table class="default-table ranking-content">
+                    <thead>
+                    <tr>
+                        <th colspan="2">{{site.shortname}}{{locale.username}}</th>
+                        <th>Credits</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for credits in credits %}
+                    <tr>
+                        <td><img src="{{site.fpath}}/avatarimage?figure={{credits.player.look}}&gesture=sml&headonly=1"
+                                 alt="{{credits.player.look}}" class="pixelated"></td>
+                        <td><a href="/profile/{{credits.player.username}}">{{credits.player.username}}</a></td>
+                        <td><span>{{credits.credits}}</span></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% for key,currency in currencys|slice(0,2) %}
+        <div class="flex_1">
+            <div class="box">
+                <table class="default-table ranking-content">
+                    <thead>
+                    <tr>
+                        <th colspan="2">{{site.shortname}}{{locale.username}}</th>
+                        <th>{{key}}</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for user in currency %}
+                    <tr>
+                        <td><img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&gesture=sml&headonly=1"
+                                 alt="{{user.player.look}}" class="pixelated"></td>
+                        <td><a href="/profile/{{user.player.username}}">{{user.player.username}}</a></td>
+                        <td><span>{{user.amount}}</span></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

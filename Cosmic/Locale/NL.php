@@ -382,7 +382,8 @@ $GLOBALS['language'] = array (
             'sex'                   => 'Geslacht',
             'male'                  => 'Jongen',
             'female'                => 'Meisje',
-            'register'              => 'Registreer'
+            'register'              => 'Registreer',
+            'referral'              => 'Uw sponsor'
         ),
 
         /*     App/View/Jobs     */

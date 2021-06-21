@@ -34,7 +34,7 @@ class Community
     {
         return QueryBuilder::connection()->table('users_currency')->selectDistinct(array('users_currency.user_id', 'users_currency.amount', 'users_currency.type'))
                       ->join('users', 'users_currency.user_id', '=', 'users.id')->where('users_currency.type', $type)
-                      ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 27)
+                      ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')
                       ->orderBy('users_currency.amount', 'DESC')->limit($limit)->get();
     }
     
@@ -188,17 +188,17 @@ class Community
     {
         return QueryBuilder::connection()->table('users_settings')->select('user_id')->select('achievement_score')->orderBy('achievement_score', 'desc')
                 ->join('users', 'users_settings.user_id', '=', 'users.id')
-                ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 27)->limit($limit)->get();
+                ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
   
     public static function getRespectsReceived($limit = 10)
     {
         return QueryBuilder::connection()->table('users_settings')->select('user_id')->select('respects_received')->orderBy('respects_received', 'desc')
                 ->join('users', 'users_settings.user_id', '=', 'users.id')
-                ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 27)->limit($limit)->get();
+                ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
     
-    public static function getOnlineTime($limit = 6)
+    public static function getOnlineTime($limit = 10)
     {
         return QueryBuilder::connection()->table('users_achievements')->select('users_achievements.*')
                 ->join('users', 'users_achievements.user_id', '=', 'users.id')
@@ -208,10 +208,10 @@ class Community
 
     public static function getCredits($limit = 10)
     {
-        return QueryBuilder::connection()->table('users')->select('users.id')->select('users.credits')->orderBy('users.credits', 'desc')
-                ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 27)->limit($limit)->get();
+        return QueryBuilder::connection()->table('users')->selectDistinct('users.id')->select('users.credits')->orderBy('users.credits', 'desc')
+            ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
- 
+
     /*
      * Jobs queries
      */
