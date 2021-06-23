@@ -42,18 +42,10 @@ function WebHotelManagerInterface() {
         var argument = arguments;
         var body = $("body");
 
-        if (argument == '/=beta' || argument == 'hotel=beta') {
-            body.find(".header-container .header-content .account-container .account-buttons .nitroButton").text(Locale.web_hotel_backto);
-            if (container.find('iframe').hasClass('nitro') != true) {
-                body.find(".header-container .header-content .account-container .account-buttons .flashButton").text("TO " + Site.name);
-                container.find("iframe").remove();
-            }
-        } else {
-            body.find(".header-container .header-content .account-container .account-buttons .flashButton").text(Locale.web_hotel_backto);
-            if (container.find('iframe').hasClass('flash') != true) {
-                body.find(".header-container .header-content .account-container .account-buttons .nitroButton").text("TO " + Site.name);
-                container.find("iframe").remove();
-            }
+        body.find(".header-container .header-content .account-container .account-buttons .nitroButton").text(Locale.web_hotel_backto);
+        if (container.find('iframe').hasClass('nitro') != true) {
+            body.find(".header-container .header-content .account-container .account-buttons .flashButton").text("TO " + Site.name);
+            container.find("iframe").remove();
         }
 
         if (!body.hasClass("hotel-visible")) {
@@ -64,13 +56,9 @@ function WebHotelManagerInterface() {
                 } else {
                     if (container.find(".client-frame").length === 0)
 
-                        if (argument == '/=beta' || argument == 'hotel=beta') {
-                            Web.ajax_manager.get("/api/ssoTicket", function (result) {
-                                container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
-                            });
-                        } else {
-                            container.prepend('<iframe class="client-frame flash" src="/client?' + argument + '"></iframe>');
-                        }
+                        Web.ajax_manager.get("/api/ssoTicket", function (result) {
+                            container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
+                        });
 
                     body.addClass("hotel-visible");
 

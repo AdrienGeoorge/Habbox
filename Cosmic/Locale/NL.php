@@ -558,7 +558,9 @@ $GLOBALS['language'] = array (
         ),
         'games_ranking' => array(
             'title'             => 'Highscores',
-            'desc'              => 'Bekijk hier onze spelers met de meeste punten of scores!'
+            'desc'              => 'Bekijk hier onze spelers met de meeste punten of scores!',
+            'achievements'      => 'Win-win',
+            'online'            => 'Tijd online'
         )
     ),
     'core' => array (

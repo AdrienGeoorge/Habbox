@@ -5,77 +5,88 @@
     <h3 class="settingsTitle">
         {{locale.title}}
         <div class="settings-panel">
-            <a href="/ranking/wealth" class="settingsMenu email {% if nav == "wealth" %}selected{% endif %}" data-label="{{locale.email}}"></a>
-            <a href="/ranking/games" class="settingsMenu changename {% if nav == "games" %}selected{% endif %}" data-label="{{locale.namechange}}"></a>
+            <a href="/ranking/wealth" class="settingsMenu email {% if nav == 'wealth' %}selected{% endif %}"
+               data-label="{{locale.email}}"></a>
+            <a href="/ranking/games" class="settingsMenu changename {% if nav == 'games' %}selected{% endif %}"
+               data-label="{{locale.namechange}}"></a>
         </div>
     </h3>
-    <div class="flex-body mt_2">
+    <div class="flex-body profile mt_3">
         <div class="flex_1">
             <div class="box">
-                <table class="default-table ranking-content">
-                    <thead>
-                    <tr>
-                        <th colspan="2">{{site.shortname}}{{locale.username}}</th>
-                        <th>GOTW</th>
-                    </tr>
-                    </thead>
+                <div class="box-title">
+                    GOTW
+                    <div class="team-title-round">
+                        <img src="/assets/icons/gotw.svg" alt="GOTW" class="team-title-badge">
+                    </div>
+                </div>
+            </div>
+            {% for key, user in currencys %}
+            <div class="box rank-box">
+                <a href="/profile/{{user.player.look}}">
+                    <img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
+                         alt="{{user.player.look}}" class="pixelated rank-look">
+                    {{user.player.username}}
+                </a>
+                <span>{{user.amount}}</span>
+                <div class="rank {{ key + 1 == 1 ? 'or' : key + 1 == 2 ? 'argent' : key + 1 == 3 ? 'bronze' : '' }}">
+                    <span>{{ key + 1 }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.achievements}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/gotw.svg" alt="Achievements" class="team-title-badge">
+                    </div>
+                </div>
+            </div>
+            {% for key, achievements in achievements %}
+            <div class="box rank-box">
+                <a href="/profile/{{achievements.player.username}}">
+                    <img src="{{site.fpath}}/avatarimage?figure={{achievements.player.look}}&head_direction=3&headonly=1&size=l"
+                         alt="{{achievements.player.look}}" class="pixelated rank-look">
+                    {{achievements.player.username}}
+                </a>
+                <span>{{achievements.achievement_score}}</span>
+                <div class="rank {{ key + 1 == 1 ? 'or' : key + 1 == 2 ? 'argent' : key + 1 == 3 ? 'bronze' : '' }}">
+                    <span>{{ key + 1 }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.online}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/gotw.svg" alt="Online as hours" class="team-title-badge">
+                    </div>
+                </div>
+            </div>
+            {% for key, online in online %}
+            <div class="box rank-box">
+                <a href="/profile/{{online.player.username}}">
+                    <img src="{{site.fpath}}/avatarimage?figure={{online.player.look}}&head_direction=3&headonly=1&size=l"
+                         alt="{{online.player.look}}" class="pixelated rank-look">
+                    {{online.player.username}}
+                </a>
+                <span>{{online.progress // 60|round}}h</span>
+                <div class="rank {{ key + 1 == 1 ? 'or' : key + 1 == 2 ? 'argent' : key + 1 == 3 ? 'bronze' : '' }}">
+                    <span>{{ key + 1 }}</span>
+                </div>
+            </div>
 
-                    <tbody>
-                    {% for user in currencys %}
-                    <tr>
-                        <td><img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&gesture=sml&headonly=1"
-                                 alt="{{user.player.look}}" class="pixelated"></td>
-                        <td><a href="/profile/{{user.player.username}}">{{user.player.username}}</a></td>
-                        <td><span>{{user.amount}}</span></td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="flex_1">
-            <div class="box">
-                <table class="default-table ranking-content">
-                    <thead>
-                    <tr>
-                        <th colspan="2">{{site.shortname}}{{locale.username}}</th>
-                        <th>Achievements</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for achievements in achievements %}
-                    <tr>
-                        <td><img src="{{site.fpath}}/avatarimage?figure={{achievements.player.look}}&gesture=sml&headonly=1"
-                                 alt="{{achievements.player.look}}" class="pixelated"></td>
-                        <td><a href="/profile/{{achievements.player.username}}">{{achievements.player.username}}</a></td>
-                        <td><span>{{achievements.achievement_score}}</span></td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="flex_1">
-            <div class="box">
-                <table class="default-table ranking-content">
-                    <thead>
-                    <tr>
-                        <th colspan="2">{{site.shortname}}{{locale.username}}</th>
-                        <th>Online as Hours</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for online in online %}
-                    <tr>
-                        <td><img src="{{site.fpath}}/avatarimage?figure={{online.player.look}}&gesture=sml&headonly=1"
-                                 alt="{{online.player.look}}" class="pixelated"></td>
-                        <td><a href="/profile/{{online.player.username}}">{{online.player.username}}</a></td>
-                        <td><span>{{ online.progress // 60|round }}h</span></td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+            <tr>
+                <td><img src="{{site.fpath}}/avatarimage?figure={{online.player.look}}&gesture=sml&headonly=1"
+                         alt="{{online.player.look}}" class="pixelated"></td>
+                <td><a href="/profile/{{online.player.username}}">{{online.player.username}}</a></td>
+                <td><span>{{ online.progress // 60|round }}h</span></td>
+            </tr>
+            {% endfor %}
         </div>
     </div>
 

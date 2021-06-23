@@ -6291,6 +6291,7 @@ input:-webkit-autofill {
 
 .team-users {
     margin-top: 2em;
+    font-size: 14px;
 }
 
 .team-user {
@@ -6736,15 +6737,77 @@ input:focus, input:hover {
     width: 88%;
 }
 
-.QRCode{
+.QRCode {
     border-radius: 1em;
     margin-top: 1em;
+}
+
+/* CLASSEMENT */
+
+.rank-box {
+    margin: 1em 1em 0 1em;
+    border-radius: 15px;
+    padding-left: 6em;
+}
+
+.rank-box a {
+    display: block;
+    text-decoration: none;
+    color: #f3f3f4;
+    font-size: 15px;
+    font-weight: 600;
+    width: 8.5em;
+    overflow-wrap: anywhere;
+}
+
+.rank {
+    background: #424354;
+    color: white;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4em;
+    height: 4em;
+    border-radius: 15px;
+}
+
+.rank.or {
+    background: #f1c40f;
+    color: white;
+}
+
+.rank.argent {
+    background: #95a5a6;
+    color: white;
+}
+
+.rank.bronze {
+    background: #bf672d;
+    color: white;
+}
+
+.rank span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.rank-look {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 5em;
 }
 
 /* MOBILE */
 
 @media (max-width: 1024px) {
-    .page-container{
+    .page-container {
         padding-bottom: 9em;
     }
 
@@ -6843,12 +6906,12 @@ input:focus, input:hover {
         justify-content: center;
     }
 
-    .lastNews .imageBox{
+    .lastNews .imageBox {
         height: 5em;
         margin-bottom: 0.5em;
     }
 
-    .settingsBox{
+    .settingsBox {
         min-height: 11.5em;
     }
 

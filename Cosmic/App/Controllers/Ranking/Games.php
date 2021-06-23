@@ -18,7 +18,7 @@ class Games
 
         foreach(Core::getCurrencys() as $type) 
         {
-            $highscores = Community::getCurrencyHighscores($type->type, 10);
+            $highscores = Community::getCurrencyHighscores($type->type, 5);
             $type = $type->currency;
             
             foreach($highscores as $highscore) {
@@ -28,19 +28,19 @@ class Games
             $currencys[$type] = $highscores;
         }
 
-        $achievements = Community::getAchievement(10);
+        $achievements = Community::getAchievement(5);
         foreach ($achievements as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));
         }
      
-        $respectreceived = Community::getRespectsReceived(10);
+        $respectreceived = Community::getRespectsReceived(5);
         foreach ($respectreceived as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));
         }
         
-        $onlinetime = Community::getOnlineTime(10);
+        $onlinetime = Community::getOnlineTime(5);
         foreach ($onlinetime as $item) 
         {
             $item->player = Player::getDataById($item->user_id, array('username', 'look'));

@@ -12,20 +12,8 @@ class Config
     /* Example external_base: = "gordon/PRODUCTION-201904011212-888653470" */
     
     const client = [
-      'external_override_variables' => 'gamedata/override/external_override_variables.txt?v=4',
-      'external_override_texts'     => 'gamedata/override/external_flash_override_texts.txt?v=9',
-      'external_variables'          => 'gamedata/external_variables.txt?v=11',
-      'external_texts'              => 'gamedata/external_flash_texts.txt',
-      'external_figurepartlist'     => 'gamedata/figuredata.xml',
-      'external_figuremap'          => 'gordon/PRODUCTION-201904011212-888653470/figuremap.xml',
-      'external_productdata'        => 'gamedata/productdata.txt',
-      'external_figuredata'         => 'gamedata/furnidata.xml?v=5',
-      'external_base'               => 'gordon/PRODUCTION-201904011212-888653470',
-      'client_swf'                  => 'Habbo.swf',
-      'client_host'                 => '151.80.54.177',
-      'client_port'                 => 3000,
       "client_radio"                => "https://21253.live.streamtheworld.com/WEB16_AAC.aac",
-      "nitro_path"                  => "https://client.circinus.dev"
+      "nitro_path"                  => "https://habbox.fr/client/"
     ];
   
     /**
@@ -35,7 +23,7 @@ class Config
      */
 
     const site = [
-      "domain"      => "https://cosmicproject.online",
+      "domain"      => "https://habbox.fr",
       "cpath"       => "https://habbox.fr/nitro",
       "fpath"       => "https://images.habbox.fr/habbox-imaging",
       "shortname"   => "Habbox",

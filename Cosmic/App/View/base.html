@@ -246,11 +246,6 @@
                 <span class="text">{{locale_base.nav_helptool}}</span>
             </div>
         </a>
-        <a href="/logout" target="_self">
-            <div class="nav-logout navigation-bottom-link tooltip" data-page="logout">
-                <span class="text">{{locale_base.user_logout}}</span>
-            </div>
-        </a>
         {% if 'housekeeping' in permissions %}
         <a href="/housekeeping" target="_blank">
             <div class="nav-housekeeping navigation-bottom-link tooltip">
@@ -258,6 +253,11 @@
             </div>
         </a>
         {% endif %}
+        <a href="/logout" target="_self">
+            <div class="nav-logout navigation-bottom-link tooltip" data-page="logout">
+                <span class="text">{{locale_base.user_logout}}</span>
+            </div>
+        </a>
     </div>
     {% else %}
     <div class="user-buttons">

@@ -560,7 +560,9 @@ $GLOBALS['language'] = array (
         ),
         'games_ranking' => array(
             'title'             => 'Classements',
-            'desc'              => 'Tu trouveras ici les meilleurs scores de nos joueurs!'
+            'desc'              => 'Tu trouveras ici les meilleurs scores de nos joueurs!',
+            'achievements'      => 'Win-win',
+            'online'            => 'Temps en ligne'
         )
     ),
     'core' => array (
