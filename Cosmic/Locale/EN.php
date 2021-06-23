@@ -588,6 +588,7 @@ $GLOBALS['language'] = array (
             'no_permissions'        => 'You do not have permission.',
             'already_liked'         => 'You already like this!',
             'liked'                 => 'You like this!',
+            'unliked'               => 'Successfully unliked!',
             'banned_1'              => 'You have been banned for breaking the ' . Config::site['shortname'] . ' Rules:',
             'banned_2'              => 'Your ban expires:',
             'something_wrong'       => 'Something went wrong, please try again.',

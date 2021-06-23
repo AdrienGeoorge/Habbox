@@ -9,12 +9,12 @@ class Community
     /*
      * Get photos queries
      */
-  
+
     public static function getPhotos($limit = 10, $offset = 0)
     {
         return QueryBuilder::connection()->table('camera_web')->offset($offset)->limit($limit)->orderBy('id', 'desc')->get();
     }
-  
+
     public static function getPhotoById($id)
     {
         return QueryBuilder::connection()->table('camera_web')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('id', $id)->first();
@@ -24,20 +24,20 @@ class Community
     {
         return QueryBuilder::connection()->table('website_photos_likes')->where('photo_id', $photoid)->count();
     }
-  
+
     public static function userAlreadylikePhoto($photoid, $userid)
     {
         return QueryBuilder::connection()->table('website_photos_likes')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('photo_id', $photoid)->where('user_id', $userid)->count();
     }
-  
-    public static function getCurrencyHighscores($type, $limit) 
+
+    public static function getCurrencyHighscores($type, $limit)
     {
         return QueryBuilder::connection()->table('users_currency')->selectDistinct(array('users_currency.user_id', 'users_currency.amount', 'users_currency.type'))
                       ->join('users', 'users_currency.user_id', '=', 'users.id')->where('users_currency.type', $type)
                       ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')
                       ->orderBy('users_currency.amount', 'DESC')->limit($limit)->get();
     }
-    
+
     /*
      * Get news queries
      */
@@ -58,27 +58,27 @@ class Community
     {
         return QueryBuilder::connection()->table('website_news_reactions')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('news_id', $id)->get();
     }
-  
+
     public static function getLastArticle()
     {
         return QueryBuilder::connection()->table('website_news')->select('id')->select('slug')->orderBy('id', 'desc')->first();
     }
-  
+
     public static function latestArticleReaction($news_id)
     {
         return QueryBuilder::connection()->table('website_news_reactions')->where('news_id', $news_id)->where('hidden', '0')->orderBy('timestamp', 'desc')->first();
     }
-    
+
     public static function isNewsHidden($news_id)
     {
         return QueryBuilder::connection()->table('website_news_reactions')->select('hidden')->where('id', $news_id)->first();
     }
-  
+
     public static function hideNewsReaction($reaction_id, $int)
     {
         return QueryBuilder::connection()->table('website_news_reactions')->where('id', $reaction_id)->update(array('hidden' => $int));
     }
-  
+
     public static function addNewsReaction($news_id, $player_id, $message)
     {
         $data = array(
@@ -92,7 +92,7 @@ class Community
     /*
      * Feeds queries
      */
-  
+
     public static function getFeeds($limit = 10, $offset = 0)
     {
         return QueryBuilder::connection()->table('website_feeds')->where('is_hidden', 0)->offset($offset)->limit($limit)->orderBy('id', 'desc')->get();
@@ -102,7 +102,7 @@ class Community
     {
         return QueryBuilder::connection()->table('website_feeds')->where('is_hidden', 0)->where('id', $feedid)->first();
     }
-  
+
     public static function getFeedsByUserid($userid)
     {
         return QueryBuilder::connection()->table('website_feeds')->select('website_feeds.*')->select('users.username')->select('users.look')
@@ -121,6 +121,7 @@ class Community
     {
         QueryBuilder::connection()->table('website_feeds')->where('id', $id)->delete();
         QueryBuilder::connection()->table('website_feeds_reactions')->where('feed_id', $id)->delete();
+        QueryBuilder::connection()->table('website_feeds_likes')->where('feed_id', $id)->delete();
     }
 
     public static function getLikes($feedid)
@@ -132,12 +133,12 @@ class Community
     {
         return QueryBuilder::connection()->table('website_feeds_likes')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('feed_id', $feedid)->where('user_id', $userid)->count();
     }
-  
-  
+
+
     /*
      * Insert queries
      */
-  
+
     public static function insertLike($feedid, $userid)
     {
         $data = array(
@@ -146,8 +147,13 @@ class Community
         );
 
         return QueryBuilder::connection()->table('website_feeds_likes')->insert($data);
-    } 
-  
+    }
+
+    public static function deleteLike($feedid, $userid)
+    {
+        return QueryBuilder::connection()->table('website_feeds_likes')->where('feed_id', $feedid)->where('user_id', $userid)->delete();
+    }
+
     public static function insertPhotoLike($photoid, $userid)
     {
         $data = array(
@@ -156,7 +162,7 @@ class Community
         );
 
         return QueryBuilder::connection()->table('website_photos_likes')->insert($data);
-    } 
+    }
 
     public static function addFeedToUser($message, $userid, $from)
     {
@@ -178,26 +184,26 @@ class Community
     {
         return QueryBuilder::connection()->query("SELECT guilds.name, guilds.badge, guilds.description, guilds_members.id, COUNT(guild_id) AS Total FROM guilds_members JOIN guilds ON guilds_members.guild_id = guilds.id AND guilds_members.level_id < 3 GROUP BY guilds_members.guild_id ORDER BY Total DESC LIMIT " . $limit)->get();
     }
-  
+
     public static function getRandomUsers($limit)
     {
         return QueryBuilder::connection()->query('SELECT username, look FROM users ORDER BY RAND() LIMIT  ' . $limit)->get();
     }
-  
+
     public static function getAchievement($limit = 10)
     {
         return QueryBuilder::connection()->table('users_settings')->selectDistinct('user_id')->select('achievement_score')->orderBy('achievement_score', 'desc')
                 ->join('users', 'users_settings.user_id', '=', 'users.id')
                 ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
-  
+
     public static function getRespectsReceived($limit = 10)
     {
         return QueryBuilder::connection()->table('users_settings')->selectDistinct('user_id')->select('respects_received')->orderBy('respects_received', 'desc')
                 ->join('users', 'users_settings.user_id', '=', 'users.id')
                 ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
-    
+
     public static function getOnlineTime($limit = 10)
     {
         return QueryBuilder::connection()->table('users_achievements')->selectDistinct('users.id')->select('users_achievements.*')
@@ -215,42 +221,42 @@ class Community
     /*
      * Jobs queries
      */
-  
+
     public static function getJobs()
     {
         return QueryBuilder::connection()->table('website_jobs')->orderBy('id', 'DESC')->get();
     }
-  
+
     public static function getJob($id)
     {
         return QueryBuilder::connection()->table('website_jobs')->where('id', $id)->first();
     }
-  
+
     public static function getJobApplications($id)
     {
         return QueryBuilder::connection()->table('website_jobs')->join('website_jobs_applys', 'website_jobs.id', '=', 'website_jobs_applys.job_id')->get();
     }
-  
+
     public static function getJobApplication($job_id, $user_id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->where('job_id', $job_id)->where('user_id', $user_id)->first();
     }
-  
+
     public static function getApplicationById($id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->where('id', $id)->first();
     }
-  
+
     public static function getMyJobApplication($user_id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->join('website_jobs', 'website_jobs_applys.job_id', '=', 'website_jobs.id')->where('user_id', $user_id)->get();
     }
-  
+
     public static function getAllApplications($id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->where('job_id', $id)->get();
     }
-  
+
     public static function addJobApply($job_id, $player_id, $firstname, $message, $available_monday, $available_tuesday, $available_wednesday, $available_thursday, $available_friday,$available_saturday, $available_sunday)
     {
         $data = array(

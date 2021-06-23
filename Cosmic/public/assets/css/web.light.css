@@ -6782,6 +6782,55 @@ input:focus, input:hover {
     width: 5em;
 }
 
+/* MORE */
+
+.more-button {
+    text-align: center;
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    background: #5c5d71;
+    z-index: 1;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 2.5em;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #242531;
+    color: white;
+    min-width: 44px;
+}
+
+.more-box{
+    position: fixed;
+    right: 2em;
+    bottom: 6em;
+    background: #5c5d71;
+    z-index: 1;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #242531;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    font-size: 15px;
+}
+
+.more-row{
+    position: relative;
+    padding-left: 2.5em;
+    color: white;
+    text-decoration: none;
+}
+
+.more-row img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 18px;
+}
+
 /* MOBILE */
 
 @media (max-width: 1024px) {

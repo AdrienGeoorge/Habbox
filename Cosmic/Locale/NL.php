@@ -581,6 +581,7 @@ $GLOBALS['language'] = array (
             'no_permissions'        => 'Je hebt geen toestemming.',
             'already_liked'         => 'Je vindt dit al leuk!',
             'liked'                 => 'Je vindt dit leuk!',
+            'unliked'               => 'Succesvol unliked!',
             'banned_1'              => 'Je bent verbannen voor het overtreden van de '. Config::site['shortname'] . ' Regels:',
             'banned_2'              => 'Je ban verloopt over:',
             'something_wrong'       => 'Er is iets misgegaan, probeer het nogmaals.',

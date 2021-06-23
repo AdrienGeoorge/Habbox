@@ -141,16 +141,10 @@
                                      class="fa-heart" width="15">
                             </a>
 
-                            {% if player.id == data.player.id %}
+                            {% if player.id == feed.from_user_id %}
                             <a href="#">
                                 <img src="/assets/icons/articles/hide.svg" alt="" data-id="{{feed.id}}"
                                      class="fa-remove" width="15">
-                            </a>
-                            {% else %}
-                            <a href="#">
-                                <img src="/assets/icons/profile/report.svg" alt="" data-id="{{feed.id}}"
-                                     data-report="feed"
-                                     class="fa-flag" width="15">
                             </a>
                             {% endif %}
                         </div>

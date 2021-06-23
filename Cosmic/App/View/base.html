@@ -144,19 +144,18 @@
 </div>
 {% endif %}
 {% if player %}
-<div id="report-item" class="payment-popup zoom-anim-dialog mfp-hide">
-    <button title="{{locale_base.close}}" type="button" class="mfp-close" style="color:#000">&#215;</button>
-    <h3 class="aside-title">{{locale_base.report_message}}</h3>
+<div id="report-item" class="confirm-popup dialog-popup zoom-anim-dialog mfp-hide">
+    <h3>{{locale_base.report_message}}</h3>
     <p>
         {{locale_base.report_certainty}}
     </p>
     <form action="/ajax/report/add" method="post" class="login-form" id="reportForm">
-
-        <p>
-            <button type="submit" class="rounded-button blue plain"
-                    id="reportItem">{{locale_base.report_inappropriate}}</button>
+        <div class="buttons-container">
             <input type="hidden" id="reportItemid" name="itemId" value="">
-        </p>
+            <button type="submit" class="rounded-button light plain" id="reportItem">
+                {{locale_base.report_inappropriate}}
+            </button>
+        </div>
     </form>
 </div>
 {% endif %}
@@ -310,6 +309,21 @@
     </ul>
 </nav>-->
 <section class="body-container margin-body">
+    <div class="more-box" style="display: none;">
+        <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/twitter.svg">
+            Twitter
+        </a>
+        <a href="https://www.instagram.com/habboxfrance/" target="_blank" class="more-row">
+            <img src="/assets/icons/instagram.svg">
+            Instagram
+        </a>
+        <a href="https://discord.com/invite/J5dDk9DGDW" target="_blank" class="more-row">
+            <img src="/assets/icons/discord.svg">
+            Discord
+        </a>
+    </div>
+    <div class="more-button">+</div>
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">
             <div class="navigation-top-menu">
@@ -407,6 +421,7 @@
 <script src="/assets/js/web/loading.js?v={{cache_timestamp}}"></script>
 <script src="/assets/js/pagination.js"></script>
 <script src="/assets/js/jquery.wysibb.js"></script>
+<script src="/assets/js/more.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://www.paypal.com/sdk/js?client-id={{paypal_client_id}}&currency={{paypal_currency}}"></script>
 

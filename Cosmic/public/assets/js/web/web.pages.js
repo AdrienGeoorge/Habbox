@@ -543,9 +543,13 @@ function WebPageProfileInterface(main_page) {
                     post: id,
                     csrftoken: csrftoken
                 }, function (result) {
-                    if (result.status == 'success') {
-                        $('.fa-heart[data-id=' + id + ']').addClass("pulsateOnce");
-                        $('.likes-count[data-id=' + id + ']').text(parseInt($('.likes-count[data-id=' + id + ']').text()) + 1);
+                    if(result.unliked){
+                        $('.likes-count[data-id=' + id + ']').text(parseInt($('.likes-count[data-id=' + id + ']').text()) - 1);
+                    }else{
+                        if (result.status == 'success') {
+                            $('.fa-heart[data-id=' + id + ']').addClass("pulsateOnce");
+                            $('.likes-count[data-id=' + id + ']').text(parseInt($('.likes-count[data-id=' + id + ']').text()) + 1);
+                        }
                     }
                 });
             } else {

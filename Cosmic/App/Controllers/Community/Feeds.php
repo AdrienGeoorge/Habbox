@@ -69,13 +69,13 @@ class Feeds
         if(!request()->player->id) {
             response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
         }
-      
+
         $feed_id = Community::getFeedsByFeedId(input('feedid'));
         if($feed_id == null) {
             response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
         }
 
-        if ($feed_id->to_user_id != request()->player->id && Permission::exists('housekeeping_moderation_tools', request()->player->rank)) {
+        if ($feed_id->from_user_id != request()->player->id && Permission::exists('housekeeping_moderation_tools', request()->player->rank)) {
             response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
         }
 
@@ -90,7 +90,8 @@ class Feeds
         }
 
         if (Community::userAlreadylikePost(input('post'), request()->player->id)) {
-            response()->json(["status" => "error", "message" => Locale::get('core/notification/already_liked')]);
+            Community::deleteLike(input('post'), request()->player->id);
+            response()->json(["status" => "success", "message" => Locale::get('core/notification/unliked'), "unliked" => true]);
         }
 
         Community::insertLike(input('post'), request()->player->id);
