@@ -1464,7 +1464,7 @@ input:-webkit-autofill {
 .notifications-container .notification-container {
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: #424354;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -1482,7 +1482,7 @@ input:-webkit-autofill {
     background-color: #000;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
-    border-radius: 25px;
+    border-radius: 15px;
     width: 50px;
     height: 50px;
     display: block;
@@ -1549,6 +1549,7 @@ input:-webkit-autofill {
 .notifications-container .notification-container .notification-content {
     font-size: 12px;
     word-break: break-word;
+    color: white;
 }
 
 /* Cookies */

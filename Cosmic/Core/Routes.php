@@ -57,6 +57,7 @@ class Routes extends Router
           
                 parent::get('/', 'Home\Index@index')->setName('index.home');
                 parent::get('/home', 'Home\Home@index');
+                parent::get('/stats', 'Home\Stats@index');
                 parent::get('/lost', 'Home\Lost@index')->setName('lost');
                 parent::get('/ranking/wealth', 'Ranking\Wealth@index');
                 parent::get('/ranking/games', 'Ranking\Games@index');

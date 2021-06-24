@@ -174,8 +174,8 @@ $GLOBALS['language'] = array (
             'reactions_fill'            => 'Entre ton commentaire ici...',
             'reactions_post'            => 'Poster',
             'latest_news'               => 'Derniers articles',
-            'reaction_hidden_yes'       => 'Newscomments made invisible!',
-            'reaction_hidden_no'        => 'Newscomments made visible!',
+            'reaction_hidden_yes'       => 'Commentaire invisible!',
+            'reaction_hidden_no'        => 'Commentaire de nouveau visible!',
             'forbidden_words'           => 'Ton commentaire possède des mots manquants!',
         ),
         'forum' => array (
