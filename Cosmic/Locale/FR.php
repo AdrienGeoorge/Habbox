@@ -386,6 +386,9 @@ $GLOBALS['language'] = array (
             'header_slogan2'        => 'Rejoins-nous et fais-toi de nouveaux amis !',
             'referral'              => 'Votre parrainage'
         ),
+        'stats' => array(
+            'title'                 => 'Mes statistiques'
+        ),
 
         /*     App/View/Jobs     */
         'apply' => array (

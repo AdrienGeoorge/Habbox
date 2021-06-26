@@ -385,6 +385,9 @@ $GLOBALS['language'] = array (
             'register'              => 'Registreer',
             'referral'              => 'Uw sponsor'
         ),
+        'stats' => array(
+            'title'                 => 'Mijn statistieken'
+        ),
 
         /*     App/View/Jobs     */
         'apply' => array (

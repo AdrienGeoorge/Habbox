@@ -62,16 +62,16 @@ class Routes extends Router
                 parent::get('/ranking/wealth', 'Ranking\Wealth@index');
                 parent::get('/ranking/games', 'Ranking\Games@index');
                 parent::get('/jobs', 'Jobs\Jobs@index');
-                parent::get('/guilds', 'Community\Guilds\Home@index');
+//                parent::get('/guilds', 'Community\Guilds\Home@index');
 
                 parent::get('/articles', 'Community\Articles@index');
                 parent::get('/article/{slug}', 'Community\Articles@index', ['defaultParameterRegex' => '[\w\-]+']);
 
                 parent::get('/community/photos', 'Community\Photos@index');
                 parent::get('/community/staff', 'Community\Staff@index');
-                parent::get('/community/team', 'Community\Staff@team');
+//                parent::get('/community/team', 'Community\Staff@team');
 
-                parent::get('/community/fansites', 'Community\Fansites@index');
+//                parent::get('/community/fansites', 'Community\Fansites@index');
 
                 parent::get('/help', 'Help\Help@index');
                 parent::get('/help/{slug}', 'Help\Help@index', ['defaultParameterRegex' => '[\w\-]+']);
@@ -123,7 +123,7 @@ class Routes extends Router
                 parent::get('/disconnect', 'Home\Lost@index')->setName('index.home');
 
                 parent::get('/hotel', 'Client\Client@hotel');
-                parent::get('/client', 'Client\Client@client');
+//                parent::get('/client', 'Client\Client@client');
 
                 parent::get('/logout', 'Home\Login@logout');
                 parent::get('/settings', 'Settings\Preferences@index');

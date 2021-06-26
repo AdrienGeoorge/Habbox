@@ -1,5 +1,94 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="page-content">
+    <div class="title">{{locale.title}}</div>
+    <div class="flex-body profile mt_2">
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Score win-win
+                </div>
+                {{data.player.achievement_score}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Respect reçus
+                </div>
+                {{data.player.respects_received}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Respects envoyés
+                </div>
+                {{data.player.respects_given}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Nombre d'amis
+                </div>
+                {{data.player.nbFriends}}
+            </div>
+        </div>
+    </div>
+    <div class="flex-body profile mt_2">
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Nombre d'appartements
+                </div>
+                {{data.player.nbRooms}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Mobis posés
+                </div>
+                {{data.player.nbPosedItems}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Mobis achetés
+                </div>
+                {{data.player.nbPurchasedItems}}
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Appartements visités
+                </div>
+                {{data.player.nbVisitedRooms}}
+            </div>
+        </div>
+    </div>
+    <div class="flex-body profile mt_2">
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    Messages envoyés
+                </div>
+                {{data.player.nbMessages}}
+            </div>
+        </div>
+        {% for achievement in data.player.achievements %}
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{achievement.achievement_name}}
+                </div>
+                {{achievement.progress}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

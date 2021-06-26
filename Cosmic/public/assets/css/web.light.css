@@ -2115,6 +2115,7 @@ input:-webkit-autofill {
     -ms-flex: 1;
     flex: 1;
     padding-bottom: 7em;
+    padding-top: 2em;
 }
 
 .page-container .page-header {
@@ -6055,7 +6056,7 @@ input:-webkit-autofill {
 
 .navigation-top-item {
     flex: 1;
-    padding: 2em 0;
+    padding-top: 2em;
 }
 
 .navigation-top-search {
@@ -6087,7 +6088,7 @@ input:-webkit-autofill {
 .navigation-top-search_logo {
     position: absolute;
     left: 1em;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
     background: url(/assets/icons/search.svg) no-repeat center;
     height: 1.5em;
@@ -6836,6 +6837,7 @@ input:focus, input:hover {
 
 @media (max-width: 1024px) {
     .page-container {
+        padding-top: 0;
         padding-bottom: 9em;
     }
 

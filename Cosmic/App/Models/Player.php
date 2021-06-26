@@ -23,7 +23,7 @@ class Player
     {
         return QueryBuilder::connection()->table('users')->select($data ?? static::$data)->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('id', $player_id)->first();
     }
-  
+
     public static function getDataByEmail($email, $data = null)
     {
         return QueryBuilder::connection()->table('users')->where('mail', $email)->first();
@@ -254,5 +254,39 @@ class Player
         ];
       
         return QueryBuilder::connection()->table('website_referrals')->insert($data);
+    }
+
+    public static function getSettingsById($player_id, $data){
+        return QueryBuilder::connection()->table('users_settings')->select($data ?? static::$data)->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('user_id', $player_id)->first();
+    }
+
+    public static function getPosedItems($player_id){
+        return QueryBuilder::connection()->query('SELECT * FROM items WHERE user_id = "' . $player_id .'"')->get();
+    }
+
+    public static function getPurchasedItems($player_id){
+        return QueryBuilder::connection()->query('SELECT * FROM logs_shop_purchases WHERE user_id = "' . $player_id .'"')->get();
+    }
+
+    public static function getVisitedRooms($player_id){
+        return QueryBuilder::connection()->query('SELECT * FROM room_enter_log WHERE user_id = "' . $player_id.'"')->get();
+    }
+
+    public static function getMessages($player_id){
+        return QueryBuilder::connection()->query('SELECT * FROM chatlogs_room WHERE user_from_id = "' . $player_id.'"')->get();
+    }
+
+    public static function getAchievements($player_id){
+        return QueryBuilder::connection()->query(
+            'SELECT users_achievements.* FROM users_achievements
+                JOIN users ON users_achievements.user_id = users.id
+                WHERE users.id = "' . $player_id.'"
+                AND (
+                    users_achievements.achievement_name = "AllTimeHotelPresence"
+                    OR users_achievements.achievement_name = "GiftGiver"
+                    OR users_achievements.achievement_name = "GiftReceiver"
+                )
+                '
+        )->get();
     }
 }

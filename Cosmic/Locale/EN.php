@@ -391,6 +391,9 @@ $GLOBALS['language'] = array (
             'header_slogan2'        => 'Join our community and make new friends',
             'referral'              => 'Your referral'
         ),
+        'stats' => array(
+            'title'                 => 'My statistics'
+        ),
 
         /*     App/View/Jobs     */
         'apply' => array (
