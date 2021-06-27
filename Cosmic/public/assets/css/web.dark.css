@@ -341,7 +341,7 @@ html {
 }
 
 body {
-    background-color: #f7f9f9;
+    background-color: #2f2f3e;
     min-width: 320px;
     min-height: 100%;
     font-family: "Nunito", Arial, sans-serif;
@@ -1367,9 +1367,11 @@ input:-webkit-autofill {
 
 #hotel-container .client-buttons {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 15px;
+    left: 15px;
     z-index: 100;
+    display: flex;
+    flex-direction: row;
 }
 
 #hotel-container .client-buttons button {
@@ -1377,12 +1379,14 @@ input:-webkit-autofill {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
     display: block;
     float: left;
-    padding: 7px;
-    min-width: 34px;
-    height: 34px;
     font-size: 12px;
     margin-right: 10px;
     line-height: normal;
+    background-color: #424354;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75em 1em;
+    color: white;
 }
 
 #hotel-container .client-buttons button .client-icon {
@@ -6022,6 +6026,10 @@ input:-webkit-autofill {
     margin-top: 3em;
 }
 
+.ml_1{
+    margin-left: 1em;
+}
+
 .flex_1 {
     flex: 1;
 }
@@ -6822,7 +6830,7 @@ input:focus, input:hover {
     min-width: 44px;
 }
 
-.more-box{
+.more-box {
     position: fixed;
     right: 2em;
     bottom: 6em;
@@ -6838,19 +6846,56 @@ input:focus, input:hover {
     font-size: 15px;
 }
 
-.more-row{
+.more-row {
     position: relative;
     padding-left: 2.5em;
     color: white;
     text-decoration: none;
 }
 
-.more-row img{
+.more-row img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     width: 18px;
+}
+
+/* INDEX */
+
+.index-hotel-view {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    image-rendering: pixelated;
+    filter: grayscale(0.9) drop-shadow(2px 4px 6px black);
+}
+
+.index-logo {
+    width: 10em;
+    image-rendering: pixelated;
+}
+
+.index-body{
+    padding: 3em 0 3em 10em;
+}
+
+.index-left{
+    width: 45em;
+}
+
+.index-form-login{
+    margin-top: 2em;
+    width: 25em;
+}
+
+.index-form-login input:focus, .index-form-login input:hover {
+    background: #272739;
+    color: #c0c1ce;
+}
+
+.btn-index{
+    margin-left: 1em;
 }
 
 /* MOBILE */
@@ -6967,5 +7012,30 @@ input:focus, input:hover {
 
     .page-container[data-page ^="settings_"] .switch-label .switch-container {
         right: 0;
+    }
+
+    .index-hotel-view {
+        display: none;
+    }
+
+    .index-logo-center{
+        text-align: center;
+    }
+
+    .index-body{
+        padding: 3em;
+    }
+
+    .index-left{
+        width: 100%;
+    }
+
+    .index-form-login{
+        margin-top: 2em;
+        width: 100%;
+    }
+
+    .btn-index{
+        margin-left: unset;
     }
 }

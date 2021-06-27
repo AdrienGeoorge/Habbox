@@ -297,6 +297,12 @@ $GLOBALS['language'] = array (
         ),
 
         /*     App/View/Home     */
+        'index' => array (
+            'connection'              => 'Connection',
+            'hook'                    => 'Join our community and create your own avatar, make friends, chat, create your own apartments and participate in our animations!',
+            'register'                => 'Register',
+            'login'                   => 'Log in'
+        ),
         'home' => array (
             'to'                      => 'To',
             'friends_online'          => 'Online friends',

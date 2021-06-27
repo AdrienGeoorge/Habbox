@@ -17,9 +17,7 @@ class Index
 {
 
     public function index()
-    {       
-        $news = Community::getNews(6);
-
+    {
         if(isset(request()->player->id)) {
             header('Location: /home');
         }
@@ -27,7 +25,6 @@ class Index
         View::renderTemplate('Home/index.html', [
             'title'     => Locale::get('core/title/home'),
             'page'      => 'index',
-            'news'      => $news,
         ], 10);
 
         return false;

@@ -293,6 +293,12 @@ $GLOBALS['language'] = array (
         ),
 
         /*     App/View/Home     */
+        'index' => array (
+            'connection'              => 'Aansluiting',
+            'hook'                    => 'Word lid van onze community en creëer je eigen avatar, maak vrienden, chat, maak je eigen appartementen en neem deel aan onze evenementen!',
+            'register'                => 'Inloggen',
+            'login'                   => 'Log in'
+        ),
         'home' => array (
             'to'                      => 'Naar',
             'friends_online'          => 'Online vrienden',

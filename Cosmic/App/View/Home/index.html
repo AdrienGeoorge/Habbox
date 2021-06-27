@@ -1,20 +1,119 @@
-{% if player is empty %}
-<div class="articles-container">
-    {% for news in news %}
-    <div class="article-container" data-id="{{news.id}}">
-        <a href="/article/{{news.id}}-{{news.slug}}" class="article-content pixelated" style="background-image: url({{news.header}});">
-            <div class="article-header">
-                <div class="article-category">{{news.category}}</div>
-                <div class="article-separation" style="background-color: #8f8c8c;"></div>
-                <div class="article-title title" data-id="{{news.id}}">{{news.title}}</div>
-                <div class="article-title title-sub" data-id="{{news.id}}" style="display:none">{{news.short_story}}</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="follow, index">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <title>{{site.sitename}} - {{title}}</title>
+
+    <meta name="description"
+          content="Virtual world for young people where you can make and meet friends. Meet and make friends, chat with others, create your own avatar, design your own room for free and much more ...">
+    <meta name="keywords"
+          content="cosmic, {{site.sitename}}, virtual, world, social network, free, community, avatar, chat, online, teen, roleplaying, join, social, groups, forums, safe, play, games, online, friends, teens, rare, rare meubi, collect, make, collect, contact, meubi, furniture, pets, furnish room, share, expression, badges, hangout, music, celebrity, VIP visits, celebs, mmo, mmorpgs, massive multiplayer, dox , dox hotel, dox hotel, space hotel, space hotel, space, sunnie, sunnie day, sunnieday, habbo, HABBO, habbo hotel, habboo, habbo city, habbocity, cool, virtual world, vip, retro, retro hotel, habbo retro, free , free habbo, holo">
+
+    <meta property="og:title" content="{{site.sitename}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{site.domain}}">
+    <meta property="og:image" content="/assets/images/summary-picture.png">
+    <meta property="og:description" content="Virtual world where you can make and meet friends.">
+    <meta property="og:site_name" content="{{site.sitename}}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/bbeditor.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/homes.css">
+    <link rel="stylesheet" href="/assets/css/selectric.css">
+    <link rel="stylesheet" href="/assets/css/circle.css?v=5">
+    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
+    <link rel="stylesheet" href="/assets/css/web.responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="index-body">
+<noscript>
+    <style>
+        .loading-container {
+            display: none;
+        }
+    </style>
+</noscript>
+<div class="loading-container">
+    <div id="loading-background"></div>
+    <div class="loading-content">
+        <div class="c100 center">
+            <span></span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
             </div>
-        </a>
+        </div>
+        <div class="loading-bodytext"></div>
     </div>
-    {% endfor %}
 </div>
-<div class="load-more-button">
-    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-    <button class="rounded-button">{{locale.load_news}}</button>
+
+<div class="page-loading"></div>
+<div class="notifications-container"></div>
+
+<div class="cookies-accept-container">
+    <div class="close-container">&times;</div>
+    {{site.sitename}} {{locale_base.cookies}}
+    <a href="/help" target="_blank">{{locale_base.read_more}}</a>
 </div>
-{% endif %}
+<img src="/assets/images/index_hotel.png" class="index-hotel-view" alt="hotel view">
+<div class="index-left">
+    <div class="index-logo-center">
+        <img src="/assets/images/habbox.gif" class="index-logo" alt="logo">
+    </div>
+    <h1 class="mt_1 index-logo-center">{{locale.connection}}</h1>
+    <h2>{{locale.hook}}</h2>
+    <form class="login-form index-form-login" action="#">
+        <input type="text" name="username" id="login-username-input-target"
+               placeholder="{{locale_base.login_name}}..." aria-label="username" required>
+        <input type="password" name="password" id="login-password-input-target"
+               placeholder="{{locale_base.login_password}}..." autocomplete="off"
+               aria-label="password" class="mt_1" required>
+        <input type="hidden" name="csrftoken" value="{{csrf_token}}"/>
+
+        <div class="mt_2 text-center">
+            <a href="password/claim" target="_self" class="claim-password" data-close-popup="true">
+                {{locale_base.login_lost_password}}
+            </a>
+            <br>
+
+            <button type="submit" class="rounded-button light mt_2" id="login-request">{{locale.login}}</button>
+            <a href="/registration" target="_self"
+               class="rounded-button light plain btn-index mt_1">{{locale.register}}</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    var Configuration = {
+    {% if publickey is not empty %}recaptcha_public: "{{publickey}}",{% endif %}
+    revision: "{{revision}}2213",
+        cache: "{{cache_timestamp}}",
+        findretros: {% if findretros %}true{% else %}false{% endif %}
+    }
+</script>
+<script src="/assets/js/js.cookie.js"></script>
+<script src="/assets/js/jquery.history.js"></script>
+<script src="/assets/js/jquery.fullscreen.min.js"></script>
+<script src="/assets/js/jquery.magnific-popup.js"></script>
+<script src="/assets/js/selectric.js?v=34212"></script>
+<script src="/assets/js/functions.js"></script>
+<script src="/assets/js/web/loading.js?v={{cache_timestamp}}"></script>
+<script src="/assets/js/pagination.js"></script>
+<script src="/assets/js/jquery.wysibb.js"></script>
+<script src="/assets/js/more.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</body>
+</html>
