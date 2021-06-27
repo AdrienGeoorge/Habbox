@@ -6849,6 +6849,7 @@ input:focus, input:hover {
     bottom: 0;
     image-rendering: pixelated;
     filter: drop-shadow(2px 4px 6px black);
+    z-index: -1;
 }
 
 .index-logo {
@@ -7002,7 +7003,15 @@ input:focus, input:hover {
     .page-container[data-page ^="settings_"] .switch-label .switch-container {
         right: 0;
     }
+}
 
+@media (max-width: 950px) {
+    .index-body{
+        padding: 3em 0 3em 4em;
+    }
+}
+
+@media (max-width: 820px) {
     .index-hotel-view {
         display: none;
     }

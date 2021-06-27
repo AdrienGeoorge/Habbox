@@ -57,7 +57,7 @@ $GLOBALS['language'] = array (
 
             'header_slogan'         => 'Virtual world for young people!',
             'header_slogan2'        => 'Join our community and make new friends',
-            'header_login'          => 'Login',
+            'header_login'          => 'Log in',
             'header_register'       => 'Register for free!',
             'header_to'             => 'To',
             'search'                => 'Search...',

@@ -57,7 +57,7 @@ $GLOBALS['language'] = array (
 
             'header_slogan'         => 'Un monde incroyable s\'ouvre devant tes yeux !',
             'header_slogan2'        => 'Rejoins-nous et fais-toi de nouveaux amis !',
-            'header_login'          => 'Connexion',
+            'header_login'          => 'Se connecter',
             'header_register'       => 'S\'inscrire',
             'header_to'             => 'Hôtel',
             'search'                => 'Rechercher...',
