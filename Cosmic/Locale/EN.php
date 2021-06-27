@@ -395,7 +395,8 @@ $GLOBALS['language'] = array (
             'female'                => 'Girl',
             'register'              => 'Register',
             'header_slogan2'        => 'Join our community and make new friends',
-            'referral'              => 'Your referral'
+            'referral'              => 'Your referral',
+            'login'                 => 'Log in'
         ),
         'stats' => array(
             'title'                 => 'My statistics'

@@ -390,7 +390,8 @@ $GLOBALS['language'] = array (
             'female'                => 'Fille',
             'register'              => 'S\'inscrire',
             'header_slogan2'        => 'Rejoins-nous et fais-toi de nouveaux amis !',
-            'referral'              => 'Votre parrainage'
+            'referral'              => 'Votre parrainage',
+            'login'                 => 'Se connecter'
         ),
         'stats' => array(
             'title'                 => 'Mes statistiques'

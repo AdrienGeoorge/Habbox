@@ -389,7 +389,8 @@ $GLOBALS['language'] = array (
             'male'                  => 'Jongen',
             'female'                => 'Meisje',
             'register'              => 'Registreer',
-            'referral'              => 'Uw sponsor'
+            'referral'              => 'Uw sponsor',
+            'login'                 => 'Inloggen'
         ),
         'stats' => array(
             'title'                 => 'Mijn statistieken'

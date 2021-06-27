@@ -71,7 +71,9 @@
 <img src="/assets/images/index_hotel.png" class="index-hotel-view" alt="hotel view">
 <div class="index-left">
     <div class="index-logo-center">
-        <img src="/assets/images/habbox.gif" class="index-logo" alt="logo">
+        <a href="/" target="_self">
+            <img src="/assets/images/habbox.gif" class="index-logo" alt="logo">
+        </a>
     </div>
     <h1 class="mt_1 index-logo-center">{{locale.register}}</h1>
     <h2 class="index-logo-center">{{locale.header_slogan2}}</h2>
@@ -124,7 +126,7 @@
                     <strong>{{locale.password_help_2}}</strong>
                 </div>
             </div>
-            <div class="box mt_2" style="height: 13em;">
+            <div class="box mt_2" style="min-height: 11em;">
                 <h5>{{locale.birthdate}}</h5>
                 <div class="form-help">{{locale.birthdate_help}}</div>
                 <div class="birthdate-small">
@@ -291,7 +293,8 @@
             </div>
             {% endif %}
             <div class="text-center mt_3">
-                <button type="submit" class="rounded-button white plain submit-form default-prevent"
+                <a href="/" target="_self" class="rounded-button light">{{locale.login}}</a>
+                <button type="submit" class="rounded-button white plain submit-form default-prevent btn-index mt_1"
                         id="registration-recaptcha">{{locale.register}}
                 </button>
             </div>
@@ -300,6 +303,12 @@
 </div>
 
 <script>
+    var Site = {
+        name: "{{site.sitename}}",
+        url: "{{site.domain}}",
+        game_url: "{{site.cpath}}",
+        figure_url: "{{site.fpath}}"
+    }
     var Configuration = {
     {% if publickey is not empty %}recaptcha_public: "{{publickey}}",{% endif %}
     revision: "{{revision}}2213",
