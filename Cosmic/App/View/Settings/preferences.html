@@ -2,10 +2,10 @@
 {% set nav = "preferences" %}
 {% block body %}
 <div class="page-content">
-    <h3 class="settingsTitle">
+    <div class="settingsTitle">
         {{locale.title}}
         {% include "Settings/panel.html" %}
-    </h3>
+    </div>
     <form action="settings/preferences/validate" method="post">
         <div class="flex-body">
             <div class="flex_1">

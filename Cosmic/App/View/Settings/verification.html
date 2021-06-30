@@ -2,10 +2,10 @@
 {% set nav = "verification" %}
 {% block body %}
 <div class="page-content">
-    <h3 class="settingsTitle">
+    <div class="settingsTitle">
         {{locale.title}}
         {% include "Settings/panel.html" %}
-    </h3>
+    </div>
     <form action="" method="post" class="default-prevent">
         <input type="hidden" id="verification_enabled"
                value="{% if auth_enabled %}{% if player.secret_key is not null %}app{% endif %}{% if player.pincode is not null %}pincode{% endif %}{% else %}{% endif %}">

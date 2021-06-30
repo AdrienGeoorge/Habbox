@@ -394,7 +394,19 @@ $GLOBALS['language'] = array (
             'login'                 => 'Se connecter'
         ),
         'stats' => array(
-            'title'                 => 'Mes statistiques'
+            'title'                 => 'Mes statistiques',
+            'winwin'                => 'Score win-win',
+            'respects_received'     => 'Respects reçus',
+            'respects_given'        => 'Respects envoyés',
+            'friends'               => 'Nombre d\'amis',
+            'messages'              => 'Messages envoyés',
+            'rooms_visited'         => 'Appartements visités',
+            'rooms'                 => 'Nombre d\'appartements',
+            'items_purchased'       => 'Mobis achetés',
+            'items_posed'           => 'Mobis posés',
+            'AllTimeHotelPresence'  => 'Temps en ligne',
+            'GiftReceiver'          => 'Cadeaux reçus',
+            'GiftGiver'             => 'Cadeaux envoyés'
         ),
 
         /*     App/View/Jobs     */

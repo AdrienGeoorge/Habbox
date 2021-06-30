@@ -2,15 +2,19 @@
 {% set nav = "games" %}
 {% block body %}
 <div class="page-content">
-    <h3 class="settingsTitle">
+    <div class="settingsTitle">
         {{locale.title}}
         <div class="settings-panel">
-            <a href="/ranking/wealth" class="settingsMenu email {% if nav == 'wealth' %}selected{% endif %}"
-               data-label="{{locale.email}}"></a>
-            <a href="/ranking/games" class="settingsMenu changename {% if nav == 'games' %}selected{% endif %}"
-               data-label="{{locale.namechange}}"></a>
+            <a href="/ranking/wealth" class="settingsMenu {% if nav == 'wealth' %}selected{% endif %}"
+               data-label="{{locale.email}}">
+                <img src="/assets/icons/wealth.svg" alt="">
+            </a>
+            <a href="/ranking/games" class="settingsMenu {% if nav == 'games' %}selected{% endif %}"
+               data-label="{{locale.namechange}}">
+                <img src="/assets/icons/games.svg" alt="">
+            </a>
         </div>
-    </h3>
+    </div>
     <div class="flex-body profile mt_3">
         <div class="flex_1">
             <div class="box">
@@ -40,7 +44,7 @@
                 <div class="box-title">
                     {{locale.achievements}}
                     <div class="team-title-round">
-                        <img src="/assets/icons/gotw.svg" alt="Achievements" class="team-title-badge">
+                        <img src="/assets/icons/winwin.svg" alt="Achievements" class="team-title-badge">
                     </div>
                 </div>
             </div>
@@ -63,7 +67,7 @@
                 <div class="box-title">
                     {{locale.online}}
                     <div class="team-title-round">
-                        <img src="/assets/icons/gotw.svg" alt="Online as hours" class="team-title-badge">
+                        <img src="/assets/icons/connexion.svg" alt="Online as hours" class="team-title-badge">
                     </div>
                 </div>
             </div>

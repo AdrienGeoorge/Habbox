@@ -6700,12 +6700,24 @@ input:focus, input:hover {
     font-family: "Nunito";
     font-weight: 500;
     position: relative;
+    font-size: 20px;
 }
 
 .settingsMenu {
     background: #ebd4bd;
     padding: 0.5em 0.75em;
     border-radius: 10px;
+    position: relative;
+    height: 65%;
+    width: 2.25em;
+}
+
+.settingsMenu img{
+    width: 1.25em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .settingBox {
@@ -6794,6 +6806,30 @@ input:focus, input:hover {
 
 /* MORE */
 
+.lightMode{
+    text-align: center;
+    position: fixed;
+    right: 2.75em;
+    bottom: 1em;
+    background: #5c5d71;
+    z-index: 1;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 2.5em;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #242531;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.lightMode img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 0.75em;
+}
+
 .more-button {
     text-align: center;
     position: fixed;
@@ -6806,8 +6842,16 @@ input:focus, input:hover {
     font-size: 2.5em;
     cursor: pointer;
     box-shadow: 1px 1px 5px #242531;
-    color: white;
-    min-width: 44px;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.more-button img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1em;
 }
 
 .more-box {
@@ -6886,6 +6930,30 @@ input:focus, input:hover {
 
 .btn-index{
     margin-left: 1em;
+}
+
+/* HELP */
+
+.help-body{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+.help-faq{
+    border-radius: 20px;
+    margin: 0 2em;
+    text-decoration: none;
+}
+
+/* STATS */
+
+.stats-text{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 20px;
+    font-weight: 600;
+    color: #424354;
 }
 
 /* MOBILE */

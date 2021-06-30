@@ -1,8 +1,20 @@
 <div class="settings-panel">
-    <a href="/settings/preferences" class="settingsMenu preferences {% if nav == 'preferences' %}selected{% endif %}" data-label="{{locale.preferences}}"></a>
-    <a href="/settings/password" class="settingsMenu password {% if nav == 'password' %}selected{% endif %}" data-label="{{locale.password}}"></a>
-    <a href="/settings/verification" class="settingsMenu verification {% if nav == 'verification' %}selected{% endif %}" data-label="{{locale.verification}}"></a>
-    <a href="/settings/email" class="settingsMenu email {% if nav == 'email' %}selected{% endif %}" data-label="{{locale.email}}"></a>
-    <a href="/settings/namechange" class="settingsMenu changename {% if nav == 'namechange' %}selected{% endif %}" data-label="{{locale.namechange}}"></a>
-    <a href="/shop/history" class="settingsMenu history"></a>
+    <a href="/settings/preferences" class="settingsMenu {% if nav == 'preferences' %}selected{% endif %}" data-label="{{locale.preferences}}">
+        <img src="/assets/icons/settings/preferences.svg" alt="">
+    </a>
+    <a href="/settings/password" class="settingsMenu {% if nav == 'password' %}selected{% endif %}" data-label="{{locale.password}}">
+        <img src="/assets/icons/settings/password.svg" alt="">
+    </a>
+    <a href="/settings/verification" class="settingsMenu {% if nav == 'verification' %}selected{% endif %}" data-label="{{locale.verification}}">
+        <img src="/assets/icons/settings/verification.svg" alt="">
+    </a>
+    <a href="/settings/email" class="settingsMenu {% if nav == 'email' %}selected{% endif %}" data-label="{{locale.email}}">
+        <img src="/assets/icons/settings/mail.svg" alt="">
+    </a>
+    <a href="/settings/namechange" class="settingsMenu {% if nav == 'namechange' %}selected{% endif %}" data-label="{{locale.namechange}}">
+        <img src="/assets/icons/settings/namechange.svg" alt="">
+    </a>
+    <a href="/shop/history" class="settingsMenu">
+        <img src="/assets/icons/settings/boutique.svg" alt="">
+    </a>
 </div>

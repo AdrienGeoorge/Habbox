@@ -203,7 +203,7 @@
     <div class="navigation-links">
         <div class="navigation-item">
             <a href="/ranking/wealth">
-                <div class="nav-highscore {% if 'ranking' in page %}selected {% endif %} navigation-link tooltip" data-page="ranking_wealth">
+                <div class="nav-highscore {% if 'ranking' in page %}selected {% endif %} navigation-link tooltip" data-page="games_ranking">
                     <span class="text">{{locale_base.nav_highscores}}</span>
                 </div>
             </a>
@@ -309,21 +309,37 @@
     </ul>
 </nav>-->
 <section class="body-container margin-body">
+    <form action="settings/preferences/validate" method="post" class="lightMode">
+        <label class="switch-label">
+            <span class="switch-container rounded-radio purple">
+                <input class="changeLightMode" type="checkbox" data-id="themeswitch" {{ player.template == 'dark' ? 'checked' }}>
+                <span><img src="/assets/icons/{{ player.template == 'dark' ? 'light' : 'dark' }}.svg" alt=""></span>
+            </span>
+        </label>
+    </form>
     <div class="more-box" style="display: none;">
         <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/twitter.svg">
+            <img src="/assets/icons/social/twitter.svg">
             Twitter
         </a>
         <a href="https://www.instagram.com/habboxfrance/" target="_blank" class="more-row">
-            <img src="/assets/icons/instagram.svg">
+            <img src="/assets/icons/social/instagram.svg">
             Instagram
         </a>
+        <a href="https://www.facebook.com/habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/social/facebook.svg">
+            Facebook
+        </a>
+        <a href="https://www.tiktok.com/@habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/social/tiktok.svg">
+            Tiktok
+        </a>
         <a href="https://discord.com/invite/J5dDk9DGDW" target="_blank" class="more-row">
-            <img src="/assets/icons/discord.svg">
+            <img src="/assets/icons/social/discord.svg">
             Discord
         </a>
     </div>
-    <div class="more-button">+</div>
+    <div class="more-button"><img src="/assets/icons/social/social.svg" alt=""></div>
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">
             <div class="navigation-top-menu">

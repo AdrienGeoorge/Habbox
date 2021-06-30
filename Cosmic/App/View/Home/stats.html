@@ -1,38 +1,44 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="page-content">
-    <div class="title">{{locale.title}}</div>
     <div class="flex-body profile mt_2">
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Score win-win
+                    {{locale.winwin}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/winwins.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.achievement_score}}
+                <div class="stats-text">
+                    {{data.player.achievement_score}}
+                </div>
             </div>
         </div>
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Respect reçus
+                    {{locale.respects_received}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/respects_recus.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.respects_received}}
+                <div class="stats-text">
+                    {{data.player.respects_received}}
+                </div>
             </div>
         </div>
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Respects envoyés
+                    {{locale.respects_given}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/respects_envoyes.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.respects_given}}
-            </div>
-        </div>
-        <div class="flex_1">
-            <div class="box">
-                <div class="box-title">
-                    Nombre d'amis
+                <div class="stats-text">
+                    {{data.player.respects_given}}
                 </div>
-                {{data.player.nbFriends}}
             </div>
         </div>
     </div>
@@ -40,33 +46,40 @@
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Nombre d'appartements
+                    {{locale.friends}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/amis.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.nbRooms}}
+                <div class="stats-text">
+                    {{data.player.nbFriends}}
+                </div>
             </div>
         </div>
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Mobis posés
+                    {{locale.messages}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/messages_envoyes.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.nbPosedItems}}
+                <div class="stats-text">
+                    {{data.player.nbMessages}}
+                </div>
             </div>
         </div>
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Mobis achetés
+                    {{locale.rooms_visited}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/apparts_visites.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.nbPurchasedItems}}
-            </div>
-        </div>
-        <div class="flex_1">
-            <div class="box">
-                <div class="box-title">
-                    Appartements visités
+                <div class="stats-text">
+                    {{data.player.nbVisitedRooms}}
                 </div>
-                {{data.player.nbVisitedRooms}}
             </div>
         </div>
     </div>
@@ -74,18 +87,62 @@
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    Messages envoyés
+                    {{locale.rooms}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/apparts.svg" alt="" class="team-title-badge">
+                    </div>
                 </div>
-                {{data.player.nbMessages}}
+                <div class="stats-text">
+                    {{data.player.nbRooms}}
+                </div>
             </div>
         </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.items_purchased}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/mobis_achetes.svg" alt="" class="team-title-badge">
+                    </div>
+                </div>
+                <div class="stats-text">
+                    {{data.player.nbPurchasedItems}}
+                </div>
+            </div>
+        </div>
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.items_posed}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/mobis_poses.svg" alt="" class="team-title-badge">
+                    </div>
+                </div>
+                <div class="stats-text">
+                    {{data.player.nbPosedItems}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-body profile mt_2">
         {% for achievement in data.player.achievements %}
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
-                    {{achievement.achievement_name}}
+                    {{locale[achievement.achievement_name]}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/{{achievement.achievement_name|lower}}.svg" alt=""
+                             class="team-title-badge">
+                    </div>
                 </div>
-                {{achievement.progress}}
+                <div class="stats-text">
+                    {% if achievement.achievement_name == 'AllTimeHotelPresence' %}
+                    {% set onlineHours = achievement.progress // 60 %}
+                    {{onlineHours|round}}h {{ onlineHours|round > 24 ? '(' ~ (achievement.progress//1440|round) ~ 'j)' }}
+                    {% else %}
+                    {{achievement.progress}}
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% endfor %}
