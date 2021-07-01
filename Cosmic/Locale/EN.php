@@ -277,6 +277,7 @@ $GLOBALS['language'] = array (
             'request_ticket_amount'     => 'Amount of tickets:',
             'request_react_on'          => 'React on:',
             'request_react'             => 'React',
+            'request_responses'         => 'Response(s) to the subject',
             'request_description'       => 'Description',
             'request_react_on_ticket'   => 'React on ticket',
             'request_contact'           => 'Contact ' . Config::site['shortname'],
@@ -287,13 +288,14 @@ $GLOBALS['language'] = array (
             'request_status'            => 'Ticket opened',
             'request_in_treatment'      => 'In treatment',
             'request_open'              => 'Open',
-            'request_closed'            => 'Closed'
+            'request_closed'            => 'Closed',
         ),
         'help_new' => array (
-            'title'         => 'My ticket',
+            'title'         => 'New ticket',
             'subject'       => 'Subject',
             'description'   => 'Description',
-            'open_ticket'   => 'Open a ticket'
+            'open_ticket'   => 'Open a ticket',
+            'request_desc'  => 'Once your ticket is opened, we will respond as quickly as possible. Please be aware that some responses may take longer to process.'
         ),
 
         /*     App/View/Home     */

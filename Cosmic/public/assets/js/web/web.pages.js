@@ -1511,7 +1511,7 @@ function WebPagePasswordClaimInterface(main_page) {
 
 
 // Checkbox change event
-$(document).find(".changeLightMode").click(function () {
+$(document).find(".changeLightMode").click(async function () {
     var post = $(this).attr("data-id");
     var type = this.checked;
     var csrftoken = $("[name=csrftoken]").val();
@@ -1522,5 +1522,6 @@ $(document).find(".changeLightMode").click(function () {
         csrftoken: csrftoken
     };
 
-    Web.ajax_manager.post("/settings/preferences/validate", dataString);
+    await Web.ajax_manager.post("/settings/preferences/validate", dataString);
+    document.location.reload()
 });

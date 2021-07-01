@@ -64,11 +64,6 @@ class Requests
             response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
         }
 
-        $latest_post = Help::latestHelpTicketReaction($ticket->id);
-        if ($latest_post ? $latest_post->practitioner_id == request()->player->id : true) {
-            response()->json(["status" => "success", "message" => Locale::get('help/no_answer_yet')]);
-        }
-
         Help::addTicketReaction($ticket->id, request()->player->id, Helper::filterString(input('message')));
         Help::updateTicketStatus($ticket->id, 'wait_reply');
 

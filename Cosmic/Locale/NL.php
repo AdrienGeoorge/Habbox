@@ -273,6 +273,7 @@ $GLOBALS['language'] = array (
             'request_ticket_count'      => 'Aantal tickets:',
             'request_react_on'          => 'Reactie op:',
             'request_react'             => 'Reageren',
+            'request_responses'         => 'Antwoorden op het onderwerp',
             'request_description'       => 'Beschrijving',
             'request_react_on_ticket'   => 'Reageer op ticket',
             'request_contact'           => 'Neem contact op met '. Config::site['shortname'],
@@ -283,13 +284,14 @@ $GLOBALS['language'] = array (
             'request_status'            => 'Ticket geopend',
             'request_in_treatment'      => 'In behandeling',
             'request_open'              => 'Open',
-            'request_closed'            => 'Gesloten'
+            'request_closed'            => 'Gesloten',
         ),
         'help_new' => array (
-            'title'         => 'Mijn ticket',
+            'title'         => 'Nieuw ticket',
             'subject'       => 'Onderwerp',
             'description'   => 'Beschrijving',
-            'open_ticket'   => 'Open een ticket'
+            'open_ticket'   => 'Open een ticket',
+            'request_desc'  => 'Zodra uw ticket is geopend, zullen wij zo snel mogelijk reageren. Houd er rekening mee dat de verwerking van sommige antwoorden meer tijd in beslag kan nemen.'
         ),
 
         /*     App/View/Home     */

@@ -4295,11 +4295,11 @@ input:-webkit-autofill {
     color: #6e6e6e;
 }
 
-.page-container[data-page ^="settings_"] .form-subcategory {
+.form-subcategory {
     margin: 40px 0 10px;
 }
 
-.page-container[data-page ^="settings_"] .form-subcategory:first-child {
+.form-subcategory:first-child {
     margin-top: 0;
 }
 
@@ -6008,6 +6008,10 @@ input:-webkit-autofill {
     margin-left: 1em;
 }
 
+.mb_1{
+    margin-bottom: 1em;
+}
+
 .flex_1 {
     flex: 1;
 }
@@ -6358,13 +6362,14 @@ input:-webkit-autofill {
 .title {
     font-weight: 500;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .text-center {
     text-align: center;
 }
 
-input {
+input, textarea {
     width: 100%;
     background: #ebd4bd;
     color: #75583a;
@@ -6376,11 +6381,11 @@ input {
     font-family: "Nunito", sans-serif;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: #75583a;
 }
 
-input:focus, input:hover {
+input:focus, input:hover, textarea:focus, textarea:hover {
     background: #f2e3d4;
     color: #75583a;
 }
@@ -6944,6 +6949,57 @@ input:focus, input:hover {
     border-radius: 20px;
     margin: 0 2em;
     text-decoration: none;
+    color: #424354;
+}
+
+.help-box{
+    text-decoration: none;
+    color: #333333;
+}
+
+.help-status{
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.help-status-right{
+    bottom: -1.5em;
+    top: unset;
+    left: 1.5em;
+    transform: unset;
+    width: fit-content;
+}
+
+.help-status-title{
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.help-status.closed, .help-status-title.closed{
+    background-color: #f46048;
+}
+
+.help-status.open, .help-status-title.open{
+    background-color: #3cca6e;
+}
+
+.help-status.treatment, .help-status-title.treatment{
+    background-color: #b79a46;
+}
+
+.help-responses{
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
 }
 
 /* STATS */

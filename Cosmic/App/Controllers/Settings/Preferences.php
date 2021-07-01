@@ -36,7 +36,7 @@ class Preferences
             Player::update(request()->player->id, ['template' =>  $skin]);
             setcookie("template", $skin, strtotime( '+30 days' ), "/"); 
           
-            response()->json(["status" => "success", "location" => "/settings"]);
+            response()->json(["status" => "success"]);
         }
 
         if (request()->player->online) {
