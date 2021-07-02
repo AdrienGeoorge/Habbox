@@ -1,28 +1,25 @@
 <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
     <tbody>
     <tr>
-        <td width="100%" height="40"></td>
-    </tr>
-    <tr>
         <td width="100%" style="font-family:'Ubuntu',Arial,sans-serif;color:#000">
             <table bgcolor="#ffffff" width="600" cellpadding="0" cellspacing="0" border="0" align="center">
                 <tbody>
-                <tr bgcolor="#276691">
-                    <td bgcolor="#276691" style="background-image:linear-gradient(45deg,#268c91 0%,#0f5793 100%)">
+                <tr bgcolor="#ff9966">
+                    <td bgcolor="#ff9966" style="background: linear-gradient(to right, #ff9966, #ff5e62); background: -webkit-linear-gradient(to right, #ff9966, #ff5e62);">
                         <table width="526" align="center" cellpadding="0" cellspacing="0" border="0">
                             <tbody>
                             <tr>
-                                <td width="100%" height="40"></td>
+                                <td width="100%" height="10"></td>
                             </tr>
                             <tr>
                                 <td align="center">
                                     <a href="{{site.domain}}/" target="_blank">
-                                        <img src="https://habbofont.net/font/hma/{{site.shortname}}.gif">
+                                        <img src="{{site.domain}}/assets/images/habbox.gif" style="width: 7em;">
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="100%" height="40"></td>
+                                <td width="100%" height="15"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -37,19 +34,19 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p style="font-family:'Ubuntu Condensed',Arial,sans-serif;font-size:26px;margin:15px 0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hey, {{username}}!</font></font></p>
+                                        <p style="font-family:'Ubuntu Condensed',Arial,sans-serif;font-size:26px;margin:15px 0"><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Hey, {{username}}!</div></div></p>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     {% if players is empty %}
                                     <td>
-                                        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Je hebt een verzoek ingediend om je wachtwoord te veranderen op Leet Hotel.</font></font></p>
-                                        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{url}}">Klik op deze link</a> om je wachtwoord te veranderen. De link verloopt over 2 uur, dus wees snel!</font></font></p>
+                                        <div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Vous avez demandé à changer votre mot de passe sur Habbox Hôtel.</div></div>
+                                        <div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Cliquez sur le bouton ci-dessous pour changer votre mot de passe. Le lien expirera dans 2 heures, alors faites vite!</div></div>
                                     </td>
                                     {% else %}
                                     <td>
-                                        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hier zijn al je accounts die zijn geregistreerd op Leet Hotel:</font></font></p>
+                                        <div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Voici tous vos comptes enregistrés sur Habbox Hôtel:</div></div>
                                         <p style="font-weight: bold">
                                             {% for item in players %}
                                             {{item.username}}<br>
@@ -65,9 +62,9 @@
                                 <tr>
                                     <td align="center">
                                         {% if players is empty %}
-                                        <a href="{{url}}" style="background-color:#257e91;border-radius:3px!important;color:#ffffff;display:inline-block;font-weight:normal;line-height:38px;margin:6px;text-align:center;text-decoration:none;padding:0 15px" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Klik hier om je wachtwoord te veranderen</font></font></a>
+                                        <a href="{{url}}" style="background-color:#ff9966;border-radius:3px!important;color:#ffffff;display:inline-block;font-weight:normal;line-height:38px;margin:6px;text-align:center;text-decoration:none;padding:0 15px" target="_blank"><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Cliquez ici pour changer votre mot de passe</div></div></a>
                                         {% else %}
-                                        <a href="{{site.domain}}" style="background-color:#257e91;border-radius:3px!important;color:#ffffff;display:inline-block;font-weight:normal;line-height:38px;margin:6px;text-align:center;text-decoration:none;padding:0 15px" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Naar Leet Hotel</font></font></a>
+                                        <a href="{{site.domain}}" style="background-color:#ff9966;border-radius:3px!important;color:#ffffff;display:inline-block;font-weight:normal;line-height:38px;margin:6px;text-align:center;text-decoration:none;padding:0 15px" target="_blank"><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Accéder à Habbox Hôtel</div></div></a>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -77,7 +74,7 @@
 
                                 <tr>
                                     <td>
-                                        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Heb je niet om deze wijziging gevraagd? </font><font style="vertical-align: inherit;">Als dit een fout is, negeer dan dit bericht en het huidige wachtwoord blijft het zelfde.</font></font></p>
+                                        <div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Vous n'avez pas demandé ce changement? </div><div style="vertical-align: inherit;">Si c'est une erreur, ignorez ce message et le mot de passe actuel restera le même.</div></div>
                                     </td>
                                 </tr>
 
@@ -86,7 +83,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#65279;Tot zo, </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Het {{site.shortname}}</font></font></p>
+                                        <div style="vertical-align: inherit;"><div style="vertical-align: inherit;">&#65279;A toute à l'heure, </div></div><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">L'administration d'{{site.shortname}}</div></div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -101,12 +98,9 @@
             <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
                 <tbody>
                 <tr>
-                    <td width="100%" height="20"></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle" style="color:#afafaf;font-size:12px;line-height:1.7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        © 2019 {{site.domain}} - Alle rechten voorbehouden. </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bent u niet bekend met {{site.shortname}}, negeer dit bericht dan.
-                    </font></font></td>
+                    <td align="center" valign="middle" style="color:#afafaf;font-size:12px;line-height:1.7"><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">
+                        © {{'now'|date('Y')}} {{site.domain}} - Tous droits réservés. </div></div><div style="vertical-align: inherit;"><div style="vertical-align: inherit;">Si vous n'êtes pas familier avec {{site.shortname}}, veuillez ignorer ce message.
+                    </div></div></td>
                 </tr>
                 </tbody>
             </table>

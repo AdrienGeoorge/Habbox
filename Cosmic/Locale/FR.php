@@ -169,6 +169,7 @@ $GLOBALS['language'] = array (
 
         /*     App/View/Community     */
         'article' => array (
+            'title'                     => 'Articles',
             'reactions'                 => 'Commentaires',
             'reactions_empty'           => 'Pas de commentaires pour le moment.',
             'reactions_fill'            => 'Entre ton commentaire ici...',
@@ -221,6 +222,7 @@ $GLOBALS['language'] = array (
 
         /*     App/View/Community     */
         'community_photos' => array (
+            'title'       => 'Photos de la communauté',
             'by'          => 'Par',
             'photos_by'   => 'Photos\'s prise par',
             'photos_desc' => 'Voir les dernières photos prises par',

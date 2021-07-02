@@ -262,7 +262,7 @@
     <div class="user-buttons">
         {% if player is empty %}
         <button class="rounded-button white login-dialog-button">{{locale_base.header_login}}</button>
-        <a href="/registration" class="rounded-button white plain">{{locale_base.header_register}}</a>
+        <a href="/registration" target="_self" class="rounded-button white plain">{{locale_base.header_register}}</a>
         {% endif %}
     </div>
     {% endif %}
@@ -270,18 +270,6 @@
 
 <!--<nav class="navigation-container">
     <ul class="navigation-menu flex-container">
-        <li class="navigation-item has-items {% if "community" in page %}selected {% endif %}"
-        data-category="community">
-        <a href="/articles">{{locale_base.nav_community}}</a>
-        <ul class="navigation-submenu">
-            <li class="navigation-subitem"><a href="/articles">{{locale_base.nav_news}}</a></li>
-            <li class="navigation-subitem"><a href="/jobs">{{locale_base.nav_jobs}}</a></li>
-            <li class="navigation-subitem"><a href="/community/photos">{{locale_base.nav_photos}}</a></li>
-            <li class="navigation-subitem"><a href="/community/staff">{{site.shortname}} {{locale_base.nav_staff}}</a></li>
-            <li class="navigation-subitem"><a href="/community/team">{{site.shortname}} {{locale_base.nav_team}}</a></li>
-        </ul>
-        </li>
-
         {% if player %}
         <li class="navigation-item has-items {% if "shop" in page %}selected {% endif %}" data-category="shop">
         <a href="/shop">{{site.shortname}} {{locale_base.nav_shop}}</a>
@@ -295,17 +283,6 @@
         </ul>
         </li>
         {% endif %}
-
-        <li class="navigation-item has-items {% if "help" in page %}selected {% endif %}" data-category="help">
-        <a href="/help">{{locale_base.nav_helptool}}</a>
-        <ul class="navigation-submenu">
-            <li class="navigation-subitem"><a href="/help">{{locale_base.nav_helptool}}</a></li>
-            {% if player %}
-            <li class="navigation-subitem"><a href="/help/requests/view">{{locale_base.nav_helptickets}}</a>
-            </li>
-            {% endif %}
-        </ul>
-        </li>
     </ul>
 </nav>-->
 <section class="body-container margin-body">

@@ -42,14 +42,14 @@ class Reset
                 Password::deleteToken($player->email);
             }
 
-            response()->json(["status" => "error", "message" => Locale::get('claim/invalid_link'), "pagetime" => "/home"]);
+            response()->json(["status" => "error", "message" => Locale::get('claim/invalid_link'), "pagetime" => "/"]);
         }
 
         Player::update($player->player_id, ['pincode' => null]);
         Player::resetPassword($player->player_id, $newPassword);
         Password::deleteToken($player->email);
 
-        response()->json(["status" => "success", "message" => Locale::get('claim/password_changed'), "pagetime" => "/home"]);
+        response()->json(["status" => "success", "message" => Locale::get('claim/password_changed'), "pagetime" => "/"]);
     }
 
     public function index($token)

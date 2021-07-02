@@ -173,6 +173,7 @@ $GLOBALS['language'] = array (
 
         /*     App/View/Community     */
         'article' => array (
+            'title'                  => 'Artikelen',
             'reactions'              => 'Reacties',
             'reactions_empty'        => 'Er zijn nog geen reacties.',
             'reactions_fill'         => 'Typ hier je bericht...',
@@ -223,6 +224,7 @@ $GLOBALS['language'] = array (
             'topic_likes_3'             => 'vinden dit leuk!'
         ),
         'community_photos' => array (
+            'title'       => 'Foto\'s van de gemeenschap',
             'by'          => 'door',
             'photos_by'   => 'Foto\'s van',
             'photos_desc' => 'Bekijk de leukste momenten in ons Hotel, genomen door',

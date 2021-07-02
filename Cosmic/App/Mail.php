@@ -8,7 +8,7 @@ use Swift_SmtpTransport;
 class Mail
 {
     public static function send($subject, $body, $to) {
-        $transport = (new Swift_SmtpTransport(Config::mailHost, Config::mailPort, 'ssl'))
+        $transport = (new Swift_SmtpTransport(Config::mailHost, Config::mailPort, 'tls'))
             ->setUsername(Config::mailUser)
             ->setPassword(Config::mailPass);
 

@@ -47,7 +47,7 @@ class Password
     }
 
     public static function sendMail($username, $email, $token) {
-        $url	= 'http://' . Config::site['domain'].'/password/reset/' . $token;
+        $url	= Config::site['domain'].'/password/reset/' . $token;
         $body 	= View::getTemplate('Password/body.html', ['url' => $url, 'username' => $username], true, true);
         return Mail::send(Locale::get('claim/email/title'), $body, $email);
     }

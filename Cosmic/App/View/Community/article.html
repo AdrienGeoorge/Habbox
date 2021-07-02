@@ -1,9 +1,14 @@
 {% extends "base.html" %}
+{% set nav = "articles" %}
 {% block title %}{{article.title}}{% endblock %}
 {% block body %}
 
 <div class="page-content">
-    <div class="flex-body">
+    <div class="settingsTitle">
+        {{locale.title}}
+        {% include "Community/panel.html" %}
+    </div>
+    <div class="flex-body mt_3">
         <div class="flex-body-left">
             <div class="box">
                 {% if article.category == 'nouveautés' %}

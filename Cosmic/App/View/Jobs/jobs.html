@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-
+{% set nav = "jobs" %}
 {% block body %}
 <div class="page-content">
-    <div class="flex-body job">
+    <div class="settingsTitle">
+        {{locale.title}}
+        {% include "Community/panel.html" %}
+    </div>
+    <div class="flex-body job mt_3">
         <div class="flex-body-left">
             <div class="title">{{locale.available_applications}}</div>
             {% for job in jobs %}

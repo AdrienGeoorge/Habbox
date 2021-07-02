@@ -32,7 +32,7 @@ class Claim
         }
 
         Password::createToken($player->id, $player->username, $player->mail);
-        response()->json(["status" => "success", "message" => Locale::get('claim/send_link'), "replacepage" => "password/claim"]);
+        response()->json(["status" => "success", "message" => Locale::get('claim/send_link')]);
     }
 
     public function index()

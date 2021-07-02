@@ -1,15 +1,18 @@
 {% extends "base.html" %}
-
+{% set nav = "photos" %}
 {% block body %}
-<header class="page-header flex-container flex-vertical-center">
-    <div class="page-header-content">
-        <h1>{{locale.photos_by}} {{site.shortname}}'s</h1>
-        {{locale.photos_desc}} {{site.shortname}}'s.
-    </div>
-</header>
-
 <div class="page-content">
-    <div class="photos-container">
+    <div class="settingsTitle">
+        {{locale.title}}
+        {% include "Community/panel.html" %}
+    </div>
+    <header class="page-header flex-container flex-vertical-center">
+        <div class="page-header-content">
+            <h1>{{locale.photos_by}} {{site.shortname}}'s</h1>
+            {{locale.photos_desc}} {{site.shortname}}'s.
+        </div>
+    </header>
+    <div class="photos-container mt_3">
         {% for photo in data %}
         <div class="photo-container">
             <div class="photo-content">

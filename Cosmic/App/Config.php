@@ -39,10 +39,10 @@ class Config
      * Mail: For sending emails when someone has forgotten their password
      */
   
-    const mailHost      = "mail.cosmicproject.nl";
-    const mailFrom      = "info@cosmicproject.nl";
-    const mailUser      = "info@cosmicproject.nl";
-    const mailPass      = "";
+    const mailHost      = "smtp-mail.outlook.com";
+    const mailFrom      = "habbox-hotel@outlook.fr";
+    const mailUser      = "habbox-hotel@outlook.fr";
+    const mailPass      = "habboxhotel0294";
     const mailPort      = 587;
 
     /**
