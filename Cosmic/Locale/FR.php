@@ -438,7 +438,9 @@ $GLOBALS['language'] = array (
             'available_applications'  => 'Postes vacants',
             'buildteam'               => 'Architectes',
             'buildteam_desc'          => 'Ils sont responsables de la construction des apparts officiels de l\'hôtel.',
-            'react'                   => 'Postuler dès maintenant!'
+            'react'                   => 'Postuler dès maintenant!',
+            'success'                 => 'Postulé avec succés',
+            'closed'                  => 'Fermé'
         ),
 
         /*     App/View/Password     */

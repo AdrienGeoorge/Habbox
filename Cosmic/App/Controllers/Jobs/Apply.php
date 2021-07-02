@@ -61,6 +61,6 @@ class Apply
         }
         
         Community::addJobApply($job_id, $player_id, Helper::filterString($firstname), Helper::filterString($message), $available_monday, $available_tuesday, $available_wednesday, $available_thursday, $available_friday,$available_saturday, $available_sunday);
-        response()->json(["status" => "success", "message" => Locale::get('website/apply/content_1'), "replacepage" => "jobs/my"]);    
+        response()->json(["status" => "success", "message" => Locale::get('website/apply/content_1'), "replacepage" => "jobs"]);
     }
 }

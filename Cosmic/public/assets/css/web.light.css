@@ -6983,11 +6983,11 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     margin-left: 1em;
 }
 
-.help-status.closed, .help-status-title.closed{
+.help-status.closed, .help-status-title.closed, .jobs-status.closed{
     background-color: #f46048;
 }
 
-.help-status.open, .help-status-title.open{
+.help-status.open, .help-status-title.open, .jobs-status.open{
     background-color: #3cca6e;
 }
 
@@ -7010,6 +7010,18 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     font-size: 20px;
     font-weight: 600;
     color: #424354;
+}
+
+/* JOBS */
+
+.jobs-status{
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.day{
+    margin-bottom: 5px;
 }
 
 /* MOBILE */

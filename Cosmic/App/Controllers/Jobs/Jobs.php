@@ -8,21 +8,15 @@ use Core\View;
 
 class Jobs
 {
-    public function my()
-    {
-        $jobs = Community::getMyJobApplication(request()->player->id);
-      
-        View::renderTemplate('Jobs/my.html', [
-            'title' => Locale::get('core/title/jobs/index'),
-            'page'  => 'jobs',
-            'jobs'  => $jobs
-        ]);
-    }
-  
     public function index()
     {
+        if(!isset(request()->player->id)){
+            redirect('/');
+        }
+
         $jobs = Community::getJobs();
-      
+        $myJobs = Community::getMyJobApplication(request()->player->id);
+
         if(request()->player) {
             foreach($jobs as $job) {
                 if(Community::getJobApplication($job->id, request()->player->id)) {
@@ -34,7 +28,8 @@ class Jobs
         View::renderTemplate('Jobs/jobs.html', [
             'title' => Locale::get('core/title/jobs/index'),
             'page'  => 'jobs',
-            'jobs'  => $jobs
+            'jobs'  => $jobs,
+            'myJobs' => $myJobs
         ]);
     }
 }

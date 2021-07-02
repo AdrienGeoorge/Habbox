@@ -437,7 +437,9 @@ $GLOBALS['language'] = array (
             'available_applications'  => 'Beschikbare vacatures',
             'buildteam'               => 'Bouwteam',
             'buildteam_desc'          => 'Ze zijn verantwoordelijk voor het bouwen van (event/officiele) kamers.',
-            'react'                   => 'Reageren'
+            'react'                   => 'Reageren',
+            'success'                 => 'Succesvol aangevraagd',
+            'closed'                  => 'Gesloten'
         ),
 
         /*     App/View/Password     */

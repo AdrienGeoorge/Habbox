@@ -1,4 +1,5 @@
-$('.more-button').on('click', function () {
+$('.more-button').on('click', function (e) {
+    e.stopPropagation();
     let box = $('.more-box');
 
     if (box.css('display') === 'none') {
@@ -6,4 +7,8 @@ $('.more-button').on('click', function () {
     } else {
         box.fadeOut();
     }
+});
+
+$(window).click(function() {
+    $('.more-box').fadeOut();
 });

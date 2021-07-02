@@ -443,7 +443,9 @@ $GLOBALS['language'] = array (
             'available_applications'  => 'Available vacancies',
             'buildteam'               => 'Buildteam',
             'buildteam_desc'          => 'They are responsible for building (event/official) rooms.',
-            'react'                   => 'React'
+            'react'                   => 'React',
+            'success'                 => 'Successfully applied for',
+            'closed'                  => 'Closed'
         ),
 
         /*     App/View/Password     */
