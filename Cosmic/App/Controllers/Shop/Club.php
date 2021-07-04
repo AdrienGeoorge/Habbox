@@ -24,8 +24,12 @@ class Club
   
     public function index()
     {
+        if(!request()->player->id){
+            redirect('/');
+        }
+
         $this->settings->vip_badges = explode(",", preg_replace("/[^a-zA-Z0-9,_]/", "", $this->settings->vip_badges));
-        $this->settings->currencys  = Player::getCurrencys(request()->player->id);
+        $this->settings->diamonds = Player::getDiamonds(request()->player->id);
         $this->settings->vip_type   = Core::getCurrencyByType($this->settings->vip_currency_type)->currency;
         
         View::renderTemplate('Shop/club.html', [

@@ -123,23 +123,24 @@
 
 {% if player is empty %}
 <div id="login-dialog" class="login-popup zoom-anim-dialog mfp-hide">
-    <h3 class="aside-title">Log in {{site.sitename}}</h3>
     <div class="login-form">
+        <form class="login-form" action="#">
         <label for="login-username-input-target" class="username-input">
-            <input type="text" name="username" class="rounded-input blue-active" id="login-username-input-target"
-                   placeholder="{{site.shortname}}{{locale_base.login_name}}..." required>
-            <i class="flaticon-user-1"></i>
+            <input type="text" name="username" id="login-username-input-target"
+                   placeholder="{{locale_base.login_name}}..." required>
         </label>
-        <label for="login-password-input-target" class="password-input">
-            <input type="password" name="password" class="rounded-input blue-active"
+        <label for="login-password-input-target" class="password-input mt_1">
+            <input type="password" name="password"
                    id="login-password-input-target" placeholder="{{locale_base.login_password}}..." autocomplete="off"
                    required>
-            <i class="flaticon-padlock"></i>
         </label>
         <input type="hidden" name="csrftoken" value="{{csrf_token}}" />
-        <a href="password/claim" class="claim-password" data-close-popup="true"
-           style="margin-top:1px">{{locale_base.login_lost_password}}</a>
-        <button type="submit" class="rounded-button blue plain" id="login-request">Log in</button>
+        <div class="text-center mt_2">
+            <a href="password/claim" target="_self" data-close-popup="true"
+               class="light">{{locale_base.login_lost_password}}</a>
+        </div>
+        <button type="submit" class="rounded-button light plain mt_1" id="login-request">{{locale_base.header_login}}</button>
+        </form>
     </div>
 </div>
 {% endif %}
@@ -286,6 +287,7 @@
     </ul>
 </nav>-->
 <section class="body-container margin-body">
+    {% if player %}
     <form action="settings/preferences/validate" method="post" class="lightMode">
         <label class="switch-label">
             <span class="switch-container rounded-radio purple">
@@ -294,6 +296,7 @@
             </span>
         </label>
     </form>
+    {% endif %}
     <div class="more-box" style="display: none;">
         <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
             <img src="/assets/icons/social/twitter.svg">

@@ -83,11 +83,6 @@
         display: none;
     }
 
-    /* Page - Shop */
-    .page-container[data-page="shop"] .offers-container .offer-container{
-        width: 25%;
-    }
-
     .page-container[data-page="shop"] .shop-purses .purse-container,
     .page-container[data-page="shop_history"] .shop-purses .purse-container,
     .page-container[data-page="shop_club"] .shop-purses .purse-container{
@@ -119,15 +114,6 @@
     /* Page */
     .page-container .page-content{
         max-width: 1075px;
-    }
-
-}
-
-@media(max-width: 880px) {
-
-    /* Page - Shop */
-    .page-container[data-page="shop"] .offers-container .offer-container{
-        width: 33.33%;
     }
 
 }
@@ -258,10 +244,6 @@
         float: none;
         clear: left;
         width: 100%;
-    }
-
-    .page-container[data-page="shop"] .offers-container .offer-container{
-        width: 50%;
     }
 
     /* Page - Settings songdisks */

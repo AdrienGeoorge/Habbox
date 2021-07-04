@@ -57,11 +57,16 @@ class Drawbadge
     }
   
     public function index()
-    {       
+    {
+        if(!request()->player->id){
+            redirect('/');
+        }
+
         $this->settings->draw_badge_currency   = Core::getCurrencyByType($this->settings->draw_badge_currency)->currency;
-      
+        $this->settings->diamonds = Player::getDiamonds(request()->player->id);
+
         View::renderTemplate('Shop/draw.html', [
-            'title'   => Locale::get('core/title/shop/club'),
+            'title'   => Locale::get('core/title/shop/badge'),
             'page'    => 'shop_history',
             'settings' => $this->settings
         ]);

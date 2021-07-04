@@ -549,9 +549,11 @@ $GLOBALS['language'] = array (
             'content_2'           => 'Do not hesitate to contact customer service via the',
             'help_tool'           =>  Config::site['shortname'] . ' Help Tool',
             'random_club_users'   => 'Random ' . Config::site['shortname'] . ' Club members',
-            'desc'                => 'Here you can buy ' . Config::site['shortname'] . ' club for real money. With club you can buy exclusive items.'
+            'desc'                => 'Here you can buy ' . Config::site['shortname'] . ' club for real money. With club you can buy exclusive items.',
+            'days'                => 'DAYS'
         ),
         'shop_history' => array (
+            'more_information'    => 'More information',
             'buy_history'         => 'Purchase history',
             'product'             => 'Product',
             'date'                => 'Date',
@@ -563,7 +565,13 @@ $GLOBALS['language'] = array (
             'title'               => 'My Purchase history',
             'desc'                => 'You see here all the purchases you have made',
             'title_draw'          => 'Draw your badge',
-            'draw_desc'           => 'Draw your own badge for points'
+            'draw_desc'           => 'Draw your own badge for points',
+            'draw_tool'           => 'Draw tool',
+            'add_color'           => 'Add a color',
+            'draw_reset'          => 'Reset to zero',
+            'buy_badge'           => 'Buy my badge',
+            'buy_on'              => 'Purchased on',
+            'erase'               => 'Shift + Click to Erase'
         ),
         'shop_offers' => array (
             'back'              => 'Back',
@@ -589,7 +597,12 @@ $GLOBALS['language'] = array (
             'to_login'          => 'to log in.',
             'store'             => 'Store',
             'desc'              => 'Here you can buy credits for real money, with this you can buy exclusive items in our catalogue',
-            'get'               => 'You earn'
+            'get'               => 'You earn',
+            'shop_success'      => 'Your diamonds have been added to your account. If anything goes wrong, please contact us through our help center.',
+            'shop_error'        => 'An error has occurred and the purchase has been cancelled. Are you unable to complete your purchase? Please contact us through our help center.',
+            'help'              => 'Help center',
+            'back'              => 'Back',
+            'waiting'           => 'Loading in progress...'
         ),
         'games_ranking' => array(
             'title'             => 'Highscores',
@@ -669,9 +682,10 @@ $GLOBALS['language'] = array (
                 'ranking'   => 'Highscores'
             ),
             'shop' => array (
-                'index'     =>  Config::site['shortname'] . ' Store',
+                'index'     =>  'Store',
                 'history'   => 'Purchase history',
-                'club'      =>  Config::site['shortname'] . ' Club'
+                'club'      =>  'VIP Club',
+                'badge'     => 'Personalize your badge'
             ),
             'help' => array (
                 'index'     => 'Help Tool',

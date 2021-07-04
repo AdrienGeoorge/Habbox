@@ -103,7 +103,6 @@ class Routes extends Router
 
                 parent::group(['middleware' => NotLoggedInMiddleware::class, 'exceptionHandler' => ExceptionHandler::class], function () {
                     parent::get('/registration/{name?}', 'Home\Registration@index');
-                    parent::get('/facebook', 'Home\Login@facebook');
 
                     parent::get('/password/claim', 'Password\Claim@index');
                     parent::get('/password/reset/{token}', 'Password\Reset@index');

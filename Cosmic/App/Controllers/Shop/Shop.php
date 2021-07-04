@@ -25,11 +25,15 @@ class Shop
     }
   
     public function index()
-    {          
+    {
+        if(!request()->player->id){
+          redirect('/');
+        }
+
         $this->data->shop = Offer::getOffers();
-        $this->data->currencys = Player::getCurrencys(request()->player->id);
+        $this->data->diamonds = Player::getDiamonds(request()->player->id);
         $currency = Core::settings()->paypal_currency;
-      
+
         View::renderTemplate('Shop/shop.html', [
             'title' => Locale::get('core/title/shop/index'),
             'page'  => 'shop',

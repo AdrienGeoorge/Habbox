@@ -937,9 +937,6 @@ function WebPageShopInterface(main_page) {
         page_container.find(".offer-content").click(function () {
             $("#editor").css("height", "320px");
 
-            page_container.find(".offers-container").css({"width": "50%", "margin-left": "150px"});
-            page_container.find(".offer-container").css({"margin-left": "70px"});
-
             var orderId = $(this).data("id");
             var amount = $(this).data("amount");
             var currency = $(this).data("type");
@@ -950,6 +947,11 @@ function WebPageShopInterface(main_page) {
             page_container.find(".offer-container").hide();
             page_container.find("#offer-" + orderId).show();
             page_container.find(".left-side .aside-title-content").html(amount + ' ' + currency);
+
+            if ($(window).width() > 520) {
+                page_container.find(".offers-container").css({"width": "60%", "margin": "2em auto 0 auto", "display": "block"});
+                page_container.find(".offer-container a").css({"width": "55%", "margin": "0 auto 2em auto"});
+            }
 
             page_container.find(".right-side .aside-content").html(description);
 

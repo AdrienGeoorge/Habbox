@@ -10,6 +10,10 @@ class History
 {
     public function index()
     {
+        if(!request()->player->id){
+            redirect('/');
+        }
+
         $history = Player::getPurchases(request()->player->id);
 
         View::renderTemplate('Shop/history.html', [

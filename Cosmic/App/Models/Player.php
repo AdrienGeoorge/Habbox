@@ -213,6 +213,11 @@ class Player
         return $data;
     }
 
+    public static function getDiamonds($user_id)
+    {
+        return QueryBuilder::connection()->select('users_currency.amount')->from('users_currency')->join('website_settings_currencys', 'users_currency.type', '=', 'website_settings_currencys.type')->where('user_id', $user_id)->where('website_settings_currencys.currency', '=', 'diamonds')->first()->amount;
+    }
+
     public static function hasPermission($permission)
     {
         $query = QueryBuilder::connection()->table('permissions')->select($permission)->where('id', request()->player->rank)->first();

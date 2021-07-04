@@ -543,9 +543,11 @@ $GLOBALS['language'] = array (
             'content_2'           => 'Aarzel niet om contact op te nemen met de klantenservice via de',
             'help_tool'           =>  Config::site['shortname'] . ' Help Tool',
             'random_club_users'   => 'Willekeurige '. Config::site['shortname'] . ' Club leden',
-            'desc'                => 'Hier kun je club kopen voor echt geld. Met club heb je voordelen en kun je exclusieve items kopen.'
+            'desc'                => 'Hier kun je club kopen voor echt geld. Met club heb je voordelen en kun je exclusieve items kopen.',
+            'days'                => 'DAGEN'
         ),
         'shop_history' => array (
+            'more_information'    => 'Meer informatie',
             'buy_history'         => 'Aankoopgeschiedenis',
             'product'             => 'Product',
             'date'                => 'Datum',
@@ -557,7 +559,13 @@ $GLOBALS['language'] = array (
             'title'               => 'Mijn aankoopgeschiedenis',
             'desc'                => 'Vind hier alle aankopen die je hebt gedaan in',
             'title_draw'          => 'Maak je badge',
-            'draw_desc'     => 'Creeër je badge en koop hem voor punten!'
+            'draw_desc'           => 'Creeër je badge en koop hem voor punten!',
+            'draw_tool'           => 'Tekengereedschap',
+            'add_color'           => 'Voeg een kleur toe',
+            'draw_reset'          => 'Terugzetten op nul',
+            'buy_badge'           => 'Koop mijn badge',
+            'buy_on'              => 'Gekocht op',
+            'erase'               => 'Shift + Klik om te wissen'
         ),
         'shop_offers' => array (
             'back'              => 'Terug',
@@ -582,7 +590,12 @@ $GLOBALS['language'] = array (
             'to_login'          => 'om in te loggen.',
             'desc'              => 'Hier kun je Bel-Credits kopen voor echt geld. Met Bel-Credits kun je exclusieve items kopen.',
             'store'             => 'Winkel',
-            'get'               => 'Je krijgt'
+            'get'               => 'Je krijgt',
+            'shop_success'      => 'Uw diamanten zijn toegevoegd aan uw account. Als er iets misgaat, neem dan contact met ons op via ons helpcentrum.',
+            'shop_error'        => 'Er is een fout opgetreden en de aankoop is geannuleerd. Kunt u uw aankoop niet afronden? Neem contact met ons op via ons helpcentrum.',
+            'help'              => 'Helpcentrum',
+            'back'              => 'Retour',
+            'waiting'           => 'Bezig met laden...'
         ),
         'games_ranking' => array(
             'title'             => 'Highscores',
@@ -662,9 +675,10 @@ $GLOBALS['language'] = array (
                 'ranking'   => 'Highscores'
             ),
             'shop' => array (
-                'index'     =>  Config::site['shortname'] . ' Winkel',
+                'index'     =>  'Winkel',
                 'history'   => 'Aankoopgeschiedenis',
-                'club'      =>  Config::site['shortname'] . ' Club'
+                'club'      =>  'VIP Club',
+                'badge'     => 'Personaliseer uw badge'
             ),
             'help' => array (
                 'index'     => 'Help Tool',

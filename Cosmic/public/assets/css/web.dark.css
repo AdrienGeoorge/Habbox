@@ -953,12 +953,12 @@ input:-webkit-autofill {
 .login-popup {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    background: #25292C;
+    background: #292a38;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
     position: relative;
-    padding: 37px 50px 50px 325px;
+    padding: 40px 50px 40px 325px;
     width: auto;
     max-width: 645px;
     margin: 20px auto;
@@ -967,30 +967,28 @@ input:-webkit-autofill {
 
 .login-popup:before,
 .login-popup:after {
-    -webkit-border-radius: 192px / 290px;
-    -moz-border-radius: 192px / 290px;
-    border-radius: 192px / 290px;
-    width: 385px;
-    height: 580px;
+    width: 270px;
+    height: 230px;
     position: absolute;
     content: "";
     top: 0;
     display: block;
     bottom: 0;
-    margin: auto;
+    margin: 2em;
+    border-radius: 1em;
 }
 
 .login-popup:before {
     background-image: url(../images/web/big-banner.png);
-    background-position: -435px -67px;
-    left: -95px;
+    background-position: -434px -67px;
+    left: 0;
 }
 
 .login-popup:after {
     background-color: rgba(99, 99, 99, 0.65);
     background-position: 40px center;
     background-repeat: no-repeat;
-    left: -94px;
+    left: 0;
 }
 
 .login-popup h3 {
@@ -1315,7 +1313,7 @@ input:-webkit-autofill {
 }
 
 .dialog-popup .mfp-close {
-    color: #fff;
+    color: #212131;
     top: 5px;
     right: 7px;
     opacity: 1;
@@ -3427,22 +3425,24 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="shop"] .offers-container {
-    margin: -13px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+    margin-top: 2em;
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container {
-    width: 33.33%;
-    float: left;
+    flex: 0 48.9%;
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content {
-    background-color: #2dc0cd;
+    background-color: #212131;
     padding: 18px 16px;
     color: #fff;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
-    margin: 13px auto;
-    width: 200px;
     line-height: 15px;
     position: relative;
     cursor: pointer;
@@ -3450,6 +3450,7 @@ input:-webkit-autofill {
     -webkit-transition: background-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s;
     height: 115px;
+    border-radius: 1em;
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content .credits-sprite {
@@ -3486,7 +3487,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content:hover {
-    background-color: #2baeb9;
+    background-color: #1e1e2d;
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content:before {
@@ -6026,11 +6027,11 @@ input:-webkit-autofill {
     margin-top: 3em;
 }
 
-.ml_1{
+.ml_1 {
     margin-left: 1em;
 }
 
-.mb_1{
+.mb_1 {
     margin-bottom: 1em;
 }
 
@@ -6738,12 +6739,12 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     width: 2.25em;
 }
 
-.settingsMenu img{
+.settingsMenu img {
     width: 1.25em;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .settingBox {
@@ -6832,7 +6833,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 /* MORE */
 
-.lightMode{
+.lightMode {
     text-align: center;
     position: fixed;
     right: 2.75em;
@@ -6848,11 +6849,11 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     height: 1.25em;
 }
 
-.lightMode img{
+.lightMode img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 0.75em;
 }
 
@@ -6872,11 +6873,11 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     height: 1.25em;
 }
 
-.more-button img{
+.more-button img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 1em;
 }
 
@@ -6927,15 +6928,15 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     image-rendering: pixelated;
 }
 
-.index-body{
+.index-body {
     padding: 3em 0 3em 10em;
 }
 
-.index-left{
+.index-left {
     width: 45em;
 }
 
-.index-form-login{
+.index-form-login {
     margin-top: 2em;
     width: 25em;
 }
@@ -6945,30 +6946,30 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     color: #c0c1ce;
 }
 
-.btn-index{
+.btn-index {
     margin-left: 1em;
 }
 
 /* HELP */
 
-.help-body{
+.help-body {
     display: flex;
     flex-direction: column;
     row-gap: 2em;
 }
 
-.help-faq{
+.help-faq {
     border-radius: 20px;
     margin: 0 2em;
     text-decoration: none;
 }
 
-.help-box{
+.help-box {
     text-decoration: none;
     color: #e9e0d8;
 }
 
-.help-status{
+.help-status {
     position: absolute;
     right: 2em;
     top: 50%;
@@ -6978,7 +6979,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     color: #fff;
 }
 
-.help-status-right{
+.help-status-right {
     bottom: -1.5em;
     top: unset;
     left: 1.5em;
@@ -6986,7 +6987,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     width: fit-content;
 }
 
-.help-status-title{
+.help-status-title {
     padding: 0.5em 1em;
     border-radius: 10px;
     color: #fff;
@@ -6994,19 +6995,19 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     margin-left: 1em;
 }
 
-.help-status.closed, .help-status-title.closed, .jobs-status.closed{
+.help-status.closed, .help-status-title.closed, .jobs-status.closed {
     background-color: #f46048;
 }
 
-.help-status.open, .help-status-title.open, .jobs-status.open{
+.help-status.open, .help-status-title.open, .jobs-status.open {
     background-color: #3cca6e;
 }
 
-.help-status.treatment, .help-status-title.treatment{
+.help-status.treatment, .help-status-title.treatment {
     background-color: #b79a46;
 }
 
-.help-responses{
+.help-responses {
     padding: 0 1.5em;
     display: flex;
     flex-direction: column;
@@ -7015,7 +7016,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 /* STATS */
 
-.stats-text{
+.stats-text {
     text-align: center;
     margin-top: 1em;
     font-size: 20px;
@@ -7024,14 +7025,61 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 /* JOBS */
 
-.jobs-status{
+.jobs-status {
     padding: 0.5em 1em;
     border-radius: 10px;
     color: #fff;
 }
 
-.day{
+.day {
     margin-bottom: 5px;
+}
+
+/* SHOP */
+
+.shop-box {
+    height: 5em;
+    border-right: 2em;
+}
+
+.shop-center-X {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8em;
+}
+
+.shop-center-X img {
+    width: 2em;
+}
+
+.shop-center-Y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0.5em;
+    font-size: 2em;
+}
+
+.shop-waiting{
+    margin-top: 2em;
+    font-size: 15px;
+}
+
+.drawbadge-table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border: 4px solid #fff;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.preview-badge{
+    position: absolute;
+    top: 55%;
+    left: 52%;
+    transform: translate(-50%, -50%);
 }
 
 /* MOBILE */
@@ -7149,10 +7197,36 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     .page-container[data-page ^="settings_"] .switch-label .switch-container {
         right: 0;
     }
+
+    .page-container[data-page="shop"] .offers-container .offer-container {
+        flex: auto;
+    }
+
+    .settingsTitle{
+        text-align: center;
+    }
+
+    .settings-panel {
+        position: unset;
+        right: unset;
+        top: unset;
+        display: flex;
+        flex-direction: unset;
+        column-gap: 0.5em;
+        height: 2em;
+        align-items: unset;
+        text-align: unset;
+        margin-top: 0.5em;
+        justify-content: center;
+    }
+
+    .settingsMenu{
+        height: 100%
+    }
 }
 
 @media (max-width: 950px) {
-    .index-body{
+    .index-body {
         padding: 3em 0 3em 4em;
     }
 }
@@ -7162,24 +7236,24 @@ input:focus, input:hover, textarea:focus, textarea:hover {
         display: none;
     }
 
-    .index-logo-center{
+    .index-logo-center {
         text-align: center;
     }
 
-    .index-body{
+    .index-body {
         padding: 3em;
     }
 
-    .index-left{
+    .index-left {
         width: 100%;
     }
 
-    .index-form-login{
+    .index-form-login {
         margin-top: 2em;
         width: 100%;
     }
 
-    .btn-index{
+    .btn-index {
         margin-left: unset;
     }
 }

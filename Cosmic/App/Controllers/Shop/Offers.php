@@ -36,11 +36,7 @@ class Offers
             return;
         }
       
-        $rcon = HotelApi::execute('executecommand', ['user_id' => request()->player->id, 'about']);
-        if(!$rcon->status ?? null) {
-            response()->json(["status" => "error", "message" => "Item can only be purchased when our hotel is back online :-)!"]);
-        }  
-      
+
         $offer = Shop::getOfferById(input('orderId'));
       
         if(!$offer) {
