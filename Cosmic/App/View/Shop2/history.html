@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="page-content">
+    <div class="settingsTitle">
+        {{locale.title}}
+        {% include "Shop/panel.html" %}
+    </div>
+
+    <div class="flex-body mt_3">
+        <div class="flex-body-left">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.buy_history}}
+                    <div class="team-title-round">
+                        <img src="/assets/images/web/pages/shop/history.svg" alt="history" class="team-title-badge">
+                    </div>
+                </div>
+                {% if history is empty %}
+                <div class="mt_2">
+                    {{locale.buy_history_empty}}
+                </div>
+                {% endif %}
+            </div>
+            {% if history is not empty %}
+            {% for row in history %}
+            <div class="box help-faq">
+                <div class="title">{{row.data}} - <small>{{locale.buy_on ~ ' ' ~ row.timestamp|date("d/m/Y")}}</small>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="flex-body-right">
+            <div class="box">
+                <div class="title">{{locale.more_information}}</div>
+                <p>{{locale.desc}}</p>
+                <p>
+                    {{locale.content_1}} {{locale.content_2}} <a href="/help/requests/new">{{locale.help_tool}}</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

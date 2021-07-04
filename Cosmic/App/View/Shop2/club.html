@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% set nav = 'club' %}
+{% block body %}
+<div class="page-content">
+    <div class="settingsTitle">
+        {{locale.club_buy}}
+        {% include "Shop/panel.html" %}
+    </div>
+
+    <div class="flex-body mt_3">
+        <div class="flex-body-left">
+            <div class="box">
+                <div class="box-title">
+                    {{locale.club_benefits}}
+                    <div class="team-title-round">
+                        <img src="/assets/images/web/pages/shop/vip.svg" alt="vip" class="team-title-badge">
+                    </div>
+                </div>
+                <div class="mt_2">
+                    {{content|raw}}
+                </div>
+                <h4>Badges</h4>
+                <div class="profile-badges">
+                    {% for badges in data.vip_badges %}
+                    <div class="profile-badge">
+                        <img src="{{site.cpath}}/c_images/album1584/{{badges|trim('value')}}.gif" class="pixelated">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="flex-body-right">
+            <div class="box shop-box">
+                <div class="shop-center-X">
+                    <img src="/assets/icons/diamonds.svg" alt="">
+                    <span class="shop-center-Y">{{data.diamonds}}</span>
+                </div>
+            </div>
+
+            <div class="box text-center">
+                <div class="title">{{locale.club_buy}}</div>
+                <form action="shop/club/buy">
+                    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
+                    <button class="rounded-button light mt_2">
+                        {% if data.vip_membership_days == "lifetime" %}{{locale.unlimited}}{% else
+                        %}{{data.vip_membership_days}} {{locale.days}} {% endif %} ({{data.vip_price}}
+                        {{data.vip_type}})
+                    </button>
+                </form>
+            </div>
+
+            <div class="box">
+                <div class="title">{{locale.more_information}}</div>
+                <p>{{locale.desc}}</p>
+                <p>
+                    {{locale.content_1}} {{locale.content_2}}
+                    <a href="/help/requests/new">{{locale.help_tool}}</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

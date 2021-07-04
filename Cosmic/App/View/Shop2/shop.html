@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set nav = 'shop' %}
+{% block body %}
+<div class="page-content">
+    <div class="settingsTitle">
+        {{locale.store}}
+        {% include "Shop/panel.html" %}
+    </div>
+
+    <div class="flex-body mt_3">
+        <div class="flex-body-left">
+            <div class="box">
+                <div class="box-title">{{locale.title}}</div>
+                <div class="payment-accept text-center" style="padding-top: 2em; display:none">
+                    <img src="/assets/images/web/pages/shop/credits-success.png">
+                    <p>{{locale.shop_success}}</p>
+                    <a href="/help" target="_self" class="rounded-button light btn-index mt_1">{{locale.help}}</a>
+                    <a href="/shop" target="_self" class="rounded-button plain light btn-index mt_1">{{locale.back}}</a>
+                </div>
+                <div class="payment-decline text-center" style="padding-top: 2em; display:none">
+                    <img src="/assets/icons/croix.svg" width="40em">
+                    <p>{{locale.shop_error}}</p>
+                    <a href="/help" target="_self" class="rounded-button light btn-index mt_1">{{locale.help}}</a>
+                    <a href="/shop" target="_self" class="rounded-button plain light btn-index mt_1">{{locale.back}}</a>
+                </div>
+                <div class="text-center payment-loader" style="padding-top: 2em; display: none;">
+                    <img class="" src="/assets/images/habbox_loading.gif">
+                    <div class="shop-waiting">{{locale.waiting}}</div>
+                    <a href="/shop" target="_self" class="rounded-button plain light btn-index mt_1">{{locale.back}}</a>
+                </div>
+
+                <div class="offers-container">
+                    {% for offer in data.shop %}
+                    <div class="offer-container" id="offer-{{offer.id}}">
+                        <a href="#" data-id="{{offer.id}}" data-amount="{{offer.amount}}"
+                           data-description="{{offer.description}}" data-type="{{currency}}"
+                           class="offer-content pixelated">
+                            <div class="offer-label">{{offer.title|capitalize }}</div>
+                            <div class="offer-amount">{{offer.price}} {{currency}}</div>
+                            <img src="/assets/images/web/pages/shop/diamonds.svg"
+                                 style="width: 5em; image-rendering: pixelated;">
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <input type="hidden" name="csrftoken" value="{{csrf_token}}">
+                </div>
+            </div>
+        </div>
+        <div class="flex-body-right">
+            <div class="box shop-box">
+                <div class="shop-center-X">
+                    <img src="/assets/icons/diamonds.svg" alt="">
+                    <span class="shop-center-Y">{{data.diamonds}}</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="title">{{locale.more_information}}</div>
+                <p>{{locale.desc}}</p>
+                <p>{{locale.content_1}} {{locale.content_2}} <a href="/help/requests/new">{{locale.help_tool}}</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

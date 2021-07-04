@@ -60,8 +60,6 @@ class View
             $settings = Core::settings();
             
             $twig->addGlobal('site', Config::site); 
-            $twig->addGlobal('paypal_client_id', $settings->paypal_client_id);
-            $twig->addGlobal('paypal_currency', $settings->paypal_currency);
             $twig->addGlobal('client', Config::client);
             
             $findretros = filter_var($settings->findretros_enabled, FILTER_VALIDATE_BOOLEAN); 

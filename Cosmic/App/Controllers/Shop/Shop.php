@@ -5,10 +5,6 @@ use App\Config;
 
 use App\Models\Player;
 use App\Models\Core;
-use App\Models\Permission;
-use App\Models\Shop as Offer;
-
-use Library\HotelApi;
 
 use Core\Locale;
 use Core\View;
@@ -23,22 +19,25 @@ class Shop
     {
         $this->data = new stdClass();
     }
-  
+
     public function index()
     {
         if(!request()->player->id){
-          redirect('/');
+            redirect('/');
         }
 
-        $this->data->shop = Offer::getOffers();
+        $this->data->shop = \App\Models\Shop::getOffers();
+      
+        foreach($this->data->shop as $offers) {
+            $offers->currency = Core::getCurrencyByType($offers->currency)->currency;
+        }
+      
         $this->data->diamonds = Player::getDiamonds(request()->player->id);
-        $currency = Core::settings()->paypal_currency;
 
         View::renderTemplate('Shop/shop.html', [
             'title' => Locale::get('core/title/shop/index'),
             'page'  => 'shop',
-            'data'  => $this->data,
-            'currency' => $currency
+            'data'  => $this->data
         ]);
     }
 }

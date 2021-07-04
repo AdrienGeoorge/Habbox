@@ -1056,18 +1056,24 @@ input:-webkit-autofill {
 
 /* Payment popup */
 .payment-popup {
-    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 30%);
+    background-color: #292a38;
+    border-radius: 10px;
     position: relative;
-    padding: 22px;
+    padding: 20px;
     width: auto;
-    max-width: 400px;
+    max-width: 450px;
     margin: 20px auto;
     overflow: hidden;
+    color: #fff;
+}
+
+.payment-popup h3 {
+    text-align: center;
+    color: #fff;
+    padding: 13px 22px;
+    border-radius: 10px;
+    text-shadow: 0 1px 0 rgb(0, 0, 0, 0.3)
 }
 
 .payment-popup .success-step,
@@ -1076,7 +1082,6 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-.payment-popup .title,
 .payment-popup .subtitle {
     color: #00abe4;
     text-align: center;

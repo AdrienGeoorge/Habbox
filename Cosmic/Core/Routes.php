@@ -85,6 +85,9 @@ class Routes extends Router
                 parent::get('/shop/drawbadge', 'Shop\Drawbadge@index');
                 parent::get('/shop/history', 'Shop\History@index');
                 parent::get('/shop/order/view/{orderId}', 'Shop\History@order');
+                parent::get('/shop/{lang}/lang', 'Shop\Shop@index');
+                parent::get('/shop/offers/{offerid}', 'Shop\Offers@index');
+
 
                 parent::get('/guilds/{slug}', 'Community\Guilds\Category@index', ['defaultParameterRegex' => '[\w\-]+'])->addMiddleware(GuildMiddleware::class);
                 parent::get('/guilds/{slug}/page/{page}', 'Community\Guilds\Category@index', ['defaultParameterRegex' => '[\w\-]+'])->addMiddleware(GuildMiddleware::class);

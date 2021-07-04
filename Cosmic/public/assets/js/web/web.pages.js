@@ -954,85 +954,6 @@ function WebPageShopInterface(main_page) {
             }
 
             page_container.find(".right-side .aside-content").html(description);
-
-            if (page_container.find(".paypal-buttons")[0]) {
-                return;
-            }
-
-            paypal.Buttons({
-                createOrder: function (data, actions) {
-                    return fetch('/shop/offers/createorder', {
-                        method: 'post',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({orderId: orderId, csrftoken: csrftoken})
-                    }).then(function (res) {
-                        return res.json();
-                    }).then(function (orderData) {
-                        $(".payment-loader").show();
-                        $(".offers-container").hide();
-                        return orderData.id;
-                    });
-                },
-                onError: function (err) {
-                    $(".payment-decline").show();
-                    $(".payment-loader").hide();
-
-                    Web.ajax_manager.post("/shop/offers/status", {
-                        status: 'FAILED',
-                        orderId: data.orderID,
-                        csrftoken: csrftoken
-                    });
-
-                    Web.notifications_manager.create("error", err, 'Error..');
-                },
-                onCancel: function (data) {
-                    $(".payment-decline").show();
-                    $(".payment-loader").hide();
-
-                    Web.ajax_manager.post("/shop/offers/status", {
-                        status: 'CANCELD',
-                        orderId: data.orderID,
-                        csrftoken: csrftoken
-                    });
-                },
-                onApprove: function (data, actions) {
-                    return fetch('/shop/offers/captureorder', {
-                        method: 'post',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({orderId: data.orderID, offerId: orderId, csrftoken: csrftoken})
-                    }).then(function (res) {
-                        return res.json();
-                    }).then(function (orderData) {
-
-                        var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
-
-                        if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
-                            return actions.restart();
-                        }
-
-                        if (errorDetail) {
-                            Web.notifications_manager.create("error", 'Sorry, your transaction could not be processed.', 'Error..');
-                        }
-
-                        Web.ajax_manager.post("/shop/offers/validate", {
-                            orderId: orderData.id,
-                            csrftoken: csrftoken
-                        });
-
-                        $(".payment-accept").show();
-                        $(".payment-loader").hide();
-
-                        var myAudio = new Audio('/assets/images/cash.mp3');
-                        myAudio.play();
-                    });
-                }
-            }).render('.offers-container');
         });
 
         page_container.find(".selectric").change(function () {
@@ -1073,13 +994,13 @@ function WebPageShopOffersInterface(main_page) {
         }
     };
     this.payment_template = [
-        '<article class="default-section offer-payment flex-container flex-vertical-center">\n' +
+        '<div class="box mt_1 offer-payment flex-container flex-vertical-center">\n' +
         '    <div class="payment-image"></div>\n' +
         '    <div class="payment-description"></div>\n' +
         '    <div class="payment-button">\n' +
-        '        <button type="button" class="rounded-button blue">Kies</button>\n' +
+        '        <button type="button" class="rounded-button light">' + Locale.web_page_shop_offers_select + '</button>\n' +
         '    </div>\n' +
-        '</article>'
+        '</div>'
     ].join("");
 
     /*
@@ -1152,7 +1073,7 @@ function WebPageShopOffersInterface(main_page) {
             '<div class="payment-popup zoom-anim-dialog">\n' +
             '    <div class="main-step">' +
             '        <h3 class="title">' + Locale.web_page_shop_offers_pay_with + ' ' + payment_solution.name + '</h3>' +
-            '        <h5 class="subtitle">' + this.amount + ' ' + Locale.web_page_shop_offers_points_for + ' €' + number_format(solution.user_price, 2, ",", " ") + '</h5>' +
+            '        <h5 class="subtitle">' + this.amount + ' ' + Locale.web_page_shop_offers_points_for + ' ' + number_format(solution.user_price, 2, ",", " ") + ' EUR</h5>' +
             '        <h5>1. ' + Locale.web_page_shop_offers_get_code + '</h5>' +
             '        ' + payment_solution.dialog +
             '        <div class="solution-details"></div>' +
@@ -1161,23 +1082,23 @@ function WebPageShopOffersInterface(main_page) {
             '        ' + Locale.web_page_shop_offers_fill_code_desc + '' +
             '        <div class="row">' +
             '            <div class="column-2">' +
-            '                <input type="text" class="rounded-input blue-active code" placeholder="Code...">' +
+            '                <input type="text" class="code" placeholder="Code...">' +
             '            </div>' +
             '            <div class="column-2">' +
-            '                <button class="rounded-button blue plain submit">' + Locale.web_page_shop_offers_submit + '</button>' +
+            '                <button class="rounded-button light plain submit">' + Locale.web_page_shop_offers_submit + '</button>' +
             '            </div>' +
             '        </div>' +
             '    </div>' +
             '    <div class="success-step">' +
-            '        <h3 class="title">' + Locale.web_page_shop_offers_success + '</h3>' +
-            '        ' + Locale.web_page_shop_offers_received + ' <span></span> ' + Locale.web_page_shop_offers_received2 + '' +
+            '        <div class="title">' + Locale.web_page_shop_offers_success + '</div>' +
             '        <img src="/assets/images/web/pages/shop/credits-success.png" alt="' + Locale.web_page_shop_offers_success + '">' +
+            '        <p>' + Locale.web_page_shop_offers_received + ' <span></span> ' + Locale.web_page_shop_offers_received2 + '</p>' +
             '        <button class="rounded-button lightgreen plain">' + Locale.web_page_shop_offers_close + '</button>' +
             '    </div>' +
             '    <div class="error-step">' +
-            '        <h3 class="title">' + Locale.web_page_shop_offers_failed + '</h3>' +
-            '        ' + Locale.web_page_shop_offers_failed_desc + '' +
-            '        <img src="/assets/images/web/pages/shop/credits-error.png" alt="' + Locale.web_page_shop_offers_failed + '">' +
+            '        <div class="title">' + Locale.web_page_shop_offers_failed + '</div>' +
+            '        <img src="/assets/icons/croix.svg" alt="' + Locale.web_page_shop_offers_failed + '" width="40em">' +
+            '        <p>' + Locale.web_page_shop_offers_failed_desc + '</p>' +
             '        <button class="rounded-button red plain">' + Locale.web_page_shop_offers_back + '</button>' +
             '    </div>' +
             '</div>'
@@ -1211,7 +1132,7 @@ function WebPageShopOffersInterface(main_page) {
             ].join("");
         } else if (!isEmpty(solution.link)) {
             obtain_template = [
-                '<button class="rounded-button blue">' + Locale.web_page_shop_offers_buy_code + '</button>'
+                '<button class="rounded-button light">' + Locale.web_page_shop_offers_buy_code + '</button>'
             ].join("");
         }
 
@@ -1257,7 +1178,7 @@ function WebPageShopOffersInterface(main_page) {
     };
 
     this.open_modal = function (link) {
-        window.open(link, "Laden...", "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=550,left=420,top=150");
+        window.open(link, Locale.web_page_shop_offers_waiting, "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=550,left=420,top=150");
     };
 
     this.submitted = false;
@@ -1273,19 +1194,16 @@ function WebPageShopOffersInterface(main_page) {
             url: "https://api.dedipass.com/v1/pay/?key=" + this.offer_id + "&rate=AUTORATE&code=" + code + "&tokenize",
             dataType: "json"
         }).done(function (result) {
-            if (result.status === "success") {
-                Web.ajax_manager.post("/shop/offers/validate", {
-                    offer_id: self.offer_id,
-                    code: code,
-                    price: solution.user_price
-                }, function (data) {
-                    if (data.status === "success")
-                        self.show_success_step(data.amount);
-                    else
-                        self.show_error_step();
-                });
-            } else
-                self.show_error_step();
+            Web.ajax_manager.post("/shop/offers/validate", {
+                offer_id: self.offer_id,
+                code: code,
+                price: solution.user_price
+            }, function (data) {
+                if (data.status === "success")
+                    self.show_success_step(data.amount);
+                else
+                    self.show_error_step();
+            });
         });
     };
 
@@ -1294,7 +1212,7 @@ function WebPageShopOffersInterface(main_page) {
         var submit_button = dialog.find(".main-step .submit");
 
         this.submitted = true;
-        submit_button.text("Laden...").prop("disabled", true);
+        submit_button.text(Locale.web_page_shop_offers_waiting).prop("disabled", true);
     };
 
     this.enable_button = function () {
@@ -1302,7 +1220,7 @@ function WebPageShopOffersInterface(main_page) {
         var submit_button = dialog.find(".main-step .submit");
 
         this.submitted = false;
-        submit_button.text("Valideren..").prop("disabled", false);
+        submit_button.text(Locale.web_dialog_validate).prop("disabled", false);
     };
 
     this.show_main_step = function () {
