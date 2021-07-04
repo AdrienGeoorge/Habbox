@@ -54,7 +54,7 @@ class Help
   
     public static function getTicketsByUserId($userid)
     {
-        return  QueryBuilder::connection()->table('website_helptool_requests')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('player_id', $userid)->get();
+        return  QueryBuilder::connection()->table('website_helptool_requests')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('player_id', $userid)->orderBy('timestamp', 'DESC')->get();
     }
 
     public static function getRequestById($id, $userid)
