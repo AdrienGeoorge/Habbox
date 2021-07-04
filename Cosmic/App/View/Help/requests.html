@@ -41,7 +41,7 @@
                     {% endif %}
                 </div>
                 <div class="mt_2">
-                    {{data.requests.message}}
+                    {{data.requests.message|raw}}
                 </div>
                 <div class="mt_2">
                     <b>{{locale.request_status}}</b> {{data.requests.timestamp|date("d/m/Y - H:i")}}

@@ -53,11 +53,13 @@ class Namechange
         if ($amount < $this->settings->namechange_price) {
             response()->json(["status" => "error", "message" => Locale::get('core/notification/not_enough_points')]);
         }
-      
+
         HotelApi::execute('changeusername', array('user_id' => request()->player->id, 'new_name' => $username));
         HotelApi::execute('givepoints', array('user_id' => request()->player->id, 'points' => - $amount + $amount - $this->settings->namechange_price, 'type' => $this->settings->namechange_currency_type));
-      
-        response()->json(["status" => "success", "message" => Locale::get('settings/name_change_saved'), "replacepage" => "settings/namechange"]);
+        HotelApi::execute('dc', array('username' => request()->player->username));
+        Player::update(request()->player->id, ['username' =>  $username]);
+
+        response()->json(["status" => "success", "message" => Locale::get('settings/name_change_saved'), 'replacepage' => '/logout']);
     }
 
     public function availability()

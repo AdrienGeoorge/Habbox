@@ -353,8 +353,15 @@ function WebPagesManagerInterface() {
                     self.load(result.loadpage);
 
                 // Replace page
-                else if (result.replacepage)
-                    self.load(result.replacepage, null, true, null, true, true);
+                else if (result.replacepage){
+                    if(result.replacepage === '/logout'){
+                        setTimeout(function() {
+                            window.location.replace('/logout')
+                        }, 2000);
+                    } else{
+                        self.load(result.replacepage, null, true, null, true, true);
+                    }
+                }
 
                 // Build new page
                 else {
@@ -572,8 +579,15 @@ function WebAjaxManagerInterface() {
                 Web.pages_manager.load(result.loadpage);
 
             // Replace page
-            if (result.replacepage)
-                Web.pages_manager.load(result.replacepage, null, true, null, true, true);
+            if (result.replacepage){
+                if(result.replacepage === '/logout'){
+                    setTimeout(function() {
+                        window.location.replace('/logout')
+                    }, 2000);
+                } else{
+                    Web.pages_manager.load(result.replacepage, null, true, null, true, true);
+                }
+            }
 
             // Build modal
             if (result.modal) {
