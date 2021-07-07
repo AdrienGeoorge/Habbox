@@ -68,7 +68,13 @@ $GLOBALS['language'] = array (
             'footer_terms'          => 'Terms and Conditions',
             'footer_privacy'        => 'Privacy declaration',
             'footer_cookies'        => 'Cookie policy',
-            'footer_guide'          => 'Parents guide'
+            'footer_guide'          => 'Parents guide',
+
+            'maintenance'           => 'Hotel maintenance',
+            'text_1'                => 'Our hotel is currently undergoing maintenance while we make some updates. Don\'t worry, we\'ll be back very soon.',
+            'text_2'                => 'You can follow the progress of the work or come and discuss with us on our community discord',
+            'follow_discord'        => 'Join discord',
+            'staff'                 => 'Team space'
         ),
 
         /*     public/assets/js/web     */

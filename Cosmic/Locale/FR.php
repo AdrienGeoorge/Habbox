@@ -68,7 +68,13 @@ $GLOBALS['language'] = array (
             'footer_terms'          => 'Les conditions d\'utilisation',
             'footer_privacy'        => 'Charte de protection des données personnelles',
             'footer_cookies'        => 'Politique des cookies',
-            'footer_guide'          => 'Le guide des parents'
+            'footer_guide'          => 'Le guide des parents',
+
+            'maintenance'           => 'Maintenance de l\'hôtel',
+            'text_1'                => 'Notre hôtel est actuellement en maintenance, le temps d\'effectuer des mises à jour. Ne t\'en fais pas, nous revenons très rapidement.',
+            'text_2'                => 'Tu peux suivre l\'avancement des travaux ou venir discuter avec nous sur notre discord communautaire.',
+            'follow_discord'        => 'Rejoindre discord',
+            'staff'                 => 'Espace équipe'
         ),
 
         /*     public/assets/js/web     */

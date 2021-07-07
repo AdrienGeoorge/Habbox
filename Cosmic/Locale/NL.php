@@ -68,7 +68,13 @@ $GLOBALS['language'] = array (
             'footer_terms'          => 'Algemene voorwaarden',
             'footer_privacy'        => 'Privacyverklaring',
             'footer_cookies'        => 'Cookie-beleid',
-            'footer_guide'          => 'Gids voor ouders'
+            'footer_guide'          => 'Gids voor ouders',
+
+            'maintenance'           => 'Hotel onderhoud',
+            'text_1'                => 'Ons hotel ondergaat momenteel onderhoud terwijl we updates maken. Maak je geen zorgen, we zijn zo terug.',
+            'text_2'                => 'U kunt de voortgang van de werkzaamheden volgen of met ons komen discussiëren op onze community discord.',
+            'follow_discord'        => 'Word lid van discord',
+            'staff'                 => 'Team ruimte'
         ),
 
         /*     public/assets/js/web     */
