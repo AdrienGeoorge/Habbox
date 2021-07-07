@@ -39,6 +39,7 @@ $GLOBALS['language'] = array (
             'credits'               => 'Merci à Raizer et Metus',
             'and_all'               => 'Ainsi qu\'à tous les utilisateurs d\'Habbox',
 
+            'login_title'           => 'Connexion',
             'login_name'            => 'Pseudo',
             'login_password'        => 'Mot de passe',
             'login_save_data'       => 'Se souvenir de moi',
@@ -167,6 +168,8 @@ $GLOBALS['language'] = array (
             'web_hotel_active_flash_2'                      => 'Clique-ici',
             'web_hotel_active_flash_3'                      => 'puis clique sur le côté à gauche pour autoriser l\'activation de flash player.',
 
+            'web_save_clipboard'                            => 'Sauvegardé dans le presse-papier',
+            'web_referral_copied'                           => 'Copie effectuée'
         ),
 
         /*     App/View/Community     */
@@ -319,7 +322,12 @@ $GLOBALS['language'] = array (
             'popular_no_groups'       => 'Aucun groupe n\'a été crée pour le moment!',
             'load_news'               => 'En savoir plus',
             'user_of_the_week'        =>  Config::site['shortname'] . ' élu membre de la semaine',
-            'user_of_the_week_label'  => 'Membre de la semaine'
+            'user_of_the_week_label'  => 'Membre de la semaine',
+            'copy_referal'            => 'Copier',
+            'referral'                => 'Parrainage',
+            'referral_desc'           => 'Envoie une invitation à tes amis et s\'ils créent un compte, tu recevras un petit cadeau.',
+            'badges'                  => 'Nouveaux badges',
+            'items'                   => 'Nouveaux mobis'
         ),
         'lost' => array (
             'page_not_found'          => 'Page introuvable!',

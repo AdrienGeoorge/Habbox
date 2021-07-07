@@ -67,7 +67,7 @@ class Routes extends Router
                 parent::get('/articles', 'Community\Articles@index');
                 parent::get('/article/{slug}', 'Community\Articles@index', ['defaultParameterRegex' => '[\w\-]+']);
 
-                parent::get('/community/photos', 'Community\Photos@index');
+//                parent::get('/community/photos', 'Community\Photos@index');
                 parent::get('/community/staff', 'Community\Staff@index');
 //                parent::get('/community/team', 'Community\Staff@team');
 
@@ -85,7 +85,6 @@ class Routes extends Router
                 parent::get('/shop/drawbadge', 'Shop\Drawbadge@index');
                 parent::get('/shop/history', 'Shop\History@index');
                 parent::get('/shop/order/view/{orderId}', 'Shop\History@order');
-                parent::get('/shop/{lang}/lang', 'Shop\Shop@index');
                 parent::get('/shop/offers/{offerid}', 'Shop\Offers@index');
 
 
@@ -94,7 +93,6 @@ class Routes extends Router
                 parent::get('/guilds/{group}/thread/{slug}', 'Community\Guilds\Topic@index', ['defaultParameterRegex' => '[\w\-]+'])->addMiddleware(GuildMiddleware::class);
                 parent::get('/guilds/{group}/thread/{slug}/page/{page}', 'Community\Guilds\Topic@index', ['defaultParameterRegex' => '[\w\-]+'])->addMiddleware(GuildMiddleware::class);
 
-                parent::get('/jobs/my', 'Jobs\Jobs@my');
                 parent::get('/jobs/{id}/apply', 'Jobs\Apply@index');
 
                 parent::get('/api/player/count', 'Client\Client@count');

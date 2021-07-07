@@ -123,6 +123,7 @@
 
 {% if player is empty %}
 <div id="login-dialog" class="login-popup zoom-anim-dialog mfp-hide">
+    <h3 class="title">{{locale_base.login_title}}</h3>
     <div class="login-form">
         <form class="login-form" action="#">
         <label for="login-username-input-target" class="username-input">
@@ -136,7 +137,7 @@
         </label>
         <input type="hidden" name="csrftoken" value="{{csrf_token}}" />
         <div class="text-center mt_2">
-            <a href="password/claim" target="_self" data-close-popup="true"
+            <a href="/password/claim" target="_self" data-close-popup="true"
                class="light">{{locale_base.login_lost_password}}</a>
         </div>
         <button type="submit" class="rounded-button light plain mt_1" id="login-request">{{locale_base.header_login}}</button>
@@ -160,7 +161,6 @@
     </form>
 </div>
 {% endif %}
-
 
 <div class="left-nav">
     <div class="absolute-menu">
@@ -269,23 +269,6 @@
     {% endif %}
 </div>
 
-<!--<nav class="navigation-container">
-    <ul class="navigation-menu flex-container">
-        {% if player %}
-        <li class="navigation-item has-items {% if "shop" in page %}selected {% endif %}" data-category="shop">
-        <a href="/shop">{{site.shortname}} {{locale_base.nav_shop}}</a>
-        <ul class="navigation-submenu">
-            <li class="navigation-subitem"><a href="/shop">{{locale_base.nav_buy_points}}</a></li>
-            <li class="navigation-subitem"><a href="/shop/club">{{locale_base.nav_buy_club}}</a></li>
-            <li class="navigation-subitem"><a href="/shop/history">{{locale_base.nav_purchasehistory}}</a></li>
-            <li class="navigation-subitem"><a href="/shop/drawbadge">{{locale_base.nav_drawyourbadge}}</a></li>
-            <li class="navigation-subitem"><a href="/settings/namechange">{{locale_base.nav_changename}}</a>
-            </li>
-        </ul>
-        </li>
-        {% endif %}
-    </ul>
-</nav>-->
 <section class="body-container margin-body">
     {% if player %}
     <form action="settings/preferences/validate" method="post" class="lightMode">

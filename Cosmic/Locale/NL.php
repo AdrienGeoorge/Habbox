@@ -39,7 +39,8 @@ $GLOBALS['language'] = array (
             'credits'               => 'Met dank aan Raizer and Metus',
             'and_all'               => 'En alle',
 
-            'login_name'            => 'naam',
+            'login_title'           => 'Aansluiting',
+            'login_name'            => 'Naam',
             'login_password'        => 'Wachtwoord',
             'login_save_data'       => 'Onthoud mijn gegevens',
             'login_lost_password'   => 'Wachtwoord/naam kwijt?',
@@ -170,7 +171,10 @@ $GLOBALS['language'] = array (
             'web_page_hotel_soon'                           => 'Dit ziet er goed uit...',
             'web_hotel_active_flash_1'                      => 'Je bent bijna op '. Config::site['shortname'] . '!',
             'web_hotel_active_flash_2'                      => 'Klik hier',
-            'web_hotel_active_flash_3'                      => 'en dan links boven op "Toestaan" om Flash Player aan te zetten.'
+            'web_hotel_active_flash_3'                      => 'en dan links boven op "Toestaan" om Flash Player aan te zetten.',
+
+            'web_save_clipboard'                            => 'Opgeslagen op klembord',
+            'web_referral_copied'                           => 'Kopie gemaakt'
         ),
 
         /*     App/View/Community     */
@@ -320,7 +324,12 @@ $GLOBALS['language'] = array (
             'popular_no_groups'       => 'Er zijn nog geen groepen aangemaakt!',
             'load_news'               => 'Meer nieuws laden',
             'user_of_the_week'        =>  Config::site['shortname'] . ' van de week',
-            'user_of_the_week_label'  => 'Speler of de week'
+            'user_of_the_week_label'  => 'Speler of de week',
+            'copy_referal'            => 'Kopiëren',
+            'referral'                => 'Sponsoring',
+            'referral_desc'           => 'Stuur een uitnodiging naar je vrienden en als zij een account aanmaken, ontvang jij een klein cadeautje.',
+            'badges'                  => 'Nieuwe badges',
+            'items'                   => 'Nieuwe artikelen'
         ),
         'lost' => array (
             'page_not_found'          => 'Pagina niet gevonden!',

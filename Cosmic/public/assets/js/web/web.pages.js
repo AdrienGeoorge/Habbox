@@ -65,7 +65,7 @@ function WebHotelManagerInterface() {
                     var radio = document.getElementById("stream");
                     radio.src = Client.client_radio;
                     radio.volume = 0.1;
-                    radio.play();
+                    // radio.play();
 
                     $(".fa-play").hide();
                     $(".fa-pause").show();
@@ -543,9 +543,9 @@ function WebPageProfileInterface(main_page) {
                     post: id,
                     csrftoken: csrftoken
                 }, function (result) {
-                    if(result.unliked){
+                    if (result.unliked) {
                         $('.likes-count[data-id=' + id + ']').text(parseInt($('.likes-count[data-id=' + id + ']').text()) - 1);
-                    }else{
+                    } else {
                         if (result.status == 'success') {
                             $('.fa-heart[data-id=' + id + ']').addClass("pulsateOnce");
                             $('.likes-count[data-id=' + id + ']').text(parseInt($('.likes-count[data-id=' + id + ']').text()) + 1);
@@ -718,18 +718,74 @@ function WebPageHomeInterface(main_page) {
         var self = this;
         var page_container = this.main_page.get_page_container();
 
-        function mouseoverTitle() {
-            $('.article-container').mouseenter(function () {
-                var id = $(this).attr("data-id");
-                $(".title[data-id=" + id + "]").hide();
-                $(".title-sub[data-id=" + id + "]").show();
-            });
+        let slideIndex = 1;
+        let slides = document.getElementsByClassName("carousel__item");
+        let dots = document.getElementsByClassName("carousel__bullets-link");
+        let carousel = document.getElementById('carousel');
+        let before = $('.carousel_before');
+        let after = $('.carousel_after');
 
-            $('.article-container').mouseleave(function () {
-                var id = $(this).attr("data-id");
-                $(".title[data-id=" + id + "]").show();
-                $(".title-sub[data-id=" + id + "]").hide();
-            }).mouseleave();
+        let nextSlide = () => {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 1
+            }else{
+                slideIndex++;
+            }
+
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+
+            timer = setTimeout(nextSlide, 4000);
+        }
+        let timer = setTimeout(nextSlide, 4000);
+
+        before.on('click', () => {
+            clearTimeout(timer);
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+
+            if(slideIndex === 1){
+                slideIndex = slides.length;
+            }else{
+                slideIndex--;
+            }
+
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+            timer = setTimeout(nextSlide, 4000);
+        })
+
+        after.on('click', () => {
+            clearTimeout(timer);
+            nextSlide();
+        })
+
+        $('.carousel__bullets-link').on('click', (e) => {
+            clearTimeout(timer);
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+
+            slideIndex = e.target.innerHTML + 1
+
+            slides[e.target.innerHTML].classList.add('active');
+            dots[e.target.innerHTML].classList.add('active');
+        })
+
+        carousel.onmouseover = (e) => {
+            clearTimeout(timer);
+        }
+
+        carousel.onmouseleave = (e) => {
+            timer = setTimeout(nextSlide, 4000);
         }
 
         $("#copyReferral").click(function () {
@@ -739,33 +795,8 @@ function WebPageHomeInterface(main_page) {
             copyText.setSelectionRange(0, 99999);
             document.execCommand("copy");
 
-            Web.notifications_manager.create("info", "Saved to clickboard!", "Referral copied!");
+            Web.notifications_manager.create("info", Locale.web_save_clipboard, Locale.web_referral_copied);
         });
-
-
-        // Load more articles
-        page_container.find(".load-more-button button").click(function () {
-            var countdivs = $('.article-container').length;
-            var csrftoken = $("[name=csrftoken]").val();
-            Web.ajax_manager.post("/community/articles/more", {
-                current_page: self.current_page,
-                offset: countdivs,
-                csrftoken: csrftoken
-            }, function (result) {
-                if (result.articles.length > 0) {
-                    for (var i = 0; i < result.articles.length; i++) {
-                        var article_data = result.articles[i];
-                        var article_template = $(self.article_template.replace(/{article.slug}/g, article_data.slug).replace(/{article.banner}/g, article_data.header).replace(/{article.id}/g, article_data.id).replace(/{article.category}/g, article_data.category).replace(/{article.color}/g, article_data.color).replace(/{article.title}/g, article_data.title));
-                        page_container.find(".articles-container").append(article_template);
-                        article_template.fadeIn();
-                    }
-
-                    self.current_page = result.current_page;
-                }
-            });
-        });
-
-        mouseoverTitle();
     };
 }
 
@@ -949,7 +980,11 @@ function WebPageShopInterface(main_page) {
             page_container.find(".left-side .aside-title-content").html(amount + ' ' + currency);
 
             if ($(window).width() > 520) {
-                page_container.find(".offers-container").css({"width": "60%", "margin": "2em auto 0 auto", "display": "block"});
+                page_container.find(".offers-container").css({
+                    "width": "60%",
+                    "margin": "2em auto 0 auto",
+                    "display": "block"
+                });
                 page_container.find(".offer-container a").css({"width": "55%", "margin": "0 auto 2em auto"});
             }
 

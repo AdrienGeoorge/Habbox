@@ -62,7 +62,7 @@ class Permission
             return QueryBuilder::connection()->table('permissions')->orderBy('id', 'desc')->get();
         }
 
-        return QueryBuilder::connection()->table('permissions')->orderBy('id', 'desc')->get();
+        return QueryBuilder::connection()->table('permissions')->where('id', '>', 2)->orderBy('id', 'desc')->get();
     }
   
     public static function getTeams()

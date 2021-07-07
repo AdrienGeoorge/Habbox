@@ -39,7 +39,8 @@ $GLOBALS['language'] = array (
             'credits'               => 'Thanks to Raizer and Metus',
             'and_all'               => 'And all',
 
-            'login_name'            => 'name',
+            'login_title'           => 'Log in',
+            'login_name'            => 'Name',
             'login_password'        => 'Password',
             'login_save_data'       => 'Remember me',
             'login_lost_password'   => 'Lost your password?',
@@ -171,6 +172,9 @@ $GLOBALS['language'] = array (
             'web_hotel_active_flash_1'                      => 'Youre almost in ' . Config::site['shortname'] .'!',
             'web_hotel_active_flash_2'                      => 'Click here',
             'web_hotel_active_flash_3'                      => 'and click on the left side at "allow" flash, to enable flash.',
+
+            'web_save_clipboard'                            => 'Saved to clipboard',
+            'web_referral_copied'                           => 'Copy done'
             
         ),
 
@@ -324,7 +328,12 @@ $GLOBALS['language'] = array (
             'popular_no_groups'       => 'No groups have been created yet!',
             'load_news'               => 'Load more news',
             'user_of_the_week'        =>  Config::site['shortname'] . ' of the week',
-            'user_of_the_week_label'  => 'User of the week'
+            'user_of_the_week_label'  => 'User of the week',
+            'copy_referal'            => 'Copy',
+            'referral'                => 'Sponsorship',
+            'referral_desc'           => 'Send an invitation to your friends and if they create an account, you will receive a small gift.',
+            'badges'                  => 'New badges',
+            'items'                   => 'New items'
         ),
         'lost' => array (
             'page_not_found'          => 'Page not found!',
