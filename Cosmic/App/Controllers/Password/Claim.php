@@ -28,7 +28,7 @@ class Claim
 
         $player = Player::getDataByUsername($username, array('id', 'username', 'mail'));
         if ($player == null || strtolower($player->mail) != strtolower($email)) {
-            response()->json(["status" => "error", "message" => Locale::get('claim/invalid_email'), "replacepage" => "password/claim"]);
+            response()->json(["status" => "error", "message" => Locale::get('claim/invalid_email')]);
         }
 
         Password::createToken($player->id, $player->username, $player->mail);
