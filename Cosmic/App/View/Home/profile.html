@@ -79,7 +79,7 @@
                             </div>
                             <div class="flex_5 comment-user-flex">
                                 <a href="/profile/{{feed.username}}" class="comment-user">
-                                    {{feed.username}} - <small>{{feed.timestamp|date('d-m-Y H:i')}}</small>
+                                    {{feed.username}} - <small>{{feed.timestamp|date('d/m/Y - H:i')}}</small>
                                 </a>
                                 <span>
                                 {{feed.message|raw}}
@@ -139,7 +139,7 @@
                 <div class="profile-badges">
                     {% if data.player.groups %}
                     {% for group in data.player.groups %}
-                    <a href="/hotel?room={{group.room_id}}" class="item-container">
+                    <a href="/api/room/{{group.room_id}}" class="item-container">
                         <div class="profile-badge tooltip">
                             <img src="https://habbox.fr/habbo-imaging/badge/{{group.badge}}.gif" alt=""
                                  class="pixelated">
@@ -166,11 +166,11 @@
                 <div class="profile-badges">
                     {% if data.player.friends %}
                     {% for row in data.player.friends %}
-                    <div class="profile-badge tooltip">
+                    <a href="/profile/{{row.username}}" target="_self" class="profile-badge tooltip">
                         <img src="{{site.fpath}}/avatarimage?figure={{row.look}}&head_direction=3&headonly=1&size=m"
                              alt="" class="pixelated" style="top: 83%;">
                         <span class="text">{{row.username}}</span>
-                    </div>
+                    </a>
                     {% endfor %}
                     {% else %}
                     <p class="text-center w-100">{{locale.friends_empty}}</p>
@@ -189,7 +189,7 @@
                 <div class="profile-badges">
                     {% if data.player.rooms %}
                     {% for row in data.player.rooms %}
-                    <a href="/hotel?room={{row.id}}" class="item-container">
+                    <a href="/api/room/{{row.id}}" class="item-container">
                         <div class="profile-badge tooltip">
 <!--                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">-->
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
