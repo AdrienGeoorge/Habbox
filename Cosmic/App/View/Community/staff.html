@@ -43,7 +43,7 @@
                 <p class="team-description">{{locale.content_2}}</p>
             </div>
 
-            {% for employee in data|slice(4,7) %}
+            {% for employee in data|slice(4,data|length) %}
             <div class="box">
                 <div class="box-title">
                     {{employee.rank_name}}

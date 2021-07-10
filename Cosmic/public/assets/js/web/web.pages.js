@@ -4,7 +4,7 @@ function WebHotelManagerInterface() {
     /*
      * Manager initialization
      * */
-    this.init = function () {
+    this.init = function() {
         this.current_page_url = window.location.pathname.substr(1) + window.location.search;
 
         this.hotel_container = $("#hotel-container");
@@ -14,7 +14,7 @@ function WebHotelManagerInterface() {
         this.hotel_container.find(".client-buttons .client-count").click(this.refresh_count);
         this.hotel_container.find(".client-buttons .client-radio").click(this.radio(this));
 
-        setInterval(function () {
+        setInterval(function() {
             $("body").find(".client-buttons .client-count #count").load("/api/online");
         }, 120000);
     };
@@ -22,15 +22,15 @@ function WebHotelManagerInterface() {
     /*
      * Hotel toggle
      * */
-    this.close_hotel = function () {
+    this.close_hotel = function() {
         Web.pages_manager.load(Web.pages_manager.last_page_url, null, true, null, true);
     };
 
-    this.refresh_count = function () {
+    this.refresh_count = function() {
         $("body").find(".client-buttons .client-count #count").load("/api/online");
     };
 
-    this.open_hotel = function (arguments) {
+    this.open_hotel = function(arguments) {
         var actions = {};
         var container = this.hotel_container;
         var container_actions = this.hotel_actions;
@@ -43,34 +43,24 @@ function WebHotelManagerInterface() {
         var body = $("body");
 
         body.find(".header-container .header-content .account-container .account-buttons .nitroButton").text(Locale.web_hotel_backto);
-        if (container.find('iframe').hasClass('nitro') != true) {
+        if(container.find('iframe').hasClass('nitro') != true) {
             body.find(".header-container .header-content .account-container .account-buttons .flashButton").text("TO " + Site.name);
             container.find("iframe").remove();
         }
 
         if (!body.hasClass("hotel-visible")) {
-            Web.ajax_manager.get("/api/vote", function (result) {
+            if (container.find(".client-frame").length === 0)
 
-                if (result.status != "voted" && Configuration.findretros === true) {
-                    window.location.href = result.api;
-                } else {
-                    if (container.find(".client-frame").length === 0)
+                Web.ajax_manager.get("/api/ssoTicket", function(result) {
+                    container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
+                });
 
-                        Web.ajax_manager.get("/api/ssoTicket", function (result) {
-                            container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
-                        });
+            document.title = 'Hotel - ' + Site.name;
+            body.addClass("hotel-visible");
 
-                    body.addClass("hotel-visible");
-
-                    var radio = document.getElementById("stream");
-                    radio.src = Client.client_radio;
-                    radio.volume = 0.1;
-                    // radio.play();
-
-                    $(".fa-play").hide();
-                    $(".fa-pause").show();
-                }
-            });
+            var radio = document.getElementById("stream");
+            radio.src = Client.client_radio;
+            radio.volume = 0.1;
         }
     };
 
@@ -78,11 +68,11 @@ function WebHotelManagerInterface() {
     /*
      * LeetFM Player
      * */
-    this.radio = function () {
+    this.radio = function() {
 
         var radio = document.getElementById("stream");
 
-        this.hotel_container.find(".client-buttons .client-radio .fa-play").click(function () {
+        this.hotel_container.find(".client-buttons .client-radio .fa-play").click(function() {
             radio.src = Client.client_radio;
             radio.volume = 0.1;
             radio.play();
@@ -91,7 +81,7 @@ function WebHotelManagerInterface() {
             $(".fa-pause").show();
         });
 
-        this.hotel_container.find(".client-buttons .client-radio .fa-pause").click(function () {
+        this.hotel_container.find(".client-buttons .client-radio .fa-pause").click(function() {
 
             radio.pause();
             radio.src = "";
@@ -101,7 +91,7 @@ function WebHotelManagerInterface() {
             $(".fa-pause").hide();
         });
 
-        this.hotel_container.find(".client-buttons .client-radio .fa-volume-up").click(function () {
+        this.hotel_container.find(".client-buttons .client-radio .fa-volume-up").click(function() {
             var volume = radio.volume;
 
             if (volume > 1.0) {
@@ -111,7 +101,7 @@ function WebHotelManagerInterface() {
             }
         });
 
-        this.hotel_container.find(".client-buttons .client-radio .fa-volume-down").click(function () {
+        this.hotel_container.find(".client-buttons .client-radio .fa-volume-down").click(function() {
             var volume = radio.volume;
 
             if (volume < 0.0) {
@@ -125,7 +115,7 @@ function WebHotelManagerInterface() {
     /*
      * Fullscreen toggle
      * */
-    this.toggle_fullscreen = function () {
+    this.toggle_fullscreen = function() {
         if ((document.fullScreenElement && document.fullScreenElement) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
             if (document.documentElement.requestFullScreen) {
                 document.documentElement.requestFullScreen();
@@ -151,6 +141,7 @@ function WebHotelManagerInterface() {
         }
     };
 }
+
 
 function WebPageArticleInterface(main_page) {
     this.main_page = main_page;
@@ -697,27 +688,10 @@ function WebPageIndexInterface(main_page) {
 
 function WebPageHomeInterface(main_page) {
     this.main_page = main_page;
-    this.article_template = [
-        '<div class="article-container" style="display: none;">\n' +
-        '    <a href="/article/{article.id}-{article.slug}" class="article-content" style="background-image: url({article.banner});">\n' +
-        '        <div class="article-header">\n' +
-        '            <div class="article-category">{article.category}</div>\n' +
-        '            <div class="article-separation" style="background-color: {article.color};"></div>\n' +
-        '            <div class="article-title title" data-id="{article.id}">{article.title}</div>\n' +
-        '            <div class="article-title title-sub" data-id="{article.id}" style="display: none;">{article.title}</div>\n' +
-        '        </div>\n' +
-        '    </a>\n' +
-        '</div>'
-    ].join("");
-    this.current_page = 1;
-
     /*
      * Generic function
      * */
     this.init = function () {
-        var self = this;
-        var page_container = this.main_page.get_page_container();
-
         let slideIndex = 1;
         let slides = document.getElementsByClassName("carousel__item");
         let dots = document.getElementsByClassName("carousel__bullets-link");
@@ -725,67 +699,69 @@ function WebPageHomeInterface(main_page) {
         let before = $('.carousel_before');
         let after = $('.carousel_after');
 
-        let nextSlide = () => {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-                dots[i].classList.remove('active');
+        if(carousel){
+            let nextSlide = () => {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                    dots[i].classList.remove('active');
+                }
+
+                if (slideIndex >= slides.length) {
+                    slideIndex = 1
+                } else {
+                    slideIndex++;
+                }
+
+                slides[slideIndex - 1].classList.add('active');
+                dots[slideIndex - 1].classList.add('active');
+
+                timer = setTimeout(nextSlide, 4000);
+            }
+            let timer = setTimeout(nextSlide, 4000);
+
+            before.on('click', () => {
+                clearTimeout(timer);
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                    dots[i].classList.remove('active');
+                }
+
+                if (slideIndex === 1) {
+                    slideIndex = slides.length;
+                } else {
+                    slideIndex--;
+                }
+
+                slides[slideIndex - 1].classList.add('active');
+                dots[slideIndex - 1].classList.add('active');
+                timer = setTimeout(nextSlide, 4000);
+            })
+
+            after.on('click', () => {
+                clearTimeout(timer);
+                nextSlide();
+            })
+
+            $('.carousel__bullets-link').on('click', (e) => {
+                clearTimeout(timer);
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                    dots[i].classList.remove('active');
+                }
+
+                slideIndex = e.target.innerHTML + 1
+
+                slides[e.target.innerHTML].classList.add('active');
+                dots[e.target.innerHTML].classList.add('active');
+            })
+
+            carousel.onmouseover = (e) => {
+                clearTimeout(timer);
             }
 
-            if (slideIndex >= slides.length) {
-                slideIndex = 1
-            }else{
-                slideIndex++;
+            carousel.onmouseleave = (e) => {
+                timer = setTimeout(nextSlide, 4000);
             }
-
-            slides[slideIndex - 1].classList.add('active');
-            dots[slideIndex - 1].classList.add('active');
-
-            timer = setTimeout(nextSlide, 4000);
-        }
-        let timer = setTimeout(nextSlide, 4000);
-
-        before.on('click', () => {
-            clearTimeout(timer);
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-                dots[i].classList.remove('active');
-            }
-
-            if(slideIndex === 1){
-                slideIndex = slides.length;
-            }else{
-                slideIndex--;
-            }
-
-            slides[slideIndex - 1].classList.add('active');
-            dots[slideIndex - 1].classList.add('active');
-            timer = setTimeout(nextSlide, 4000);
-        })
-
-        after.on('click', () => {
-            clearTimeout(timer);
-            nextSlide();
-        })
-
-        $('.carousel__bullets-link').on('click', (e) => {
-            clearTimeout(timer);
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-                dots[i].classList.remove('active');
-            }
-
-            slideIndex = e.target.innerHTML + 1
-
-            slides[e.target.innerHTML].classList.add('active');
-            dots[e.target.innerHTML].classList.add('active');
-        })
-
-        carousel.onmouseover = (e) => {
-            clearTimeout(timer);
-        }
-
-        carousel.onmouseleave = (e) => {
-            timer = setTimeout(nextSlide, 4000);
         }
 
         $("#copyReferral").click(function () {

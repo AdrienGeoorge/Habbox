@@ -250,7 +250,7 @@ function WebPagesManagerInterface() {
         }
 
         if (this.current_page_url.match(/^hotel/) && User.is_logged) {
-            Web.hotel_manager.open_hotel(this.current_page_url);
+            Web.hotel_manager.open_hotel();
         }
 
         History.Adapter.bind(window, "statechange", function () {
@@ -384,7 +384,7 @@ function WebPagesManagerInterface() {
                 self.push(url, result.title, false);
             });
         } else if (User.is_logged) {
-            Web.hotel_manager.open_hotel(url.replace("hotel?", "").replace("hotel", ""));
+            Web.hotel_manager.open_hotel();
             self.push(url, "Hotel - " + Site.name, false);
         }
     };
