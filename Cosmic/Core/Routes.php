@@ -123,7 +123,7 @@ class Routes extends Router
                 parent::get('/disconnect', 'Home\Lost@index')->setName('index.home');
 
                 parent::get('/hotel', 'Client\Client@hotel');
-//                parent::get('/client', 'Client\Client@client');
+                parent::get('/client', 'Client\Client@client');
 
                 parent::get('/logout', 'Home\Login@logout');
                 parent::get('/settings', 'Settings\Preferences@index');

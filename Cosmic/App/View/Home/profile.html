@@ -166,7 +166,7 @@
                 <div class="profile-badges">
                     {% if data.player.friends %}
                     {% for row in data.player.friends %}
-                    <a href="/profile/{{row.username}}" target="_self" class="profile-badge tooltip">
+                    <a href="/profile/{{row.username}}" class="profile-badge tooltip">
                         <img src="{{site.fpath}}/avatarimage?figure={{row.look}}&head_direction=3&headonly=1&size=m"
                              alt="" class="pixelated" style="top: 83%;">
                         <span class="text">{{row.username}}</span>

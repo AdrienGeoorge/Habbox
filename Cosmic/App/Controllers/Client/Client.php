@@ -27,6 +27,12 @@ class Client
 
     public function client()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }else{
+            redirect('/hotel');
+        }
+
         $this->data = new stdClass();
     
         $reader = new Reader(__DIR__. '/../../' .Config::vpnLocation);
@@ -84,6 +90,10 @@ class Client
 
     public function hotel()
     {
+        if(!isset(request()->player->id)) {
+            redirect('/');
+        }
+
         View::renderTemplate('base.html', [
             'title' => Locale::get('core/title/hotel'),
             'page'  => 'home'

@@ -169,9 +169,15 @@
         </div>
     </div>
     <div class="habbox-logo">
+        {% if player %}
+        <a href="/home">
+            <img src="/assets/images/habbox.gif" alt="Habbox Logo" width="100%">
+        </a>
+        {% else %}
         <a href="/" target="_self">
             <img src="/assets/images/habbox.gif" alt="Habbox Logo" width="100%">
         </a>
+        {% endif %}
     </div>
     {% if player %}
     <a href="/profile/{{player.username}}">
