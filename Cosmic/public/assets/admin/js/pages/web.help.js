@@ -37,7 +37,7 @@ var help = function() {
                 overlayColor: "#000000",
                 type: "v2",
                 state: "primary",
-                message: "Processing..."
+                message: "Traitement en cours..."
             });
 
             setTimeout(function() {

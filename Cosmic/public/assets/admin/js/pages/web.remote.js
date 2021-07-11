@@ -28,7 +28,7 @@ var remote = function() {
                 overlayColor: "#000000",
                 type: "v2",
                 state: "primary",
-                message: "Processing..."
+                message: "Traitement en cours..."
             }), setTimeout(function() {
                 KTApp.unblockPage()
             }, 2e3)
@@ -76,7 +76,7 @@ var remote = function() {
                    }
                }, {
                    field: "ip_address",
-                   title: "IP Adress",
+                   title: "Adresse IP",
                    width: 250,
                    template: function(data) {
                         if(jsonObj.authorization) {
@@ -171,7 +171,7 @@ var remote = function() {
                         width: 75
                     }, {
                         field: "username",
-                        title: "Username",
+                        title: "Pseudo",
                         width: 100,
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.username + '">' + data.username +  '</a>';
@@ -182,11 +182,11 @@ var remote = function() {
                         width: 85
                     }, {
                         field: "value",
-                        title: "Data",
+                        title: "Données",
                         width: 350
                     }, {
                         field: "target",
-                        title: "Target",
+                        title: "Cible",
                         width: 100,
                         template: function(data) {
                             if(data.target !== null)
@@ -234,7 +234,7 @@ var remote = function() {
                        sortable: "desc"
                    }, {
                        field: "username",
-                       title: "Username",
+                       title: "Pseudo",
                        width: 200,
                        template: function(data) {
                            return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.username + '">' + data.username + '</a></span>';
@@ -248,7 +248,7 @@ var remote = function() {
                        }
                    }, {
                        field: "last_login",
-                       title: "Last visit",
+                       title: "Dernière visite",
                        width: 175
                    }]
                 }), $("#kt_datatable_reload_clones").on("click", function() {
@@ -288,11 +288,11 @@ var remote = function() {
                        sortable: "desc"
                    }, {
                        field: "new_name",
-                       title: "New name",
+                       title: "Nouveau",
                        width: 200
                    }, {
                        field: "old_name",
-                       title: "Old name",
+                       title: "Ancien",
                        width: 250
                    }, {
                        field: "timestamp",
@@ -333,14 +333,14 @@ var remote = function() {
                    },
                    columns: [{
                        field: "user_one",
-                       title: "From / To",
+                       title: "De / A",
                        width: 120,
                        template: function(data) {
                            return '<span class="kt-font">' + data.user_one_id.username + ' / ' + data.user_two_id.username + '</span>';
                        }
                    }, {
                        field: "user_one_items",
-                       title: "Items 1",
+                       title: "Item 1",
                        width: 250,
                        template: function(data, i) {
                             var jsonObj = {};
@@ -355,7 +355,7 @@ var remote = function() {
                        }
                    }, {
                        field: "user_two_items",
-                       title: "Items 2",
+                       title: "Item 2",
                        template: function(data, i) {
                             var jsonObj = {};
                          
@@ -415,21 +415,21 @@ var remote = function() {
                        }
                    }, {
                        field: "new_mail",
-                       title: "New mail",
+                       title: "Nouveau",
                        width: 220,
                        template: function(data) {
                            return '<span class="kt-font">' + data.new_mail + '</span>';
                        }
                    }, {
                        field: "old_mail",
-                       title: "Old mail",
+                       title: "Ancien",
                        width: 220,
                        template: function(data) {
                            return '<span class="kt-font">' + data.old_mail + '</span>';
                        }
                    }, {
                        field: "ip_address",
-                       title: "IP Adress",
+                       title: "Adresse IP",
                        width: 120,
                        template: function(data) {
                            return '<span class="kt-font">' + data.ip_address + '</span>';
@@ -482,7 +482,7 @@ var remote = function() {
                        }
                    }, {
                        field: "name",
-                       title: "Name",
+                       title: "Nom",
                        width: 200,
                        // callback function support for column rendering
                        template: function(data) {
@@ -532,14 +532,14 @@ var remote = function() {
                         sortable: "desc"
                     }, {
                         field: "user_staff_id",
-                        title: "Banned by",
+                        title: "Banni par",
                         width: 100,
                            template: function(data) {
                                return '<span class="kt-font">' + data.user_staff_id.username + '</span>';
                            }
                     }, {
                         field: "ban_reason",
-                        title: "Reason",
+                        title: "Raison",
                         width: 350
                     }, {
                         field: "ban_expire",

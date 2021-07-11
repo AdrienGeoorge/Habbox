@@ -47,7 +47,7 @@ class Remote
 
         $this->data->user->ip_current   = Helper::convertIp($this->user->ip_current);
         $this->data->user->ip_register  = Helper::convertIp($this->user->ip_register);
-        $this->data->user->last_login   = $this->user->online ? 'Online' : date("d-m-Y H:i:s", $this->user->last_login);
+        $this->data->user->last_login   = $this->user->online ? 'En ligne' : date("d-m-Y H:i:s", $this->user->last_login);
 
         $this->data->user->id           = $this->user->id;
         $this->data->user->username     = $this->user->username;
@@ -316,7 +316,7 @@ class Remote
         foreach ($this->data->duplicateUsers as $row) {
             $row->iplast = Helper::convertIp($row->ip_current);
             $row->ipreg = Helper::convertIp($row->ip_register);
-            $row->last_login = $row->online ? 'Online' : date("d-m-Y H:i:s", $row->last_login);
+            $row->last_login = $row->online ? 'En ligne' : date("d-m-Y H:i:s", $row->last_login);
         }
     }
 

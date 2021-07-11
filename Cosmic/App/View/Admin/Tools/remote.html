@@ -16,7 +16,7 @@
          <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                <h3 class="kt-portlet__head-title">
-                  User Info
+                  Informations de l'utilisateur
                </h3>
             </div>
          </div>
@@ -24,7 +24,7 @@
          <form class="kt-form" method="post" action="remote/change">
             <div class="kt-portlet__body">
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Username</label>
+                  <label for="example-text-input" class="col-3 col-form-label">Pseudo</label>
                   <div class="col-9">
                      <input type="text" class="form-control" name="username" value="{{data.user.username}}" disabled>
                      <input type="hidden" name="user_id" value="{{data.user.id}}" id="user_id" data-id="{{data.user.id}}">
@@ -74,25 +74,25 @@
                {% endif %}
 
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Last/Reg IP</label>
+                  <label for="example-text-input" class="col-3 col-form-label">Dernière IP / IP régulière</label>
                   <div class="col-9">
                      <input type="text" class="form-control" value="{{data.user.ip_current}} / {{data.user.ip_register}}" disabled>
                   </div>
                </div>
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Last Visit</label>
+                  <label for="example-text-input" class="col-3 col-form-label">Dernière visite</label>
                   <div class="col-9">
                      <input type="text" class="form-control" value="{{data.user.last_login}}" disabled>
                   </div>
                </div>
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Motto</label>
+                  <label for="example-text-input" class="col-3 col-form-label">Mission</label>
                   <div class="col-9">
                      <input type="text" class="form-control" name="motto" value="{{data.user.motto}}">
                   </div>
                </div>
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Credits</label>
+                  <label for="example-text-input" class="col-3 col-form-label">Crédits</label>
                   <div class="col-9">
                      <input type="number" class="form-control" value="{{data.user.credits}}" name="credits" {{disabled}}>
                   </div>
@@ -108,18 +108,14 @@
 						 {% endif %}
 	              {% endfor %}
 	               </div>
-            </div>
-            {% if 'housekeeping_ranks' in permissions or 'housekeeping_ranks_extra' in permissions or 'housekeeping_change_email' in permissions %}
-            <div class="kt-portlet__foot kt-portlet__foot--solid">
-               <div class="kt-form__actions">
-                  <div class="row">
-                     <div class="col-3">
-                        <button type="submit" class="btn btn-primary ajaxLoad">Save</button>
-                     </div>
+               {% if 'housekeeping_ranks' in permissions or 'housekeeping_ranks_extra' in permissions or 'housekeeping_change_email' in permissions %}
+               <div class="text-center">
+                  <div class="kt-form__actions">
+                     <button type="submit" class="btn green ajaxLoad">Sauvegarder</button>
                   </div>
                </div>
+               {% endif %}
             </div>
-            {% endif %}
          </form>
       </div>
    </div>
@@ -132,24 +128,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Messenger Logs 
+                  Historiques des messages privées
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_messengerlogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_messengerlogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_messengerlogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_messengerlogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -176,19 +172,19 @@
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_compare">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_compare">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_compare">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_compare">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -210,24 +206,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Clones
+                  Doubles comptes
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_clones">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_clones">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_clones">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_clones">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -253,19 +249,19 @@
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_stafflogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_stafflogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_stafflogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_stafflogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -290,24 +286,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Username logs
+                  Changement de pseudo
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_userlogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_userlogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_userlogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_userlogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -334,19 +330,19 @@
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_chatlogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_chatlogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_chatlogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_chatlogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -368,24 +364,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Trade logs
+                  Historique des échanges
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_tradelogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_tradelogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_tradelogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_tradelogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -412,19 +408,19 @@
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_maillogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_maillogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_maillogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_maillogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -446,24 +442,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Rooms
+                  Apparts
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_roomlogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_roomlogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_roomlogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_roomlogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -484,24 +480,24 @@
                <i class="kt-font-brand flaticon2-user"></i>
                </span>
                <h3 class="kt-portlet__head-title">
-                  Ban logs
+                  Historique des bans
                </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                <div class="kt-portlet__head-wrapper">
-                  <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                  <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                      <div class="kt-input-icon kt-input-icon--left">
-                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch_banlogs">
+                        <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_banlogs">
                         <span class="kt-input-icon__icon kt-input-icon__icon--left">
                         <span><i class="la la-search"></i></span>
                         </span>
                      </div>
                   </div>
                   &nbsp;
-                  <div class="col-md-4 kt-tablet-and-mobile">
+                  <div class="col-md-5 kt-tablet-and-mobile">
                      <div class="kt-form__group kt-form__group--inline">
                         <div class="kt-form__label">
-                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_banlogs">Reload</button>
+                           <button class="btn btn-secondary" type="button" id="kt_datatable_reload_banlogs">Recharger</button>
                         </div>
                      </div>
                   </div>
@@ -528,7 +524,7 @@
                   <div id="datatableAccounts"></div>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-clean btn-bold btn-upper btn-font-sm" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-clean btn-bold btn-upper btn-font-sm" data-dismiss="modal">Fermer</button>
               </div>
           </div>
       </div>

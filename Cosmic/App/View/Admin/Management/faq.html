@@ -15,29 +15,29 @@
                         </span>
 
                         <h3 class="kt-portlet__head-title titleFaq">
-                            Edit FAQ
+                            Modifier les FAQ
                         </h3>
                     </div>
                     <div class="kt-subheader__wrapper kt-margin-t-10">
                        <a id="goBack" class="btn btn-clean btn-icon-sm" style="">
-                       <i class="la la-long-arrow-left"></i>Back
+                       <i class="la la-long-arrow-left"></i>Retour
                        </a>
                     </div>
                 </div>
 
                 <div class="kt-portlet__body">
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Titre</label>
                         <input type="text" class="form-control" name="title">
                     </div>
 
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>Catégorie</label>
                         <select class="form-control" name="category" id="category"></select>
                     </div>
 
                     <div class="form-group">
-                        <label>Story</label>
+                        <label>Texte</label>
                         <textarea name="story" id="story" style="font-size: 7px;"></textarea>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
 
                         <div class="col-lg-6 kt-align-right">
                             <input type="hidden" name="faqId">
-                            <button type="submit" class="btn btn-brand addFaq">Edit FAQ</button>
-                            <span class="kt-margin-left-10">or <a id="goBack" class="kt-link kt-font-bold">Cancel</a></span>
+                            <button type="submit" class="btn btn-brand addFaq">Modifier les FAQ</button>
+                            <span class="kt-margin-left-10">ou <a id="goBack" class="kt-link kt-font-bold">Retour</a></span>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     </span>
 
                     <h3 class="kt-portlet__head-title">
-                        Category Management
+                        Gestion des catégories
                     </h3>
                 </div>
 
@@ -77,7 +77,7 @@
                         <div class="kt-input-icon kt-input-icon--left">
                             <a id="goBackCat" class="btn btn-clean btn-icon-sm">
                                 <i class="la la-long-arrow-left"></i>
-                                Back
+                                Retour
                             </a>
                         </div>
 
@@ -95,7 +95,7 @@
                                     <li class="kt-nav__item">
                                         <a data-toggle="modal" data-target="#addCategoryModal" class="kt-nav__link">
                                             <i class="kt-nav__link-icon flaticon2-plus"></i>
-                                            <span class="kt-nav__link-text">Add Category</span>
+                                            <span class="kt-nav__link-text">Ajouter une catégorie</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -120,14 +120,14 @@
                     </span>
 
                     <h3 class="kt-portlet__head-title">
-                        FAQ Management
+                        Gestion des FAQ
                     </h3>
                 </div>
 
                 <div class="kt-portlet__head-toolbar">
                     <div class="kt-portlet__head-wrapper">
                         <div class="kt-input-icon kt-input-icon--left">
-                            <input type="text" class="form-control" style="width: 200px" placeholder="Search..." id="faq_search">
+                            <input type="text" class="form-control" style="width: 200px" placeholder="Rechercher..." id="faq_search">
                             <span class="kt-input-icon__icon kt-input-icon__icon--left">
                                 <span><i class="la la-search"></i></span>
                             </span>
@@ -147,14 +147,14 @@
                                     <li class="kt-nav__item">
                                         <a class="kt-nav__link">
                                             <i class="kt-nav__link-icon flaticon2-plus"></i>
-                                            <span class="kt-nav__link-text addFaqPage">Add FAQ</span>
+                                            <span class="kt-nav__link-text addFaqPage">Ajouter une FAQ</span>
                                         </a>
                                     </li>
 
                                     <li class="kt-nav__item">
                                         <a class="kt-nav__link">
                                             <i class="kt-nav__link-icon flaticon2-open-text-book"></i>
-                                            <span class="kt-nav__link-text getCategory">Categories</span>
+                                            <span class="kt-nav__link-text getCategory">Catégories</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -175,7 +175,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addCategoryModalLabel">Add Category</h5>
+                <h5 class="modal-title" id="addCategoryModalLabel">Ajouter une catégorie</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -184,15 +184,15 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="categoryName" class="form-control-label">Name:</label>
+                        <label for="categoryName" class="form-control-label">Nom:</label>
                         <input type="text" class="form-control" name="categoryName">
                     </div>
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary addCategory">Add</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-primary addCategory">Ajouter</button>
             </div>
         </div>
     </div>
@@ -202,7 +202,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editCategoryModalLabel">Edit Category</h5>
+                <h5 class="modal-title" id="editCategoryModalLabel">Modifier </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -211,15 +211,15 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="categoryName" class="form-control-label">Name:</label>
+                        <label for="categoryName" class="form-control-label">Nom:</label>
                         <input type="text" class="form-control" name="editCategoryName">
                     </div>
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary editCategory">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary editCategory">Sauvegarder</button>
             </div>
         </div>
     </div>

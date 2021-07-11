@@ -92,7 +92,7 @@ var forums = function() {
                     forums.forumManage(id);
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function (e) {
-                        $(".modal-title").html("Delete " + title);
+                        $(".modal-title").html("Supprimer " + title);
                         $(".btn-ok").unbind().click(function () {
                             forums.deleteForum(id);
                         });
@@ -278,7 +278,7 @@ var forums = function() {
                     forums.categoryManage(id);
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function (e) {
-                        $(".modal-title").html("Delete " + title);
+                        $(".modal-title").html("Supprimer " + title);
                         $(".btn-ok").unbind().click(function () {
                             forums.deleteCategory(id);
                         });

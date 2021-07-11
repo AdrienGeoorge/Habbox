@@ -97,7 +97,7 @@ var news = function() {
                     news.newsRequest(id);
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Delete " + title);
+                    $(".modal-title").html("Supprimer " + title);
                   
                     $(".btn-ok").click(function () {
                         news.deleteNews(id);

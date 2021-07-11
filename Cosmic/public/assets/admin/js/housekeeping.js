@@ -13,7 +13,7 @@ $('#uploadModal').on('show.bs.modal', function (event) {
         $("#path").attr("value", path)
 
         modal.find('.modal-title').text('Upload forum image')
-        modal.find('.modal-footer').html('<a onclick="uploadFile(' + recipient + ', \'' + path + '\', \'' + route + '\');" class=\"btn btn-success\">Save</a>')
+        modal.find('.modal-footer').html('<a onclick="uploadFile(' + recipient + ', \'' + path + '\', \'' + route + '\');" class=\"btn light\">Sauvegarder</a>')
     }
 });
 
@@ -25,8 +25,8 @@ $('#deletePermissionModal').on('show.bs.modal', function (event) {
     var modal = $(this)
 
     if(id != null) {
-        modal.find('.modal-title').text('Action to ' + value)
-        modal.find('.modal-footer').html('<a href=\"/housekeeping/manage/role/' + role + '/users\" class=\"btn btn-success\">See all users</a><a href=\"/housekeeping/manage/permissions/' + id + '/rank/' + role + '/delete\" class=\"btn btn-danger\">Delete</a>');
+        modal.find('.modal-title').text('Actions pour ' + value)
+        modal.find('.modal-footer').html('<a href=\"/housekeeping/manage/role/' + role + '/users\" class=\"btn light\">Voir tous les utilisateurs</a><a href=\"/housekeeping/manage/permissions/' + id + '/rank/' + role + '/delete\" class=\"btn light\">Supprimer</a>');
         modal.find('.modal-body input').val(id)
     }
 
@@ -60,18 +60,18 @@ $('#reportModal').on('show.bs.modal', function (event) {
           $('.showimagediv').html(img).show();
         } else {
             if(type == "photo") {
-                modal.find('.modal-title').text('Action to ' + recipient)
+                modal.find('.modal-title').text('Actions pour ' + recipient)
                 if(status == "open") {
-                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/photo/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-danger\"\">Delete Photo</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
+                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/photo/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn light\"\">Supprimer la photo</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
                 }  
             } else {
-                modal.find('.modal-title').text('Action to ' + recipient)
+                modal.find('.modal-title').text('Actions pour ' + recipient)
                 if(status == "open") {
-                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/hide/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-danger\"\">Disable Reaction</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
+                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/hide/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn light\"\">Désactiver la réaction</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
                 } else if(status == "hidden") {
-                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/enable/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-danger\"\">Enable Reaction</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
+                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/enable/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn light\"\">Activer la réaction</a><a href=\"/housekeeping/reports/close/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Close report</a>')
                 } else if(status == "closed") {
-                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/open/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn btn-secondary\">Open report</a>')
+                    modal.find('.modal-footer').html('<a href=\"/housekeeping/reports/open/' + id + '/type/' + type + '/itemid/' + item + '\" class=\"btn light\">Rapport ouvert</a>')
                 }
                 modal.find('.modal-body input').val(recipient)        
             }
@@ -85,8 +85,8 @@ $('#actionModal').on('show.bs.modal', function (event) {
     var modal = $(this)
 
     if(recipient != null) {
-        modal.find('.modal-title').text('Action to ' + recipient)
-        modal.find('.modal-footer').html('<a href=\"#\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn btn-success\" data-id=\"' + recipient + '\">Alert</a><a href=\"#\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Ban</a><a href=\"/housekeeping/remote/user/' + recipient + '\" class=\"btn btn-secondary\">Manage User</a>')
+        modal.find('.modal-title').text('Actions pour ' + recipient)
+        modal.find('.modal-footer').html('<a href=\"#\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn yellow\" data-id=\"' + recipient + '\">Alerter</a><a href=\"#\" class=\"btn red\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Bannir</a><a href=\"/housekeeping/remote/user/' + recipient + '\" class=\"btn light\">Gérer l\'utilisateur</a>')
         modal.find('.modal-body input').val(recipient)
     }
 });
@@ -98,9 +98,9 @@ $('#actionModalNamechange').on('show.bs.modal', function (event) {
     var modal = $(this)
 
     if(recipient != null) {
-        modal.find('.modal-title').text('Action to ' + recipient)
+        modal.find('.modal-title').text('Actions pour ' + recipient)
         modal.find('.modal-body').html(bodytext)
-        modal.find('.modal-footer').html('<a href=\"#\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn btn-success\" data-id=\"' + recipient + '\">Alert</a><a href=\"#\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Ban</a><a href=\"/housekeeping/remote/user/' + recipient + '\" class=\"btn btn-secondary\">Manage User</a>')
+        modal.find('.modal-footer').html('<a href=\"#\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn yellow\" data-id=\"' + recipient + '\">Alerter</a><a href=\"#\" class=\"btn red\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Bannir</a><a href=\"/housekeeping/remote/user/' + recipient + '\" class=\"btn light\">Gérer l\'utilisateur</a>')
         modal.find('.modal-body input').val(recipient)
     }
 });
@@ -112,8 +112,8 @@ $('#unbanModal').on('show.bs.modal', function (event) {
     var modal = $(this)
 
     if(recipient != null) {
-        modal.find('.modal-title').text('Are you sure to unban ' + player + '?')
-        modal.find('.modal-footer').html('<a href=\"/housekeeping/remote/user/' + player + '\" class=\"btn btn-secondary\">Manage User</a> <a href=\"/housekeeping/remote/user/' + recipient + '/unban"\" class=\"btn btn-success\">Unban</a>')
+        modal.find('.modal-title').text('Êtes-vous sûr de déban ' + player + '?')
+        modal.find('.modal-footer').html('<a href=\"/housekeeping/remote/user/' + player + '\" class=\"btn light\">Gérer l\'utilisateur</a> <a href=\"/housekeeping/remote/user/' + recipient + '/unban"\" class=\"btn light\">Débannir</a>')
         modal.find('.modal-body input').val(recipient)
     }
 });

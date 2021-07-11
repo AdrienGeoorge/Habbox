@@ -227,7 +227,7 @@ var value = function() {
             $('#categoryEdit').modal('hide');
           
             $('#confirm-delete').on('show.bs.modal', function (e) {
-                $("#confirm-delete .modal-title").html("Delete " + name);
+                $("#confirm-delete .modal-title").html("Supprimer " + name);
                 $(".btn-ok").unbind().click(function () {
                     self.ajax_manager.post("/housekeeping/api/value/deleteCategory", {post: id}, function (result) {
                         if(result.status == "success"){
@@ -243,7 +243,7 @@ var value = function() {
             this.ajax_manager = new WebPostInterface.init();
           
             $('#confirm-delete').on('show.bs.modal', function (e) {
-                $("#confirm-delete .modal-title").html("Delete " + title);
+                $("#confirm-delete .modal-title").html("Supprimer " + title);
                 $(".btn-ok").unbind().click(function () {
                     self.ajax_manager.post("/housekeeping/api/value/removeValue", {post: id}, function (result) {
                         if(result.status == "success"){
@@ -255,8 +255,8 @@ var value = function() {
         },
       
         addRareValue: function() {
-            $("#viewRareValue .modal-title").html("Add Rare Value");
-            $("#viewRareValue .submitRareValue").html("Add rare");
+            $("#viewRareValue .modal-title").html("Ajouter la valeur du rare");
+            $("#viewRareValue .submitRareValue").html("Ajouter rare");
             $('#rareValueManage').trigger("reset"); 
         },
       

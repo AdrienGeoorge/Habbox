@@ -64,16 +64,16 @@ var wordFilter = function() {
                },
                columns: [{
                    field: "key",
-                   title: "Word"
+                   title: "Mot"
                }, {
                    field: "hide",
-                   title: "Hidden"
+                   title: "Caché"
                }, {
                    field: "report",
-                   title: "Send report",
+                   title: "Envoyer un rapport",
                }, {
                    field: "mute",
-                   title: "Give mute",
+                   title: "Mute",
                }, {
                   field: "Actions",
                   title: "Actions",
@@ -83,7 +83,7 @@ var wordFilter = function() {
                   textAlign: "left",
                   autoHide: !1,
                   template: function(data) {
-                      return '<a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm fitlerDelete" data-toggle="modal" data-target="#confirm-delete" title="Delete"><i class="flaticon2-delete" data-value="' + data.word + '"></i></a>'
+                      return '<a href="#" class="btn light plain btn-sm btn-clean btn-icon fitlerDelete" data-toggle="modal" data-target="#confirm-delete" title="Supprimer"><i class="flaticon2-delete" data-value="' + data.word + '"></i></a>'
                   }
               }]
             }), $("#kt_datatable_wordfilter_reload").on("click", function() {
@@ -98,7 +98,7 @@ var wordFilter = function() {
                 var word = $(e.target).closest('.kt-datatable__row').find('[data-field="key"]').text();
 
                 $('#confirm-delete').on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Delete Word");
+                    $(".modal-title").html("Supprimer le mot");
                     $(".btn-ok").unbind().click(function () {
                         wordFilter.deleteWord(word);
                     });
@@ -114,7 +114,7 @@ jQuery(document).ready(function() {
     wordFilter.loadwordFilter();
   
     $('.removeWord').select2({
-        placeholder: 'Select a word',
+        placeholder: 'Sélectionnez un mot',
         width: '80%',
         ajax: {
             url: '/housekeeping/search/get/wordfilter',

@@ -126,7 +126,7 @@ var permissions = function() {
             let rank_name = $(e.target).closest('.kt-datatable__row').find('[data-field="rank_name"]').text();
 
             $('#confirm-delete').on('show.bs.modal', function(e) {
-                $(".modal-title").html("Delete " + rank_name);
+                $(".modal-title").html("Supprimer " + rank_name);
 
                 $(".btn-ok").click(function() {
                     var self = this;
@@ -234,7 +234,7 @@ var permissions = function() {
           
             //load permissions that they didnt have
             $('.targetPermission').select2({
-                placeholder: 'Select a permission',
+                placeholder: 'Sélectionnez une permission',
                 width: '85%',
                 ajax: {
                     url: '/housekeeping/search/get/permission',
@@ -353,7 +353,7 @@ var permissions = function() {
                 let id = $(e.target).closest('.kt-datatable__row').find('[data-field="idp"]').text();
 
                 $('#confirm-delete').on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Delete permission");
+                    $(".modal-title").html("Supprimer permission");
                     $(".btn-ok").unbind().click(function () {
                         permissions.deletePermission(id);
                     });
@@ -510,7 +510,7 @@ var permissions = function() {
                         $("#serverPermissions").append(overview_template);
                     }
                   
-                    $("#rankName").html($("[name=rank_name]").val() + ' has almost been created!');
+                    $("#rankName").html($("[name=rank_name]").val() + ' a presque été créé!');
                  
                 }
                 KTUtil.scrollTop()
@@ -565,7 +565,7 @@ jQuery(document).ready(function() {
   permissions.wizard();
   
   $('.targetRole').select2({
-      placeholder: 'Select a role',
+      placeholder: 'Sélectionnez un rank',
       width: '85%',
       ajax: {
           url: '/housekeeping/search/get/role',

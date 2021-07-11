@@ -182,11 +182,9 @@ select.selectpicker {
   padding-left: inherit;
   height: 100%;
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
-.bootstrap-select .dropdown-toggle .filter-option-inner {
-  padding-right: inherit;
-}
+
 .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
   overflow: hidden;
 }

@@ -10,7 +10,7 @@ var KTDashboard = function() {
             var loading = new KTDialog({
                 'type': 'loader',
                 'placement': 'top center',
-                'message': 'Loading ...'
+                'message': 'Chargement...'
             });
             loading.show();
 
@@ -25,7 +25,7 @@ var select2Interface = function() {
     return {
         init: function() {
             $('.remoteControl').select2({
-                placeholder: 'Select a user',
+                placeholder: 'Sélectionnez un utilisateur',
                 width: "100%",
                 ajax: {
                     url: '/housekeeping/search/get/playername',
@@ -45,7 +45,7 @@ var select2Interface = function() {
                 }
             });
             $('.chatControl').select2({
-                placeholder: 'Select a user',
+                placeholder: 'Sélectionnez un utilisateur',
                 width: "85%",
                 ajax: {
                     url: '/housekeeping/search/get/playername',
@@ -75,7 +75,7 @@ var blockPageInterfaceSubmit = function() {
                 overlayColor: "#000000",
                 type: "v2",
                 state: "primary",
-                message: "Processing..."
+                message: "Traitement en cours..."
             }), setTimeout(function() {
                 KTApp.unblockPage()
             }, 2e3)
@@ -91,7 +91,7 @@ var blockPageInterface = function() {
                     overlayColor: "#000000",
                     type: "v2",
                     state: "primary",
-                    message: "Processing..."
+                    message: "Traitement en cours..."
                 }), setTimeout(function() {
                     KTApp.unblockPage()
                 }, 2e3)
@@ -259,13 +259,13 @@ var showOnlinePlayers = function() {
                         }
                     }, {
                         field: "username",
-                        title: "Username",
+                        title: "Pseudo",
                         width: 250,
                         template: function(data, i) {
                             var output = '\
                                     <div class="kt-user-card-v2">\
                                         <div class="kt-user-card-v2__pic">\
-                                            <div class="kt-badge kt-badge--xl" style="background: #d8d8d8;"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/avatarimage?figure=' + data.look + '&headonly=1&gesture=&size=s" alt="image"></span></div>\
+                                            <div class="kt-badge kt-badge--xl"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/avatarimage?figure=' + data.look + '&headonly=1&gesture=&size=s" alt="image"></span></div>\
                                         </div>\
                                         <div class="kt-user-card-v2__details">\
                                             <a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.username + '">' + data.username + '</a>\
@@ -277,7 +277,8 @@ var showOnlinePlayers = function() {
                         }
                     }, {
                         field: "lastip",
-                        title: "Last / Reg IP",
+                        title: "\t\n" +
+                            "Dernière IP / IP régulière",
                         template: function(data) {
                             return '<span class="kt-font">' + data.ip_register + ' / ' + data.ip_current + '</span>';
                         }

@@ -5,24 +5,22 @@
 
 {% block body %}
 <div class="row">
-    <div class="col-xl-12 col-lg-12 order-lg-1 order-xl-1">
+    <div class="col-xl-6 col-lg-12 order-lg-1 order-xl-1">
         <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                    Search Rooms
+                    Recherche d'apparts
                     </h3>
                 </div>
             </div>
 
-            <div class="kt-portlet__body">
-                <div class="input-group">
-                    <select name="element" class="form-control roomControl"></select>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary searchRoom" type="submit">Go!</button>
-                    </div>
-                </div>
-            </div>
+           <div class="kt-portlet__body">
+              <div class="input-group">
+                 <select name="element" class="form-control roomControl"></select>
+                 <input type="submit" value="Go" class="btn light ml-2 h-100 searchRoom">
+              </div>
+           </div>
         </div>
     </div>
 </div>
@@ -36,24 +34,24 @@
               <i class="kt-font-brand flaticon2-user"></i>
               </span>
               <h3 class="kt-portlet__head-title">
-                 Popular Rooms
+                 Apparts populaires
               </h3>
            </div>
            <div class="kt-portlet__head-toolbar">
               <div class="kt-portlet__head-wrapper">
-                 <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                 <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                     <div class="kt-input-icon kt-input-icon--left">
-                       <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
+                       <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch">
                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
                        <span><i class="la la-search"></i></span>
                        </span>
                     </div>
                  </div>
                  &nbsp;
-                 <div class="col-md-4 kt-tablet-and-mobile">
+                 <div class="col-md-5 kt-tablet-and-mobile">
                     <div class="kt-form__group kt-form__group--inline">
                        <div class="kt-form__label">
-                          <button class="btn btn-secondary" type="button" id="kt_datatable_rooms_reload">Reload</button>
+                          <button class="btn btn-secondary" type="button" id="kt_datatable_rooms_reload">Recharger</button>
                        </div>
                     </div>
                  </div>
@@ -72,65 +70,58 @@
          <div class="kt-portlet__head">
             <div class="kt-portlet__head-label">
                <h3 class="kt-portlet__head-title">
-                 Room Info
+                 Informations sur l'appart
                </h3>
             </div>
             <div style="float: right; margin-top: 10px;">
-              <button type="button" class="btn btn-secondary goBack"><i class="fa fa-undo"></i> Back</button>
+              <button type="button" class="btn btn-secondary goBack"><i class="fa fa-undo"></i> Retour</button>
             </div>
          </div>
 
          <form class="kt-form" id="updateRoom" method="get">
             <div class="kt-portlet__body">
                <div class="form-group row">
-                  <label class="col-3 col-form-label">Room Name</label>
+                  <label class="col-3 col-form-label">Nom de l'appart</label>
                   <div class="col-9">
                      <input type="text" class="form-control" name="roomName">
                   </div>
                </div>
 
                <div class="form-group row">
-                  <label class="col-3 col-form-label">Room Description</label>
+                  <label class="col-3 col-form-label">Description de l'appart</label>
                   <div class="col-9">
                      <input type="text" class="form-control" name="roomDesc">
                   </div>
                </div>
 
                <div class="form-group row">
-                  <label class="col-3 col-form-label">Owner</label>
+                  <label class="col-3 col-form-label">Propriétaire</label>
                   <div class="col-9">
                      <input type="text" class="form-control" name="roomOwner" disabled>
                   </div>
                </div>
 
                <div class="form-group row">
-                  <label class="col-3 col-form-label">Access type</label>
+                  <label class="col-3 col-form-label">Type d'accès</label>
                   <div class="col-9">
                        <select class="form-control" name="accessType" required>
-                          <option value="open">Open</option>
-                          <option value="locked">Locked</option>
-                          <option value="password">Password</option>
+                          <option value="open">Ouvert</option>
+                          <option value="locked">Fermé</option>
+                          <option value="password">Mot de passe</option>
                           <option value="invisible">Invisible</option>
                       </select>
                   </div>
                </div>
 
                <div class="form-group row">
-                  <label class="col-3 col-form-label">Max users</label>
+                  <label class="col-3 col-form-label">Limite d'utilisateurs</label>
                   <div class="col-9">
                       <input class="form-control" type="number" name="maxUsers" required>
                   </div>
                </div>
-            </div>
-
-            <div class="kt-portlet__foot kt-portlet__foot--solid">
-               <div class="kt-form__actions">
-                  <div class="row">
-                     <div class="col-3">
-                        <input type="hidden" name="roomId">
-                        <button type="submit" class="btn btn-primary updateRoom">Save</button>
-                     </div>
-                  </div>
+               <div class="text-center">
+                  <input type="hidden" name="roomId">
+                  <button type="submit" class="btn green updateRoom">Sauvegarder</button>
                </div>
             </div>
          </form>
@@ -146,24 +137,24 @@
               <i class="kt-font-brand flaticon2-user"></i>
               </span>
               <h3 class="kt-portlet__head-title">
-                 Room Bans
+                 Bannissement d'apparts
               </h3>
            </div>
            <div class="kt-portlet__head-toolbar">
               <div class="kt-portlet__head-wrapper">
-                 <div class="col-md-8 kt-margin-b-20-tablet-and-mobile">
+                 <div class="col-md-7 kt-margin-b-20-tablet-and-mobile">
                     <div class="kt-input-icon kt-input-icon--left">
-                       <input type="text" class="form-control" placeholder="Search..." id="generalSearch_bans">
+                       <input type="text" class="form-control" placeholder="Rechercher..." id="generalSearch_bans">
                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
                        <span><i class="la la-search"></i></span>
                        </span>
                     </div>
                  </div>
                  &nbsp;
-                 <div class="col-md-4 kt-tablet-and-mobile">
+                 <div class="col-md-5 kt-tablet-and-mobile">
                     <div class="kt-form__group kt-form__group--inline">
                        <div class="kt-form__label">
-                          <button class="btn btn-secondary" type="button" id="kt_datatable_roombans_reload">Reload</button>
+                          <button class="btn btn-secondary" type="button" id="kt_datatable_roombans_reload">Recharger</button>
                        </div>
                     </div>
                  </div>

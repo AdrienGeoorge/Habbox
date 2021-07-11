@@ -93,7 +93,7 @@ var vpnControl = function() {
                 let id = $(e.target).closest('.kt-datatable__row').find('[data-field="id"]').text();
 
                 $('#confirm-delete').on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Delete Vpn");
+                    $(".modal-title").html("Supprimer VPN");
                     $(".btn-ok").unbind().click(function () {
                         vpnControl.deleteASN(id);
                     });

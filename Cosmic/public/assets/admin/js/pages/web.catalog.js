@@ -247,8 +247,8 @@ var catalog = function() {
             });
           
             $('#confirm-delete').on('show.bs.modal', function(e) {
-                $(".modal-title").html("Delete " + $("#parentLabel").text());
-                $(".btn-ok").html("Delete");
+                $(".modal-title").html("Supprimer " + $("#parentLabel").text());
+                $(".btn-ok").html("Supprimer");
 
                 $('#parentFirst').modal('hide');
                 $(".btn-ok").click(function () {

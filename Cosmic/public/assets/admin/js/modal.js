@@ -4,8 +4,8 @@ $('#actionModal').on('show.bs.modal', function (event) {
   var modal = $(this)
 
   if(recipient != null) {
-      modal.find('.modal-title').text('Action to ' + recipient)
-      modal.find('.modal-footer').html('<button type=\"button\" class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn btn-success\" data-id=\"' + recipient + '\">Alert</button><button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Ban</button><a href=\"/housekeeping/remote/user/view/' + recipient + '\" class=\"btn btn-secondary\">Manage User</a>')
+      modal.find('.modal-title').text('Actions pour ' + recipient)
+      modal.find('.modal-footer').html('<button type=\"button\" class=\"btn yellow\" data-toggle=\"modal\" data-target=\"#alertModal\" class=\"btn yellow\" data-id=\"' + recipient + '\">Alerter</button><button type=\"button\" class=\"btn red\" data-toggle=\"modal\" data-target=\"#banModal\" data-id=\"' + recipient + '\">Bannir</button><a href=\"/housekeeping/remote/user/view/' + recipient + '\" class=\"btn light\">Gérer l\'utilisateur</a>')
       modal.find('.modal-body input').val(recipient)
   }
 });

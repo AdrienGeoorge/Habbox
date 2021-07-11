@@ -11,10 +11,10 @@
                      </div>
                      <div class="kt-wizard-v2__nav-label">
                         <div class="kt-wizard-v2__nav-label-title">
-                           Manage user
+                           Gérer l'utilisateur
                         </div>
                         <div class="kt-wizard-v2__nav-label-desc">
-                           Search information from a user
+                           Rechercher des informations
                         </div>
                      </div>
                   </div>
@@ -26,10 +26,10 @@
                      </div>
                      <div class="kt-wizard-v2__nav-label">
                         <div class="kt-wizard-v2__nav-label-title">
-                           Reset user
+                           Réinitialiser l'utilisateur
                         </div>
                         <div class="kt-wizard-v2__nav-label-desc">
-                           Reset motto/relationships
+                           Réinitialiser la mission / le look
                         </div>
                      </div>
                   </div>
@@ -41,10 +41,10 @@
                      </div>
                      <div class="kt-wizard-v2__nav-label">
                         <div class="kt-wizard-v2__nav-label-title">
-                           Ban user
+                           Bannir l'utilisateur
                         </div>
                         <div class="kt-wizard-v2__nav-label-desc">
-                           Ban someone for misconduct
+                           Bannir un utilisateur de l'hôtel
                         </div>
                      </div>
                   </div>
@@ -56,10 +56,10 @@
                      </div>
                      <div class="kt-wizard-v2__nav-label">
                         <div class="kt-wizard-v2__nav-label-title">
-                           Alert user
+                           Alerter l'utilisateur
                         </div>
                         <div class="kt-wizard-v2__nav-label-desc">
-                           Give user an alert in hotel
+                           Envoyer une alerte sur l'hôtel
                         </div>
                      </div>
                   </div>
@@ -72,7 +72,7 @@
          <div class="kt-form" id="kt_form">
            
             <div class="kt-wizard-v2__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-               <div class="kt-heading kt-heading--md">See users information</div>
+               <div class="kt-heading kt-heading--md">Voir les informations de l'utilisateur</div>
                <div class="kt-form__section kt-form__section--first">
                   <form action="remote/manage">
                      <div class="kt-wizard-v2__form">
@@ -85,17 +85,17 @@
                         </div>
                         <div class="form-group">
                            <select name="type" class="form-control">
-                              <option value="" selected>All info</option>
-                              <option value="userinfo">User Info</option>
-                              <option value="chatlogs">Chat Logs</option>
-                              <option value="namelogs">Name Logs</option>
-                              <option value="tradelogs">Trade Logs</option>
-                              <option value="maillogs">Mail Logs</option>
-                              <option value="roomlogs">Rooms</option>
+                              <option value="" selected>Toutes les informations</option>
+                              <option value="userinfo">Informations de l'utilisateur</option>
+                              <option value="chatlogs">Historique des tchats</option>
+							  <option value="tradelogs">Historique des échanges</option>
+                              <option value="namelogs">Changement de pseudos</option>
+                              <option value="maillogs">Changement d'adresse e-mail</option>
+                              <option value="roomlogs">Apparts</option>
                            </select>
                         </div>
                         <div class="kt-form__actions">
-                            <button type="submit" class="btn btn-primary ajaxLoad">Submit</button>
+                            <button type="submit" class="btn light ajaxLoad">Soumettre</button>
                         </div>
                   </form>
                   </div>
@@ -103,7 +103,7 @@
             </div>
     
             <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-               <div class="kt-heading kt-heading--md">Reset user</div>
+               <div class="kt-heading kt-heading--md">Réinitialiser l'utilisateur</div>
                <div class="kt-form__section kt-form__section--first">
                   <form action="remote/reset">
                      <div class="kt-wizard-v2__form">
@@ -116,12 +116,12 @@
                         </div>
                         <div class="form-group">
                            <select name="type" class="form-control">
-                              <option value="1">Motto</option>
+                              <option value="1">Mission</option>
                               <option value="2">Look</option>
                            </select>
                         </div>
                        <div class="kt-form__actions">
-                          <button type="submit" class="btn btn-primary ajaxLoad">Submit</button>
+                          <button type="submit" class="btn light ajaxLoad">Soumettre</button>
                        </div>
                     </form>
                   </div>
@@ -129,7 +129,7 @@
             </div>
 
             <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-               <div class="kt-heading kt-heading--md">Ban User</div>
+               <div class="kt-heading kt-heading--md">Bannir l'utilisateur</div>
                <div class="kt-form__section kt-form__section--first">
                   <form action="remote/ban">
                      <div class="kt-wizard-v2__form">
@@ -156,12 +156,12 @@
                         </div>
                         <div class="form-group">
                            <select name="type" class="form-control" required>
-                              <option value="user">User</option>
+                              <option value="user">Utilisateur</option>
                               <option value="ip">IP</option>
                           </select>
                         </div>
                         <div class="kt-form__actions">
-						  <button type="submit" class="btn btn-primary ajaxLoad">Submit</button>
+						  <button type="submit" class="btn light ajaxLoad">Soumettre</button>
 					   </div>
 					</form>
                   </div>
@@ -169,7 +169,7 @@
             </div>
            
             <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-               <div class="kt-heading kt-heading--md">Alert User</div>
+               <div class="kt-heading kt-heading--md">Alerter l'utilisateur</div>
                <div class="kt-form__section kt-form__section--first">
                   <form action="remote/alert">
                      <div class="kt-wizard-v2__form">
@@ -189,13 +189,13 @@
                         </div>
                         <div class="form-group">
                             <select name="action" class="form-control" required>
-                                <option value="0">None</option>
-                                <option value="1">Disconnect</option>
-                                <option value="2">Mute</option>
+                                <option value="0">Rien</option>
+								<option value="2">Muter</option>
+                                <option value="1">Déconnecter</option>
                             </select>
                         </div>
                         <div class="kt-form__actions">
-                           <button type="submit" class="btn btn-primary ajaxLoad">Submit</button>
+                           <button type="submit" class="btn light ajaxLoad">Soumettre</button>
                         </div>
                     </form>
                   </div>

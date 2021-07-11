@@ -2167,7 +2167,6 @@ input:-webkit-autofill {
 
 .page-container .page-content {
     width: 100%;
-    max-width: 1055px;
     margin: 1em auto;
     font-family: "Nunito", sans-serif;
 }

@@ -88,13 +88,13 @@ var vacanies = function() {
                 }
               
                 $('#view-vacancies').unbind().on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Edit " + jobtitle);
+                    $(".modal-title").html("Editer " + jobtitle);
                     vacanies.edit(jobid);
                 });
               
                 $('#confirm-delete').on('show.bs.modal', function(e) {
-                    $(".modal-title").html("Delete " + jobtitle);
-                    $(".btn-ok").html("Delete");
+                    $(".modal-title").html("Supprimer " + jobtitle);
+                    $(".btn-ok").html("Supprimer");
                   
                     $(".btn-ok").click(function () {
                         vacanies.delete(jobid);
@@ -177,7 +177,7 @@ var vacanies = function() {
                 var id = $(e.target).closest('.kt-datatable__row').find('[data-field="id"]').text();
                 var firstname = $(e.target).closest('.kt-datatable__row').find('[data-field="firstname"]').text();
                 
-                $(".modal-title").html("Vacancie from " + firstname);
+                $(".modal-title").html("Recrutement de " + firstname);
               
                 vacanies.view(id);
             });
@@ -228,8 +228,8 @@ var vacanies = function() {
             var jobid = id;
           
             if(id == null) {
-                $(".modal-title").html("Add an vacancie");
-                $(".btn-ok").html("Add");
+                $(".modal-title").html("Ajouter un poste");
+                $(".btn-ok").html("Ajouter");
               
                 $('[name=job]').val("");
                 $('[name=small_description]').val("");

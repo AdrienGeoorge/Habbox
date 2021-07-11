@@ -93,7 +93,7 @@ var roomSearch = function() {
                    width: 75
                }, {
                    field: "username",
-                   title: "Username"
+                   title: "Pseudo"
                }, {
                    field: "ends",
                    title: "Expire"
@@ -106,7 +106,7 @@ var roomSearch = function() {
                   textAlign: "left",
                   autoHide: !1,
                   template: function(data) {
-                      return '<a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm deleteRoom" title="Delete"><i class="la la-trash"></i></a>'
+                      return '<a href="#" class="btn light plain btn-sm btn-clean btn-icon btn-icon-sm deleteRoom" title="Supprimer"><i class="la la-trash"></i></a>'
                   }
               }]
             });
@@ -186,17 +186,17 @@ var roomSearch = function() {
                    }
                }, {
                    field: "name",
-                   title: "Name",
+                   title: "Nom",
                    width: 100
                }, {
                    field: "description",
                    title: "Description"
                }, {
                    field: "owner_name",
-                   title: "Owner"
+                   title: "Propriétaire"
                }, {
                    field: "users",
-                   title: "Users",
+                   title: "Utilisateurs",
                    sortable: "desc"
                }, {
                   field: "Actions",
@@ -207,7 +207,7 @@ var roomSearch = function() {
                   textAlign: "left",
                   autoHide: !1,
                   template: function(data) {
-                      return '<a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm editRoom" title="Delete"><i class="la la-edit"></i></a>'
+                      return '<a href="#" class="btn light plain btn-sm btn-clean btn-icon btn-icon-sm editRoom" title="Supprimer"><i class="la la-edit"></i></a>'
                   }
               }]
             }), $("#kt_datatable_rooms_reload").on("click", function() {
@@ -227,7 +227,7 @@ jQuery(document).ready(function() {
     roomSearch.loadRooms();
   
     $('.roomControl').select2({
-          placeholder: 'Select a room',
+          placeholder: 'Sélectionnez un appartement',
           width: "90%",
           ajax: {
               url: '/housekeeping/search/get/rooms',

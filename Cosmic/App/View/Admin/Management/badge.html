@@ -6,7 +6,7 @@
    {% if badges is empty %}
     <div class="col-lg-12">
       <div class="alert alert-danger" role="alert">
-          <div class="alert-text">No badge requests found</div>
+          <div class="alert-text">Aucune demande de badge trouvée</div>
       </div>
   </div>
     {% endif %}
@@ -31,13 +31,13 @@
                            <li class="kt-nav__item">
                               <a href="#" data-badge="{{badge.id}}" id="badgeAccept" data-uri="accept" class="kt-nav__link">
                               <i class="kt-nav__link-icon flaticon2-graph-1"></i>
-                              <span class="kt-nav__link-text">Accept</span>
+                              <span class="kt-nav__link-text">Accepter</span>
                               </a>
                            </li>
                            <li class="kt-nav__item">
                               <a href="#" data-badge="{{badge.id}}" id="badgeDecline" data-uri="decline" class="kt-nav__link">
                               <i class="kt-nav__link-icon flaticon2-graph-1"></i>
-                              <span class="kt-nav__link-text">Decline</span>
+                              <span class="kt-nav__link-text">Refuser</span>
                               </a>
                            </li>
                         </ul>
@@ -47,7 +47,7 @@
             </div>
          </div>
          <div class="kt-portlet__body">
-            <center><img src="{{site.cpath}}/c_images/album1584/{{badge.badge_imaging}}"></center>
+            <center><img src="{{site.cpath}}/nitro/c_images/album1584/{{badge.badge_imaging}}"></center>
          </div>
       </div>
    </div>

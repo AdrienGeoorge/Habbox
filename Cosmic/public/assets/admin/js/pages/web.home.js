@@ -42,13 +42,13 @@ var home = function() {
                         }
                     }, {
                         field: "username",
-                        title: "Username",
+                        title: "Pseudo",
                         width: 200,
                         template: function(data, i) {
                             var output = '\
                                     <div class="kt-user-card-v2">\
                                         <div class="kt-user-card-v2__pic">\
-                                            <div class="kt-badge kt-badge--xl" style="background: #d8d8d8;"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/avatarimage?figure=' + data.look + '&headonly=1&gesture=&size=s" alt="image"></span></div>\
+                                            <div class="kt-badge kt-badge--xl"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/avatarimage?figure=' + data.look + '&headonly=1&gesture=&size=s" alt="image"></span></div>\
                                         </div>\
                                         <div class="kt-user-card-v2__details">\
                                             <a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.username + '">' + data.username + '</a>\
@@ -60,14 +60,14 @@ var home = function() {
                         }
                     }, {
                         field: "lastip",
-                        title: "Last / Reg IP",
+                        title: "Dernière IP / IP régulière",
                         width: 250,
                         template: function(data) {
                             return '<span class="kt-font">' + data.ip_current + ' / ' + data.ip_register + '</span>';
                         }
                     }, {
                         field: "lastvisit",
-                        title: "Date",
+                        title: "Dernière connexion",
                         width: 130,
                         template: function(data) {
                             return '<span class="kt-font">' + data.last_login + '</span>';
@@ -116,14 +116,14 @@ var home = function() {
                         }
                     }, {
                         field: "new_name",
-                        title: "New username",
+                        title: "Nouveau",
                         width: 130,
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.new_name + '">' + data.new_name + '</a></span>';
                         }
                     }, {
                         field: "old_name",
-                        title: "Old username",
+                        title: "Ancien",
                         width: 130,
                         template: function(data) {
                             return '<span class="kt-font">' + data.old_name + '</span>';

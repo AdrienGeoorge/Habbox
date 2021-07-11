@@ -100,7 +100,7 @@ var faq = function() {
                     faq.faqRequest(id);
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function (e) {
-                        $(".modal-title").html("Delete " + title);
+                        $(".modal-title").html("Supprimer " + title);
                         $(".btn-ok").unbind().click(function () {
                             faq.deleteFaq(id);
                         });
@@ -198,7 +198,7 @@ var faq = function() {
                     });
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function (e) {
-                        $(".modal-title").html("Delete " + cat);
+                        $(".modal-title").html("Supprimer " + cat);
                         $(".btn-ok").unbind().click(function () {
                             faq.deleteCat(id);
                         });

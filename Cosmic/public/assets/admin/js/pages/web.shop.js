@@ -162,7 +162,7 @@ var shop = function() {
                     shop.editOffer(id);
                 } else {
                     $('#confirm-delete').on('show.bs.modal', function(e) {
-                        $(".modal-title").html("Delete this offer?");
+                        $(".modal-title").html("Supprimer cette offre?");
                         $(".btn-ok").unbind().click(function() {
                             shop.deleteOffer(id);
                         });
