@@ -73,7 +73,7 @@ var catalog = function() {
         },
 
         initDatatable: function (jsonObj) {
-            $(".addCatalogPage").html("Add page");
+            $(".addCatalogPage").html("Ajouter une page");
 
             catalog.treeViewRequest();
           
@@ -81,7 +81,7 @@ var catalog = function() {
                 catalog.addPage();
             });
 
-            $(".kt-portlet__head-title").html("Catalog pages");
+            $(".kt-portlet__head-title").html("Pages du catalogue");
             var datatableCatalogPage = function () {
 
                 if ($('#kt_datatable_catalog').length === 0) {
@@ -111,17 +111,17 @@ var catalog = function() {
                         width: 75
                     }, {
                         field: "caption",
-                        title: "Caption",
+                        title: "Légende",
                         template: function (data) {
                             return '<span class="kt-font">' + data.caption + '</span>';
                         }
                     }, {
                         field: "page_texts",
-                        title: "Page texts",
+                        title: "Textes de page",
                         sortable: "asc"
                     }, {
                         field: "page_layout",
-                        title: "Page layout",
+                        title: "Mise en page",
                         width: 130
                     }, {
                         field: "visible",
@@ -129,7 +129,7 @@ var catalog = function() {
                         width: 130
                     }, {
                         field: "enabled",
-                        title: "Enabled",
+                        title: "Activé",
                         width: 130
                     }, {
                         field: "Actions",
@@ -140,7 +140,7 @@ var catalog = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function () {
-                            return '<a class="btn btn-sm btn-clean btn-icon btn-icon-sm" id="editCatalog" title="Edit"><i class="flaticon2-edit"></i></a>'
+                            return '<a class="btn light btn-sm btn-clean btn-icon" id="editCatalog" title="Editer"><i class="flaticon2-edit"></i></a>'
                         }
                     }]
                 });
@@ -219,10 +219,10 @@ var catalog = function() {
                   catalog.editCatalog(data.node.id, json);
               
                   $(".createFolder").unbind().click(function() {
-                      $("#parentLabel").html("Create page for " + data.node.text);
+                      $("#parentLabel").html("Créer une page pour " + data.node.text);
                       $('#formParent').trigger("reset");  
                       $('.saveChanges').hide(); 
-                      $('.createFolder').html('Save');
+                      $('.createFolder').html('Sauvegarder');
                       $('.createFolder').addClass('saveFolder');
                       $('#formParent [name=create]').val('1');
                       $('#groupParent').hide();
@@ -294,7 +294,7 @@ var catalog = function() {
               
                 if($('#formParent [name=create]').val() == '1') {
                     $('.saveChanges').show(); 
-                    $('.createFolder').html('Create Folder');
+                    $('.createFolder').html('Créer un dossier');
                     $('.createFolder').removeClass('saveFolder');
                     $('#formParent [name=create]').val('0');
                     $('#groupParent').show();
@@ -346,7 +346,7 @@ var catalog = function() {
 
         createItemList: function (id, jsonObj) {
             $("#kt_datatable_catalog_itemlist").KTDatatable("destroy")
-            $(".addItem").html("Add item");
+            $(".addItem").html("Ajouter un item");
 
             $(".addItem").unbind().click(function() {
                 catalog.addItem(jsonObj);
@@ -396,17 +396,17 @@ var catalog = function() {
                         width: 75
                     }, {
                         field: "catalog_name",
-                        title: "Name",
+                        title: "Nom",
                         width: 200
                     }, {
                         field: "cost_credits",
-                        title: "Credits",
+                        title: "Crédits",
                     }, {
                         field: "cost_points",
                         title: "Points"
                     }, {
                         field: "club_only",
-                        title: "Club only"
+                        title: "Club uniquement"
                     }, {
                         field: "Actions",
                         title: "Actions",
@@ -416,7 +416,7 @@ var catalog = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function () {
-                            return '<a class="btn btn-sm btn-clean btn-icon btn-icon-sm" id="editItem" title="Edit"><i class="flaticon2-edit"></i></a>'
+                            return '<a class="btn light btn-sm btn-clean btn-icon" id="editItem" title="Editer"><i class="flaticon2-edit"></i></a>'
                         }
                     }]
                 });
@@ -441,7 +441,7 @@ var catalog = function() {
             $("#catalogList").hide();
             $("#eItemPage").show();
             $("#eItemPage [name=object]").val('add');
-            $("#itemForm [name=additem]").html("Add Item");
+            $("#itemForm [name=additem]").html("Ajouter un item");
 
             for (var o = 0; o < jsonObj.length; o++){
                 var pages = jsonObj[o];
@@ -455,7 +455,7 @@ var catalog = function() {
             console.log(jsonObj)
             self.ajax_manager.post("/housekeeping/api/catalog/getFurnitureById", {post: id}, function (result) {
                 result = result.data;
-                $("#itemForm [name=additem]").html("Edit Item");
+                $("#itemForm [name=additem]").html("Editer un item");
               
                 $("html, body").animate({ scrollTop: 0 }, "slow");
 

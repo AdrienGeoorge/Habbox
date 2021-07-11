@@ -486,7 +486,7 @@ kbd kbd {
 pre {
     display: block;
     font-size: 87.5%;
-    color: #212529
+    color: #b6bfc7
 }
 
 pre code {
@@ -1502,10 +1502,6 @@ pre code {
 
 .table-borderless tbody + tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
     border: 0
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f7f8fa
 }
 
 .table-hover tbody tr:hover {
@@ -9864,7 +9860,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 .btn:not(.white):not([disabled]):not(.no-hover):hover,
 .btn:not(.white).plain {
-    background-color: #333;
+    background-color: #242434;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -22730,7 +22726,6 @@ and (max-width: 768px) {
     border-radius: 15px;
     position: relative;
     box-shadow: 3px 3px 5px #242531;
-    overflow: hidden;
 }
 
 .kt-portlet .kt-portlet__head {
@@ -28933,10 +28928,10 @@ td > .kt-radio.kt-radio--single, th > .kt-radio.kt-radio--single {
 }
 
 .bootstrap-select > .dropdown-toggle.btn-light, .bootstrap-select > .dropdown-toggle.btn-secondary {
-    background: #fff;
-    color: #595d6e;
-    border-color: #e2e5ec;
-    box-shadow: none
+    background: #212131;
+    color: #fff !important;
+    border: unset;
+    box-shadow: none;
 }
 
 .bootstrap-select > .dropdown-toggle.btn-light.active, .bootstrap-select > .dropdown-toggle.btn-light:focus, .bootstrap-select > .dropdown-toggle.btn-secondary.active, .bootstrap-select > .dropdown-toggle.btn-secondary:focus {
@@ -31627,12 +31622,9 @@ body.swal2-height-auto {
     display: flex;
     align-items: center;
     padding: 1.1rem 1.5rem;
-    border-bottom: 1px solid #f7f8fa;
-    transition: background-color .3s ease
-}
-
-.kt-notification .kt-notification__item:last-child {
-    border-bottom: 1px solid transparent
+    background: #1e1e2d !important;
+    border-radius: 10px !important;
+    margin: 1em 0;
 }
 
 .kt-notification .kt-notification__item .kt-notification__item-icon {
@@ -31662,13 +31654,13 @@ body.swal2-height-auto {
     transition: color .3s ease;
     font-size: 1rem;
     font-weight: 400;
-    color: #595d6e
+    color: #fff
 }
 
 .kt-notification .kt-notification__item .kt-notification__item-details .kt-notification__item-time {
     font-size: 1rem;
     font-weight: 300;
-    color: #74788d
+    color: #ffff
 }
 
 .kt-notification .kt-notification__item:hover {
@@ -31688,15 +31680,9 @@ body.swal2-height-auto {
 
 .kt-notification .kt-notification__item:after {
     border: 0;
-    font-family: LineAwesome;
     text-decoration: inherit;
-    text-rendering: optimizeLegibility;
-    text-transform: none;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    content: "?";
-    font-size: .8rem;
+    content: "x";
+    font-size: 1.5em;
     line-height: 0;
     position: relative;
     color: #74788d

@@ -29,7 +29,7 @@ class Help
     {
         $request = Admin::getHelpTicketById(input()->post('post')->value);
         if ($request == null) {
-            response()->json(["status" => "error", "message" => "No ticket found!"]);
+            response()->json(["status" => "error", "message" => "Aucun ticket trouvé!"]);
         }
 
         $request->user = Player::getDataById($request->player_id, array('username','look','last_online'));
@@ -89,7 +89,7 @@ class Help
         Admin::updateTicketStatus($action, $ticket->id);
         Log::addHelpTicketLog(request()->player->id, $ticket->id, 'CHANGE', $action);
 
-        response()->json(["status" => "success", "message" => "Ticket status has been updated!"]);
+        response()->json(["status" => "success", "message" => "Le statut du ticket a bien été mis à jour!"]);
     }
 
     public function sendmessage()
@@ -113,10 +113,10 @@ class Help
         Log::addHelpTicketLog(request()->player->id, $ticket->id, 'SEND', 'message');
 
         if(Config::apiEnabled && request()->player->online) {
-            HotelApi::execute('alertuser', array('user_id' => $ticket->player_id, 'message' => 'You received a response on your help ticket!'));
+            HotelApi::execute('alertuser', array('user_id' => $ticket->player_id, 'message' => 'Vous avez reçu une réponse à votre ticket d\'aide!'));
         }
 
-        response()->json(["status" => "success", "message" => "Succesfully send a message to user"]);
+        response()->json(["status" => "success", "message" => "Envoi réussi d'un message à l'utilisateur"]);
     }
 
     public function view()

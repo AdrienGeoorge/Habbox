@@ -45,7 +45,7 @@ var feeds = function() {
                         }
                     }, {
                         field: "from_username",
-                        title: "From user",
+                        title: "De l'utilisateur",
                         width: 100,
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" data-toggle="modal" data-target="#actionModal" data-id="' + data.from_username + '">' + data.from_username + '</a></span>';
@@ -59,7 +59,7 @@ var feeds = function() {
                         }
                     }, {
                         field: "to_username",
-                        title: "To user",
+                        title: "Pour l'utilisateur",
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" data-toggle="modal" data-target="#actionModal" data-id="' + data.to_username + '">' + data.to_username + '</a></span>';
                         }
@@ -79,7 +79,7 @@ var feeds = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function() {
-                            return '<a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm feedActions" data-toggle="modal" data-target="#confirm-delete" title="Delete"><i class="flaticon2-trash"></i></a>'
+                            return '<a href="#" class="btn light btn-sm btn-clean btn-icon feedActions" data-toggle="modal" data-target="#confirm-delete" title="Supprimer"><i class="flaticon2-trash"></i></a>'
                         }
                     }]
                 }), $("#kt_datatable_reload").on("click", function() {

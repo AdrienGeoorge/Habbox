@@ -29,7 +29,7 @@ class News
         $news = Admin::getNews();
 
         if (empty($news)) {
-            response()->json(["status" => "error", "message" => "We were unable to find any news items"]);
+            response()->json(["status" => "error", "message" => "Nous n'avons pas trouvé d'articles"]);
         }
 
         foreach ($news as $row) {
@@ -45,7 +45,7 @@ class News
         $category = Admin::getNewsCategories();
 
         if (empty($category)) {
-            response()->json(["status" => "error", "message" => "We were unable to find any news categories"]);
+            response()->json(["status" => "error", "message" => "Nous n'avons pas pu trouver de catégories"]);
         }
 
         Json::filter($category, 'desc', 'id');
@@ -84,21 +84,21 @@ class News
       
         if ($id == 0) {
             Admin::addNews($title, $short_story, $full_story, $category, $imagePath, $images, request()->player->id);
-            Log::addStaffLog('-1', 'News placed: ' . $title, request()->player->id, 'news');
+            Log::addStaffLog('-1', 'Article posté: ' . $title, request()->player->id, 'news');
           
-            response()->json(["status" => "success", "message" => "News article is posted!"]);
+            response()->json(["status" => "success", "message" => "Nouvel article posté!"]);
         }
 
         Admin::editNews($id, $title, $short_story, $full_story, $category, $imagePath, $images, request()->player->id);
-        Log::addStaffLog('-1', 'News edit: ' . $title, request()->player->id, 'news');
+        Log::addStaffLog('-1', 'Article édité: ' . $title, request()->player->id, 'news');
       
-        response()->json(["status" => "success", "message" => "News edit successfully"]);
+        response()->json(["status" => "success", "message" => "Article édité avec succès!"]);
     }
 
     public function edit()
     {
         if (empty(input()->post('post')->value)) {
-            response()->json(["status" => "error", "message" => "We were unable to find this news item"]);
+            response()->json(["status" => "error", "message" => "Nous n'avons pas pu trouver cet article"]);
         }
 
         $this->data->news = Admin::getNewsById(input()->post('post')->value);
@@ -111,11 +111,11 @@ class News
         $news = Admin::removeNews(input()->post('post')->value);
 
         if (empty($news)) {
-            response()->json(["status" => "error", "message" => "We were unable to find this news item"]);
+            response()->json(["status" => "error", "message" => "Nous n'avons pas pu trouver cet article"]);
         }
 
-        Log::addStaffLog('-1', 'News removed: ' . input()->post('post')->value, request()->player->id, 'news');  
-        response()->json(["status" => "success", "message" => "News removed succesfully!"]);
+        Log::addStaffLog('-1', 'Article supprimé: ' . input()->post('post')->value, request()->player->id, 'news');
+        response()->json(["status" => "success", "message" => "Article supprimé avec succès!"]);
     }
 
     public function addcategory()
@@ -129,9 +129,9 @@ class News
         }
 
         Admin::addNewsCategory(input()->post('post')->value);
-        Log::addStaffLog('-1', 'News category added: ' . input()->post('post')->value, request()->player->id, 'news');
+        Log::addStaffLog('-1', 'Catégorie d\'article ajoutée: ' . input()->post('post')->value, request()->player->id, 'news');
       
-        response()->json(["status" => "success", "message" => "Category successfully added!"]);
+        response()->json(["status" => "success", "message" => "Catégorie ajoutée avec succès!"]);
     }
 
     public function editcategory()
@@ -139,26 +139,26 @@ class News
         $category = Admin::getNewsCategoryById(input()->post('post')->value);
 
         if (empty($category)) {
-            response()->json(["status" => "error", "message" => "Category does not exists!"]);
+            response()->json(["status" => "error", "message" => "La catégorie n'existe pas!"]);
         }
 
-        Log::addStaffLog('-1', 'News category edit: ' . $category->category . ' to ' .input()->post('post')->value, request()->player->id, 'news');
+        Log::addStaffLog('-1', 'Catégorie d\'article éditée: ' . $category->category . ' to ' .input()->post('post')->value, request()->player->id, 'news');
         Admin::editNewsCategory($category->id, input()->post('value')->value);
       
-        response()->json(["status" => "success", "message" => "Category edit is successfully!"]);
+        response()->json(["status" => "success", "message" => "La catégorie a été éditée avec succès!"]);
     }
 
     public function removecategory()
     {
         $category = Admin::getNewsCategoryById(input()->post('post')->value);
         if (empty($category)) { 
-            response()->json(["status" => "error", "message" => "Category does not exists!"]);
+            response()->json(["status" => "error", "message" => "La catégorie n'existe pas!"]);
         }
 
-        Log::addStaffLog('-1', 'News category removed: ' . $category->category, request()->player->id, 'news');
+        Log::addStaffLog('-1', 'Catégorie d\'article supprimée: ' . $category->category, request()->player->id, 'news');
         Admin::removeNewsCategory($category->id);
       
-        response()->json(["status" => "success", "message" => "Category removed succesfully!"]);
+        response()->json(["status" => "success", "message" => "La catégorie a été supprimée avec succès!"]);
     }
 
     public function view()

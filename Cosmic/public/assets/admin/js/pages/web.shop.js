@@ -1,86 +1,47 @@
 var shop = function() {
 
     return {
-        init: function() {
+        init: function () {
             shop.initDatatable();
 
-            $('#giveOffer').on('show.bs.modal', function(event) {
+            $('#giveOffer').on('show.bs.modal', function (event) {
                 shop.giveOffer();
             });
 
-            $(".createOffer").click(function() {
+            $(".createOffer").click(function () {
                 shop.editOffer(null);
             });
 
-            $("#goBack").unbind().click(function() {
+            $("#goBack").unbind().click(function () {
                 shop.goBack();
             });
-
-            $(".addVip").click(function() {
-                shop.editOffer(null, 'vip');
-            });
-
         },
 
-        editOffer: function(id, type) {
+        editOffer: function (id) {
             var self = this;
             this.ajax_manager = new WebPostInterface.init();
 
             $("#offerManage").show();
             $("#offers").hide();
-            $('#jsoneditor').html("");
-          
-            if (id != null) {
-                self.ajax_manager.post("/housekeeping/api/shop/getofferbyid", {
-                    post: id
-                }, function(result) {
-                    result = result.data;
 
-                    $('[name=shopId]').val(result.id);
-                    $('[name=title]').val(result.title);
-                    $('[name=price]').val(result.price);
+            if(id != null) {
+                self.ajax_manager.post("/housekeeping/api/shop/getofferbyid", {post: id}, function (result) {
+                    $('[name=shopId]').val(result[0].id);
 
-                    $(".offerName").html("Modify Offer");
+                    $("[name=currencys] option[value='" + result[0].currency + "']").prop('selected', true);
+                    $("[name=lang] option[value='" + result[0].lang + "']").prop('selected', true);
 
-                    if (result.description != '') {
-                        tinyMCE.activeEditor.setContent(result.description);
-                    }
-
-                    if (result.data != '') {
-                        $('[name=data]').val($("#json").html());
-                        $('.data').show();
-
-                        const container = document.getElementById("jsoneditor")
-                        const options = {};
-                        editor = new JSONEditor(container, options)
-                        editor.set(JSON.parse(result.data))
-
-                        $(".offerName").click(function() {
-                            $("[name=json]").val(JSON.stringify(editor.get()))
-                        });
-                    }
+                    $('[name=amount]').val(result[0].amount);
+                    $('[name=price]').val(result[0].price);
+                    $('[name=private_key]').val(result[0].private_key);
+                    $('[name=offer_id]').val(result[0].offer_id);
                 });
-
             } else {
-
-                const container = document.getElementById("jsoneditor")
-                const options = {};
-                editor = new JSONEditor(container, options)
-                tinyMCE.activeEditor.setContent("");
-
-                $('[name=json]').val("");
-                $(".offerName").html("Create Offer");
-                $('[name=shopId]').val("");
-                $('[name=title]').val("");
+                $('[name=shopId]').val(0);
+                $('[name=amount]').val("")
                 $('[name=price]').val("");
-                $('[name=data]').val("");
                 $('[name=private_key]').val("");
                 $('[name=offer_id]').val("");
-
-                
-                $(".offerName").click(function() {
-                    $("[name=json]").val(JSON.stringify(editor.get()))
-                });
             }
         },
 
@@ -91,9 +52,9 @@ var shop = function() {
             $("#offers").show();
         },
 
-        initDatatable: function() {
+        initDatatable: function () {
 
-            var datatableShop = function() {
+            var datatableShop = function () {
 
                 if ($('#kt_datatable_shop').length === 0) {
                     return;
@@ -129,11 +90,18 @@ var shop = function() {
                         width: 75,
                         sortable: "desc"
                     }, {
-                        field: "title",
-                        title: "Title"
+                        field: "currency",
+                        title: "Monnaie",
+                    }, {
+                        field: "amount",
+                        title: "Montant"
                     }, {
                         field: "price",
-                        title: "Price"
+                        title: "Prix"
+                    }, {
+                        field: "lang",
+                        title: "Langage",
+                        sortable: "desc"
                     }, {
                         field: "Action",
                         title: "Action",
@@ -143,17 +111,17 @@ var shop = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function(data) {
-                            return '<a class="btn btn-sm btn-clean btn-icon btn-icon-sm" id="editOffer" title="Edit"><i class="flaticon2-edit"></i></a> <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm deleteOffer" data-toggle="modal" data-target="#confirm-delete" title="Delete"><i class="la la-trash"></i></a>'
+                            return '<a class="btn light btn-sm btn-clean btn-icon" id="editOffer" title="Editer"><i class="flaticon2-edit"></i></a> <a href="#" class="btn light btn-sm btn-clean btn-icon deleteOffer" data-toggle="modal" data-target="#confirm-delete" title="Supprimer"><i class="la la-trash"></i></a>'
                         }
                     }]
                 });
 
-                $("#kt_datatable_shop_reload").on("click", function() {
+                $("#kt_datatable_shop_reload").on("click", function () {
                     $("#kt_datatable_faq").KTDatatable("reload")
                 });
             };
 
-            $("#kt_datatable_shop").unbind().on("click", "#editOffer, .deleteOffer", function(e) {
+            $("#kt_datatable_shop").unbind().on("click", "#editOffer, .deleteOffer", function (e) {
                 e.preventDefault();
 
                 let id = $(e.target).closest('.kt-datatable__row').find('[data-field="id"]').text();
@@ -161,9 +129,9 @@ var shop = function() {
                 if ($(this).attr("id") == "editOffer") {
                     shop.editOffer(id);
                 } else {
-                    $('#confirm-delete').on('show.bs.modal', function(e) {
+                    $('#confirm-delete').on('show.bs.modal', function (e) {
                         $(".modal-title").html("Supprimer cette offre?");
-                        $(".btn-ok").unbind().click(function() {
+                        $(".btn-ok").unbind().click(function () {
                             shop.deleteOffer(id);
                         });
                     });
@@ -171,37 +139,15 @@ var shop = function() {
             });
 
             datatableShop();
-        },
-
-        deleteOffer: function(id) {
-            var self = this;
-            this.ajax_manager = new WebPostInterface.init();
-
-            self.ajax_manager.post("/housekeeping/api/shop/remove", {
-                post: id
-            }, function(result) {
-                if (result.status == "success") {
-                    $("#kt_datatable_shop").KTDatatable("reload");
-                }
-            });
         }
     }
 }();
 
 jQuery(document).ready(function() {
     shop.init();
-    tinymce.init({
-        selector: "textarea",
-        width: '100%',
-        height: 270,
-        plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern imagetools codesample",
-        statusbar: true,
-        menubar: true,
-        toolbar: "undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-    });
 
     $('.targetCurrency').select2({
-        placeholder: 'Select a currency',
+        placeholder: 'Sélectionnez une monnaie',
         width: '85%',
         ajax: {
             url: '/housekeeping/search/get/currencys',

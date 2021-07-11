@@ -16,60 +16,59 @@ use Library\Json;
 
 class Shop
 {
-  
-    public function remove()
-    {
-        $faq = Admin::removeOffer(input('post'));
-        Log::addStaffLog(input('post'), 'Offer removed: ' . intval(input()->post('post')->value), request()->player->id, 'offer');
-        response()->json(["status" => "success", "message" => "Offer removed successfully!"]);
-    }
-  
     public function editcreate()
     {
         $validate = request()->validator->validate([
-            'title' => 'required',
-            'price' => 'required|numeric',
-            'json'  => 'required'
+            'currencys' => 'required',
+            'amount'    => 'required|numeric',
+            'price'     => 'required|numeric',
+            'offer_id'  => 'required',
+            'private_key' => 'required'
         ]);
-      
+
+        $id = input()->post('shopId')->value;
+        $currencys = input()->post('currencys')->value;
+        $amount = input()->post('amount')->value;
+        $price = input()->post('price')->value;
+        $offer_id = input()->post('offer_id')->value;
+        $private_key = input()->post('private_key')->value;
+
         if(!$validate->isSuccess()) {
             return;
         }
-      
-        $data = [
-            "title" => input('title'),
-            "price" => input('price'),
-            "image" => input('image'),
-            "data"  => trim(input('json')),
-            "description" => input('description')
-        ];
-      
-        if (!empty(input('shopId'))) {
-            $id = input('shopId');
+
+        if (!empty($id)) {
+            Admin::offerEdit($id, $currencys, $amount, $price, $offer_id, $private_key);
+            Log::addStaffLog('-1', 'Shop edited: ' . $offer_id, request()->player->id, 'shop');
+            response()->json(["status" => "success", "message" => "Shop edited successfully!"]);
         }
 
-        Admin::offerEdit($data, $id ?? null);
-        Log::addStaffLog($id ?? null, 'Shop item ' . isset($id) ? "modafied" : "created" . '{' . "{$data}" . '}', request()->player->id, 'shop');
-        response()->json(["status" => "success", "message" => "Offer " . empty($id) ? "modafied" : "created"]);
+        Admin::offerCreate($currencys, $amount, $price, $offer_id, $private_key);
+        Log::addStaffLog('-1', 'Shop item created: ' . $offer_id, request()->player->id, 'shop');
+        response()->json(["status" => "success", "message" => "Shop created successfully!"]);
     }
-  
+
     public function getOfferById()
     {
-       $validate = request()->validator->validate([
-            'post' => 'required'
+        $validate = request()->validator->validate([
+            'post'        => 'required'
         ]);
 
         if (!$validate->isSuccess()) {
             return;
         }
-      
-        $offer = Shops::getOfferById(input('post'));
-        response()->json(["data" => $offer]);
+        $offer = Shops::getOfferById(input()->post('post')->value);
+
+        response()->json([$offer]);
     }
 
     public function getOffers()
     {
         $offers = Admin::getOffers();
+        foreach($offers as $offer) {
+            $offer->currency = Core::getCurrencyByType($offer->currency)->currency;
+        }
+
         Json::filter($offers, 'desc', 'id');
     }
 

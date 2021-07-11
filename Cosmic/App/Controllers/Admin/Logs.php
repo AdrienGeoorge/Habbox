@@ -41,7 +41,7 @@ class Logs
             $player = Player::getDataById($logs->user_from_id);
 
             if($player->rank >= request()->player->rank) {
-                Log::addStaffLog($player->id, 'Manage Multiple Chatlogs (No permission)', request()->player->id, 'check');
+                Log::addStaffLog($player->id, 'Gérer plusieurs chatlogs (Aucune permission)', request()->player->id, 'check');
                 exit;
             }
 
@@ -59,7 +59,7 @@ class Logs
         }
 
         foreach ($this->data->users as $row) {
-            Log::addStaffLog(Player::getDataByUsername($row, 'id')->id, 'Manage Multiple Chatlogs', request()->player->id, 'check');
+            Log::addStaffLog(Player::getDataByUsername($row, 'id')->id, 'Gérer plusieurs chatlogs', request()->player->id, 'check');
         }
 
         Json::encode($this->data->chatlogsall);

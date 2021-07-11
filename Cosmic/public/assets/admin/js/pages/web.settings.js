@@ -198,7 +198,7 @@ $(".targetItems").val(Values).trigger('change');
         autosave_interval: '30s',
         autosave_prefix: '{path}{query}-{id}-',
         autosave_restore_when_empty: false,
-        autosave_retention: '2m',
+        autosave_retention: '30m',
         image_advtab: true,
         importcss_append: true,
         file_picker_callback: function (callback, value, meta) {

@@ -36,7 +36,7 @@ class Settings
         }
       
 
-        response()->json(["status" => "success", "message" => "Saved!"]);
+        response()->json(["status" => "success", "message" => "Sauvegardé!"]);
     }
   
     public function addCurrency()
@@ -51,7 +51,7 @@ class Settings
         }
       
         Core::addCurrency($currency, $type, $amount);
-        response()->json(["status" => "success", "message" => "Currency has been added!"]);
+        response()->json(["status" => "success", "message" => "La monnaie a été ajoutée!"]);
     }
   
     public function deleteCurrency()
@@ -64,7 +64,7 @@ class Settings
         }
       
         if(Core::deleteCurrency($type, input()->post('currency')->value)) {
-            response()->json(["status" => "success", "message" => "Currency has been deleted"]);
+            response()->json(["status" => "success", "message" => "La devise a été supprimée"]);
         }
     }
   

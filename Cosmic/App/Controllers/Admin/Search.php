@@ -22,7 +22,7 @@ class Search
   
     public function emptyString()
     {
-        echo Json::encode([array('id' => "none", 'text' => 'Select badge')]);
+        echo Json::encode([array('id' => "none", 'text' => 'Sélectionnez un badge')]);
     }
   
     public function items()
@@ -48,7 +48,7 @@ class Search
     public function playerid()
     {
         if(!isset($this->url)) {
-            response()->json(['id' => "none", 'text' => 'Where are you searching for?']);
+            response()->json(['id' => "none", 'text' => 'Où cherchez-vous?']);
         }
 
         $userObject = Admin::getPlayersByString($this->url);
@@ -62,7 +62,7 @@ class Search
     public function catalogueitem()
     {
         if(!isset($this->url)) {
-            response()->json(['id' => "none", 'text' => 'Choose an catalogue page']);
+            response()->json(['id' => "none", 'text' => 'Choisissez une page de catalogue']);
         }
 
         $userObject = Admin::getCataloguePage($this->url);
@@ -76,7 +76,7 @@ class Search
     public function playername()
     {
         if(!isset($this->url)) {
-            response()->json(['id' => "none", 'text' => 'Where are you searching for?']);
+            response()->json(['id' => "none", 'text' => 'Où cherchez-vous?']);
         }
 
         $userObject = Admin::getPlayersByString($this->url);
@@ -90,12 +90,12 @@ class Search
     public function rooms()
     {
         if(!isset($this->url)) {
-            response()->json(['id' => "none", 'text' => 'Where are you searching for?']);
+            response()->json(['id' => "none", 'text' => 'Où cherchez-vous?']);
         }
 
         $roomObject = Admin::getRoomsByString($this->url);
         foreach($roomObject as $room) {
-            $this->paths[] = array('id' => $room->id, 'text' => $room->name.' From: '.$room->owner.' Visitors: '.$room->users_now);
+            $this->paths[] = array('id' => $room->id, 'text' => $room->name.' De: '.$room->owner.' Visiteurs: '.$room->users_now);
         }
 
         echo Json::encode($this->paths);
@@ -129,7 +129,7 @@ class Search
         }
  
         if(empty($this->paths)) {
-            response()->json(['id' => "none", 'text' => 'This role has all the permissions they can have']);
+            response()->json(['id' => "none", 'text' => 'Ce rôle a toutes les permissions qu\'il peut avoir.']);
         }
 
         echo Json::encode($this->paths);
@@ -138,7 +138,7 @@ class Search
     public function wordfilter()
     {
         if(!isset($this->url)) {
-            response()->json(['id' => "none", 'text' => 'Where are you searching for?']);
+            response()->json(['id' => "none", 'text' => 'Où cherchez-vous?']);
         }
 
         $wordObject = Admin::getWordsByString($string);

@@ -53,17 +53,17 @@ class Dashboard
     public function maintenance()
     {
         if (!Permission::exists('housekeeping_permissions', request()->player->rank)) {
-            response()->json(["status" => "error", "message" => "You have no permissions to do this!"]);
+            response()->json(["status" => "error", "message" => "Vous n'avez pas le droit de faire ça!"]);
         }
       
         $maintenance = Admin::saveSettings('maintenance', (Core::settings()->maintenance == "1") ? "0" : "1");
-        response()->json(["status" => "success", "message" => "Maintenance updated"]);
+        response()->json(["status" => "success", "message" => "Mise à jour de la maintenance"]);
     }
   
     public function clearcache()
     {
         Admin::saveSettings('cache_timestamp', md5(time()));
-        response()->json(["status" => "success", "message" => "Cache deleted!"]);
+        response()->json(["status" => "success", "message" => "Cache supprimés!"]);
     }
 
     public function view()

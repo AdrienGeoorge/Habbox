@@ -38,7 +38,7 @@ class Wordfilter
         $word_filter = Admin::getWordFilterByWord($word);
 
         if ($word_filter) {
-            response()->json(["status" => "error", "message" => "{$word} is already blacklisted!"]);
+            response()->json(["status" => "error", "message" => "{$word} est déjà blacklisté!"]);
         }
 
         Admin::addWordFilter($word, request()->player->id);
@@ -47,8 +47,8 @@ class Wordfilter
             HotelApi::execute('updatewordfilter');
         };
 
-        Log::addStaffLog('-1', 'Added wordfilter: ' . $word, request()->player->id, 'wordfilter');
-        response()->json(["status" => "success", "message" => "{$word} is added to the blacklist."]);
+        Log::addStaffLog('-1', 'Ajout de mot filtré: ' . $word, request()->player->id, 'wordfilter');
+        response()->json(["status" => "success", "message" => "{$word} est désormais blacklisté."]);
     }
 
     public function remove()
@@ -65,7 +65,7 @@ class Wordfilter
 
         $word_filter = Admin::getWordFilterByWord($word);
         if (empty($word_filter)) {
-            response()->json(["status" => "error", "message" => "{$word} is already removed"]);
+            response()->json(["status" => "error", "message" => "{$word} a été supprimé"]);
         }
 
         Admin::deleteWordByWord($word);
@@ -74,8 +74,8 @@ class Wordfilter
             HotelApi::execute('updatewordfilter');
         }
 
-        Log::addStaffLog('-1', 'Removed wordfilter: ' . $word, request()->player->id, 'wordfilter');
-        response()->json(["status" => "success", "message" => "{$word} successfully removed"]);
+        Log::addStaffLog('-1', 'Mot filtré supprimé: ' . $word, request()->player->id, 'wordfilter');
+        response()->json(["status" => "success", "message" => "{$word} supprimé avec succès"]);
     }
 
     public function getwordfilters()
@@ -83,9 +83,9 @@ class Wordfilter
         $word_filter = Admin::getWordFilters();
 
         foreach ($word_filter as $row) {
-            $row->hide    = ($row->hide == 0 ? 'No' : 'Yes');
-            $row->report  = ($row->report == 0 ? 'No' : 'Yes');
-            $row->mute    = ($row->mute == 0 ? 'No' : 'Yes');
+            $row->hide    = ($row->hide == 0 ? 'Non' : 'Oui');
+            $row->report  = ($row->report == 0 ? 'Non' : 'Oui');
+            $row->mute    = ($row->mute == 0 ? 'Non' : 'Oui');
         }
 
         Json::filter($word_filter, 'desc', 'id');

@@ -20,7 +20,7 @@ class Value
     public function reloadCatalog() 
     {
         HotelApi::execute('updatecatalog');
-        response()->json(["status" => "success", "message" => "Server catalog reloaded!"]);
+        response()->json(["status" => "success", "message" => "Catalogue du serveur rechargé!"]);
     }
 
     public function editItem() 
@@ -45,11 +45,11 @@ class Value
       
         $value = Admin::getValueById($value_id);
         if(!$value) {
-            response()->json(["status" => "error", "message" => "This item doesnt exist!"]);
+            response()->json(["status" => "error", "message" => "Cet article n'existe pas!"]);
         }
       
         Admin::editValueById($value_id, $cost_points, $cost_credits, $points_type, $club_only); 
-        response()->json(["status" => "success", "message" => "Item successfuly edited!"]);
+        response()->json(["status" => "success", "message" => "Élément édité avec succès!"]);
     }
 
     public function addcategory()
@@ -69,18 +69,18 @@ class Value
         $hidden = input()->post('hidden')->value;
 
         Admin::addValueCategory($cat_ids, $name, $hidden, Helper::convertSlug($name));
-        response()->json(["status" => "success", "message" => "Category: {$name} is succesfully added!"]);
+        response()->json(["status" => "success", "message" => "Catégorie: {$name} a été ajoutée avec succès!"]);
     }
 
     public function deleteCategory()
     {
         $category = Admin::getValueCategoryById(input()->post('post')->value);
         if (empty($category)) {
-            response()->json(["status" => "error", "message" => "Category item doesnt exist!"]);
+            response()->json(["status" => "error", "message" => "La catégorie de l'article n'existe pas!"]);
         }
 
         Admin::removeValueCategory($category->id);
-        response()->json(["status" => "success", "message" => "Category is succesfully deleted!"]);
+        response()->json(["status" => "success", "message" => "La catégorie a été supprimée avec succès!"]);
     }
   
     public function getValueById()

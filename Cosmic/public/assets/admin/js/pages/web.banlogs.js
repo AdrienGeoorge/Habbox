@@ -31,7 +31,7 @@ t = $("#kt_datatable_ban_logs").KTDatatable({
         width: 50
     }, {
         field: "user_id",
-        title: "User",
+        title: "Pseudo",
         width: 100,
         template: function(data) {
             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.user_id + '">' + data.user_id +  '</a>';
@@ -42,14 +42,14 @@ t = $("#kt_datatable_ban_logs").KTDatatable({
         width: 75
     }, {
         field: "ban_reason",
-        title: "Reason",
+        title: "Raison",
         width: 250
     }, {
         field: "ban_expire",
         title: "Expire"
     }, {
         field: "user_staff_id",
-        title: "By"
+        title: "Par"
     }]
 }), $("#kt_datatable_reload").on("click", function() {
     $("#kt_datatable_ban_logs").KTDatatable("reload")

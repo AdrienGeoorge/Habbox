@@ -80,38 +80,24 @@ var help = function() {
             ].join(""); 
           
             this.ticket_tmp = [
+                '<select class="form-control bootstrap-select w-75 d-inline-block" id="status">'  +
+                '<option value="open">Ouvert</option>\n'  +
+                '<option value="closed">Fermé</option>\n'  +
+                '<option value="in_treatment">En traitement</option>\n'  +
+                '</select>'  +
+                '<div class="d-inline-block w-25 text-right mb-4">'  +
+                '<button class="btn light w-75" type="button" id="goBack">Retour</button>'  +
+                '</div>'  +
             '<div class="kt-portlet">\n'  +
                '<div class="kt-portlet__head">\n'  +
                   '<div class="kt-portlet__head-label">\n'  +
-                     '<span class="kt-portlet__head-icon">\n'  +
                      '<img src="' + Site.figure_url + '/avatarimage?figure={figurePath}&headonly=1&direction=2&head_direction=2&action=&gesture=&" alt="image">\n' +
-                     '</span>\n'  +
                      '<h3 class="kt-portlet__head-title">\n'  +
                         '<a href="#" data-toggle="modal" data-target="#actionModal" data-id="{reporter}">{reporter}</a> - <small>{timestamp}</small>\n'  +
                      '</h3>\n'  +
                   '</div>\n'  +
-                    '<div class="kt-portlet__head-toolbar">'  +
-                       '<div class="kt-portlet__head-wrapper">'  +
-                          '<select class="form-control bootstrap-select" id="status">'  +
-                             '<option value="open">Open</option>\n'  +
-                             '<option value="closed">Closed</option>\n'  +
-                             '<option value="in_treatment">In treatment</option>\n'  +
-                          '</select>'  +
-                          '&nbsp;'  +
-                          '<div class="kt-form__label">'  +
-                             '<button class="btn btn-secondary" type="button" id="goBack">Back</button>'  +
-                          '</div>'  +
-                          '&nbsp;'  + 
-                          '<div class="kt-input-icon kt-input-icon--left">'  +
-                             '<input type="text" class="form-control" placeholder="Search..." id="generalSearch">'  +
-                             '<span class="kt-input-icon__icon kt-input-icon__icon--left">'  +
-                             '<span><i class="la la-search"></i></span>'  +
-                             '</span>'  +
-                          '</div>'  +
-                       '</div>'  +
-                    '</div>'  +
                '</div>\n'  +
-               '<div class="kt-portlet__body" style="color: #5d5b6f">\n'  +
+               '<div class="kt-portlet__body" style="margin-top: -3em;">\n'  +
                   '{message}\n' +
                '</div>\n'  +
             '</div> \n' 
@@ -121,15 +107,13 @@ var help = function() {
             '<div class="kt-portlet">\n'  +
                '<div class="kt-portlet__head">\n'  +
                   '<div class="kt-portlet__head-label">\n'  +
-                     '<span class="kt-portlet__head-icon">\n'  +
                      '<img src="' + Site.figure_url + '/avatarimage?figure={figurePath}&headonly=1&direction=2&head_direction=2&action=&gesture=&" alt="image">\n' +
-                     '</span>\n'  +
                      '<h3 class="kt-portlet__head-title">\n'  +
                         '<a href="#" data-toggle="modal" data-target="#actionModal" data-id="{reporter}">{reporter}</a> - <small>{timestamp}</small>\n'  +
                      '</h3>\n'  +
                   '</div>\n'  +
                '</div>\n'  +
-               '<div class="kt-portlet__body" style="color: #5d5b6f">\n'  +
+               '<div class="kt-portlet__body" style="margin-top: -3em;">\n'  +
                   '{message}\n' +
                '</div>\n'  +
                '<div class="kt-portlet__foot kt-hidden">\n'  +
@@ -138,8 +122,8 @@ var help = function() {
                         'Portlet footer: \n'  +
                      '</div>\n'  +
                      '<div class="col-lg-6">\n'  +
-                        '<button type="submit" class="btn btn-primary">Submit</button>\n'  +
-                        '<span class="kt-margin-left-10">or <a href="#" class="kt-link kt-font-bold">Cancel</a></span>\n'  +
+                        '<button type="submit" class="btn light">Soumettre</button>\n'  +
+                        '<span class="kt-margin-left-10">or <a href="#" class="kt-link kt-font-bold">Annuler</a></span>\n'  +
                      '</div>\n'  +
                   '</div>\n'  +
                '</div>\n'  +
@@ -228,13 +212,13 @@ var help = function() {
                    }
                }, {
                    field: "subject",
-                   title: "Subject",
+                   title: "Sujet",
                    template: function(data) {
                        return '<a href="#" class="viewTicket"><span class="kt-font">' + data.subject + '</span></a>';
                    }
                }, {
                    field: "username",
-                   title: "Reporter"
+                   title: "Rapporteur"
                }, {
                    field: "practitioner",
                    title: "Staff"
@@ -243,20 +227,20 @@ var help = function() {
                    title: "Timestamp"
                }, {
                   field: "status",
-                  title: "Status",
+                  title: "Statut",
                   sortable: "desc",
                   template: function(t) {
                     var e = {
                         "in_treatment": {
-                            title: "IN TREATMENT",
+                            title: "En traitement",
                             class: "kt-badge--warning"
                         },
                         "closed": {
-                            title: "CLOSED",
+                            title: "Fermé",
                             class: " kt-badge--dark"
                         },
                         "open": {
-                            title: "OPEN",
+                            title: "Ouvert",
                             class: " kt-badge--danger"
                         },
                         "wait_reply": {
@@ -299,14 +283,47 @@ var help = function() {
 jQuery(document).ready(function() {
     help.init();  
     help.loadTickets();
-  
+
     tinymce.init({
-         selector:   "textarea",
-         width:      '100%',
-         height:     270,
-         plugins:    "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern imagetools codesample",
-         statusbar:  true,
-         menubar:    true,
-         toolbar:    "undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-     });
+        selector: 'textarea',
+        plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+        imagetools_cors_hosts: ['picsum.photos'],
+        menubar: 'file edit view insert format tools table help',
+        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save | insertfile image media link anchor | ltr rtl',
+        toolbar_sticky: true,
+        autosave_ask_before_unload: true,
+        autosave_interval: '30s',
+        autosave_prefix: '{path}{query}-{id}-',
+        autosave_restore_when_empty: false,
+        autosave_retention: '30m',
+        image_advtab: true,
+        importcss_append: true,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+        height: 600,
+        image_caption: true,
+        quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+        noneditable_noneditable_class: 'mceNonEditable',
+        toolbar_mode: 'sliding',
+        contextmenu: 'link image imagetools table',
+        skin: 'oxide-dark',
+        content_css: 'dark',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
 });

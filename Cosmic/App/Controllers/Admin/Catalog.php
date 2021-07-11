@@ -31,7 +31,7 @@ class Catalog
         ]);
 
         if (!$validate->isSuccess()) {
-            echo '{"status":"error","message":"Fill in all fields!"}';
+            echo '{"status":"error","message":"Remplissez tous les champs!"}';
             exit;
         }
       
@@ -48,7 +48,7 @@ class Catalog
         $catalogue = Admin::getCatalogPagesById(input()->post('catid')->value);
         $query = Admin::updateCatalogPages($catid, $caption, $page_teaser, $page_headline, $parent_id, $page_layout, $visible, $enabled, $create);
       
-        echo '{"status":"success","message":"Item is successfully editted!"}';
+        echo '{"status":"success","message":"L\'élément a été édité avec succès!"}';
         exit;
     }
   
@@ -84,7 +84,7 @@ class Catalog
         ]);
 
         if (!$validate->isSuccess()) {
-            echo '{"status":"error","message":"Fill in all fields!"}';
+            echo '{"status":"error","message":"Remplissez tous les champs!"}';
             exit;
         }
           
@@ -124,14 +124,14 @@ class Catalog
         ), $furni_id));
 
 
-        echo '{"status":"success","message":"Item is successfully editted!"}';
+        echo '{"status":"success","message":"L\'élément a été édité avec succès!"}';
         exit;
     }
   
     public function executeRcon() 
     {
         if(HotelApi::execute('updatecatalog')) {
-            echo '{"status":"success","message":"Catalog !"}';
+            echo '{"status":"success","message":"Catalogue !"}';
         }
     }
   
@@ -147,7 +147,7 @@ class Catalog
         ]);
       
         if (!$validate->isSuccess()) {
-            echo '{"status":"error","message":"Fill in all fields!"}';
+            echo '{"status":"error","message":"Remplissez tous les champs!"}';
             exit;
         }
           
@@ -172,7 +172,7 @@ class Catalog
             $i++;
         }
       
-        echo '{"status":"success","message":"Folder is succesfully moved"}';
+        echo '{"status":"success","message":"Le dossier a été déplacé avec succès"}';
     }
   
     public function deleteparent()
@@ -182,7 +182,7 @@ class Catalog
         ]);
       
         if (!$validate->isSuccess()) {
-            echo '{"status":"error","message":"Fill in all fields!"}';
+            echo '{"status":"error","message":"Remplissez tous les champs!"}';
             exit;
         }
       
@@ -195,7 +195,7 @@ class Catalog
             }
         }
       
-        echo '{"status":"success","message":"Folder is succesfully deleted"}';
+        echo '{"status":"success","message":"Le dossier a été supprimé avec succès"}';
     }
   
     public function tree() 
@@ -257,11 +257,11 @@ class Catalog
         }
       
         foreach ($pages as $row) {
-            $row->page_texts = !empty($row->page_texts) ? $row->page_texts : 'Empty';
-            $row->enabled = $row->enabled ? 'Yes' : 'No';
-            $row->visible = $row->visible ? 'Yes' : 'No';
+            $row->page_texts = !empty($row->page_texts) ? $row->page_texts : 'Vide';
+            $row->enabled = $row->enabled ? 'Oui' : 'Non';
+            $row->visible = $row->visible ? 'Oui' : 'Non';
         }
-      
+
         response()->json($pages);
     }
   

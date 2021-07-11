@@ -14,7 +14,7 @@ var chatlogs = function() {
         },
       
         getAllLogs: function(id) {
-            $("#chatlogs .kt-portlet__head-title").html("All logs");
+            $("#chatlogs .kt-portlet__head-title").html("Tous les logs");
 
             var datatableCompare = function () {
 
@@ -51,12 +51,12 @@ var chatlogs = function() {
                     },
                    columns: [{
                         field: "room_id",
-                        title: "Room Id",
+                        title: "Appartement",
                         type: "number",
                         width: 75
                     }, {
                         field: "user_from_id",
-                        title: "Username",
+                        title: "Pseudo",
                         width: 75,
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.user_from_id + '">' + data.user_from_id + '</a></span>';
@@ -80,7 +80,7 @@ var chatlogs = function() {
         },
       
         compareUsers: function (dataArray) {
-            $("#chatlogs .kt-portlet__head-title").html("Compare Logs by " +dataArray);
+            $("#chatlogs .kt-portlet__head-title").html("Conversations de " +dataArray);
 
             var datatableCompare = function () {
 
@@ -121,7 +121,7 @@ var chatlogs = function() {
                         width: 75
                     }, {
                        field: "player",
-                       title: "Player",
+                       title: "Joueur",
                        width: 125,
                        template: function(data) {
                           return '<a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.player + '">' + data.player + '</a>';
@@ -145,7 +145,7 @@ var chatlogs = function() {
         },
 
         initDatatable: function () {
-            $("#chatlogs .kt-portlet__head-title").html("All chatlogs");
+            $("#chatlogs .kt-portlet__head-title").html("Tous les logs");
           
             var datatableChatLogs = function() {
                 if ($('#kt_datatable_chatlogs').length === 0) {
@@ -178,7 +178,7 @@ var chatlogs = function() {
                         width: 75
                     }, {
                         field: "user_from_id",
-                        title: "Username",
+                        title: "Pseudo",
                         width: 125,
                         template: function(data) {
                             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.user_from_id + '">' + data.user_from_id + '</a></span>';

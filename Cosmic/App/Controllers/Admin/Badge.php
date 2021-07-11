@@ -48,7 +48,7 @@ class Badge
         }
       
         Admin::updateBadgeRequest($id, $action);
-        response()->json(["status" => "success", "message" => "Request succeed!"]);
+        response()->json(["status" => "success", "message" => "Demande réussie!"]);
     }
   
     public function view()

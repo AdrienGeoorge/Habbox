@@ -30,7 +30,7 @@ class Rooms
         $room_id = Room::getById(input()->post('roomId')->value)->id;
 
         if(empty($room_id)) { 
-            response()->json(["status" => "error", "message" => "This room does not exists!"]);
+            response()->json(["status" => "error", "message" => "Cet appartement n'existe pas!"]);
         }
 
         $room_name = input()->post('roomName')->value;
@@ -39,20 +39,20 @@ class Rooms
         $max_users = input()->post('maxUsers')->value;
 
         Room::save($room_id, $room_name, $room_desc, $access_type, $max_users);
-        Log::addStaffLog(request()->player->id, 'Saved room: ' . $room_name, request()->player->id, 'manage');
+        Log::addStaffLog(request()->player->id, 'Appartement enregistré: ' . $room_name, request()->player->id, 'manage');
 
-        response()->json(["status" => "success", "message" => "Room saved!"]);
+        response()->json(["status" => "success", "message" => "Appartement enregistré!"]);
     }
 
     public function delete()
     {
         $ban = Ban::getRoomBanById(input()->post('id')->value);
         if (empty($ban)) {
-            response()->json(["status" => "error", "message" => "Ban doesnt exist!"]);
+            response()->json(["status" => "error", "message" => "Le ban n'existe pas!"]);
         }
 
         Ban::deleteRoomBan($ban->id);
-        response()->json(["status" => "success", "message" => "Ban deleted!"]);
+        response()->json(["status" => "success", "message" => "Ban supprimé!"]);
     }
 
     public function get()
@@ -60,7 +60,7 @@ class Rooms
         $room = Room::getById(input()->post('post'));
 
         if (empty($room)) {
-            response()->json(["status" => "error", "message" => "No results!"]);
+            response()->json(["status" => "error", "message" => "Aucun résultats!"]);
         }
 
         $roomData = Room::getById($room->id);

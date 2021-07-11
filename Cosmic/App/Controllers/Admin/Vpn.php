@@ -40,11 +40,11 @@ class Vpn
 
             $asn = Ban::getNetworkBanByAsn($record->autonomousSystemNumber);
             if ($asn != null) {
-                response()->json(["status" => "success", "message" => "AS {$asn->asn} is already banned"]);
+                response()->json(["status" => "success", "message" => "AS {$asn->asn} est déjà banni"]);
             }
 
             Ban::createNetworkBan($record->autonomousSystemNumber, json_decode($organisation)->asn->name, request()->player->id);
-            response()->json(["status" => "success", "message" => "AS {$record->autonomousSystemNumber} is added to our ban list"]);
+            response()->json(["status" => "success", "message" => "AS {$record->autonomousSystemNumber} est ajouté à notre liste d'interdiction"]);
 
         } catch (AddressNotFoundException $e) {
             response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
@@ -57,11 +57,11 @@ class Vpn
     {
         $ban = Ban::getNetworkBanById(input()->post('asn')->value);
         if ($ban == null) {
-            response()->json(["status" => "error", "message" => "AS {$ban->asn} is not banned"]);
+            response()->json(["status" => "error", "message" => "AS {$ban->asn} n'est pas banni"]);
         }
 
         Ban::removeNetworkBan($ban->asn);
-        response()->json(["status" => "success", "message" => "AS {$ban->asn}/{$ban->host} is deleted"]);
+        response()->json(["status" => "success", "message" => "AS {$ban->asn}/{$ban->host} a été supprimé"]);
     }
 
     public function getasnbans()

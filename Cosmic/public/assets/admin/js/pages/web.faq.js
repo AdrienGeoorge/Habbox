@@ -46,21 +46,21 @@ var faq = function() {
                         }
                     }, {
                         field: "title",
-                        title: "Title",
+                        title: "Titre",
                         width: 200,
                         template: function (data) {
                             return '<span class="kt-font">' + data.title + '</span>';
                         }
                     }, {
                         field: "cat_name",
-                        title: "Category",
+                        title: "Catégorie",
                         width: 200,
                         template: function (data) {
                             return '<span class="kt-font">' + data.cat_name + '</span>'
                         }
                     }, {
                         field: "author",
-                        title: "Author",
+                        title: "Auteur",
                         width: 75,
                         template: function (data) {
                             return '<span class="kt-font">' + data.author + '</span>';
@@ -81,7 +81,7 @@ var faq = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function () {
-                            return '<a class="btn btn-sm btn-clean btn-icon btn-icon-sm" id="editFaq" title="Edit"><i class="flaticon2-edit"></i></a> <a class="btn btn-sm btn-clean btn-icon btn-icon-sm" id="deleteFaq" data-toggle="modal" data-target="#confirm-delete" title="Delete"><i class="flaticon2-trash"></i></a>'
+                            return '<a class="btn light btn-sm btn-clean btn-icon" id="editFaq" title="Editer"><i class="flaticon2-edit"></i></a> <a class="btn light btn-sm btn-clean btn-icon" id="deleteFaq" data-toggle="modal" data-target="#confirm-delete" title="Supprimer"><i class="flaticon2-trash"></i></a>'
                         }
                     }]
                 });
@@ -162,7 +162,7 @@ var faq = function() {
                         }
                     }, {
                         field: "category",
-                        title: "Category",
+                        title: "Catégorie",
                         template: function (data) {
                             return '<span class="kt-font">' + data.category + '</span>';
                         }
@@ -175,7 +175,7 @@ var faq = function() {
                         textAlign: "left",
                         autoHide: !1,
                         template: function () {
-                            return '<a class="btn btn-sm btn-clean btn-icon btn-icon-sm" data-toggle="modal" data-target="#editCategoryModal" id="editCat" title="Edit"><i class="flaticon2-edit"></i></a> <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-sm" data-toggle="modal" data-target="#confirm-delete" id="deleteCat" title="Delete"><i class="flaticon2-trash"></i></a>'
+                            return '<a class="btn light btn-sm btn-clean btn-icon" data-toggle="modal" data-target="#editCategoryModal" id="editCat" title="Edit"><i class="flaticon2-edit"></i></a> <a href="#" class="btn light btn-sm btn-clean btn-icon" data-toggle="modal" data-target="#confirm-delete" id="deleteCat" title="Supprimer"><i class="flaticon2-trash"></i></a>'
                         }
                     }]
                 });
@@ -226,6 +226,7 @@ var faq = function() {
                 post: category
             }, function (result) {
                 if (result.status == "success") {
+                    faq.goBack();
                     $('#addCategoryModal').modal('toggle');
                     $("#kt_datatable_faq_category").KTDatatable("reload");
                 }
@@ -241,6 +242,7 @@ var faq = function() {
                 value: category
             }, function (result) {
                 if (result.status == "success") {
+                    faq.goBack();
                     $('#editCategoryModal').modal('toggle');
                     $("#kt_datatable_faq_category").KTDatatable("reload");
                 }
@@ -309,13 +311,13 @@ var faq = function() {
                     $('[name=title]').val(result.faq.title);
                     tinyMCE.activeEditor.setContent(result.faq.desc);
 
-                    $('.titleFaq, .addFaq').text('Edit FAQ');
+                    $('.titleFaq, .addFaq').text('Editer la FAQ');
                 } else {
                     $('[name=faqId]').val(0);
                     $('[name=title]').val("");
                     tinyMCE.activeEditor.setContent("");
 
-                    $('.titleFaq, .addFaq').text('Add FAQ');
+                    $('.titleFaq, .addFaq').text('Ajouter la FAQ');
                 }
 
             });
@@ -331,12 +333,45 @@ jQuery(document).ready(function() {
     faq.init();
 
     tinymce.init({
-        selector: "textarea",
-        width: '100%',
-        height: 270,
-        plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern imagetools codesample",
-        statusbar: true,
-        menubar: true,
-        toolbar: "undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        selector: 'textarea',
+        plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+        imagetools_cors_hosts: ['picsum.photos'],
+        menubar: 'file edit view insert format tools table help',
+        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save | insertfile image media link anchor | ltr rtl',
+        toolbar_sticky: true,
+        autosave_ask_before_unload: true,
+        autosave_interval: '30s',
+        autosave_prefix: '{path}{query}-{id}-',
+        autosave_restore_when_empty: false,
+        autosave_retention: '30m',
+        image_advtab: true,
+        importcss_append: true,
+        file_picker_callback: function (callback, value, meta) {
+            /* Provide file and text for the link dialog */
+            if (meta.filetype === 'file') {
+                callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            }
+
+            /* Provide image and alt text for the image dialog */
+            if (meta.filetype === 'image') {
+                callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            }
+
+            /* Provide alternative source and posted for the media dialog */
+            if (meta.filetype === 'media') {
+                callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+            }
+        },
+        template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+        height: 600,
+        image_caption: true,
+        quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+        noneditable_noneditable_class: 'mceNonEditable',
+        toolbar_mode: 'sliding',
+        contextmenu: 'link image imagetools table',
+        skin: 'oxide-dark',
+        content_css: 'dark',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
     });
 });

@@ -482,12 +482,12 @@ class Admin
 
     public static function getOffers()
     {
-        return QueryBuilder::connection()->table('website_paypal_offers')->get();
+        return QueryBuilder::connection()->table('website_shop_offers')->get();
     }
-    
+
     public static function removeOffer($id)
     {
-        return QueryBuilder::connection()->table('website_paypal_offers')->where('id', $id)->delete();
+        return QueryBuilder::connection()->table('website_shop_offers')->where('id', $id)->delete();
     }
     /*
      * Catalog queries
@@ -764,16 +764,34 @@ class Admin
     {
         return QueryBuilder::connection()->table('website_forum_categories')->where('id', $id)->delete();
     }
-  
-   public static function offerEdit($data, $id = null)
-   {
-        if(!is_null($id)) {
-            return QueryBuilder::connection()->table('website_paypal_offers')->where('id', $id)->update($data);
-        }
-     
-        return QueryBuilder::connection()->table('website_paypal_offers')->insert($data);
+
+    public static function offerCreate($currencys, $amount, $price, $offer_id, $private_key)
+    {
+        $data = array(
+            'currency'        => $currencys,
+            'amount'          => $amount,
+            'price'           => $price,
+            'offer_id'        => $offer_id,
+            'private_key'     => $private_key
+        );
+
+        return QueryBuilder::connection()->table('website_shop_offers')->insert($data);
     }
-  
+
+    public static function offerEdit($id, $currencys, $amount, $price, $offer_id, $private_key)
+    {
+        $data = array(
+            'currency'        => $currencys,
+            'amount'          => $amount,
+            'price'           => $price,
+            'offer_id'        => $offer_id,
+            'private_key'     => $private_key
+        );
+
+        return QueryBuilder::connection()->table('website_shop_offers')->where('id', $id)->update($data);
+    }
+
+
     public static function getValueCategoryById($id)
     {
         return QueryBuilder::connection()->table('website_rare_values')->where('id', $id)->first();

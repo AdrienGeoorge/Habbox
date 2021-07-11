@@ -40,18 +40,10 @@
                         <label>Texte</label>
                         <textarea name="story" id="story" style="font-size: 7px;"></textarea>
                     </div>
-                </div>
-
-                <div class="kt-portlet__foot">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 m--valign-middle">
-                            Action:
-                        </div>
-
-                        <div class="col-lg-6 kt-align-right">
+                        <div class="col-lg-12 kt-align-right">
                             <input type="hidden" name="faqId">
                             <button type="submit" class="btn btn-brand addFaq">Modifier les FAQ</button>
-                            <span class="kt-margin-left-10">ou <a id="goBack" class="kt-link kt-font-bold">Retour</a></span>
                         </div>
                     </div>
                 </div>
@@ -88,7 +80,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(110px, 38px, 0px);">
                                 <ul class="kt-nav">
-                                    <li class="kt-nav__section kt-nav__section--first">
+                                    <li class="kt-nav__section kt-nav__section--first mb-4">
                                         <span class="kt-nav__section-text">Action</span>
                                     </li>
 
@@ -133,14 +125,14 @@
                             </span>
                         </div>
 
-                        <div class="dropdown dropdown-inline">
-                            <button type="button" class="btn btn-hover-brand btn-elevate-hover btn-icon btn-sm btn-icon-md btn-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown dropdown-inline ml-2">
+                            <button type="button" class="btn light btn-hover-brand btn-elevate-hover btn-icon btn-sm btn-icon-md btn-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="flaticon-more-1"></i>
                             </button>
 
                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(110px, 38px, 0px);">
                                 <ul class="kt-nav">
-                                    <li class="kt-nav__section kt-nav__section--first">
+                                    <li class="kt-nav__section kt-nav__section--first mb-4">
                                         <span class="kt-nav__section-text">Actions</span>
                                     </li>
 
@@ -191,8 +183,8 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary addCategory">Ajouter</button>
+                <button type="button" class="btn light" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn green addCategory">Ajouter</button>
             </div>
         </div>
     </div>
@@ -218,12 +210,12 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary editCategory">Sauvegarder</button>
+                <button type="button" class="btn light" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn green editCategory">Sauvegarder</button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ximwo5y97dtfrnc60p0d3bt43tgla29a83es2owf5uwib1v2"></script>
+<script src="https://cdn.tiny.cloud/1/ximwo5y97dtfrnc60p0d3bt43tgla29a83es2owf5uwib1v2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 {% endblock %}

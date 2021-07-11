@@ -31,7 +31,7 @@ t = $("#kt_datatable_staff_logs").KTDatatable({
         width: 75
     }, {
         field: "username",
-        title: "Username",
+        title: "Pseudo",
         width: 100,
         template: function(data) {
             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.username + '">' + data.username +  '</a>';
@@ -42,11 +42,11 @@ t = $("#kt_datatable_staff_logs").KTDatatable({
         width: 85
     }, {
         field: "value",
-        title: "Data",
+        title: "Données",
         width: 350
     }, {
         field: "target",
-        title: "Target",
+        title: "Cible",
         width: 100,
         template: function(data) {
             if(data.target !== null)
@@ -89,18 +89,18 @@ t = $("#kt_datatable_command_logs").KTDatatable({
     },
     columns: [{
         field: "username",
-        title: "Username",
+        title: "Pseudo",
         width: 100,
         template: function(data) {
             return '<span class="kt-font"><a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal"  data-id="' + data.username + '">' + data.username +  '</a>';
         }
     }, {
         field: "params",
-        title: "Params", 
+        title: "Paramètres",
         width: 180
     }, {
         field: "command",
-        title: "Command",
+        title: "Commande",
         width: 400
     }, {
         field: "timestamp",

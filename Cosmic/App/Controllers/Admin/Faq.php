@@ -40,8 +40,8 @@ class Faq
 
         if (empty($id)) {
             Admin::addFAQ($title, Helper::convertSlug($title), $story, $category, request()->player->id);
-            Log::addStaffLog('-1', 'FAQ added: ' . $title, request()->player->id, 'faq');
-            response()->json(["status" => "success", "message" => "FAQ added successfully!"]);
+            Log::addStaffLog('-1', 'FAQ ajoutée: ' . $title, request()->player->id, 'faq');
+            response()->json(["status" => "success", "message" => "FAQ ajoutée avec succès!", "loadpage" => "/housekeeping/faq/manage"]);
         }
 
         $faq = Admin::getFAQById($id);
@@ -50,8 +50,8 @@ class Faq
         }
 
         if (Admin::editFAQ($id, $title, Helper::convertSlug($title), $story, $category, request()->player->id)) {
-            Log::addStaffLog('-1', 'FAQ edit: ' . $id, request()->player->id, 'faq');
-            response()->json(["status" => "success", "message" => "FAQ editted successfully!"]);
+            Log::addStaffLog('-1', 'FAQ éditée: ' . $id, request()->player->id, 'faq');
+            response()->json(["status" => "success", "message" => "FAQ éditée avec succès!", "loadpage" => "/housekeeping/faq/manage"]);
         }
     }
 
@@ -69,9 +69,9 @@ class Faq
     public function remove()
     {
         $faq = Admin::removeFAQ(input()->post('post')->value);
-        Log::addStaffLog('-1', 'FAQ removed: ' . intval(input()->post('post')->value), request()->player->id, 'faq');
+        Log::addStaffLog('-1', 'FAQ supprimée: ' . intval(input()->post('post')->value), request()->player->id, 'faq');
 
-        response()->json(["status" => "success", "message" => "FAQ removed successfully!"]);
+        response()->json(["status" => "success", "message" => "FAQ supprimée avec succès!"]);
     }
 
     public function addcategory()
@@ -87,29 +87,29 @@ class Faq
         $category = input()->post('post')->value;
 
         Admin::addFAQCategory($category);
-        Log::addStaffLog('-1', 'FAQ Category added: ' . $category, request()->player->id, 'faq');
+        Log::addStaffLog('-1', 'FAQ catégorie ajoutée: ' . $category, request()->player->id, 'faq');
 
-        response()->json(["status" => "success", "message" => "Category successfully added!"]);
+        response()->json(["status" => "success", "message" => "Catégorie ajoutée avec succès!", "replacepage" => "/housekeeping/faq/manage"]);
 }
 
     public function editcategory()
     {
         $category = Admin::getFAQCategoryById(input()->post('category')->value);
 
-        Log::addStaffLog('-1', 'FAQ Category edit: ' . $category->category . ' to ' . input()->post('value')->value, request()->player->id, 'faq');
+        Log::addStaffLog('-1', 'FAQ catégorie éditée: ' . $category->category . ' to ' . input()->post('value')->value, request()->player->id, 'faq');
         Admin::editFAQCategory(input()->post('category')->value, input()->post('value')->value);
 
-        response()->json(["status" => "success", "message" => "Category modified succesfully!"]);
+        response()->json(["status" => "success", "message" => "Catégorie éditée avec succès!", "replacepage" => "/housekeeping/faq/manage"]);
     }
 
     public function removecategory()
     {
         $category = Admin::getFAQCategoryById(input()->post('post')->value);
 
-        Log::addStaffLog('-1', 'FAQ Category removed: ' . $category->category, request()->player->id,  'faq');
+        Log::addStaffLog('-1', 'FAQ catégorie supprimée: ' . $category->category, request()->player->id,  'faq');
         Admin::removeFAQCategory($category->id);
 
-        response()->json(["status" => "success", "message" => "Category removed succesfully!"]);
+        response()->json(["status" => "success", "message" => "Catégorie supprimée avec succès!"]);
     }
 
     public function getfaqs()

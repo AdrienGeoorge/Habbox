@@ -37,7 +37,7 @@ class Permissions
         $minimum_rk = filter_var(input()->post('minimum_rank')->value, FILTER_SANITIZE_NUMBER_INT);
 
         if (Admin::changeMinimumRank($command_id, $minimum_rk)) {
-            response()->json(["status" => "success", "message" => "Permission rank has been changed!"]);
+            response()->json(["status" => "success", "message" => "Les permissions du rank ont été modifiées!"]);
         }
     }
 
@@ -60,15 +60,15 @@ class Permissions
         }
 
         if (empty($this->data->rank_name)) {
-            response()->json(["status" => "error", "message" => "Rank can not be empty!"]);
+            response()->json(["status" => "error", "message" => "Le rank ne peut pas être vide!"]);
         }
       
         if (in_array($this->data->rank_name, array_column(Admin::getRanks(true), 'name'))) {
-            response()->json(["status" => "error", "message" => "Rank name is already in use!"]);
+            response()->json(["status" => "error", "message" => "Le nom du rank est déjà utilisé!"]);
         }
   
         Admin::addRank($this->data, $permissionsArray);
-        response()->json(["status" => "success", "message" => "Rank added successfully!"]);
+        response()->json(["status" => "success", "message" => "Rank ajouté avec succès!"]);
     }
 
     public function getwebsiteranks()
@@ -93,13 +93,13 @@ class Permissions
     {
         Admin::deleteTeam(input()->post('id')->value);
         Admin::updateTeamPlayer(input()->post('id')->value);
-        response()->json(["status" => "success", "message" => "Team has been deleted!"]);
+        response()->json(["status" => "success", "message" => "L'équipe a été supprimée!"]);
     }
   
     public function addteam()
     {
         Admin::addTeam(input()->post('rank_name')->value, input()->post('rank_desciption')->value);
-        response()->json(["status" => "success", "message" => "Team is added!"]);
+        response()->json(["status" => "success", "message" => "L'équipe a été ajoutée!"]);
     }
   
     public function getteams()
@@ -115,7 +115,7 @@ class Permissions
 
     public function search()
     {
-        response()->json(["status" => "success", "message" => "Permissions has been loaded!"]);
+        response()->json(["status" => "success", "message" => "Les permissions ont été chargées!"]);
     }
 
     public function addpermission()
@@ -124,26 +124,26 @@ class Permissions
         $permission_id = input()->post('permissionid')->value;
 
         if (empty($role_id) || empty($permission_id)) {
-            response()->json(["status" => "error", "message" => "Permission can not be added!"]);
+            response()->json(["status" => "error", "message" => "La permission ne peut pas être ajoutée!"]);
         }
 
         if (Admin::roleExists($role_id, $permission_id))  {
-            response()->json(["status" => "error", "message" => "Permissions has already added to this role!"]);
+            response()->json(["status" => "error", "message" => "Les permissions ont déjà été ajoutées à ce rôle!"]);
         }
 
         Admin::createPermission($role_id, $permission_id);
-        response()->json(["status" => "success", "message" => "Permissions has been added!"]);
+        response()->json(["status" => "success", "message" => "Les permissions ont été ajoutées!"]);
     }
 
     public function delete()
     {
         $permission = Permission::getPermissionById(input()->post('id')->value);
         if (empty($permission)) {
-            response()->json(["status" => "error", "message" => "No permission found!"]);
+            response()->json(["status" => "error", "message" => "Aucune permission trouvée!"]);
         }
 
         Admin::deletePermission($permission->id);
-        response()->json(["status" => "success", "message" => "Permissions has been deleted!"]);
+        response()->json(["status" => "success", "message" => "Les permissions ont été supprimées!"]);
     }
 
     public function view()
