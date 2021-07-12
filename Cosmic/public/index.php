@@ -14,6 +14,11 @@ if(Config::debug) {
  *  Set session
  */
 
+ini_set('session.gc_maxlifetime', 21600);
+ini_set('session.cookie_lifetime', 21600);
+//ini_set("session.use_only_cookies", true);
+session_cache_expire(360);
+session_set_cookie_params(21600);
 session_start();
 
 /**

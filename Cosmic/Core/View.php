@@ -83,6 +83,8 @@ class View
               
                 if(request()->getUrl()->contains('/housekeeping')) {
                     $twig->addGlobal('staff_count', Admin::getStaffCount(3));
+                    $twig->addGlobal('items_count', Admin::getCatalogItems());
+                    $twig->addGlobal('rooms_count', Admin::getRooms());
                     $twig->addGlobal('player_rank', Player::getHotelRank(request()->player->rank));
                     $twig->addGlobal('flash_messages', Flash::getMessages());
                     $twig->addGlobal('alert_messages', Admin::getAlertMessages());

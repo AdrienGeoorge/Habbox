@@ -318,6 +318,16 @@ class Admin
     {
         return QueryBuilder::connection()->table('users')->where('online', "1")->where('rank', ">=", $rank)->count();
     }
+
+    public static function getCatalogItems()
+    {
+        return QueryBuilder::connection()->table('catalog_items')->count();
+    }
+
+    public static function getRooms()
+    {
+        return QueryBuilder::connection()->table('rooms')->count();
+    }
   
     public static function getPopularRooms($limit = 100)
     {
