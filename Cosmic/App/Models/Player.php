@@ -162,6 +162,11 @@ class Player
         return QueryBuilder::connection()->query('SELECT u.look, u.username, mf.relation, u.online FROM messenger_friendships mf JOIN users u ON mf.user_one_id = u.id WHERE mf.user_two_id = "' . $user_id .'" ORDER BY u.online DESC, u.last_online DESC, u.username ASC LIMIT '. $limit)->get();
     }
 
+    public static function getRandomFriends($user_id, $limit = 5)
+    {
+        return QueryBuilder::connection()->query('SELECT u.look, u.username, mf.relation, u.online FROM messenger_friendships mf JOIN users u ON mf.user_one_id = u.id WHERE mf.user_two_id = "' . $user_id .'" ORDER BY RAND() LIMIT '. $limit)->get();
+    }
+
     public static function getMyOnlineFriends($user_id)
     {
         return QueryBuilder::connection()->query('SELECT users.look, users.username FROM messenger_friendships JOIN users ON messenger_friendships.user_one_id = users.id WHERE user_two_id = "' . $user_id .'" AND users.online > "0"')->get();

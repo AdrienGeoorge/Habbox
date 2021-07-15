@@ -44,7 +44,7 @@ class Profile
 
         $this->data->player->badges = Player::getBadges($player->id, 7);
         $this->data->player->profileBadges = Player::getProfileBadges($player->id);
-        $this->data->player->friends = Player::getFriends($player->id);
+        $this->data->player->friends = Player::getRandomFriends($player->id);
 
         $this->data->player->groups = Player::getGroups($player->id, 7);
         $this->data->player->rooms = Player::getRooms($player->id);
