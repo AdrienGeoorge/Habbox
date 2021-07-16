@@ -58,12 +58,12 @@ var vacanies = function() {
                }, {
                     field: "applys",
                     title: "Postulants",
-                   width: 50
+                   width: 75
                }, {
                   field: "Actions",
                   title: "Actions",
                   sortable: !1,
-                  width: 75,
+                  width: 100,
                   overflow: "visible",
                   textAlign: "left",
                   autoHide: !1,
@@ -190,7 +190,7 @@ var vacanies = function() {
             self.ajax_manager.post("/housekeeping/api/vacancies/seejob", {
                 id: id
             }, function(result) {
-                $(".job-body").html("<b>Mon message</b><br /><br />" + result.job.message + "<br /><br />");
+                $(".job-body").html("<b>Mon message</b><br /><br />" + result.job.message + "<br /><br />").text();
               
                 $(".monday").html(result.job.available_monday);
                 $(".tuesday").html(result.job.available_tuesday);

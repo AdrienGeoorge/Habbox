@@ -95,7 +95,7 @@ class Search
 
         $roomObject = Admin::getRoomsByString($this->url);
         foreach($roomObject as $room) {
-            $this->paths[] = array('id' => $room->id, 'text' => $room->name.' De: '.$room->owner.' Visiteurs: '.$room->users_now);
+            $this->paths[] = array('id' => $room->id, 'text' => $room->name.' - Appartement de '.$room->owner_name.' - '.$room->users.' visiteurs');
         }
 
         echo Json::encode($this->paths);
@@ -141,7 +141,7 @@ class Search
             response()->json(['id' => "none", 'text' => 'Où cherchez-vous?']);
         }
 
-        $wordObject = Admin::getWordsByString($string);
+        $wordObject = Admin::getWordsByString($this->url);
         foreach ($wordObject as $user) {
             $this->paths[] = array('id' => $user->key, 'text' => $user->key);
         }

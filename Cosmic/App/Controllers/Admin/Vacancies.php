@@ -108,7 +108,7 @@ class Vacancies
     {
         $jobs = Community::getJobs();
         foreach($jobs as $job) {
-            $job->applys = count(Community::getJobApplications($job));
+            $job->applys = count(Community::getJobApplicationsAdmin($job->id));
         }
       
         Json::filter($jobs, 'desc', 'id');

@@ -237,6 +237,11 @@ class Community
         return QueryBuilder::connection()->table('website_jobs')->join('website_jobs_applys', 'website_jobs.id', '=', 'website_jobs_applys.job_id')->get();
     }
 
+    public static function getJobApplicationsAdmin($id)
+    {
+        return QueryBuilder::connection()->table('website_jobs_applys')->where('job_id', $id)->get();
+    }
+
     public static function getJobApplication($job_id, $user_id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->where('job_id', $job_id)->where('user_id', $user_id)->first();
