@@ -765,11 +765,12 @@ function WebPageHomeInterface(main_page) {
         }
 
         $("#copyReferral").click(function () {
-            var copyText = document.getElementById("getReferral");
-
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
+            var copyText = document.createRange();
+            copyText.selectNode(document.getElementById("getReferral"));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(copyText);
             document.execCommand("copy");
+            window.getSelection().removeAllRanges();
 
             Web.notifications_manager.create("info", Locale.web_save_clipboard, Locale.web_referral_copied);
         });
