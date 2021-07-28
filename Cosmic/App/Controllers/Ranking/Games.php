@@ -52,7 +52,7 @@ class Games
             'achievements' => $achievements,
             'respects' => $respectreceived,
             'online' => $onlinetime,
-            'currencys'  => $currencys['GOTW']
+            'currencys'  => $currencys['gotw']
         ]);
     }
 }

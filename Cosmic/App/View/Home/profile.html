@@ -14,7 +14,7 @@
                 <span class="profile-motto">{{data.player.motto}}</span>
             </div>
             <div class="profile-badges" style="justify-content: center;">
-                {% set i = 1 %}
+                {% set i = 0 %}
                 {% for badge in data.player.profileBadges %}
                 <div class="profile-badge">
                     <img src="{{site.cpath}}/c_images/album1584/{{badge.badge_code}}.gif" alt="{{badge.badge_code}}"
@@ -22,9 +22,11 @@
                 </div>
                 {% set i = i + 1 %}
                 {% endfor %}
-                {% for n in i..5 %}
+                {% if i < 5 %}
+                {% for n in i..4 %}
                 <div class="profile-badge"></div>
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
         <div class="box flex_2 profile-connect-infos">
