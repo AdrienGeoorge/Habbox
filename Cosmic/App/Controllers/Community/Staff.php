@@ -23,6 +23,8 @@ class Staff
                         $users->settings = Player::getSettings($users->id);
                     }
                 }
+            }else{
+                unset($ranks[array_search($row, $ranks)]);
             }
         }
 
