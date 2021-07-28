@@ -134,7 +134,7 @@
                      <div class="kt-container  kt-grid__item kt-grid__item--fluid" style="margin-top:30px">
                         <div class="kt-portlet__body  kt-portlet__body--fit">
                            <div class="row">
-                              <div class="col-md-12 col-lg-6 col-xl-3">
+                              <div class="col-md-12 col-lg-6 col-xl-6">
                                  <div class="kt-portlet">
                                     <div class="kt-widget24">
                                        <div class="kt-widget24__details">
@@ -147,13 +147,13 @@
                                           </span>
                                           </div>
                                           <span class="kt-widget24__stats infos-server blue">
-                                          <a href="#" id="showOnlinePlayers">{{online_count}}</a>
+                                          <a href="#" id="showOnlinePlayers">{{online_count|number_format(0, '.', ',')}}</a>
                                        </span>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-md-12 col-lg-6 col-xl-3">
+                              <div class="col-md-12 col-lg-6 col-xl-6">
                                  <div class="kt-portlet">
                                     <div class="kt-widget24">
                                        <div class="kt-widget24__details">
@@ -166,13 +166,13 @@
                                           </span>
                                           </div>
                                           <span class="kt-widget24__stats infos-server yellow">
-                                       {{staff_count}}
+                                       {{staff_count|number_format(0, '.', ',')}}
                                        </span>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-md-12 col-lg-6 col-xl-3">
+                              <div class="col-md-12 col-lg-6 col-xl-6">
                                  <div class="kt-portlet">
                                     <div class="kt-widget24">
                                        <div class="kt-widget24__details">
@@ -185,13 +185,13 @@
                                           </span>
                                           </div>
                                           <span class="kt-widget24__stats infos-server green">
-                                       {{rooms_count}}
+                                       {{rooms_count|number_format(0, '.', ',')}}
                                        </span>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-md-12 col-lg-6 col-xl-3">
+                              <div class="col-md-12 col-lg-6 col-xl-6">
                                  <div class="kt-portlet">
                                     <div class="kt-widget24">
                                        <div class="kt-widget24__details">
@@ -204,7 +204,7 @@
                                           </span>
                                           </div>
                                           <span class="kt-widget24__stats infos-server red">
-                                       {{items_count}}
+                                       {{items_count|number_format(0, '.', ',')}}
                                        </span>
                                        </div>
                                     </div>
