@@ -28,6 +28,7 @@
 
         <div class="flex-body-right">
             <div class="title">{{locale.applications}}</div>
+            {% if myJobs %}
             {% for job in myJobs %}
             <div class="default-section job-offer flex-container flex-vertical-center box">
                 <div class="offer-description">
@@ -42,6 +43,9 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %}
+            {{locale.my_applications}}
+            {% endif %}
         </div>
     </div>
 </div>

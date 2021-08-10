@@ -454,6 +454,7 @@ $GLOBALS['language'] = array (
         'jobs' => array (
             'title'                   => 'Liste des candidatures',
             'applications'            => 'Mes candidatures',
+            'my_applications'         => 'Pas encore de candidatures',
             'available_applications'  => 'Postes vacants',
             'buildteam'               => 'Architectes',
             'buildteam_desc'          => 'Ils sont responsables de la construction des apparts officiels de l\'hôtel.',

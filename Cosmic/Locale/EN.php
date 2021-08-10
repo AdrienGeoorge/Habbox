@@ -460,6 +460,7 @@ $GLOBALS['language'] = array (
         'jobs' => array (
             'title'                   => 'List of vacancies',
             'applications'            => 'My applications',
+            'my_applications'         => 'No applications yet',
             'available_applications'  => 'Available vacancies',
             'buildteam'               => 'Buildteam',
             'buildteam_desc'          => 'They are responsible for building (event/official) rooms.',
