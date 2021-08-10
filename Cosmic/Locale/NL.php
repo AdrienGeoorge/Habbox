@@ -194,6 +194,7 @@ $GLOBALS['language'] = array (
             'reaction_hidden_yes'    => 'Nieuwsreactie is verborgen gemaakt!',
             'reaction_hidden_no'     => 'Nieuwsreactie is zcithbaar gemaakt!',
             'forbidden_words'        => 'Your message contains forbidden words!',
+            'published_on'           => 'Gepubliceerd op'
         ),
         'forum' => array (
           /*  Forum/index.html  */

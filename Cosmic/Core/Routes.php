@@ -27,6 +27,7 @@ class Routes extends Router
             parent::group(['prefix' => 'housekeeping', 'middleware' => AdminAuthMiddleware::class, 'exceptionHandler' => ExceptionHandler::class], function () {
                 
                 parent::get('/', '\App\Controllers\Admin\Dashboard@view');
+                parent::get('/stats', '\App\Controllers\Admin\Stats@view');
                 parent::get('/permissions/get/commands', 'Permissions@getpermissioncommands');
                 parent::get('/catalog/get/tree', 'Catalog@tree');
               

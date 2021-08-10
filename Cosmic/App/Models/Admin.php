@@ -908,4 +908,19 @@ class Admin
     {
         return QueryBuilder::connection()->table('website_badge_requests')->where('id', $id)->update(array('status' => $status));
     }
+
+    public static function getPlayers()
+    {
+        return QueryBuilder::connection()->table('users')->count();
+    }
+
+    public static function getGuilds()
+    {
+        return QueryBuilder::connection()->table('guilds')->count();
+    }
+
+    public static function getBans()
+    {
+        return QueryBuilder::connection()->table('bans')->where('ban_expire', '>', time())->count();
+    }
 }

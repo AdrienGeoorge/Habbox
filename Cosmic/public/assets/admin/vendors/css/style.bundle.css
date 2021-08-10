@@ -42567,3 +42567,19 @@ and (min-width: 1025px) {
 .infos-server.yellow{
     background-color: #ffb822;
 }
+
+.infos-server.purple{
+    background-color: #a06cb1;
+}
+
+.infos-server.green_2{
+    background-color: #89c763;
+}
+
+.infos-server.orange{
+    background-color: coral;
+}
+
+.infos-server.indian{
+    background-color: indianred;
+}

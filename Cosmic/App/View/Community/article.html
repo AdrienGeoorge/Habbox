@@ -31,6 +31,7 @@
                 {% endif %}
                 <div class="article-body">
                     {{article.full_story|raw}}
+                    <p>{{locale.published_on ~ ' ' ~ article.timestamp|date('d/m/Y - H:i')}}</p>
                 </div>
                 <div class="article-author-infos">
                     <div class="article-author-image">
@@ -125,6 +126,7 @@
                     </div>
                     <div class="flex_4 infosNews">
                         <span>{{item.title}}</span>
+                        <span class="descNews">{{item.timestamp|date('d/m/Y - H:i')}}</span>
                         <span class="descNews">
                             {{ item.short_story|length > 50 ? item.short_story|slice(0,50) ~ '...' :
                             item.short_story }}

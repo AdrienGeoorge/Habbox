@@ -189,6 +189,7 @@ $GLOBALS['language'] = array (
             'reaction_hidden_yes'       => 'Commentaire invisible!',
             'reaction_hidden_no'        => 'Commentaire de nouveau visible!',
             'forbidden_words'           => 'Ton commentaire possède des mots manquants!',
+            'published_on'              => 'Publié le'
         ),
         'forum' => array (
             /*  Forum/index.html  */

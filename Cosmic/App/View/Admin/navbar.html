@@ -54,6 +54,10 @@
               <i class="kt-menu__link-icon flaticon-technology-2"></i><span class="kt-menu__link-text">Gestion du site</span></a>
           </li>
           {% endif %}
+           <li class="kt-menu__item ajaxLoading" aria-haspopup="true" >
+               <a  href="/housekeeping/stats" class="kt-menu__link ">
+                   <i class="kt-menu__link-icon flaticon-technology-2"></i><span class="kt-menu__link-text">Statistiques</span></a>
+           </li>
           {% endif %}
 
           {% if 'housekeeping_ban_logs' in permissions or 'housekeeping_chat_logs' in permissions or 'housekeeping_staff_logs' in permissions %}

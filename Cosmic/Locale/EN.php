@@ -195,6 +195,7 @@ $GLOBALS['language'] = array (
             'reaction_hidden_yes'       => 'Comment made invisible!',
             'reaction_hidden_no'        => 'Comment made visible!',
             'forbidden_words'           => 'Your message contains forbidden words!',
+            'published_on'              => 'Published on'
         ),
         'forum' => array (
           /*  Forum/index.html  */
