@@ -12,7 +12,7 @@ class Config
     /* Example external_base: = "gordon/PRODUCTION-201904011212-888653470" */
     
     const client = [
-      "client_radio"                => "https://21253.live.streamtheworld.com/WEB16_AAC.aac",
+      "client_radio"                => "https://icecast.skyrock.net/s/parisidf_aac_128k",
       "nitro_path"                  => "https://habbox.fr/client/"
     ];
   
