@@ -27,7 +27,7 @@ class Home
             $currencys = Player::getCurrencys(request()->player->id);
         }
 
-        $dirnameBadges = './../nitro/c_images/album1584/';
+        $dirnameBadges = './../public/nitro/c_images/album1584/';
         $dirBadges = scandir($dirnameBadges);
         $badges = [];
         foreach ($dirBadges as $file) {
@@ -39,7 +39,7 @@ class Home
         }
         krsort($badges);
 
-        $dirnameItems = './../nitro/c_images/catalogue/';
+        $dirnameItems = './../public/nitro/c_images/catalogue/';
         $dirItems = scandir($dirnameItems);
         $items = [];
         foreach ($dirItems as $file) {
