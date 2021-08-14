@@ -6449,6 +6449,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .image-banner {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 170px;
     width: 100%;
     border-radius: 15px;

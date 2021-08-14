@@ -45,7 +45,9 @@ class Home
         foreach ($dirItems as $file) {
             if ($file != '.' && $file != '..') {
                 if (!is_dir($dirnameItems . '/' . $file)) {
-                    $items[filemtime($dirnameItems.'/'.$file)] = $file;
+                    if(strpos($file, 'icon_') !== false){
+                        $items[filemtime($dirnameItems.'/'.$file)] = $file;
+                    }
                 }
             }
         }
