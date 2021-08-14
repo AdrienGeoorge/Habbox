@@ -6172,9 +6172,9 @@ input:-webkit-autofill {
 
 .navigation-top-logo {
     position: absolute;
-    width: 40px;
+    width: 59px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-10%, -50%);
     flex: 1;
 }
 
