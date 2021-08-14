@@ -27,7 +27,7 @@ class Config
       "cpath"       => "https://habbox.fr/nitro",
       "fpath"       => "https://images.habbox.fr/habbox-imaging",
       "shortname"   => "Habbox",
-      "sitename"    => "Habbox Hôtel"
+      "sitename"    => "Habbox"
     ];
       
     const language = "FR";
