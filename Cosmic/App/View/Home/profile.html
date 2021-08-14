@@ -75,11 +75,11 @@
                         <div class="flex-body profile-feed" data-id="{{feed.id}}" id="{{feed.id}}">
                             <div class="comment-avatar-flex">
                                 <a href="/profile/{{feed.username}}" class="comment-avatar">
-                                    <img src="{{site.fpath}}/avatarimage?figure={{feed.look}}&head_direction=3&size=m&headonly=1"
-                                         alt="" class="flex_1 pixelated" style="width: 6em;">
+                                    <img src="{{site.fpath}}/avatarimage?figure={{feed.look}}&head_direction=2&size=m&headonly=1"
+                                         alt="" class="flex_1 pixelated" style="width: 5em;">
                                 </a>
                             </div>
-                            <div class="flex_5 comment-user-flex">
+                            <div class="comment-user-flex" style="flex: 7;">
                                 <a href="/profile/{{feed.username}}" class="comment-user">
                                     {{feed.username}} - <small>{{feed.timestamp|date('d/m/Y - H:i')}}</small>
                                 </a>

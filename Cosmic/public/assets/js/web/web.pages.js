@@ -177,7 +177,7 @@ function WebPageArticleInterface(main_page) {
             ['<div class="flex-body comment" data-id="{{post.id}}">\n' +
             '    <div class="comment-avatar-flex">\n' +
             '       <a href="/profile/' + User.username + '" class="comment-avatar">\n' +
-            '           <img src="' + Site.figure_url + '/avatarimage?figure={{figure}}&head_direction=3&size=m&headonly=1"\n' +
+            '           <img src="' + Site.figure_url + '/avatarimage?figure={{figure}}&head_direction=2&size=m&headonly=1"\n' +
             '                                     alt="" class="flex_1">\n' +
             '       </a>\n' +
             '    </div>\n' +
