@@ -6314,7 +6314,7 @@ input:-webkit-autofill {
 }
 
 .team-users {
-    margin-top: 2em;
+    margin-top: 1em;
     font-size: 14px;
 }
 
@@ -6326,6 +6326,7 @@ input:-webkit-autofill {
     text-align: center;
     vertical-align: top;
     font-weight: 200;
+    margin: 1em 0;
 }
 
 .team-user p {
