@@ -31,12 +31,12 @@
         </div>
         <div class="box flex_2 profile-connect-infos">
             <div>
-                <img src="/assets/icons/profile/register.svg" alt="" width="25">
+                <img src="/assets/icons/profile/last_visit.svg" alt="" width="25">
                 <b class="profile-connect-title">{{locale.since}}</b>
                 <div class="profile-connect-info">{{data.player.account_created|date("d-m-Y")}}</div>
             </div>
             <div>
-                <img src="/assets/icons/profile/last_visit.svg" alt="" width="25">
+                <img src="/assets/icons/profile/register.svg" alt="" width="25">
                 <b class="profile-connect-title">{{locale.last_visit}}</b>
                 <div class="profile-connect-info">
                     {% if data.player.settings.hide_last_online == 0 or 'housekeeping' in permissions %}
