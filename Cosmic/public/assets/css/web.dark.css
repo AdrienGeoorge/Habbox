@@ -5785,7 +5785,7 @@ input:-webkit-autofill {
 }
 
 .user-avatar-image {
-    width: 70px;
+    width: 71.5px;
     position: absolute;
     left: 50%;
     top: 80%;
@@ -5889,7 +5889,7 @@ input:-webkit-autofill {
     padding: 1em;
     background: linear-gradient(180deg, #424354 44.45%, #32233E 155.96%);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-    z-index: 2;
+    z-index: 5;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -6253,7 +6253,7 @@ input:-webkit-autofill {
 }
 
 .one-friend .user {
-    width: 70px;
+    width: 71.5px;
     position: absolute;
     left: 50%;
     top: 80%;
@@ -6367,7 +6367,7 @@ input:-webkit-autofill {
 }
 
 .team-avatar-image {
-    width: 70px;
+    width: 71.5px;
     position: absolute;
     left: 50%;
     top: 80%;
