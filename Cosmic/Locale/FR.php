@@ -502,7 +502,7 @@ $GLOBALS['language'] = array (
         ),
         'settings_namechange' => array (
             'title'           => 'Changement de mon pseudo',
-            'help_1'          => 'Veux-tu changer ton pseudo pour un autre ? Tu peux ! Cela te coûtera que quelques diamants.',
+            'help_1'          => 'Tu veux changer ton pseudo pour un autre? Cela te coûtera ',
             'help_2'          => 'seront débités immédiatement après votre demande. Merci de bien réfléchir à votre futur pseudo.',
             'fill_username'   => 'Entre ton nouveau pseudo...',
             'request'         => 'Requête'
