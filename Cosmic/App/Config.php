@@ -26,6 +26,7 @@ class Config
       "domain"      => "https://habbox.fr",
       "cpath"       => "https://habbox.fr/nitro",
       "fpath"       => "https://images.habbox.fr/habbox-imaging",
+      "gpath"       => "https://habbox.fr/habbo-imaging",
       "shortname"   => "Habbox",
       "sitename"    => "Habbox"
     ];

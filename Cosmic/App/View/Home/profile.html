@@ -142,7 +142,7 @@
                     {% for group in data.player.groups %}
                     <a href="/api/room/{{group.room_id}}" class="item-container">
                         <div class="profile-badge tooltip">
-                            <img src="https://images.habbox.fr/badge/{{group.badge}}.gif" alt=""
+                            <img src="{{site.gpath}}/badge/{{group.badge}}.gif" alt=""
                                  class="pixelated">
                             <span class="text">{{group.name}}</span>
                         </div>
