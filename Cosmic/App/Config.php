@@ -40,7 +40,7 @@ class Config
      * Mail: For sending emails when someone has forgotten their password
      */
   
-    const mailHost      = "smtp-mail.outlook.com";
+    const mailHost      = "smtp.office365.com";
     const mailFrom      = "habbox-hotel@outlook.fr";
     const mailUser      = "habbox-hotel@outlook.fr";
     const mailPass      = "habboxhotel0294";

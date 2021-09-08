@@ -4541,8 +4541,8 @@ hooks.defineLocale('fr', {
         sameElse : 'L'
     },
     relativeTime : {
-        future : 'dans %s',
-        past : 'il y a %s',
+        future : 'il y a %s',
+        past : 'dans %s',
         s : 'quelques secondes',
         m : 'une minute',
         mm : '%d minutes',

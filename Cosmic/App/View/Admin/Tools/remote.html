@@ -26,7 +26,11 @@
                <div class="form-group row">
                   <label for="example-text-input" class="col-3 col-form-label">Pseudo</label>
                   <div class="col-9">
+                     {% if 'housekeeping_ranks' in permissions %}
+                     <input type="text" class="form-control" name="username" value="{{data.user.username}}">
+                     {% else %}
                      <input type="text" class="form-control" name="username" value="{{data.user.username}}" disabled>
+                     {% endif %}
                      <input type="hidden" name="user_id" value="{{data.user.id}}" id="user_id" data-id="{{data.user.id}}">
                   </div>
                </div>
