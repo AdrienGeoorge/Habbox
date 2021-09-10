@@ -65,7 +65,7 @@ function SiteLoadingInterface()
         script.onerror = function ()
         {
             console.log("Oops, file \"" + file_name + "\" not found.");
-            self.write_bodytext("Oops, something went wrong. <a href=\"javascript:window.location.reload();\">Reload the page</a>.");
+            self.write_bodytext("Oops, quelque chose s'est mal passé. <a href=\"javascript:window.location.reload();\">Recharger la page</a>.");
         };
         script.src = "/assets/js/web/" + file_name + ".js?" + this.cache_id;
     };

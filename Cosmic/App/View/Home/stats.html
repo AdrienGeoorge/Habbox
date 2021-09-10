@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.achievement_score >= 1000 ? (data.player.achievement_score/1000)|round(1) ~ 'K' : data.player.achievement_score}}
+                    {{data.player.achievement_score >= 1000 ? (data.player.achievement_score/1000)|number_format(0, '.', ',') : data.player.achievement_score}}
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.respects_received >= 1000 ? (data.player.respects_received/1000)|round(1) ~ 'K' : data.player.respects_received}}
+                    {{data.player.respects_received >= 1000 ? (data.player.respects_received/1000)|number_format(0, '.', ',') : data.player.respects_received}}
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.respects_given >= 1000 ? (data.player.respects_given/1000)|round(1) ~ 'K' : data.player.respects_given}}
+                    {{data.player.respects_given >= 1000 ? (data.player.respects_given/1000)|number_format(0, '.', ',') : data.player.respects_given}}
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbFriends >= 1000 ? (data.player.nbFriends/1000)|round(1) ~ 'K' : data.player.nbFriends}}
+                    {{data.player.nbFriends >= 1000 ? (data.player.nbFriends/1000)|number_format(0, '.', ',') : data.player.nbFriends}}
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbMessages >= 1000 ? (data.player.nbMessages/1000)|round(1) ~ 'K' : data.player.nbMessages}}
+                    {{data.player.nbMessages >= 1000 ? (data.player.nbMessages/1000)|number_format(0, '.', ',') : data.player.nbMessages}}
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbVisitedRooms >= 1000 ? (data.player.nbVisitedRooms/1000)|round(1) ~ 'K' : data.player.nbVisitedRooms}}
+                    {{data.player.nbVisitedRooms >= 1000 ? (data.player.nbVisitedRooms/1000)|number_format(0, '.', ',') : data.player.nbVisitedRooms}}
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbRooms >= 1000 ? (data.player.nbRooms/1000)|round(1) ~ 'K' : data.player.nbRooms}}
+                    {{data.player.nbRooms >= 1000 ? (data.player.nbRooms/1000)|number_format(0, '.', ',') : data.player.nbRooms}}
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbPurchasedItems >= 1000 ? (data.player.nbPurchasedItems/1000)|round(1) ~ 'K' : data.player.nbPurchasedItems}}
+                    {{data.player.nbPurchasedItems >= 1000 ? (data.player.nbPurchasedItems/1000)|number_format(0, '.', ',') : data.player.nbPurchasedItems}}
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbPosedItems >= 1000 ? (data.player.nbPosedItems/1000)|round(1) ~ 'K' : data.player.nbPosedItems}}
+                    {{data.player.nbPosedItems >= 1000 ? (data.player.nbPosedItems/1000)|number_format(0, '.', ',') : data.player.nbPosedItems}}
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
                     {% set onlineHours = achievement.progress // 60 %}
                     {{onlineHours|round}}h {{ onlineHours|round > 24 ? '(' ~ (achievement.progress//1440|round) ~ 'j)' }}
                     {% else %}
-                    {{achievement.progress >= 1000 ? (achievement.progress/1000)|round(1) ~ 'K' : achievement.progress}}
+                    {{achievement.progress >= 1000 ? (achievement.progress/1000)|number_format(0, '.', ',') : achievement.progress}}
                     {% endif %}
                 </div>
             </div>

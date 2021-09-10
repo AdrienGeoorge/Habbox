@@ -366,6 +366,7 @@ class Remote
             response()->json(["status" => "error", "message" => "Ce joueur n'existe pas!"]);
         }
 
+        $username = (input()->post('username')->value ? input()->post('username')->value : $player->username);
         $email = (input()->post('email')->value ? input()->post('email')->value : $player->mail);
         $pin_code = (input()->post('pincode')->value ? input()->post('pincode')->value : (string)$player->pincode);
         $motto = (input()->post('motto')->value ? input()->post('motto')->value : $player->motto);
@@ -407,7 +408,7 @@ class Remote
             }
         }
         
-        if (Admin::changePlayerSettings($email ?? $player->mail, $motto, $pin_code, $player->id, $extra_rank)) {
+        if (Admin::changePlayerSettings($email ?? $player->mail, $username ?? $player->username, $motto, $pin_code, $player->id, $extra_rank)) {
 
             if($player->credits != $credits) {
                 HotelApi::execute('givecredits', ['user_id' => $player->id, 'credits' => - $player->credits + $credits]);
