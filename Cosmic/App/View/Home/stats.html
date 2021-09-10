@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.achievement_score|number_format(0, ' ', ',')}}
+                    {{data.player.achievement_score|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.respects_received|number_format(0, ' ', ',')}}
+                    {{data.player.respects_received|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.respects_given|number_format(0, ' ', ',')}}
+                    {{data.player.respects_given|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbFriends|number_format(0, ' ', ',')}}
+                    {{data.player.nbFriends|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbMessages|number_format(0, ' ', ',')}}
+                    {{data.player.nbMessages|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbVisitedRooms|number_format(0, ' ', ',')}}
+                    {{data.player.nbVisitedRooms|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbRooms|number_format(0, ' ', ',')}}
+                    {{data.player.nbRooms|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbPurchasedItems|number_format(0, ' ', ',')}}
+                    {{data.player.nbPurchasedItems|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {{data.player.nbPosedItems|number_format(0, ' ', ',')}}
+                    {{data.player.nbPosedItems|number_format(0, '.', ' ')}}
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
                     {% set onlineHours = achievement.progress // 60 %}
                     {{onlineHours|round}}h {{ onlineHours|round > 24 ? '(' ~ (achievement.progress//1440|round) ~ 'j)' }}
                     {% else %}
-                    {{achievement.progress|number_format(0, ' ', ',')}}
+                    {{achievement.progress|number_format(0, '.', ' ')}}
                     {% endif %}
                 </div>
             </div>
