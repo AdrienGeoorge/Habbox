@@ -42583,3 +42583,23 @@ and (min-width: 1025px) {
 .infos-server.indian{
     background-color: indianred;
 }
+
+.infos-server.or {
+    background: #f1c40f;
+    color: white;
+}
+
+.infos-server.argent {
+    background: #95a5a6;
+    color: white;
+}
+
+.infos-server.bronze {
+    background: #bf672d;
+    color: white;
+}
+
+.stats-login-button{
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,47 @@
+{% extends "Admin/base.html" %}
+{% set set_permission_page = 'housekeeping_home' %}
+
+{% block page %}Statistiques{% endblock %}
+{% block jsfile %}home{% endblock %}
+
+{% block body %}
+<div class="kt-portlet__body  kt-portlet__body--fit">
+    <h3 class="kt-portlet__head-title mb-4 position-relative">
+        Temps de connexion de l'équipe<br>
+        <small>Depuis le {{data.login[0].date|date('d/m/Y à H:i')}}</small>
+        <form class="kt-form position-absolute stats-login-button" method="post" action="timer/reset">
+            <div class="text-center">
+                <div class="kt-form__actions">
+                    <button type="submit" class="btn green ajaxLoad">Remettre à zéro</button>
+                </div>
+            </div>
+        </form>
+    </h3>
+    <div class="row">
+        {% for key, staff in data.login %}
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="kt-portlet">
+                <div class="kt-widget24">
+                    <div class="kt-widget24__details">
+                        <div class="kt-widget24__info">
+                            <h4 class="kt-widget24__title">
+                                {{staff.username}}
+                            </h4>
+                            <span class="kt-widget24__desc">
+                                {% set minutes = staff.progress - staff.hours %}
+                                {% set hours = (minutes / 60)|round(0, 'floor') %}
+                                {% set hours_minutes = minutes % 60 %}
+                                Connexion pendant {{minutes}} minutes soit {{hours}}h{{hours_minutes < 10 ? '0' ~ hours_minutes : hours_minutes}}
+                            </span>
+                        </div>
+                        <span class="kt-widget24__stats infos-server or">
+                            {{key + 1}}
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

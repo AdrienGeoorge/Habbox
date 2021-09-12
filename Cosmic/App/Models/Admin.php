@@ -37,7 +37,7 @@ class Admin
     {
         return QueryBuilder::connection()->table('room_trade_log')->select('room_trade_log.*')->where('user_one_id', $player_id)->orWhere('user_two_id', $player_id)->OrderBy('room_trade_log.id', 'desc')->limit($limit)->get();
     }
-  
+
     public static function getTradeLogItems($item_id)
     {
         return QueryBuilder::connection()->table('room_trade_log_items')->select('room_trade_log_items.*')->select('items_base.item_name')->where('room_trade_log_items.id', $item_id)
@@ -146,7 +146,7 @@ class Admin
     {
         return QueryBuilder::connection()->table('website_staff_logs')->OrderBy('id', 'desc')->limit($limit)->get();
     }
-  
+
     public static function getCommandLogs($limit = 100)
     {
         return QueryBuilder::connection()->table('commandlogs')->OrderBy('timestamp', 'desc')->limit($limit)->get();
@@ -329,7 +329,7 @@ class Admin
     {
         return QueryBuilder::connection()->table('rooms')->count();
     }
-  
+
     public static function getPopularRooms($limit = 100)
     {
         return QueryBuilder::connection()->table('rooms')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->orderBy('users', 'desc')->limit($limit)->get();
@@ -345,7 +345,7 @@ class Admin
         return QueryBuilder::connection()->table('users')->select('id')->select('username')->select('ip_current')->select('ip_register')
             ->select('last_login')->select('online')->where('ip_current', $ip)->orWhere('ip_register', $ip)->get();
     }
-    
+
     /*
      * Helptool queries
      */
@@ -507,7 +507,7 @@ class Admin
     {
         return QueryBuilder::connection()->table('items_base')->where('item_name', 'LIKE', $string . '%')->limit($limit)->get();
     }
-  
+
     public static function getCatalogPages()
     {
         return QueryBuilder::connection()->table('catalog_pages')->orderby('caption', 'asc')->get();
@@ -532,42 +532,42 @@ class Admin
     {
         return QueryBuilder::connection()->table('items_base')->find($id);
     }
-  
+
     public static function getPageFromParentId($data = '*')
     {
         return QueryBuilder::connection()->table('catalog_pages')->select($data)->orderBy('order_num', 'asc')->get();
     }
-  
+
     public static function updateParent($id, $new_parent)
     {
         return QueryBuilder::connection()->table('catalog_pages')->where('id', $id)->update(['parent_id' => $new_parent]);
     }
-  
+
     public static function getAllParent($ids)
     {
         return QueryBuilder::connection()->query("SELECT id from catalog_pages WHERE id IN ($ids)")->get();
     }
-  
+
     public static function getParents($id)
     {
         return QueryBuilder::connection()->table('catalog_pages')->where('parent_id', $id)->get();
     }
-  
+
     public static function deleteParent($id)
     {
         return QueryBuilder::connection()->table('catalog_pages')->where('id', $id)->delete();
     }
-  
+
     public static function UpdateOrderNumFromParent($ids)
     {
         return QueryBuilder::connection()->query("UPDATE catalog_pages SET order_num = '' WHERE id IN ($ids)")->get();
     }
-  
+
     public static function UpdateNewOrderNumFromParent($id, $pos)
     {
         return QueryBuilder::connection()->table('catalog_pages')->where('id', $id)->update(['order_num' => $pos]);
     }
-    public static function updateCatalogPages($catid, $caption, $page_teaser, $page_headline, $parent_id, $page_layout, $visible, $enabled, $create) 
+    public static function updateCatalogPages($catid, $caption, $page_teaser, $page_headline, $parent_id, $page_layout, $visible, $enabled, $create)
     {
         $data = array(
             'caption' => $caption,
@@ -578,31 +578,31 @@ class Admin
             'visible' => $visible,
             'enabled' => $enabled,
         );
-        
-        if($create === "0" || $create === "") {  
+
+        if($create === "0" || $create === "") {
             return QueryBuilder::connection()->table('catalog_pages')->where('id', $catid)->update($data);
         } else {
              return QueryBuilder::connection()->table('catalog_pages')->insert($data);
         }
     }
-  
+
     public static function updateFurniture($object, $furni_id)
     {
         $lastItemBase = QueryBuilder::connection()->table('items_base')->orderBy('id', 'desc')->limit(1)->first();
         $lastItemCatalog = QueryBuilder::connection()->table('catalog_items')->orderBy('id', 'desc')->limit(1)->first();
-        
+
         $furnidata = self::getFurnitureById($furni_id);
         if(!empty($furni_id)) {
             QueryBuilder::connection()->table('items_base')->where('id', $furni_id)->update($object['items_base']);
             return QueryBuilder::connection()->table('catalog_items')->where('item_ids', $furni_id)->update($object['catalog_items']);
         } else {
-          
+
             $object['catalog_items']['item_ids'] = $lastItemBase->id + 1;
             $object['catalog_items']['id'] = $lastItemCatalog->id + 1;
             $object['items_base']['id'] = $lastItemBase->id + 1;
-          
+
             QueryBuilder::connection()->table('items_base')->insert($object['items_base']);
-            QueryBuilder::connection()->table('catalog_items')->insert($object['catalog_items']); 
+            QueryBuilder::connection()->table('catalog_items')->insert($object['catalog_items']);
         }
     }
 
@@ -623,7 +623,7 @@ class Admin
     {
         return QueryBuilder::connection()->table('website_permissions')->limit($limit)->get();
     }
-  
+
     public static function getWebPermissions($id, $limit = 500)
     {
         return QueryBuilder::connection()->query("SELECT description FROM website_permissions WHERE id IN ($id)")->limit($limit)->get();
@@ -651,7 +651,7 @@ class Admin
         }
         return true;
     }
-  
+
     public static function changeMinimumRank($command, $rank)
     {
         return QueryBuilder::connection()->table('permission_commands')->where('command_id', $command)->update(array('minimum_rank' => $rank));
@@ -681,17 +681,17 @@ class Admin
         return QueryBuilder::connection()->table('bans')->select('bans.*')->select('users.username')
                     ->join('users', 'bans.user_id', '=', 'users.id')->where('bans.user_id', $user_id)->get();
     }
-  
+
     public static function getForums()
     {
         return QueryBuilder::connection()->table('website_forum_index')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->orderBy('position', 'asc')->get();
     }
-  
+
     public static function getCategoryById($id)
     {
         return QueryBuilder::connection()->table('website_forum_categories')->where('id', $id)->orderBy('position', 'asc')->first();
     }
-  
+
     public static function createCategory($title, $description, $min_rank, $position)
     {
         $data = array(
@@ -700,10 +700,10 @@ class Admin
             'min_rank'    => $min_rank,
             'position'    => $position
         );
-      
+
         return QueryBuilder::connection()->table('website_forum_categories')->insert($data);
-    } 
-  
+    }
+
    public static function editCategory($id, $title, $description, $min_rank, $position)
    {
         $data = array(
@@ -712,10 +712,10 @@ class Admin
             'min_rank'    => $min_rank,
             'position'    => $position
         );
-      
+
         return QueryBuilder::connection()->table('website_forum_categories')-where('id', $id)->update($data);
-    } 
-  
+    }
+
    public static function createForum($title, $description, $category, $imagePath, $min_rank, $position, $slug)
     {
         $data = array(
@@ -724,13 +724,13 @@ class Admin
             'cat_id'        => $category,
             'image'         => $imagePath,
             'min_rank'      => $min_rank,
-            'position'      => $position, 
+            'position'      => $position,
             'slug'          => $slug
         );
-      
+
         return QueryBuilder::connection()->table('website_forum_index')->insert($data);
-    } 
-  
+    }
+
    public static function editForum($id, $title, $description, $category, $imagePath, $min_rank, $position, $slug)
    {
         $data = array(
@@ -739,13 +739,13 @@ class Admin
             'cat_id'        => $category,
             'image'         => $imagePath,
             'min_rank'      => $min_rank,
-            'position'      => $position, 
+            'position'      => $position,
             'slug'          => $slug
         );
-      
+
         return QueryBuilder::connection()->table('website_forum_index')-where('id', $id)->update($data);
     }
-  
+
     public static function deleteForum($id)
     {
         return QueryBuilder::connection()->table('website_forum_index')->where('id', $id)->delete();
@@ -762,15 +762,15 @@ class Admin
             'rank_name'         => $rank,
             'rank_description'  => $description
         );
-      
+
         return QueryBuilder::connection()->table('website_extra_ranks')->insert($data);
-    } 
-  
+    }
+
     public static function updateTeamPlayer($id)
     {
         return QueryBuilder::connection()->table('users')->where('extra_rank', $id)->update(['extra_rank' => NULL]);
     }
-  
+
     public static function deleteCategory($id)
     {
         return QueryBuilder::connection()->table('website_forum_categories')->where('id', $id)->delete();
@@ -807,22 +807,22 @@ class Admin
     {
         return QueryBuilder::connection()->table('website_rare_values')->where('id', $id)->first();
     }
-  
+
     public static function removeValueCategory($id)
     {
         return QueryBuilder::connection()->table('website_rare_values')->where('id', $id)->delete();
     }
-  
+
     public static function getCataloguePage($string, $limit = 10)
     {
         return QueryBuilder::connection()->table('catalog_pages')->select('caption')->select('id')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->where('caption', 'LIKE', $string . '%')->limit($limit)->get();
     }
-  
+
     public static function getValueById($id)
     {
         return QueryBuilder::connection()->table('catalog_items')->where('id', $id)->first();
     }
-  
+
     public static function addValueCategory($cat_ids, $name, $hidden, $slug)
     {
         $data = array(
@@ -834,7 +834,7 @@ class Admin
 
         return QueryBuilder::connection()->table('website_rare_values')->insert($data);
     }
-  
+
     public static function editValueById($value_id, $cost_points, $cost_credits, $points_type, $club_only)
     {
          $data = array(
@@ -846,7 +846,7 @@ class Admin
 
           return QueryBuilder::connection()->table('catalog_items')->where('id', $value_id)->update($data);
     }
-  
+
     public static function editJob($jobid, $job_title, $small_description, $full_description)
     {
         $data = array(
@@ -857,7 +857,7 @@ class Admin
 
         return QueryBuilder::connection()->table('website_jobs')->where('id', $jobid)->update($data);
     }
-  
+
     public static function addJob($job_title, $small_description, $full_description)
     {
         $data = array(
@@ -868,32 +868,32 @@ class Admin
 
         return QueryBuilder::connection()->table('website_jobs')->insert($data);
     }
-  
+
     public static function deleteJob($id)
     {
         return QueryBuilder::connection()->table('website_jobs')->where('id', $id)->delete();
     }
-  
-    public static function changeJobStatus($id) 
+
+    public static function changeJobStatus($id)
     {
         return QueryBuilder::connection()->table('website_jobs_applys')->where('id', $id)->update(array('status' => "closed"));
     }
-  
+
     public static function saveSettings($column, $value_id)
     {
         return QueryBuilder::connection()->table('website_settings')->where('key', $column)->update(array('value' => $value_id));
     }
-  
-    public static function getBadgeById($id) 
+
+    public static function getBadgeById($id)
     {
         return QueryBuilder::connection()->table('website_badge_requests')->find($id);
     }
-  
-    public static function getBadgeRequests() 
+
+    public static function getBadgeRequests()
     {
         return QueryBuilder::connection()->table('website_badge_requests')->where('status', "open")->get();
     }
-  
+
     public static function insertBadge($user_id, $badge)
     {
         $data = array(
@@ -904,7 +904,7 @@ class Admin
 
         return QueryBuilder::connection()->table('users_badges')->insert($data);
     }
-  
+
     public static function updateBadgeRequest($id, $status)
     {
         return QueryBuilder::connection()->table('website_badge_requests')->where('id', $id)->update(array('status' => $status));
@@ -923,5 +923,52 @@ class Admin
     public static function getBans()
     {
         return QueryBuilder::connection()->table('bans')->where('ban_expire', '>', time())->count();
+    }
+
+    public static function getStaffLoginStats()
+    {
+        return QueryBuilder::connection()->table('staffs_login_stats')
+            ->select('users.username')
+            ->select('staffs_login_stats.date')
+            ->select('staffs_login_stats.hours')
+            ->select('users_achievements.progress')
+            ->join('users', 'staffs_login_stats.user', '=', 'users.id')
+            ->join('users_achievements', 'staffs_login_stats.user', '=', 'users_achievements.user_id')
+            ->where('users_achievements.achievement_name', '=', 'AllTimeHotelPresence')
+            ->where('archive', '=', '0')
+            ->get();
+    }
+
+    public static function archiveStaffLoginStats()
+    {
+        $data = array(
+            'archive' => '1'
+        );
+
+        QueryBuilder::connection()->table('staffs_login_stats')->where('archive', '=', '0')->update($data);
+
+        return true;
+    }
+
+    public static function newStaffLoginStats()
+    {
+        $staffs = QueryBuilder::connection()->table('users')->where('rank', ">=", 3)->get();
+
+        foreach ($staffs as $staff) {
+            $hours = QueryBuilder::connection()->table('users_achievements')
+                ->select('progress')
+                ->where('users_achievements.achievement_name', '=', 'AllTimeHotelPresence')
+                ->where('user_id', '=', $staff->id)
+                ->get();
+
+            $data = array(
+                'user' => $staff->id,
+                'hours' => $hours[0]->progress,
+            );
+
+            return QueryBuilder::connection()->table('staffs_login_stats')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+        }
+
+        return true;
     }
 }
