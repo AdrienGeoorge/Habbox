@@ -952,7 +952,7 @@ class Admin
 
     public static function newStaffLoginStats()
     {
-        $staffs = QueryBuilder::connection()->table('users')->where('rank', ">=", 1)->get();
+        $staffs = QueryBuilder::connection()->table('users')->where('rank', ">=", 3)->get();
 
         foreach ($staffs as $staff) {
             $hours = QueryBuilder::connection()->table('users_achievements')
