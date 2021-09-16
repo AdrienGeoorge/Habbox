@@ -952,7 +952,7 @@ class Admin
 
     public static function newStaffLoginStats()
     {
-        $staffs = QueryBuilder::connection()->table('users')->where('rank', ">=", 3)->get();
+        $staffs = QueryBuilder::connection()->table('users')->where('rank', ">=", 1)->get();
 
         foreach ($staffs as $staff) {
             $hours = QueryBuilder::connection()->table('users_achievements')
@@ -963,10 +963,10 @@ class Admin
 
             $data = array(
                 'user' => $staff->id,
-                'hours' => $hours[0]->progress,
+                'hours' => isset($hours[0]) ? $hours[0]->progress : 0,
             );
 
-            return QueryBuilder::connection()->table('staffs_login_stats')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+            QueryBuilder::connection()->table('staffs_login_stats')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
         }
 
         return true;
