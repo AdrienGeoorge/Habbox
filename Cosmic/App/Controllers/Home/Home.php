@@ -28,31 +28,20 @@ class Home
         }
 
         $dirnameBadges = './../public/nitro/c_images/album1584/';
-        $dirBadges = scandir($dirnameBadges);
+        $dirBadges = array_slice(preg_grep('~\.gif$~', scandir($dirnameBadges, SCANDIR_SORT_DESCENDING)), 0, 6);
         $badges = [];
         foreach ($dirBadges as $file) {
-            if ($file != '.' && $file != '..') {
-                if (!is_dir($dirnameBadges . '/' . $file)) {
-                    $badges[filemtime($dirnameBadges.'/'.$file)] = $file;
-                }
-            }
+            $badges[filemtime($dirnameBadges . '/' . $file)] = $file;
         }
-        krsort($badges);
 
         $dirnameItems = './../public/nitro/c_images/catalogue/';
-        $dirItems = scandir($dirnameItems);
+        $dirItems = array_slice(preg_grep('~\.(jpeg|jpg|png|gif)$~', scandir($dirnameItems, SCANDIR_SORT_DESCENDING)), 0, 6);
         $items = [];
         foreach ($dirItems as $file) {
-            if ($file != '.' && $file != '..') {
-                if (!is_dir($dirnameItems . '/' . $file)) {
-                    if(strpos($file, 'icon_') !== false){
-                        $items[filemtime($dirnameItems.'/'.$file)] = $file;
-                    }
-                }
+            if (strpos($file, 'icon_') !== false) {
+                $items[filemtime($dirnameItems . '/' . $file)] = $file;
             }
         }
-        krsort($items);
-
 
         View::renderTemplate('Home/home.html', [
             'title' => !request()->player ? Locale::get('core/title/home') : request()->player->username,
