@@ -23,6 +23,17 @@ class Timer
     {
         $this->data->login = Admin::getStaffLoginStats();
 
+        foreach ($this->data->login as $item){
+            $item->total = $item->progress - $item->hours;
+        }
+
+        usort($this->data->login, function($a, $b) {
+            if ($a->total == $b->total) {
+                return 0;
+            }
+            return ($a->total > $b->total) ? -1 : 1;
+        });
+
         View::renderTemplate('Admin/timer.html',
             [
                 'data' => $this->data,

@@ -28,13 +28,12 @@
                                 {{staff.username}}
                             </h4>
                             <span class="kt-widget24__desc">
-                                {% set minutes = staff.progress - staff.hours %}
-                                {% set hours = (minutes / 60)|round(0, 'floor') %}
-                                {% set hours_minutes = minutes % 60 %}
-                                Connexion pendant {{minutes}} minutes soit {{hours}}h{{hours_minutes < 10 ? '0' ~ hours_minutes : hours_minutes}}
+                                {% set hours = (staff.total / 60)|round(0, 'floor') %}
+                                {% set hours_minutes = staff.total % 60 %}
+                                Connexion pendant {{staff.total}} minutes soit {{hours}}h{{hours_minutes < 10 ? '0' ~ hours_minutes : hours_minutes}}
                             </span>
                         </div>
-                        <span class="kt-widget24__stats infos-server or">
+                        <span class="kt-widget24__stats infos-server {{ key + 1 == 1 ? 'or' : key + 1 == 2 ? 'argent' : key + 1 == 3 ? 'bronze' : 'purple' }}">
                             {{key + 1}}
                        </span>
                     </div>
