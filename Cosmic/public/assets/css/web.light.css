@@ -6153,6 +6153,7 @@ input:-webkit-autofill {
 .navigation-top-logo-user {
     top: 75%;
 }
+
 .navigation-top-logo-stats {
     width: 31px;
     left: 1em;
@@ -7114,7 +7115,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     padding: 20px;
 }
 
-.carousel__arrow img{
+.carousel__arrow img {
     width: 4em;
 }
 
@@ -7189,9 +7190,40 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     text-shadow: 1px 1px 5px #2f2f3e;
 }
 
-.home-badges{
+.home-badges {
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* EVENT BANNER */
+
+.event-banner {
+    background: #f2e3d4;
+    display: flex;
+    flex-direction: row;
+    min-height: 6em;
+    text-decoration: none;
+    position: relative;
+    border-radius: 2em;
+    width: 95%;
+    margin: 0 auto -1em auto;
+    column-gap: 2em;
+    padding: 1em !important;
+    color: #424354;
+}
+
+.event-banner .image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.event-banner .lighter {
+    display: block;
+    font-weight: 200;
+    margin: 0;
 }
 
 /* MOBILE */

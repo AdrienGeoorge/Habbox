@@ -1,0 +1,18 @@
+{% extends "Events/base_events.html" %}
+{% block styles %}
+<link rel="stylesheet" href="/assets/events/squid-game/main.css" type="text/css"/>
+{% endblock %}
+{% block body %}
+<div class="page-content">
+    <img src="/assets/events/squid-game/soldier.png" class="soldier" alt="Squid game débarque sur Habbox!"><br>
+    <img src="/assets/events/squid-game/symboles.jpeg" class="symboles" alt="A toi de jouer...">
+    <h1 class="event-name">La série à succès arrive sur Habbox</h1>
+    <a href="{{player ? '/events/squid-game/go' : '#'}}" class="button">
+        Je souhaite participer
+        {% if not player %}
+        <small class="connection-required">(Connexion à Habbox requise)</small>
+        {% endif %}
+    </a>
+    <a href="/events/squid-game/more-infos" class="button">Plus d'infos sur l'évènement</a>
+</div>
+{% endblock %}

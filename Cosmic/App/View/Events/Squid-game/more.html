@@ -1,0 +1,27 @@
+{% extends "Events/base_events.html" %}
+{% block styles %}
+<link rel="stylesheet" href="/assets/events/squid-game/main.css" type="text/css"/>
+{% endblock %}
+{% block body %}
+<div class="page-content">
+    <h1 class="event-title">Petit point sur ce qui t'attendras durant cet évènement...</h1>
+    <h2 class="event-subtitle">Nous espérons que ce que nous avons concacter te plairas!</h2>
+    <div class="grid_3">
+        <div>
+            <div class="event-image" style="background-image: url(/assets/events/squid-game/soleil.png);"></div>
+            <h2 class="event-anim-title">Des animations thématisées</h2>
+            <h4 class="event-anim-time">Durant tout l'évènement</h4>
+        </div>
+        <div>
+            <div class="event-image" style="background-image: url(/assets/events/squid-game/invitation-background.jpeg);"></div>
+            <h2 class="event-anim-title">Une quête en ligne</h2>
+            <h4 class="event-anim-time">Disponible le 15 Novembre</h4>
+        </div>
+        <div>
+            <div class="event-image" style="background-image: url(https://pbs.twimg.com/media/Ebc3iJGWkAApKnP.png);"></div>
+            <h2 class="event-anim-title">Une nuit des jeux</h2>
+            <h4 class="event-anim-time">Vendredi 23 Octobre à 21h</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}

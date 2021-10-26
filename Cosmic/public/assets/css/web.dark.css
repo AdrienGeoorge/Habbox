@@ -7211,6 +7211,36 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     justify-content: center;
 }
 
+/* EVENT BANNER */
+
+.event-banner {
+    background: #212131;
+    display: flex;
+    flex-direction: row;
+    min-height: 6em;
+    text-decoration: none;
+    position: relative;
+    border-radius: 2em;
+    width: 95%;
+    margin: 0 auto -1em auto;
+    column-gap: 2em;
+    padding: 1em !important;
+}
+
+.event-banner .image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.event-banner .lighter {
+    display: block;
+    font-weight: 200;
+    margin: 0;
+}
+
 /* MOBILE */
 
 @media (max-width: 1024px) {

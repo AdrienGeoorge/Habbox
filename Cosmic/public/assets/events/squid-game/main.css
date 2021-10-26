@@ -1,0 +1,122 @@
+body {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #e8e8e8;
+    background-color: black;
+    min-height: unset;
+    min-width: unset;
+}
+
+.page-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.page-container .page-content {
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-container #loading-background {
+    background: #25292C;
+}
+
+.page-loading {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.myBtn {
+    background: #212131;
+    color: #c0c1ce;
+}
+
+.myBtn:hover {
+    background: #191926;
+    color: #fff;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #313A43;
+    border-radius: 1em;
+    padding: 1em 2em;
+    margin: 1em auto;
+    display: block;
+    width: 18em;
+    color: white;
+    font-size: 1.25em;
+}
+
+.connection-required {
+    display: block;
+}
+
+.grid_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    width: 70vw;
+    margin: 4em auto;
+}
+
+.soldier {
+    width: 35em;
+}
+
+.symboles {
+    width: 18em;
+}
+
+.event-name {
+    width: 90%;
+    margin: auto;
+}
+
+.event-title, .event-anim-title {
+    font-weight: bold;
+}
+
+.event-subtitle {
+    margin-top: -1em;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+.event-image {
+    height: 18em;
+    width: 18em;
+    border-radius: 4em;
+    background-position: center center;
+    margin: auto;
+}
+
+.event-anim-time {
+    margin-top: -1em;
+    font-weight: lighter;
+}
+
+.invitation {
+    background-image: url(invitation.png);
+    height: 13em;
+    width: 15em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+@media (max-width: 875px) {
+    .grid_3 {
+        grid-template-columns: 1fr;
+    }
+
+    .soldier {
+        width: 24em;
+    }
+}

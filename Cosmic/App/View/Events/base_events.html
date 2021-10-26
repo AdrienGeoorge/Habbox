@@ -1,0 +1,137 @@
+{% block base %}
+{% if load is not defined %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="follow, index">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <title>{{title}} - {{site.sitename}}</title>
+
+    <meta name="description" content="Habbox - fais-toi plein d'amis, deviens un Habbo célèbre ! Séjourne GRATUITEMENT dans l'un des meilleurs hôtel habbo.">
+    <meta name="keywords" content="habbox, habboz, habbo, habbo hotel, habbocity, habbo city, habbo alpha, habboalpha, habboo, rétro, rétro habbo, bobbalive, adohotel, bobbahotel, habbix, jeu en ligne, serveur habbo, communauté, avatar, jeu, cosmic, virtual, world, social network, free, community, avatar, chat, online, teen, roleplaying, join, social, groups, forums, safe, play, games, online, friends, teens, rare, rare meubi, collect, make, collect, contact, meubi, furniture, pets, furnish room, share, expression, badges, hangout, music, celebrity, VIP visits, celebs, mmo, mmorpgs, massive multiplayer, dox , dox hotel, dox hotel, space hotel, space hotel, space, sunnie, sunnie day, sunnieday, habbo, HABBO, habbo hotel, habboo, habbo city, habbocity, cool, virtual world, vip, retro, retro hotel, habbo retro, free, free habbo, holo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Habbox">
+    <meta name="twitter:description" content="Habbox - fais-toi plein d'amis, deviens un Habbo célèbre ! Séjourne GRATUITEMENT dans l'un des meilleurs hôtel habbo.">
+    <meta name="twitter:image" content="https://www.habbox.fr/assets/images/habbox_hotel.png">
+    <meta name="twitter:site" content="@habboxfrance">
+    <meta name="twitter:url" content="https://www.habbox.fr">
+    <meta name="twitter:widgets:csp" content="on">
+
+    <meta property="og:title" content="Habbox Hôtel">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.habbox.fr">
+    <meta property="og:image" content="https://www.habbox.fr/assets/images/habbox_hotel.png">
+    <meta property="og:description" content="Habbox - fais-toi plein d'amis, deviens un Habbo célèbre ! Séjourne GRATUITEMENT dans l'un des meilleurs hôtel habbo.">
+    <meta property="og:site_name" content="Habbox">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/bbeditor.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/homes.css">
+    <link rel="stylesheet" href="/assets/css/selectric.css">
+    <link rel="stylesheet" href="/assets/css/circle.css?v=5">
+    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
+    <link rel="stylesheet" href="/assets/css/web.responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block styles %}{% endblock %}
+
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        var Site = {
+            name: "{{site.sitename}}",
+            url: "{{site.domain}}",
+            game_url: "{{site.cpath}}",
+            figure_url: "{{site.fpath}}"
+        }
+
+        {% if player is empty %}
+        var User = {
+            id: 0,
+            username: "",
+            online: 0,
+            is_logged: false,
+            is_staff: false
+        }
+        {% else %}
+        var Client = {
+            client_radio: "{{client.client_radio}}",
+            nitro_path: "{{client.nitro_path}}"
+        }
+        var User = {
+            id: {{player.id}},
+        username: "{{player.username}}",
+            is_logged: true,
+            ticket: "{{player.auth_ticket}}",
+            is_staff: {% if player.rank >= 3 %}true{% else %}false{% endif %}
+
+        };
+        {% endif %}
+        var Configuration = {
+        {% if publickey is not empty %}recaptcha_public: "{{publickey}}",{% endif %}
+        revision: "{{revision}}2213",
+            cache: "{{cache_timestamp}}",
+            findretros: {% if findretros %}true{% else %}false{% endif %}
+        }
+    </script>
+</head>
+
+<body class="flex-container flex-direction-column">
+<noscript>
+    <style>
+        .loading-container {
+            display: none;
+        }
+    </style>
+</noscript>
+<div class="loading-container">
+    <div id="loading-background"></div>
+    <div class="loading-content">
+        <div class="c100 center">
+            <span></span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+        <div class="loading-bodytext"></div>
+    </div>
+</div>
+
+<div class="page-loading"></div>
+<div class="notifications-container"></div>
+
+<div>
+    <div class="page-container" data-page="{% if page is empty %}lost{% else %}{{page}}{% endif %}">
+    {% block body %} {% endblock %}
+    </div>
+</div>
+
+<script src="/assets/js/js.cookie.js"></script>
+<script src="/assets/js/jquery.history.js"></script>
+<script src="/assets/js/jquery.fullscreen.min.js"></script>
+<script src="/assets/js/jquery.magnific-popup.js"></script>
+<script src="/assets/js/selectric.js?v=34212"></script>
+<script src="/assets/js/functions.js"></script>
+<script src="/assets/js/web/loading.js?v={{cache_timestamp}}"></script>
+<script src="/assets/js/pagination.js"></script>
+<script src="/assets/js/jquery.wysibb.js"></script>
+<script src="/assets/js/more.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</body>
+
+</html>
+{% else %}
+{{ block('body') }}
+{% endif %}
+{% endblock %}

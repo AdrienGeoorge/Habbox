@@ -21,6 +21,7 @@ class Home
     {
         $news = Community::getNews(4);
         $rooms = Community::getPopularRooms(7);
+        $settings = Core::settings();
 
         if (isset(request()->player->id)) {
             $friends = Player::getFriends(request()->player->id, 25);
@@ -51,7 +52,8 @@ class Home
             'currencys' => isset($currencys) ? $currencys : null,
             'friends' => isset($friends) ? $friends : null,
             'badges' => $badges,
-            'items' => $items
+            'items' => $items,
+            'settings' => $settings
         ], 10);
 
         return false;
