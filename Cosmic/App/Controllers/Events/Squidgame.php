@@ -13,6 +13,7 @@ class SquidGame
             'page'  => 'squid-game',
         ]);
     }
+
     public function moreInfos()
     {
         View::renderTemplate('Events/Squid-game/more.html', [
