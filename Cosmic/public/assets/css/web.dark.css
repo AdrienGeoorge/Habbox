@@ -1054,7 +1054,7 @@ input:-webkit-autofill {
     width: 100%;
 }
 
-.text-white{
+.text-white {
     color: #fff;
 }
 
@@ -1592,8 +1592,9 @@ input:-webkit-autofill {
     padding: 1em 5em 1em 2em;
     text-align: center;
     display: none;
-    margin: 1em 3em 2em 23vw;
+    margin: 0 auto 2em auto;
     border-radius: 15px;
+    width: 75vw;
 }
 
 .cookies-accept-container .close-container {
@@ -7074,12 +7075,12 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     font-size: 2em;
 }
 
-.shop-waiting{
+.shop-waiting {
     margin-top: 2em;
     font-size: 15px;
 }
 
-.drawbadge-table{
+.drawbadge-table {
     margin: 0 auto;
     border-collapse: collapse;
     background-color: white;
@@ -7088,14 +7089,14 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     overflow: hidden;
 }
 
-.preview-badge{
+.preview-badge {
     position: absolute;
     top: 55%;
     left: 52%;
     transform: translate(-50%, -50%);
 }
 
-#copyReferral, #getReferral{
+#copyReferral, #getReferral {
     display: inline-block;
 }
 
@@ -7114,7 +7115,9 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     height: 100%;
     z-index: 1;
     opacity: 0;
-    transition: opacity .8s
+    transition: opacity .8s;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .carousel__item.active {
@@ -7131,7 +7134,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     padding: 20px;
 }
 
-.carousel__arrow img{
+.carousel__arrow img {
     width: 4em;
 }
 
@@ -7206,7 +7209,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     text-shadow: 1px 1px 5px #2f2f3e;
 }
 
-.home-badges{
+.home-badges {
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -7361,7 +7364,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
         flex: auto;
     }
 
-    .settingsTitle{
+    .settingsTitle {
         text-align: center;
     }
 
@@ -7379,7 +7382,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
         justify-content: center;
     }
 
-    .settingsMenu{
+    .settingsMenu {
         height: 100%
     }
 }

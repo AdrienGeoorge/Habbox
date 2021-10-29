@@ -698,6 +698,7 @@ function WebPageHomeInterface(main_page) {
         let carousel = document.getElementById('carousel');
         let before = $('.carousel_before');
         let after = $('.carousel_after');
+        let timer;
 
         if(carousel){
             let nextSlide = () => {
@@ -717,7 +718,7 @@ function WebPageHomeInterface(main_page) {
 
                 timer = setTimeout(nextSlide, 4000);
             }
-            let timer = setTimeout(nextSlide, 4000);
+            timer = setTimeout(nextSlide, 4000);
 
             before.on('click', () => {
                 clearTimeout(timer);
