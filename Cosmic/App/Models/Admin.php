@@ -939,6 +939,44 @@ class Admin
             ->get();
     }
 
+    public static function getEventDatas()
+    {
+        return QueryBuilder::connection()->table('website_settings')
+            ->where('key', 'LIKE', 'event%')
+            ->get();
+    }
+
+    public static function editEvent($description, $link, $imagePath, $show)
+    {
+        QueryBuilder::connection()
+            ->table('website_settings')
+            ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('key', 'event_description')
+            ->update(['value' => $description]);
+
+        QueryBuilder::connection()
+            ->table('website_settings')
+            ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('key', 'event_link')
+            ->update(['value' => $link]);
+
+        if ($imagePath) {
+            QueryBuilder::connection()
+                ->table('website_settings')
+                ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+                ->where('key', 'event_image')
+                ->update(['value' => $imagePath]);
+        }
+
+        QueryBuilder::connection()
+            ->table('website_settings')
+            ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('key', 'event_home')
+            ->update(['value' => $show]);
+
+        return true;
+    }
+
     public static function archiveStaffLoginStats()
     {
         $data = array(

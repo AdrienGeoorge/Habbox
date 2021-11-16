@@ -226,44 +226,14 @@
         </div>
     </div>
 </div>
-<style>
-#image-preview {
-    width: 730px;
-    height: 170px;
-    position: relative;
-    overflow: hidden;
-    background-color: #1e1e2d;
-    color: #ecf0f1;
-    margin: auto;
-    width: 70%;
-    border-radius: 20px;
-    margin-bottom: 2em;
-}
-#image-preview label {
-    position: absolute;
-    z-index: 5;
-    opacity: .8;
-    cursor: pointer;
-    background-color: #bdc3c7;
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    line-height: 50px;
-    text-transform: uppercase;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-  text-align: center;
-}
-#image-preview input {
-    line-height: 200px;
-    font-size: 200px;
-    position: absolute;
-    opacity: 0;
-    z-index: 10;
-}
-</style>
+<script>
+    const image = document.getElementById('image-upload')
+    const preview = document.getElementById('image-preview')
+    image.addEventListener('change', () => {
+        const [file] = image.files
+        const url = URL.createObjectURL(file)
+        preview.style.backgroundImage = 'url(' + url + ')'
+    })
+</script>
 <script src="https://cdn.tiny.cloud/1/ximwo5y97dtfrnc60p0d3bt43tgla29a83es2owf5uwib1v2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 {% endblock %}

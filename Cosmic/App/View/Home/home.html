@@ -14,8 +14,8 @@
         </div>
     </div>
     {% endif %}
-    {% if settings.event_home == 'true' %}
-        <a href="/events/squid-game" target="_self" class="event-banner">
+    {% if settings.event_home == '1' %}
+        <a href="{{ settings.event_link }}" target="_self" class="event-banner">
             <div class="flex_1">
                 <div class="image" style="background-image: url({{ settings.event_image }});"></div>
             </div>
