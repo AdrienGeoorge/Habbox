@@ -946,12 +946,12 @@ class Admin
             ->get();
     }
 
-    public static function editEvent($description, $link, $imagePath, $show)
+    public static function editEvent($description, $link, $linkText, $imagePath, $show)
     {
         QueryBuilder::connection()
             ->table('website_settings')
             ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
-            ->where('key', 'event_description')
+            ->where('key', 'event_desc')
             ->update(['value' => $description]);
 
         QueryBuilder::connection()
@@ -959,6 +959,12 @@ class Admin
             ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
             ->where('key', 'event_link')
             ->update(['value' => $link]);
+
+        QueryBuilder::connection()
+            ->table('website_settings')
+            ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('key', 'event_link_text')
+            ->update(['value' => $linkText]);
 
         if ($imagePath) {
             QueryBuilder::connection()

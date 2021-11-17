@@ -33,6 +33,7 @@ class Event
     {
         $description = input()->post('event_description')->value;
         $link = input()->post('event_link')->value;
+        $linkText = input()->post('event_link_text')->value;
         $show = (bool)filter_var(input('event_show'), FILTER_VALIDATE_BOOLEAN);
         $imagePath = input()->file('imagesUpload')->filename;
 
@@ -42,7 +43,7 @@ class Event
             }
         }
 
-        Admin::editEvent($description, $link, $imagePath, $show);
+        Admin::editEvent($description, $link, $linkText, $imagePath, $show);
         Log::addStaffLog('-1', 'Infos évènement mises à jour', request()->player->id, 'event');
 
         response()->json(["status" => "success", "message" => "Evènement mis à jour avec succès!"]);
