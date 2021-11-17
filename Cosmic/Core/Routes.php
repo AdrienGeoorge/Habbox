@@ -141,9 +141,14 @@ class Routes extends Router
                 parent::get('/help/requests/{ticket}/view', 'Help\Requests@ticket', ['defaultParameterRegex' => '[0-9]+']);
 
                 parent::get('/events', 'Events\Event@index');
+                /* SQUID GAME */
                 parent::get('/events/squid-game', 'Events\SquidGame@index');
                 parent::get('/events/squid-game/more-infos', 'Events\SquidGame@moreInfos');
                 parent::get('/events/squid-game/go', 'Events\SquidGame@go');
+                /* NOEL */
+                parent::get('/events/noel', 'Events\Noel@index');
+                parent::get('/events/noel/calendrier', 'Events\Noel@calendrier');
+                parent::post('/events/noel/get-gift', 'Events\Noel@getGift');
 
                 parent::partialGroup('/guilds/post/{controller}/{action}', function ($controller, $action) {
                     parent::post('/', 'Community\Guilds\\' . ucfirst($controller) . '@' . $action)->addMiddleware(GuildMiddleware::class);

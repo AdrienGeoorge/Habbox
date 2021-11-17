@@ -1,0 +1,29 @@
+{% extends "Events/base_events.html" %}
+{% block styles %}
+<link rel="stylesheet" href="/assets/events/noel/main.css" type="text/css"/>
+{% endblock %}
+{% block body %}
+<div class="page-content">
+    <h1 class="event-title">Petit point sur ce qui t'attendras durant cet évènement...</h1>
+    <h2 class="event-subtitle">Nous espérons que ce que nous avons concacter te plairas!</h2>
+    <div class="grid_2">
+        <div>
+            <div class="event-image" style="background-image: url(/assets/events/noel/games.png);"></div>
+            <h2 class="event-anim-title">Des animations thématisées</h2>
+            <h4 class="event-anim-time">Durant tout l'évènement</h4>
+        </div>
+        <div>
+            <div class="event-image" style="background-image: url(https://pbs.twimg.com/media/Ebc3iJGWkAApKnP.png);"></div>
+            <h2 class="event-anim-title">Ton calendrier de l'avent</h2>
+            <h4 class="event-anim-time">Jusqu'au 25 décembre</h4>
+        </div>
+    </div>
+
+    <a href="{{player ? '/events/noel/calendrier' : '#'}}" target="_self" class="button">
+        Accéder au calendrier de l'avent
+        {% if not player %}
+        <small class="connection-required">(Connexion à Habbox requise)</small>
+        {% endif %}
+    </a>
+</div>
+{% endblock %}
