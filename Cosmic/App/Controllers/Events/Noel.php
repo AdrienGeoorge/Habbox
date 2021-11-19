@@ -2,12 +2,12 @@
 
 namespace App\Controllers\Events;
 
-use App\Models\Log;
+use App\Models\Player;
 use Core\View;
 
 class Noel
 {
-    private array $gifts;
+    private $gifts;
 
     public function __construct()
     {
@@ -50,25 +50,44 @@ class Noel
 
     public function calendrier()
     {
-        View::renderTemplate('Events/Noel/calendrier.html', [
-            'title' => 'Mon calendrier de l\'avent',
-            'page' => 'noel-calendrier',
-            'day' => date('jS'),
-            'gifts' => $this->gifts
-        ]);
+        if (request()->player) {
+            View::renderTemplate('Events/Noel/calendrier.html', [
+                'title' => 'Mon calendrier de l\'avent',
+                'page' => 'noel-calendrier',
+                'day' => date('jS'),
+                'gifts' => $this->gifts
+            ]);
+        } else {
+            redirect('/');
+        }
     }
 
     public function getGift()
     {
-        $dayReceived = intval($_POST['day']);
-        $day = date('jS');
+        if (request()->player) {
+            $dayReceived = intval($_POST['day']);
+            $date = new \DateTimeImmutable('now');
+            $player = request()->player;
 
-        if ($dayReceived < $day) {
-            response()->json(["status" => "error", "message" => "Tu arrives trop tard..."]);
-        } elseif ($dayReceived > $day) {
-            response()->json(["status" => "error", "message" => "Tu es en avance, reviens plus tard"]);
+            if ($date->format('n') != 12) {
+                response()->json(["status" => "error", "message" => "Sois patient, le calendrier de l'avent ne sera disponible qu'à partir du 1er décembre..."]);
+            } else {
+                $day = $date->format('jS');
+                if ($dayReceived < $day) {
+                    response()->json(["status" => "error", "message" => "Tu arrives trop tard..."]);
+                } elseif ($dayReceived > $day) {
+                    response()->json(["status" => "error", "message" => "Tu es en avance, reviens plus tard"]);
+                } else {
+                    $result = Player::sendChristmasGift($player, $this->gifts[$dayReceived][1], $this->gifts[$dayReceived][2]);
+                    if ($result[0] === 'ok') {
+                        response()->json(["status" => "success", "message" => $result[1]]);
+                    } elseif ($result[0] === 'already-received') {
+                        response()->json(["status" => "error", "message" => "Tu as déjà reçu ton cadeau journalier!"]);
+                    }
+                }
+            }
         } else {
-            response()->json(["status" => "success", "message" => "Tu as bien reçu ton cadeau"]);
+            response()->json(["status" => "error", "message" => "Tu dois être connecté pour pouvoir réclamer ta récompense..."]);
         }
     }
 }
