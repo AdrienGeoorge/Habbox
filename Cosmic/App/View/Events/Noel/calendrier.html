@@ -9,7 +9,20 @@
 <h2 class="event-subtitle">En route vers Noël...</h2>
 <div class="calendar">
     {% for i in 1..25 %}
-    <div class="calendar-gift clicked {{ i == day ? 'day-day' }} {{ i < day ? 'day-passed' }} {{ i > day ? 'day-after' }} {{ i == 25 ? 'day-noel' }}" data-day="{{i}}">
+    {% if month == 12 %}
+        {% if i == 25 %}
+            {% set class = 'day-noel' %}
+        {% elseif i == day %}
+            {% set class = 'day-day' %}
+        {% elseif i < day %}
+            {% set class = 'day-passed' %}
+        {% elseif i > day %}
+            {% set class = 'day-after' %}
+        {% endif %}
+    {% else %}
+        {% set class = 'day-after' %}
+    {% endif %}
+    <div class="calendar-gift clicked {{ class }}" data-day="{{i}}">
         <div class="calendar-day">
             <span>{{ i }}</span>
         </div>

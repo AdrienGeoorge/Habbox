@@ -55,6 +55,7 @@ class Noel
                 'title' => 'Mon calendrier de l\'avent',
                 'page' => 'noel-calendrier',
                 'day' => date('jS'),
+                'month' => date('n'),
                 'gifts' => $this->gifts
             ]);
         } else {

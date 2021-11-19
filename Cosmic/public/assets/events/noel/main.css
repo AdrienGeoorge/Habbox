@@ -147,7 +147,16 @@ body {
 }
 
 @media (max-width: 875px) {
+    .page-container .page-content {
+        padding: 2em 0;
+        position: relative;
+        left: unset;
+        top: unset;
+        transform: unset;
+    }
+
     .grid_2 {
+        width: fit-content;
         grid-template-columns: 1fr;
     }
 
