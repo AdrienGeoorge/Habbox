@@ -312,7 +312,8 @@ class Player
         )->get();
     }
 
-    public static function checkChristmasGift($player){
+    public static function checkChristmasGift($player)
+    {
         return QueryBuilder::connection()->query(
             'SELECT * FROM christmas_gifts
                 WHERE user = "' . $player . '"
@@ -324,6 +325,7 @@ class Player
     {
         $settings = \App\Models\Core::settings();
         $received = Player::checkChristmasGift($player->id);
+
         if ($received) {
             return ['already-received'];
         } else {
@@ -332,6 +334,12 @@ class Player
                 case 'diamonds':
                     HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => (int)$amount, 'type' => 'diamonds'));
                     return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s diamants à dépenser dans la boutique', $amount)];
+                case 'duckets':
+                    HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => (int)$amount, 'type' => 'duckets'));
+                    return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s duckets à dépenser dans la boutique', $amount)];
+                case 'credits':
+                    HotelApi::execute('givecredits', ['user_id' => $player->id, 'credits' => -$player->credits + (int)$amount]);
+                    return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s crédits', $amount)];
                 case 'vip':
                     Player::insertMembership($player->id, $player->rank, strtotime('+' . $amount . ' days'));
                     HotelApi::execute('setrank', ['user_id' => $player->id, 'rank' => $settings->vip_permission_id]);
@@ -343,9 +351,36 @@ class Player
                         Admin::insertBadge($player->id, (string)$amount);
                     }
                     return ['ok', 'Tu as bien reçu ton cadeau! Voici un joli badge rien que pour toi!'];
+                default:
+                    return ['error', 'Oops! Il semblerait que quelque chose ce soit mal passé...'];
             }
         }
+    }
 
-        return ['error'];
+    public static function sendChristmasItem($player, $valeur, $item, $id)
+    {
+        $received = Player::checkChristmasGift($player->id);
+
+        if ($received) {
+            return ['already-received'];
+        } else {
+            QueryBuilder::connection()->table('christmas_gifts')->insert(array('user' => $player->id, 'day' => (int)date('jS'), 'year' => (int)date('Y')));
+        }
+
+        HotelApi::execute('sendgift', array('user_id' => $player->id, 'itemid' => $id, 'message' => 'Cadeau de Noël'));
+        return ['ok', sprintf("Tu as reçu un joli cadeau (%a) pour décorer ton appartement! Valeur du bien: %s", $item, strtolower($valeur))];
+    }
+
+    public static function addToChristmasLotery($player)
+    {
+        $received = Player::checkChristmasGift($player->id);
+
+        if ($received) {
+            return ['already-received'];
+        } else {
+            QueryBuilder::connection()->table('christmas_gifts')->insert(array('user' => $player->id, 'day' => (int)date('jS'), 'year' => (int)date('Y')));
+        }
+
+        return ['ok', 'Tu as été inscrit à la loterie de Noël !'];
     }
 }
