@@ -132,15 +132,15 @@ class Noel
             $date = new \DateTimeImmutable('now');
             $player = request()->player;
 
-//            if ($date->format('n') != 12) {
-//                response()->json(["status" => "error", "message" => "Sois patient, le calendrier de l'avent ne sera disponible qu'à partir du 1er décembre..."]);
-//            } else {
-//                $day = $date->format('jS');
-//                if ($dayReceived < $day) {
-//                    response()->json(["status" => "error", "message" => "Tu arrives trop tard..."]);
-//                } elseif ($dayReceived > $day) {
-//                    response()->json(["status" => "error", "message" => "Tu es en avance, reviens plus tard"]);
-//                } else {
+            if ($date->format('n') != 12) {
+                response()->json(["status" => "error", "message" => "Sois patient, le calendrier de l'avent ne sera disponible qu'à partir du 1er décembre..."]);
+            } else {
+                $day = $date->format('jS');
+                if ($dayReceived < $day) {
+                    response()->json(["status" => "error", "message" => "Tu arrives trop tard..."]);
+                } elseif ($dayReceived > $day) {
+                    response()->json(["status" => "error", "message" => "Tu es en avance, reviens plus tard"]);
+                } else {
                     if ($this->gifts[$dayReceived][1] === 'mobis') {
                         $item = $this->items[$this->gifts[$dayReceived][2]][array_rand($this->items[$this->gifts[$dayReceived][2]])];
                         $result = Player::sendChristmasItem($player, $this->gifts[$dayReceived][2], $item[1], $item[0]);
@@ -156,10 +156,10 @@ class Noel
                     } elseif ($result[0] === 'error') {
                         response()->json(["status" => "error", "message" => $result[1]]);
                     }
-//                }
-//            }
-//        } else {
-//            response()->json(["status" => "error", "message" => "Tu dois être connecté pour pouvoir réclamer ta récompense..."]);
+                }
+            }
+        } else {
+            response()->json(["status" => "error", "message" => "Tu dois être connecté pour pouvoir réclamer ta récompense..."]);
         }
     }
 }

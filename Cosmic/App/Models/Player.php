@@ -329,7 +329,7 @@ class Player
         if ($received) {
             return ['already-received'];
         } else {
-//            QueryBuilder::connection()->table('christmas_gifts')->insert(array('user' => $player->id, 'day' => (int)date('jS'), 'year' => (int)date('Y')));
+            QueryBuilder::connection()->table('christmas_gifts')->insert(array('user' => $player->id, 'day' => (int)date('jS'), 'year' => (int)date('Y')));
             switch ($type) {
                 case 'diamonds':
                     HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => + (int)$amount, 'type' => 5));
