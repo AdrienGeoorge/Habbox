@@ -1,0 +1,69 @@
+{% extends "Events/base_events.html" %}
+{% block styles %}
+<link rel="stylesheet" href="/assets/events/noel/main.css" type="text/css"/>
+<link href="/assets/admin/vendors/css/toastr.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block body %}
+<div class="notifications-container"></div>
+<h1 class="event-title">Calendrier de l'avent</h1>
+<h2 class="event-subtitle">En route vers Noël...</h2>
+<div class="calendar">
+    {% for i in 1..25 %}
+    {% if month == 12 %}
+        {% if i == 25 %}
+            {% set class = 'day-noel' %}
+        {% elseif i == day %}
+            {% set class = 'day-day' %}
+        {% elseif i < day %}
+            {% set class = 'day-passed' %}
+        {% elseif i > day %}
+            {% set class = 'day-after' %}
+        {% endif %}
+    {% else %}
+        {% set class = 'day-after' %}
+    {% endif %}
+    <div class="calendar-gift clicked {{ class }}" data-day="{{i}}">
+        <div class="calendar-day">
+            <span>{{ i }}</span>
+        </div>
+        <div style="background-image: url({{ gifts[i][0] }})"
+             class="calendar-gift-img">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script>
+    const days = document.getElementsByClassName('clicked')
+    Array.prototype.forEach.call(days, function(el) {
+        el.addEventListener('click', ev => {
+            $.ajax({
+                type: "POST",
+                data: {day: el.getAttribute('data-day')},
+                url: '/events/noel/get-gift',
+                success: result => {
+                    if (!isEmpty(result.status) && !isEmpty(result.message)) {
+                        toastr.options = {
+                            "closeButton": true,
+                            "progressBar": true,
+                            "positionClass": "toast-top-right",
+                            "preventDuplicates": true,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr[result.status](result.message);
+                    }
+                }
+            })
+        })
+    })
+</script>
+{% endblock %}
