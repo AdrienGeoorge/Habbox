@@ -135,7 +135,7 @@ class Noel
 //            if ($date->format('n') != 12) {
 //                response()->json(["status" => "error", "message" => "Sois patient, le calendrier de l'avent ne sera disponible qu'à partir du 1er décembre..."]);
 //            } else {
-                $day = $date->format('jS');
+//                $day = $date->format('jS');
 //                if ($dayReceived < $day) {
 //                    response()->json(["status" => "error", "message" => "Tu arrives trop tard..."]);
 //                } elseif ($dayReceived > $day) {
@@ -158,8 +158,8 @@ class Noel
                     }
 //                }
 //            }
-        } else {
-            response()->json(["status" => "error", "message" => "Tu dois être connecté pour pouvoir réclamer ta récompense..."]);
+//        } else {
+//            response()->json(["status" => "error", "message" => "Tu dois être connecté pour pouvoir réclamer ta récompense..."]);
         }
     }
 }

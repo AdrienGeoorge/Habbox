@@ -332,13 +332,13 @@ class Player
 //            QueryBuilder::connection()->table('christmas_gifts')->insert(array('user' => $player->id, 'day' => (int)date('jS'), 'year' => (int)date('Y')));
             switch ($type) {
                 case 'diamonds':
-                    HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => + (int)$amount, 'type' => 'diamonds'));
+                    HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => + (int)$amount, 'type' => 5));
                     return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s diamants à dépenser dans la boutique', $amount)];
                 case 'duckets':
-                    HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => + (int)$amount, 'type' => 'duckets'));
+                    HotelApi::execute('givepoints', array('user_id' => $player->id, 'points' => + (int)$amount, 'type' => 0));
                     return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s duckets à dépenser dans la boutique', $amount)];
                 case 'credits':
-                    HotelApi::execute('givecredits', ['user_id' => $player->id, 'credits' => $player->credits + (int)$amount]);
+                    HotelApi::execute('givecredits', ['user_id' => $player->id, 'credits' => (int)$amount]);
                     return ['ok', sprintf('Tu as bien reçu ton cadeau! En attendant Noël, nous t\'offrons %s crédits', $amount)];
                 case 'vip':
                     Player::insertMembership($player->id, $player->rank, strtotime('+' . $amount . ' days'));
@@ -368,7 +368,7 @@ class Player
         }
 
         HotelApi::execute('sendgift', array('user_id' => $player->id, 'itemid' => $id, 'message' => 'Cadeau de Noël'));
-        return ['ok', sprintf("Tu as reçu un joli cadeau (%a) pour décorer ton appartement! Valeur du bien: %s", $item, strtolower($valeur))];
+        return ['ok', sprintf("Tu as reçu un joli cadeau (%s) pour décorer ton appartement! Valeur du bien: %s", $item, strtolower($valeur))];
     }
 
     public static function addToChristmasLotery($player)
