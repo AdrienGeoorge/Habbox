@@ -37,6 +37,8 @@
       <excludeFolder url="file://$MODULE_DIR$/Cosmic/vendor/usmanhalalit/pixie" />
       <excludeFolder url="file://$MODULE_DIR$/Cosmic/vendor/usmanhalalit/viocon" />
       <excludeFolder url="file://$MODULE_DIR$/Cosmic/vendor/sonata-project/google-authenticator" />
+      <excludeFolder url="file://$MODULE_DIR$/Cosmic/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/Cosmic/vendor/pecee/pixie" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
