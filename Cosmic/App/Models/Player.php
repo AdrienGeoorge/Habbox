@@ -317,6 +317,8 @@ class Player
         return QueryBuilder::connection()->query(
             'SELECT * FROM christmas_gifts
                 WHERE user = "' . $player . '"
+                AND day = "' . (int)date('jS') . '"
+                AND year = "' . (int)date('Y') . '"
                 '
         )->get();
     }
