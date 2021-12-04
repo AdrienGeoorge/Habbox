@@ -703,12 +703,18 @@ input:-webkit-autofill {
 
 .rounded-button.white {
     color: #fff;
-    border-color: #8ea763;
+    border-color: white;
 }
 
-.rounded-button.white:not([disabled]):not(.no-hover):hover,
-.rounded-button.white.plain {
+.rounded-button.white.plain, .rounded-button.white.plain:not([disabled]):not(.no-hover):hover{
     background-color: #8ea763;
+    border-color: #8ea763;
+    color: white;
+}
+
+.rounded-button.white:not([disabled]):not(.no-hover):hover{
+    background-color: #d14c5e;
+    border-color: #d14c5e;
     color: white;
 }
 

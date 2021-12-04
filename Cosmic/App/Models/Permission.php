@@ -23,7 +23,7 @@ class Permission
 
     public static function permissionExists($role, $permission)
     {
-        return queryBuilder::table('website_permissions_ranks')->where('rank_id', $role)->where('permission_id', $permission)->count();
+        return queryBuilder::connection()->table('website_permissions_ranks')->where('rank_id', $role)->where('permission_id', $permission)->count();
     }
 
     public static function permissionAndRankExists($rank, $permission)
