@@ -64,6 +64,26 @@ class Permission
 
         return QueryBuilder::connection()->table('permissions')->where('id', '>', 2)->orderBy('id', 'desc')->get();
     }
+
+    public static function getDirection()
+    {
+        $direction = QueryBuilder::connection()->table('permissions')->where('rank_name', 'Direction')->get();
+        return QueryBuilder::connection()->table('users')->select(['id', 'username', 'online', 'look', 'motto'])->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('rank', $direction[0]->id)->orderBy('online', 'desc')->get();
+    }
+
+    public static function getAdmin()
+    {
+        $admin = QueryBuilder::connection()->table('permissions')->where('rank_name', 'Administration')->get();
+        return QueryBuilder::connection()->table('users')->select(['id', 'username', 'online', 'look', 'motto'])->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('rank', $admin[0]->id)->orderBy('online', 'desc')->get();
+    }
+
+    public static function getStaffs()
+    {
+        return QueryBuilder::connection()->table('users')->select(['id', 'username', 'online', 'look', 'motto'])->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('rank','>=', '3')->where('rank', '<=', 8)->orderBy('rank', 'desc')->orderBy('online', 'desc')->get();
+    }
   
     public static function getTeams()
     {

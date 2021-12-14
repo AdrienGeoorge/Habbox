@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers\Community;
 
 use App\Models\Permission;
@@ -11,11 +12,27 @@ class Staff
 {
     public function index()
     {
+        $direction = Permission::getDirection();
+        $admin = Permission::getAdmin();
+        $staffs = Permission::getStaffs();
+
+        View::renderTemplate('Community/staff.html', [
+            'title' => Locale::get('core/title/community/staff'),
+            'page' => 'community_staff',
+            'action' => 'staff',
+            'direction' => $direction,
+            'admin' => $admin,
+            'staffs' => $staffs
+        ]);
+    }
+
+    public function indexOld()
+    {
         $ranks = Permission::getRanks();
 
         foreach ($ranks as $row) {
-          
-            if(!Permission::exists('website_invisible_staff', $row->id)) {
+
+            if (!Permission::exists('website_invisible_staff', $row->id)) {
                 $row->users = Player::getDataByRank($row->id);
 
                 if (!empty($row->users) && is_array($row->users)) {
@@ -23,19 +40,19 @@ class Staff
                         $users->settings = Player::getSettings($users->id);
                     }
                 }
-            }else{
+            } else {
                 unset($ranks[array_search($row, $ranks)]);
             }
         }
 
-        View::renderTemplate('Community/staff.html', [
+        View::renderTemplate('Community/staff_old.html', [
             'title' => Locale::get('core/title/community/staff'),
-            'page'  => 'community_staff',
+            'page' => 'community_staff',
             'action' => 'staff',
-            'data'  => $ranks
+            'data' => $ranks
         ]);
     }
-  
+
 //    public function team()
 //    {
 //        $ranks = Permission::getTeams();
@@ -44,7 +61,7 @@ class Staff
 //            $row->users = Player::getByExtraRank($row->id);
 //        }
 //
-//        View::renderTemplate('Community/staff.html', [
+//        View::renderTemplate('Community/staff_old.html', [
 //            'title' => Locale::get('core/title/community/staff'),
 //            'page'  => 'community_staff',
 //            'action' => 'team',
