@@ -1746,7 +1746,7 @@ pre code {
     border: 0
 }
 
-.form-control {
+.form-control, select.form-control:focus {
     display: block;
     width: 100%;
     height: calc(1.5em + 1.3rem + 2px);
@@ -1760,6 +1760,26 @@ pre code {
     border: unset;
     border-radius: 10px;
     transition: box-shadow .15s ease-in-out;
+}
+
+select.form-control{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.codes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2em;
+}
+
+.one-code {
+    background-color: #212131;
+    color: white;
+    border-radius: 1em;
+    padding: 1em 2em;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1806,7 +1826,7 @@ pre code {
 }
 
 select.form-control:focus::-ms-value {
-    color: #c0c1cec0c1ce;
+    color: #c0c1ce;
     background-color: #1b1b27
 }
 

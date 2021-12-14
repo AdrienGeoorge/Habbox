@@ -1015,4 +1015,24 @@ class Admin
 
         return true;
     }
+
+    public static function checkCodePromoExist($code) {
+        return QueryBuilder::connection()->table('vouchers')->where('code', $code)->get();
+    }
+
+    public static function getAllCodePromo() {
+        return QueryBuilder::connection()->table('vouchers')->orderBy('id', 'desc')->limit(10)->get();
+    }
+
+    public static function addCodePromo($code, $nbUse, $nbPoints, $pointsType, $credits){
+        $data = array(
+            'code' => $code,
+            'credits' => $credits,
+            'points' => $nbPoints,
+            'points_type' => $pointsType,
+            'limit' => $nbUse,
+        );
+
+        return QueryBuilder::connection()->table('vouchers')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
+    }
 }

@@ -1,0 +1,102 @@
+{% extends "Admin/base.html" %}
+{% set set_permission_page = 'housekeeping_home' %}
+
+{% block page %}Code promo{% endblock %}
+{% block jsfile %}home{% endblock %}
+
+{% block body %}
+<div>
+    <div class="kt-portlet">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                     <span class="kt-portlet__head-icon">
+                        <i class="flaticon-gift"></i>
+                        </span>
+                    Historiques des 10 derniers codes promos
+                </h3>
+            </div>
+        </div>
+        <div class="kt-portlet__body">
+            <div class="codes">
+                {% for code in codes %}
+                <div class="one-code">
+                    {{code.code}}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="kt-portlet">
+        <form method="post" action="vouchers/save">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                        <span class="kt-portlet__head-icon">
+                        <i class="flaticon-gift"></i>
+                        </span>
+                    <h3 class="kt-portlet__head-title">
+                        Création de code promo
+                        <small>Par défaut, le nombre d'utilisation est définit à -1 pour une utilisation
+                            illimitée</small>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="kt-portlet__body">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="voucher-code">Code à saisir</label>
+                            <input type="text" class="form-control" name="voucher-code" id="voucher-code">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="voucher-limit">Nombre d'utilisation</label>
+                            <input type="text" class="form-control" name="voucher-limit" id="voucher-limit" value="-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="voucher-points-number">Nombre de points</label>
+                            <input type="text" class="form-control" name="voucher-points-number"
+                                   id="voucher-points-number" value="0">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="voucher-points-type">Type de points</label>
+                            <select name="voucher-points-type" id="voucher-points-type" class="form-control"
+                                    aria-label="Type de points">
+                                <option disabled selected>Sélectionnez un type</option>
+                                {% for currency in currencies %}
+                                <option value="{{currency.type}}">{{currency.currency}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="voucher-credits">Nombre de crédits</label>
+                            <input type="text" class="form-control" name="voucher-credits" id="voucher-credits"
+                                   value="0">
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-12 kt-align-center">
+                        <button type="submit" class="btn btn-brand">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

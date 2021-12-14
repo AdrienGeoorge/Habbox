@@ -30,9 +30,10 @@ class Routes extends Router
                 parent::get('/stats', '\App\Controllers\Admin\Stats@view');
                 parent::get('/timer', '\App\Controllers\Admin\Timer@view');
                 parent::get('/event', '\App\Controllers\Admin\Event@view');
+                parent::get('/vouchers', '\App\Controllers\Admin\Vouchers@view');
                 parent::get('/permissions/get/commands', 'Permissions@getpermissioncommands');
                 parent::get('/catalog/get/tree', 'Catalog@tree');
-              
+
                  parent::partialGroup('/api/{param1}/{param2}', function ($param1, $param2) {
                       parent::post('/', ucfirst($param1) . '@' . $param2)->addMiddleware(PermissionMiddleware::class);
                   })->addMiddleware(ValidateMiddleWare::class);
