@@ -16,6 +16,18 @@ class Staff
         $admin = Permission::getAdmin();
         $staffs = Permission::getStaffs();
 
+        foreach ($direction as $users) {
+            $users->settings = Player::getSettings($users->id);
+        }
+
+        foreach ($admin as $users) {
+            $users->settings = Player::getSettings($users->id);
+        }
+
+        foreach ($staffs as $users) {
+            $users->settings = Player::getSettings($users->id);
+        }
+
         View::renderTemplate('Community/staff.html', [
             'title' => Locale::get('core/title/community/staff'),
             'page' => 'community_staff',
