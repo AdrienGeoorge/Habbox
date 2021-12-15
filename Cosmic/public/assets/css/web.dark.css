@@ -1,3 +1,111 @@
+#buildTool {
+    background: #424354;
+    position: absolute;
+    left: 1.5em;
+    top: 5em;
+    border-radius: 2em;
+    padding: 1em 2em;
+    cursor: pointer;
+    color: #FFF;
+}
+
+#buildTool.d-none{
+    display: none;
+}
+
+#buildTool .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5em;
+    margin: 0.5em 0;
+}
+
+#buildTool input {
+    width: 4.25em;
+    background: unset;
+    color: #c0c1ce;
+    border-radius: unset;
+    border: none;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: unset;
+    position: absolute;
+    left: 4em;
+}
+
+#buildTool input::placeholder {
+    color: #c0c1ce;
+}
+
+#buildTool .inputBox {
+    display: flex;
+    align-items: center;
+    background: #212131;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    height: 40px;
+    cursor: text;
+    width: 10em;
+}
+
+#buildTool .inputBox:hover, #buildTool .inputBox:focus {
+    background: #2f2f3e;
+    color: #c0c1ce;
+}
+
+#buildTool input::-webkit-outer-spin-button,
+#buildTool input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#buildTool input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#buildTool .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5em;
+}
+
+#buildTool .buildButton {
+    display: flex;
+    border-radius: 0.5em;
+    padding: 0.25em;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+#buildTool .buildButton.plus {
+    background-color: #8ea763;
+}
+
+#buildTool .buildButton.plus:hover{
+    background-color: #9cb66f;
+}
+
+#buildTool .buildButton.moins {
+    background-color: #6388a7;
+}
+
+#buildTool .buildButton.moins:hover {
+    background-color: #6d93b2;
+}
+
+#buildTool .buildButton.stop {
+    background-color: #d14c5e;
+}
+
+#buildTool .buildButton.stop:hover {
+    background-color: #de5668;
+}
+
 .openBtn {
     background: #f1f1f1;
     border: none;

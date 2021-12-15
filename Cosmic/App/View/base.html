@@ -370,6 +370,42 @@
 
 {% if player %}
 <div id="hotel-container">
+    <div id="buildTool" class="d-none">
+        <div class="title mb_1 text-center">Outil de construction</div>
+        <div class="grid">
+            <div class="inputBox">
+                <img src="/assets/images/hotel/hauteur_icon.png" style="height: 70%;margin-right: 1em;">
+                <input type="number" min="-80" max="80" aria-label="Hauteur" placeholder="Hauteur" name="item-hauteur">
+            </div>
+            <div class="buttons">
+                <div class="buildButton moins">-</div>
+                <div class="buildButton plus">+</div>
+                <div class="buildButton stop">×</div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="inputBox">
+                <img src="/assets/images/hotel/rotation_icon.png" style="height: 60%;margin-right: 1em;">
+                <input type="number" min="0" max="6" aria-label="Rotation" placeholder="Rotation" name="item-rotation">
+            </div>
+            <div class="buttons">
+                <div class="buildButton moins">-</div>
+                <div class="buildButton plus">+</div>
+                <div class="buildButton stop">×</div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="inputBox">
+                <img src="/assets/images/hotel/etat_icon.png" style="height: 70%;margin-right: 1em;">
+                <input type="number" min="0" max="40" aria-label="Etat" placeholder="Etat" name="item-etat">
+            </div>
+            <div class="buttons">
+                <div class="buildButton moins">-</div>
+                <div class="buildButton plus">+</div>
+                <div class="buildButton stop">×</div>
+            </div>
+        </div>
+    </div>
     <div class="client-buttons">
         <button class="client-close">
             <i class="client-icon client-close-icon"></i>
@@ -411,7 +447,58 @@
 <script src="/assets/js/jquery.wysibb.js"></script>
 <script src="/assets/js/more.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    $("#buildTool").draggable();
 
+    let buildButtons = document.querySelectorAll('#buildTool .buildButton');
+    buildButtons.forEach(el => {
+        el.addEventListener('click', () => {
+            let input = el.parentNode.parentNode.querySelector('input');
+            let max = input.max;
+            let min = input.min;
+            let value = input.value === '' ? 0 : parseFloat(input.value);
+
+            if (el.classList.contains('plus')) {
+                if (input.name === 'item-hauteur') {
+                    if (value + 0.1 < max) {
+                        input.value = (value + 0.1).toFixed(2);
+                    }
+                } else {
+                    if (value++ < max) {
+                        input.value = value++;
+                    }
+                }
+            } else if (el.classList.contains('moins')) {
+                if (input.name === 'item-rotation') {
+                    if (value - 0.1 > min) {
+                        input.value = (value - 0.1).toFixed(2);
+                    }
+                } else {
+                    if (value-- > min) {
+                        input.value = value--;
+                    }
+                }
+            } else if (el.classList.contains('stop')) {
+                input.value = '';
+            }
+        })
+    });
+
+    let buildInputs = document.querySelectorAll('#buildTool .inputBox input');
+    buildInputs.forEach(el => {
+        el.addEventListener('change', () => {
+            if (el.value > el.max) {
+                el.value = el.max;
+                return true;
+            }
+
+            if (el.value > el.min) {
+                el.value = el.min;
+                return true;
+            }
+        })
+    });
+</script>
 </body>
 
 </html>
