@@ -1,3 +1,9 @@
+.d-none {
+    display: none;
+}
+
+/* BUILD TOOL */
+
 #buildTool {
     background: #424354;
     position: absolute;

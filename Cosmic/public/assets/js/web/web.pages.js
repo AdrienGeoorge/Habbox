@@ -333,9 +333,11 @@ function WebPageSettingsVerificationInterface(main_page) {
         // Init type select
         page_container.find(".type-select").selectric({
             theme: "web",
-            onChange: function (event) {
-                self.switch_type(event.value);
-            }
+        });
+
+        let select = document.querySelector('.type-select');
+        select.addEventListener('change', () => {
+            self.switch_type(select.value);
         });
 
         // Init questions selects
@@ -452,6 +454,7 @@ function WebPageSettingsVerificationInterface(main_page) {
     };
 
     this.switch_type = function (type) {
+        console.log(type);
         this.main_page.get_page_container().find(".verification-selected[data-method != '" + type + "']:visible").hide();
         this.main_page.get_page_container().find(".verification-selected[data-method = '" + type + "']").show();
     };
