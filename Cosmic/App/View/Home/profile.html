@@ -13,7 +13,7 @@
                 </div>
                 <span class="profile-motto">{{data.player.motto}}</span>
             </div>
-            <div class="profile-badges" style="justify-content: center;">
+            <div class="profile-badges home-badges">
                 {% set i = 0 %}
                 {% for badge in data.player.profileBadges %}
                 <div class="profile-badge">
@@ -116,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="profile-badges">
+                <div class="profile-badges home-badges">
                     {% if data.player.badges %}
                     {% for badge in data.player.badges %}
                     <div class="profile-badge">
@@ -137,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="profile-badges">
+                <div class="profile-badges home-badges">
                     {% if data.player.groups %}
                     {% for group in data.player.groups %}
                     <a href="/api/room/{{group.room_id}}" class="item-container">
@@ -164,7 +164,7 @@
                         <img src="/assets/icons/profile/amis.svg" alt="" class="team-title-badge">
                     </div>
                 </div>
-                <div class="profile-badges">
+                <div class="profile-badges home-badges">
                     {% if data.player.friends %}
                     {% for row in data.player.friends %}
                     <a href="/profile/{{row.username}}" class="profile-badge tooltip">
@@ -187,7 +187,7 @@
                         <img src="/assets/icons/profile/apparts.svg" alt="" class="team-title-badge">
                     </div>
                 </div>
-                <div class="profile-badges">
+                <div class="profile-badges home-badges">
                     {% if data.player.rooms %}
                     {% for row in data.player.rooms %}
                     <a href="/api/room/{{row.id}}" class="item-container">

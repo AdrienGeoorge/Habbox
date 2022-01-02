@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="/assets/css/web.christmas.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3929b306a6.js" crossorigin="anonymous"></script>
 
     <script src="/assets/js/jquery-3.2.1.min.js"></script>
     <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
@@ -372,6 +372,7 @@
 <div id="hotel-container">
     <div id="buildTool" class="d-none">
         <div class="title mb_1 text-center">Outil de construction</div>
+        <div class="close-buildTool">×</div>
         <div class="grid">
             <div class="inputBox">
                 <img src="/assets/images/hotel/hauteur_icon.png" style="height: 70%;margin-right: 1em;">
@@ -415,6 +416,9 @@
             <i class="client-icon client-fullscreen-icon"></i>
             <i class="client-icon client-fullscreen-icon-back hidden"></i>
         </button>
+        <button class="client-buildtool">
+            <i class="fas fa-tools"></i>
+        </button>
         <button class="client-count">
             {% if 'housekeeping' in permissions %}<a href="/housekeeping" target="_blank"
                                                      style="color:#fff;text-decoration: none;"><i class="fa fa-user"></i> <b
@@ -450,7 +454,23 @@
 <script>
     $("#buildTool").draggable();
 
+    let buildTool = document.getElementById('buildTool');
+    let buildToolShow = document.querySelector('.client-buildtool');
     let buildButtons = document.querySelectorAll('#buildTool .buildButton');
+    let buildClose = document.querySelector('#buildTool .close-buildTool');
+
+    buildToolShow.addEventListener('click', () => {
+        if (buildTool.classList.contains('d-none')) {
+            buildTool.classList.remove('d-none');
+        } else {
+            buildTool.classList.add('d-none');
+        }
+    });
+
+    buildClose.addEventListener('click', () => {
+        buildTool.classList.add('d-none');
+    });
+
     buildButtons.forEach(el => {
         el.addEventListener('click', () => {
             let input = el.parentNode.parentNode.querySelector('input');
@@ -469,7 +489,7 @@
                     }
                 }
             } else if (el.classList.contains('moins')) {
-                if (input.name === 'item-rotation') {
+                if (input.name === 'item-hauteur') {
                     if (value - 0.1 > min) {
                         input.value = (value - 0.1).toFixed(2);
                     }
