@@ -30,6 +30,7 @@ class Routes extends Router
                 parent::get('/stats', '\App\Controllers\Admin\Stats@view');
                 parent::get('/timer', '\App\Controllers\Admin\Timer@view');
                 parent::get('/event', '\App\Controllers\Admin\Event@view');
+                parent::get('/upload/badges', '\App\Controllers\Admin\UploadBadges@view');
                 parent::get('/vouchers', '\App\Controllers\Admin\Vouchers@view');
                 parent::get('/permissions/get/commands', 'Permissions@getpermissioncommands');
                 parent::get('/catalog/get/tree', 'Catalog@tree');

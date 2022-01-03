@@ -77,6 +77,13 @@
                    <i class="kt-menu__link-icon flaticon-gift"></i><span class="kt-menu__link-text">Création de code promo</span></a>
            </li>
            {% endif %}
+
+           {% if 'housekeeping_ranks' in permissions %}
+           <li class="kt-menu__item ajaxLoading" aria-haspopup="true" >
+               <a  href="/housekeeping/upload/badges" class="kt-menu__link ">
+                   <i class="kt-menu__link-icon flaticon-upload-1"></i><span class="kt-menu__link-text">Upload des badges</span></a>
+           </li>
+           {% endif %}
           {% endif %}
 
           {% if 'housekeeping_ban_logs' in permissions or 'housekeeping_chat_logs' in permissions or 'housekeeping_staff_logs' in permissions %}

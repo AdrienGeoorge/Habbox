@@ -1035,4 +1035,8 @@ class Admin
 
         return QueryBuilder::connection()->table('vouchers')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
+
+    public static function addBadge($imagePath){
+
+    }
 }

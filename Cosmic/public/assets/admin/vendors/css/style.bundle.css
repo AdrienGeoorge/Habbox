@@ -42665,6 +42665,76 @@ and (min-width: 1025px) {
     z-index: 10;
 }
 
+#badgeUpload {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 1em;
+    width: 27em;
+    margin-bottom: 2em;
+}
+
+#badgeUpload label {
+    cursor: pointer;
+    background-color: #bdc3c7;
+    width: fit-content;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 1em;
+    padding: 1em 2em;
+}
+
+#badgeUpload input {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+}
+
+#badgeUpload-preview {
+    height: 6em;
+    width: 6em;
+    background-color: #1e1e2d;
+    border-radius: 1em;
+    display: inline-block;
+    padding: 0.5em;
+}
+
+#badgeUpload-preview #image {
+    height: 4em;
+    width: 4em;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#badges {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em;
+}
+
+#badges .badge {
+    position: relative;
+    height: 8em;
+    width: 6em;
+    background-color: #1e1e2d;
+    border-radius: 1em;
+}
+
+#badges .badge img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#badges .badge span {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .switch {
     position: relative;
     display: inline-block;
