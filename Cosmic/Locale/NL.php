@@ -56,6 +56,11 @@ $GLOBALS['language'] = array (
             'user_logout'           => 'Log uit',
             'user_hotel'            => 'Hotel',
 
+            'build_tool'            => 'Bouwgereedschap',
+            'build_height'          => 'Hoogte',
+            'build_rotation'        => 'Rotatie',
+            'build_state'           => 'Status',
+
             'header_slogan'         => 'Virtuele wereld voor jongeren!',
             'header_slogan2'        => 'Word lid van onze community en maak nieuwe vrienden',
             'header_login'          => 'Inloggen',
@@ -336,7 +341,8 @@ $GLOBALS['language'] = array (
             'referral'                => 'Sponsoring',
             'referral_desc'           => 'Stuur een uitnodiging naar je vrienden en als zij een account aanmaken, ontvang jij een klein cadeautje.',
             'badges'                  => 'Nieuwe badges',
-            'items'                   => 'Nieuwe artikelen'
+            'items'                   => 'Nieuwe artikelen',
+            'event'                   => 'Er is een evenement aan de gang op Habbox',
         ),
         'lost' => array (
             'page_not_found'          => 'Pagina niet gevonden!',
@@ -501,6 +507,7 @@ $GLOBALS['language'] = array (
             'save'            => 'Opslaan'
         ),
         'settings_namechange' => array (
+            'warning'         => 'Attentie! Log uit voordat je je nickname verandert!',
             'title'           =>  Config::site['shortname'] . 'naam veranderen',
             'help_1'          => 'Wil jij je Asteroidnaam veranderen? Dat kan! Dit kost',
             'help_2'          => 'en zullen meteen na je verzoek afgeschreven worden. Wanneer je naam eenmaal is veranderd kunnen wij dit niet meer terugdraaien! Zorg dus dat je goed na denkt over je besluit!',
@@ -529,7 +536,8 @@ $GLOBALS['language'] = array (
             'hotelalerts_label'   => 'Ik wil geen hotelmeldingen ontvangen',
             'chat_title'          => 'Chat instellingen',
             'chat_label'          => 'Ik wil gebruik maken van de oude chat',
-            'dark_mode'           => 'Wilt u de donkere modus gebruiken?'
+            'dark_mode'           => 'Wilt u de donkere modus gebruiken?',
+            'language_title'      => 'Keuze van de taal'
         ),
         'settings_verification' => array (
             'title'                 => 'Beveilig jouw account',

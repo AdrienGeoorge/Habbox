@@ -333,6 +333,9 @@ function WebPageSettingsVerificationInterface(main_page) {
         // Init type select
         page_container.find(".type-select").selectric({
             theme: "web",
+            onChange: function (event) {
+                self.switch_type(event.value);
+            }
         });
 
         let select = document.querySelector('.type-select');
@@ -448,9 +451,9 @@ function WebPageSettingsVerificationInterface(main_page) {
 
     this.switch_enable = function (enabled) {
         if (enabled)
-            this.main_page.get_page_container().find(".verification-container").show();
+            document.querySelector('.verification-container').classList.remove('d-none')
         else
-            this.main_page.get_page_container().find(".verification-container").hide();
+            document.querySelector('.verification-container').classList.add('d-none')
     };
 
     this.switch_type = function (type) {

@@ -52,6 +52,20 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="settingBox">
+                    <div class="centered">
+                        <label class="switch-label" for="themeswitch-target">
+                        <span class="switch-container rounded-radio purple">
+                            <input class="settings" type="checkbox" data-id="themeswitch" id="themeswitch-target" {% if
+                                   player.template== "dark" %}checked{% endif %}>
+                            <span class="switch-button"></span>
+                        </span>
+                            <h4 class="label-title">{{locale.dark_mode}}</h4>
+                            <span class="label-description"></span>
+                        </label>
+                    </div>
+                </div>
             </div>
 
             <div class="flex_1">
@@ -85,14 +99,15 @@
 
                 <div class="settingBox">
                     <div class="centered">
-                        <label class="switch-label" for="themeswitch-target">
-                        <span class="switch-container rounded-radio purple">
-                            <input class="settings" type="checkbox" data-id="themeswitch" id="themeswitch-target" {% if
-                                   player.template== "dark" %}checked{% endif %}>
-                            <span class="switch-button"></span>
-                        </span>
-                            <h4 class="label-title">{{locale.dark_mode}}</h4>
-                            <span class="label-description"></span>
+                        <label class="switch-label" for="language">
+                            <h4 class="label-title">{{locale.language_title}}</h4>
+                            <select name="language" class="form-control" id="language">
+                                <option value="FR" {{data.language == 'FR' ? 'selected' }}>Français</option>
+                                <option value="EN" {{data.language == 'EN' ? 'selected' }}>English</option>
+                                <option value="ES" {{data.language == 'ES' ? 'selected' }}>Español</option>
+                                <option value="PT" {{data.language == 'PT' ? 'selected' }}>Português</option>
+                                <option value="NL" {{data.language == 'NL' ? 'selected' }}>Nederlands</option>
+                            </select>
                         </label>
                     </div>
                 </div>
@@ -100,5 +115,18 @@
         </div>
     </form>
 </div>
+<script>
+    document.getElementById('language').addEventListener('change', ev => {
+        let select = ev.target;
+        $.ajax({
+            type: "POST",
+            data: {type: select.id, value: select.value},
+            url: '/settings/changeLanguage',
+            success: () => {
+                location.reload();
+            }
+        })
+    })
+</script>
 {% endblock %}
 

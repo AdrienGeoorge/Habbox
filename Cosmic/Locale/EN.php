@@ -56,6 +56,11 @@ $GLOBALS['language'] = array (
             'user_logout'           => 'Log out',
             'user_hotel'            => 'Hotel',
 
+            'build_tool'            => 'Build tool',
+            'build_height'          => 'Height',
+            'build_rotation'        => 'Rotation',
+            'build_state'           => 'State',
+
             'header_slogan'         => 'Virtual world for young people!',
             'header_slogan2'        => 'Join our community and make new friends',
             'header_login'          => 'Log in',
@@ -340,7 +345,8 @@ $GLOBALS['language'] = array (
             'referral'                => 'Sponsorship',
             'referral_desc'           => 'Send an invitation to your friends and if they create an account, you will receive a small gift.',
             'badges'                  => 'New badges',
-            'items'                   => 'New items'
+            'items'                   => 'New items',
+            'event'                   => 'An event is in progress on Habbox',
         ),
         'lost' => array (
             'page_not_found'          => 'Page not found!',
@@ -507,6 +513,7 @@ $GLOBALS['language'] = array (
             'save'            => 'Save'
         ),
         'settings_namechange' => array (
+            'warning'         => 'Attention! Log out of the hotel before changing your nickname!',
             'title'           => 'Change ' . Config::site['shortname'] . 'name',
             'help_1'          => 'Do you want to change your ' . Config::site['shortname'] . 'name? Which can! This costs',
             'help_2'          => 'and will be debited immediately after your request. Once your name has been changed we cannot reverse it! So make sure you think carefully about your decision!',
@@ -535,7 +542,8 @@ $GLOBALS['language'] = array (
             'hotelalerts_label'   => 'I don\'t want to receive hotel notifications',
             'chat_title'          => 'Chat settings',
             'chat_label'          => 'I want to use the old chat',
-            'dark_mode'           => 'Would you like tu use dark mode?'
+            'dark_mode'           => 'Would you like tu use dark mode?',
+            'language_title'      => 'Choice of language'
         ),
         'settings_verification' => array (
             'title'                 => 'Secure your account',

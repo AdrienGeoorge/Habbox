@@ -48,6 +48,23 @@ class Preferences
         response()->json(["status" => "success", "message" => Locale::get('settings/preferences_saved')]);
     }
 
+    public function changeLanguage()
+    {
+        $type = $_POST['type'];
+        $value = $_POST['value'];
+
+        if (empty($type) || empty($value)) {
+            response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong'), "captcha_error" => "error"]);
+        }
+
+        if ($type !== 'language') {
+            response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong'), "captcha_error" => "error"]);
+        }
+
+        Player::updateSettings(request()->player->id, $type, $value);
+        response()->json(["status" => "success", "message" => Locale::get('settings/preferences_saved')]);
+    }
+
     public function index()
     {
         if(!isset(request()->player->id)) {

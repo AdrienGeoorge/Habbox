@@ -2,6 +2,7 @@
 namespace Core;
 
 use App\Config;
+use App\Models\Player;
 
 class Locale
 {
@@ -14,7 +15,14 @@ class Locale
      */
     public static function get($path = null, $all = false)
     {
-        require_once __DIR__.'/../Locale/'.Config::language.'.php';
+        if(request()->player){
+            $settings = Player::getSettings(request()->player->id);
+            $language = $settings->language;
+        } else {
+            $language = 'FR';
+        }
+
+        require_once __DIR__.'/../Locale/'.$language.'.php';
 
         if ($path) {
             $locale = $GLOBALS['language'];
