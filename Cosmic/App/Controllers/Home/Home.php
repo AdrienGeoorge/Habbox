@@ -72,13 +72,13 @@ class Home
                 $type = explode('-', $type)[1];
 
                 if ($type === 'hauteur') {
-                    HotelApi::execute('setz', array('user_id' => $player->id, 'setZ' => $value));
+                    HotelApi::execute('setz', array('user_id' => $player->id, 'height' => $value));
                     response()->json(["status" => "success", "message" => 'Hauteur mise à jour']);
                 } elseif ($type === 'rotation') {
-                    HotelApi::execute('setr', array('user_id' => $player->id, 'setRotation' => $value));
+                    HotelApi::execute('setr', array('user_id' => $player->id, 'rot' => $value));
                     response()->json(["status" => "success", "message" => 'Rotation mise à jour']);
                 } elseif ($type === 'etat') {
-                    HotelApi::execute('sets', array('user_id' => $player->id, 'setExtradata' => $value));
+                    HotelApi::execute('sets', array('user_id' => $player->id, 'extra_data' => $value));
                     response()->json(["status" => "success", "message" => 'Etat mis à jour']);
                 }
             }
