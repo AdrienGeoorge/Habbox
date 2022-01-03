@@ -42625,7 +42625,6 @@ and (min-width: 1025px) {
 }
 
 #image-preview {
-    width: 730px;
     height: 170px;
     position: relative;
     overflow: hidden;
@@ -42635,6 +42634,9 @@ and (min-width: 1025px) {
     width: 70%;
     border-radius: 20px;
     margin-bottom: 2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #image-preview label {
@@ -42733,6 +42735,56 @@ and (min-width: 1025px) {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    column-gap: 2em;
+    row-gap: 2em;
+}
+
+#images img {
+    display: block;
+    float: left;
+    flex: 0 0 auto;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    #images img {
+        width: calc(94%/3);
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #images img {
+        width: calc(94%/3);
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #images img {
+        width: calc(94%/2);
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    #images img {
+        width: 100%;
+    }
+}
+
+@media screen  and (max-width: 320px) {
+    #images img {
+        width: 100%;
+    }
 }
 
 .switch {

@@ -15,7 +15,7 @@ class UploadBadges
     public function view()
     {
         $dirnameBadges = '../public/nitro/c_images/album1584/';
-        $dirBadges = array_slice(preg_grep('~\.gif$~', scandir($dirnameBadges, SCANDIR_SORT_DESCENDING)), 0);
+        $dirBadges = preg_grep('~\.gif$~', scandir($dirnameBadges, SCANDIR_SORT_DESCENDING));
         $badges = [];
 
         foreach ($dirBadges as $file) {
