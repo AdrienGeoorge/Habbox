@@ -53,7 +53,7 @@ $GLOBALS['language'] = array (
             'user_profile'          => 'Mi perfil',
             'user_settings'         => 'Ajustes',
             'user_stats'            => 'Mis estadísticas',
-            'user_logout'           => 'Cierre de sesión',
+            'user_logout'           => 'Desconectando',
             'user_hotel'            => 'Hotel',
 
             'build_tool'            => 'Herramienta de construcción',
@@ -118,10 +118,10 @@ $GLOBALS['language'] = array (
             'web_page_forum_topic_closed'                   => 'Este tema está cerrado y no se puede responder en este momento.',
             'web_page_forum_login_toreact'                  => 'Debes estar conectado para responder.',
             'web_page_forum_login_tolike'                   => 'Debes estar conectado para que te guste este post.',
-            'web_page_forum_loggedout'                      => 'Cierre de sesión :(',
+            'web_page_forum_loggedout'                      => 'Desconectando :(',
 
             'web_page_profile_login'                        => 'Tienes que estar conectado para que te gusten estas fotos!',
-            'web_page_profile_loggedout'                    => 'Cierre de sesión :(',
+            'web_page_profile_loggedout'                    => 'Desconectando :(',
 
             'web_page_settings_namechange_request'          => 'Solicitar',
             'web_page_settings_namechange_not_available'    => 'No disponible',

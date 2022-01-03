@@ -61,16 +61,25 @@
                     <span>{{locale.popular_rooms_label}}</span>
                     <div class="profile-badges home-badges">
                         {% for row in rooms %}
+                        {% if player %}
                         <a href="/api/room/{{row.id}}" class="profile-badge tooltip">
                             <!-- <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">&ndash;&gt;-->
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
                             <div class="text">{{row.name}}</div>
                         </a>
+                        {% else %}
+                        <div class="profile-badge tooltip">
+                            <!-- <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">&ndash;&gt;-->
+                            <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
+                            <div class="text">{{row.name}}</div>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
                 {% endif %}
             </div>
+            {% if player %}
             <div class="box">
                 <div class="title">{{locale.referral}}</div>
                 <span>{{locale.referral_desc}}</span>
@@ -86,6 +95,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
         <div class="flex-body-right">
             <div class="box">

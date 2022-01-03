@@ -2,7 +2,9 @@
     <a href="/help" class="settingsMenu {% if nav == 'help' %}selected{% endif %}">
         <img src="/assets/icons/faq.svg" alt="">
     </a>
+    {% if player %}
     <a href="/help/requests/view" class="settingsMenu {% if nav == 'view' %}selected{% endif %}">
         <img src="/assets/icons/ticket.svg" alt="">
     </a>
+    {% endif %}
 </div>

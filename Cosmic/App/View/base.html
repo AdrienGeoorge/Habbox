@@ -174,15 +174,9 @@
         </div>
     </div>
     <div class="habbox-logo">
-        {% if player %}
         <a href="/home">
             <img src="/assets/images/habbox-candy.png" alt="Habbox Logo" width="100%">
         </a>
-        {% else %}
-        <a href="/" target="_self">
-            <img src="/assets/images/habbox-candy.png" alt="Habbox Logo" width="100%">
-        </a>
-        {% endif %}
     </div>
     {% if player %}
     <a href="/profile/{{player.username}}">
@@ -211,6 +205,14 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="user-buttons">
+        {% if player is empty %}
+        <button class="rounded-button white login-dialog-button">{{locale_base.header_login}}</button>
+        <a href="/registration" target="_self" class="rounded-button white plain">{{locale_base.header_register}}</a>
+        {% endif %}
+    </div>
+    {% endif %}
 
     <div class="navigation-links">
         <div class="navigation-item">
@@ -237,6 +239,7 @@
             </a>
         </div>
 
+        {% if player %}
         <div class="navigation-item">
             <a href="/shop">
                 <div class="nav-shop {% if page == 'shop' %}selected {% endif %} navigation-link tooltip" data-page="shop">
@@ -244,8 +247,10 @@
                 </div>
             </a>
         </div>
+        {% endif %}
     </div>
 
+    {% if player %}
     <div class="navigation-bottom">
         <a href="/settings">
             <div class="nav-settings navigation-bottom-link tooltip" data-page="settings">
@@ -269,13 +274,6 @@
                 <span class="text">{{locale_base.user_logout}}</span>
             </div>
         </a>
-    </div>
-    {% else %}
-    <div class="user-buttons">
-        {% if player is empty %}
-        <button class="rounded-button white login-dialog-button">{{locale_base.header_login}}</button>
-        <a href="/registration" target="_self" class="rounded-button white plain">{{locale_base.header_register}}</a>
-        {% endif %}
     </div>
     {% endif %}
 </div>

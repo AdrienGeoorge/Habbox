@@ -40,9 +40,11 @@
             <div class="box">
                 <div class="title">{{locale.help_title}}</div>
                 <div class="mt_1">{{locale.desc}}</div>
+                {% if player %}
                 <a href="/help/requests/new" class="rounded-button light mt_2">
                     {{locale.help_contact}}
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>

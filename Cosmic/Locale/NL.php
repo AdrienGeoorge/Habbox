@@ -7,22 +7,22 @@ $GLOBALS['language'] = array (
         'base' => array(
             'nav_home'              => 'Home',
 
-            'nav_community'         => 'Community',
+            'nav_community'         => 'Gemeenschap',
             'nav_news'              => 'Nieuws',
             'nav_jobs'              => 'Jobs',
             'nav_photos'            => 'Foto\'s',
-            'nav_staff'             => 'Staff',
+            'nav_staff'             => 'Personeel',
             'nav_team'              => 'Teams',
             'nav_exchange'          => 'Marketplace',
 
-            'nav_shop'              => 'winkel',
+            'nav_shop'              => 'Winkel',
             'nav_buy_points'        => 'Bel-Credits kopen',
             'nav_buy_club'          =>  Config::site['shortname'] . ' Club kopen',
             'nav_purchasehistory'   => 'Aankoopgeschiedenis',
             'nav_changename'        =>  Config::site['shortname'] . 'naam veranderen',
             'nav_drawyourbadge'     => 'Maak je badge',
           
-            'nav_highscores'        => 'Highscores',
+            'nav_highscores'        => 'Ranglijsten',
 
             'nav_forum'             => 'Groepen',
 
@@ -51,9 +51,9 @@ $GLOBALS['language'] = array (
 
             'user_to'               => 'Naar',
             'user_profile'          => 'Mijn profiel',
-            'user_settings'         => 'instellingen',
+            'user_settings'         => 'Instellingen',
             'user_stats'            => 'Mijn statistieken',
-            'user_logout'           => 'Log uit',
+            'user_logout'           => 'Ontkoppeling',
             'user_hotel'            => 'Hotel',
 
             'build_tool'            => 'Bouwgereedschap',
@@ -68,7 +68,7 @@ $GLOBALS['language'] = array (
             'header_to'             => 'Naar',
             'search'                => 'Zoeker...',
 
-            'footer_helptool'       => 'Help Tool',
+            'footer_helptool'       => 'Helpcentrum',
             'footer_rules'          => 'De '. Config::site['shortname'] . ' Regels',
             'footer_terms'          => 'Algemene voorwaarden',
             'footer_privacy'        => 'Privacyverklaring',
@@ -103,7 +103,7 @@ $GLOBALS['language'] = array (
 
             'web_hotel_backto'                              => 'Terug naar '. Config::site['shortname'] . ' Hotel',
 
-            'web_fill_pincode'                              => 'Vul de pincode in die je hebt opgegeven tijdens het aanmaken van de extra beveiliging op jouw account. Nou, ik ben deze vergeten? Neem dan contact op via de '. Config::site['shortname'] . ' Help Tool',
+            'web_fill_pincode'                              => 'Vul de pincode in die je hebt opgegeven tijdens het aanmaken van de extra beveiliging op jouw account. Nou, ik ben deze vergeten? Neem dan contact op via de '. Config::site['shortname'] . ' Helpcentrum',
             'web_twostep'                                   => 'Twee-staps autorisatie!',
             'web_login'                                     => 'Je moet ingelogd zijn om dit bericht te rapporteren!',
             'web_loggedout'                                 => 'Uitgelogd :(',
@@ -166,7 +166,7 @@ $GLOBALS['language'] = array (
             'web_page_shop_offers_received2'                => 'Bel-Credits ontvangen.',
             'web_page_shop_offers_close'                    => 'Sluit',
             'web_page_shop_offers_failed'                   => 'Aankoop mislukt!',
-            'web_page_shop_offers_failed_desc'              => 'De aankoop is mislukt. Probeer het nog eens of neem contact op via de Help Tool.',
+            'web_page_shop_offers_failed_desc'              => 'De aankoop is mislukt. Probeer het nog eens of neem contact op via de Helpcentrum.',
             'web_page_shop_offers_back'                     => 'Terug',
             'web_page_shop_offers_no_card'                  => 'Als je geen Neosurf-prepaidkaart hebt, kun je de',
             'web_page_shop_offers_no_card2'                 => 'verkooppunten zien',
@@ -249,9 +249,9 @@ $GLOBALS['language'] = array (
             'load_more'   => 'Bekijk meer foto\'s'
         ),
         'community_staff' => array (
-            'title'       => 'Hoe word ik '. Config::site['shortname'] . ' Staff?',
+            'title'       => 'Hoe word ik '. Config::site['shortname'] . ' Personeel?',
             'desc'        => 'Zij vertegenwoordigen het officiele team dat verantwoordelijk is voor de goede werking van het hotel.',
-            'content_1'   => 'Natuurlijk droomt iedereen wel van zo\'n plaats als '. Config::site['shortname'] . ' Stafflid, maar helaas is dit niet voor iedereen weggelegd. Om '. Config::site['shortname'] . ' Staff te kunnen worden moet je solliciteren.',
+            'content_1'   => 'Natuurlijk droomt iedereen wel van zo\'n plaats als '. Config::site['shortname'] . ' Stafflid, maar helaas is dit niet voor iedereen weggelegd. Om '. Config::site['shortname'] . ' Personeel te kunnen worden moet je solliciteren.',
             'content_2'   => 'Dit kan alleen op momenten wanneer wij vacatures hebben, wanneer we dit hebben, wordt dit vermeldt in het nieuws.',
             'no_users'    => 'Er is niemand in deze categorie'
         ),
@@ -285,7 +285,7 @@ $GLOBALS['language'] = array (
             'help_other_questions'      => 'Andere vragen',
             'help_content_1'            => 'Het antwoord op jouw vraag niet gevonden? Aarzel dan niet om contact op te nemen met onze klantenservice zodat we meer informatie kunnen geven.',
             'help_contact'              => 'Contact opnemen',
-            'title'                     => 'Help Tool',
+            'title'                     => 'Helpcentrum',
             'desc'                      => 'Je kunt hier op zoek naar antwoorden op je vragen. Vind je het antwoord op jouw vraag niet, dien dan een hulpverzoek in.',
 
           /*  Help/request.html  */
@@ -319,7 +319,7 @@ $GLOBALS['language'] = array (
             'connection'              => 'Aansluiting',
             'hook'                    => 'Word lid van onze community en creëer je eigen avatar, maak vrienden, chat, maak je eigen appartementen en neem deel aan onze evenementen!',
             'register'                => 'Inloggen',
-            'login'                   => 'Log in'
+            'login'                   => 'Inloggen'
         ),
         'home' => array (
             'to'                      => 'Naar',
@@ -351,7 +351,7 @@ $GLOBALS['language'] = array (
             'sidebar_title'           => 'Zocht je misschien...',
             'sidebar_stats'           => 'De home van een van je vrienden?',
             'sidebar_stats_label_1'   => 'Misschien staat hij/zij bij de',
-            'sidebar_stats_label_2'   => 'Highscores',
+            'sidebar_stats_label_2'   => 'Ranglijsten',
             'sidebar_rooms'           => 'Populaire kamers?',
             'sidebar_rooms_label_1'   => 'Blader eens door de',
             'sidebar_rooms_label_2'   => 'Navigator',
@@ -507,7 +507,7 @@ $GLOBALS['language'] = array (
             'save'            => 'Opslaan'
         ),
         'settings_namechange' => array (
-            'warning'         => 'Attentie! Log uit voordat je je nickname verandert!',
+            'warning'         => 'Attentie! Ontkoppeling voordat je je nickname verandert!',
             'title'           =>  Config::site['shortname'] . 'naam veranderen',
             'help_1'          => 'Wil jij je Asteroidnaam veranderen? Dat kan! Dit kost',
             'help_2'          => 'en zullen meteen na je verzoek afgeschreven worden. Wanneer je naam eenmaal is veranderd kunnen wij dit niet meer terugdraaien! Zorg dus dat je goed na denkt over je besluit!',
@@ -568,7 +568,7 @@ $GLOBALS['language'] = array (
             'more_information'    => 'Meer informatie',
             'content_1'           => 'Heb je een vraag of probleem met een aankoop?',
             'content_2'           => 'Aarzel niet om contact op te nemen met de klantenservice via de',
-            'help_tool'           =>  Config::site['shortname'] . ' Help Tool',
+            'help_tool'           =>  Config::site['shortname'] . ' Helpcentrum',
             'random_club_users'   => 'Willekeurige '. Config::site['shortname'] . ' Club leden',
             'desc'                => 'Hier kun je club kopen voor echt geld. Met club heb je voordelen en kun je exclusieve items kopen.',
             'days'                => 'DAGEN'
@@ -582,7 +582,7 @@ $GLOBALS['language'] = array (
             'buy_club'            => 'Koop '. Config::site['shortname'] . ' Club',
             'content_1'           => 'Heb je een vraag of probleem met een aankoop?',
             'content_2'           => 'Aarzel niet om contact op te nemen met de klantenservice via de',
-            'help_tool'           =>  Config::site['shortname'] . ' Help Tool',
+            'help_tool'           =>  Config::site['shortname'] . ' Helpcentrum',
             'title'               => 'Mijn aankoopgeschiedenis',
             'desc'                => 'Vind hier alle aankopen die je hebt gedaan in',
             'title_draw'          => 'Maak je badge',
@@ -610,7 +610,7 @@ $GLOBALS['language'] = array (
             'more_information'  => 'Meer informatie',
             'content_1'         => 'Heb je een vraag of probleem met een aankoop?',
             'content_2'         => 'Aarzel niet om contact op te nemen met de klantenservice via de',
-            'help_tool'         =>  Config::site['shortname'] . ' Help Tool',
+            'help_tool'         =>  Config::site['shortname'] . ' Helpcentrum',
             'not_logged'        => 'Oeps! Je bent niet ingelogd.',
             'have_to_login'     => 'Om de '. Config::site['shortname'] . ' Winkel te bezoeken moet je ingelogd zijn.',
             'click_here'        => 'Klik hier',
@@ -625,7 +625,7 @@ $GLOBALS['language'] = array (
             'waiting'           => 'Bezig met laden...'
         ),
         'games_ranking' => array(
-            'title'             => 'Highscores',
+            'title'             => 'Ranglijsten',
             'desc'              => 'Bekijk hier onze spelers met de meeste punten of scores!',
             'achievements'      => 'Win-win',
             'online'            => 'Tijd online'
@@ -654,7 +654,7 @@ $GLOBALS['language'] = array (
             'banned_2'              => 'Je ban verloopt over:',
             'something_wrong'       => 'Er is iets misgegaan, probeer het nogmaals.',
             'room_not_exists'       => 'Deze kamer bestaat niet!',
-            'staff_received'        => 'Bedankt! De '. Config::site['shortname'] . ' Staff heeft dit ontvangen!',
+            'staff_received'        => 'Bedankt! De '. Config::site['shortname'] . ' Personeel heeft dit ontvangen!',
             'not_enough_belcredits' => 'Je hebt niet genoeg belcredits.',
 			'not_enough_points'     => 'Je hebt helaas geen genoeg Diamanten!',
             'topic_closed'          => 'Je kunt niet reageren op een topic dat is gesloten!',
@@ -690,16 +690,16 @@ $GLOBALS['language'] = array (
                 'namechange'    =>  Config::site['shortname'] . 'naam veranderen'
             ),
             'community' => array (
-                'index'     => 'Community',
+                'index'     => 'Gemeenschap',
                 'photos'    => 'Foto\'s',
-                'staff'     =>  Config::site['shortname'] . ' Staff',
+                'staff'     =>  Config::site['shortname'] . ' Personeel',
                 'team'      =>  Config::site['shortname'] . ' Team',
                 'fansites'  => 'Fansites',
                 'value'     => 'Ruilwaarde',
                 'forum'     => 'Ons Forum'
             ),
             'games' => array (
-                'ranking'   => 'Highscores'
+                'ranking'   => 'Ranglijsten'
             ),
             'shop' => array (
                 'index'     =>  'Winkel',
@@ -708,7 +708,7 @@ $GLOBALS['language'] = array (
                 'badge'     => 'Personaliseer uw badge'
             ),
             'help' => array (
-                'index'     => 'Help Tool',
+                'index'     => 'Helpcentrum',
                 'requests'  => 'Help Tickets',
                 'new'       => 'Help Ticket openen'
             ),
@@ -781,9 +781,9 @@ $GLOBALS['language'] = array (
     ),
     'help' => array (
         'ticket_created'            => 'Jouw Help Ticket is aangemaakt. Bekijk je Help Tickets om het hulpverzoek te bekijken.',
-        'ticket_received'           => 'Een '. Config::site['shortname'] . ' Staff heeft gereageerd op je Help Tool ticket. Bezoek de Help Tool om de reactie te bekijken.',
+        'ticket_received'           => 'Een '. Config::site['shortname'] . ' Personeel heeft gereageerd op je Helpcentrum ticket. Bezoek de Helpcentrum om de reactie te bekijken.',
         'already_open'              => 'Je hebt nog een openstaande ticket! Wanneer deze behandeld is kun je weer een ticket aanmaken.',
-        'no_answer_yet'             => 'Je kunt pas reageren als een '. Config::site['shortname'] . ' Staff je ticket heeft beantwoord.',
+        'no_answer_yet'             => 'Je kunt pas reageren als een '. Config::site['shortname'] . ' Personeel je ticket heeft beantwoord.',
     ),
     'forum' => array (
         'is_sticky'                 => 'Sticky geüpdate!',
