@@ -68,6 +68,7 @@ class Routes extends Router
                 parent::get('/ranking/wealth', 'Ranking\Wealth@index');
                 parent::get('/ranking/games', 'Ranking\Games@index');
                 parent::get('/jobs', 'Jobs\Jobs@index');
+                parent::post('/buildtool-ajax', 'Home\Home@buildtool');
 //                parent::get('/guilds', 'Community\Guilds\Home@index');
 
                 parent::get('/articles', 'Community\Articles@index');

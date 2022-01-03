@@ -12,6 +12,7 @@ use App\Models\Core;
 use Core\Locale;
 use Core\View;
 
+use Library\HotelApi;
 use stdClass;
 
 class Home
@@ -58,5 +59,31 @@ class Home
 
         return false;
 
+    }
+
+    public function buildtool()
+    {
+        if (request()->player) {
+            $type = $_POST['type'];
+            $value = doubleval($_POST['value']);
+            $player = request()->player;
+
+            if ($type) {
+                $type = explode('-', $type)[1];
+
+                if ($type === 'hauteur') {
+                    HotelApi::execute('setz', array('user_id' => $player->id, 'height' => $value));
+                    response()->json(["status" => "success", "message" => 'Hauteur mise à jour']);
+                } elseif ($type === 'rotation') {
+                    HotelApi::execute('setr', array('user_id' => $player->id, 'rot' => $value));
+                    response()->json(["status" => "success", "message" => 'Rotation mise à jour']);
+                } elseif ($type === 'etat') {
+                    HotelApi::execute('sets', array('user_id' => $player->id, 'extra_data' => $value));
+                    response()->json(["status" => "success", "message" => 'Etat mis à jour']);
+                }
+            }
+        } else {
+            response()->json(["status" => "error", "message" => "Tu dois être connecté pour utiliser la build tool..."]);
+        }
     }
 }
