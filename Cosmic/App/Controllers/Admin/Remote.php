@@ -44,6 +44,7 @@ class Remote
         }
 
         $this->data->user               = (object)$this->user->username;
+        $this->data->user->settings     = Player::getSettings($this->user->id);
 
         $this->data->user->ip_current   = Helper::convertIp($this->user->ip_current);
         $this->data->user->ip_register  = Helper::convertIp($this->user->ip_register);
@@ -366,11 +367,14 @@ class Remote
             response()->json(["status" => "error", "message" => "Ce joueur n'existe pas!"]);
         }
 
+        $settings = Player::getSettings($player->id);
+
         $username = (input()->post('username')->value ? input()->post('username')->value : $player->username);
         $email = (input()->post('email')->value ? input()->post('email')->value : $player->mail);
         $pin_code = (input()->post('pincode')->value ? input()->post('pincode')->value : (string)$player->pincode);
         $motto = (input()->post('motto')->value ? input()->post('motto')->value : $player->motto);
         $rank = (input()->post('rank')->value ? input()->post('rank')->value : (string)$player->rank);
+        $role = (input()->post('role')->value ? input()->post('role')->value : (string)$settings->role);
         $credits = (input()->post('credits')->value ? input()->post('credits')->value : (string)$player->credits);
         $extra_rank = (input()->post('extra_rank')->value ? input()->post('extra_rank')->value : null);
       
@@ -416,6 +420,10 @@ class Remote
 
             if($player->rank != $rank) {
                 HotelApi::execute('setrank', ['user_id' => $player->id, 'rank' => $rank]);
+            }
+
+            if($settings->role != $role) {
+                Player::updateSettings($player->id, 'role', $role);
             }
 
             foreach($currencys as $currency) {

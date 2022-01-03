@@ -47,13 +47,20 @@
 
                {% if 'housekeeping_ranks' in permissions %}
                <div class="form-group row">
-                  <label for="example-text-input" class="col-3 col-form-label">Rank</label>
+                  <label for="rank" class="col-3 col-form-label">Rank</label>
                   <div class="col-9">
-                     <select class="form-control" name="rank" required>
+                     <select class="form-control" id="rank" name="rank" required>
                         {% for ranks in data.hotel_ranks %}
                         <option value="{{ranks.id}}" {% if ranks.id == data.user.rank_id %}selected{% endif %}>{{ranks.id}} - {{ranks.rank_name}}</option>
                         {% endfor %}
                      </select>
+                  </div>
+               </div>
+
+               <div class="form-group row">
+                  <label for="role" class="col-3 col-form-label">Rôle</label>
+                  <div class="col-9">
+                     <input type="text" class="form-control" id="role" name="role" value="{{data.user.settings.role|raw}}">
                   </div>
                </div>
                {% endif %}
@@ -61,7 +68,7 @@
                   <label for="example-text-input" class="col-3 col-form-label">Rank Extra</label>
                   <div class="col-9">
                      <select class="form-control" name="extra_rank">
-                        <option value="0">None</option>
+                        <option value="0">Aucun</option>
                         {% for ranks in data.teams %}
                         <option value="{{ranks.id}}" {% if ranks.id == data.user.extra_rank %}selected{% endif %}>{{ranks.id}} - {{ranks.rank_name}}</option>
                         {% endfor %}
@@ -92,7 +99,7 @@
                <div class="form-group row">
                   <label for="example-text-input" class="col-3 col-form-label">Mission</label>
                   <div class="col-9">
-                     <input type="text" class="form-control" name="motto" value="{{data.user.motto}}">
+                     <input type="text" class="form-control" name="motto" value="{{data.user.motto|raw}}">
                   </div>
                </div>
                <div class="form-group row">

@@ -783,7 +783,7 @@ function WebDialogManagerInterface() {
         }
 
         if (this.type === "confirm")
-            dialog.find(".buttons-container").append('<button class="rounded-button light plain confirm">' + this.buttons.confirm + '</button>');
+            dialog.find(".buttons-container").append('<button class="rounded-button white plain confirm">' + this.buttons.confirm + '</button>');
 
         $.magnificPopup.open({
             modal: this.type === "confirm",

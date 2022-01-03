@@ -1422,7 +1422,7 @@ input:-webkit-autofill {
 /* Dialog popup */
 .dialog-popup {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #FCF2E8;
+    background-color: #f1f1f1;
     border-radius: 10px;
     position: relative;
     padding: 20px;
@@ -1447,7 +1447,7 @@ input:-webkit-autofill {
 }
 
 .dialog-popup.confirm-popup h3 {
-    background-color: #e4bb92;
+    background-color: #424354;
 }
 
 .dialog-popup.cancel-popup h3 {
