@@ -5,18 +5,18 @@
 <div class="page-content">
     <div class="flex-body">
         <div class="flex-body-left">
-            {% for employee in data|slice(0, 4) %}
             <div class="box">
                 <div class="box-title">
-                    {{employee.rank_name}}
+                    La direction
                     <div class="team-title-round">
-                        <img src="/assets/icons/team/{{employee.rank_name}}.svg" alt="{{employee.rank_name}}" class="team-title-badge">
+                        <img src="/assets/icons/team/Direction.svg" alt="Direction"
+                             class="team-title-badge">
                     </div>
                 </div>
 
                 <div class="team-users">
-                    {% if employee.users %}
-                    {% for user in employee.users %}
+                    {% if direction %}
+                    {% for user in direction %}
                     <a href="/profile/{{user.username}}" class="team-user">
                         <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
                             <div class="team-avatar-round_2">
@@ -33,8 +33,62 @@
                     {% endif %}
                 </div>
             </div>
-            {% set k = k + 1 %}
-            {% endfor %}
+            <div class="box">
+                <div class="box-title">
+                    L'administration
+                    <div class="team-title-round">
+                        <img src="/assets/icons/team/Administration.svg" alt="Administration"
+                             class="team-title-badge">
+                    </div>
+                </div>
+
+                <div class="team-users">
+                    {% if admin %}
+                    {% for user in admin %}
+                    <a href="/profile/{{user.username}}" class="team-user">
+                        <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
+                            <div class="team-avatar-round_2">
+                                <img src="{{site.fpath}}/avatarimage?figure={{user.look}}&head_direction=3&headonly=1"
+                                     alt="{{user.username}}" class="team-avatar-image pixelated">
+                            </div>
+                        </div>
+                        <p>{{user.username}}</p>
+                        <p class="team-user-role">{{user.settings.role}}</p>
+                    </a>
+                    {% endfor %}
+                    {% else %}
+                    <p>{{locale.no_users}}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    Les membres de l'équipe
+                    <div class="team-title-round">
+                        <img src="/assets/icons/team/Modération.svg" alt="Staff"
+                             class="team-title-badge">
+                    </div>
+                </div>
+
+                <div class="team-users">
+                    {% if staffs %}
+                    {% for user in staffs %}
+                    <a href="/profile/{{user.username}}" class="team-user">
+                        <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
+                            <div class="team-avatar-round_2">
+                                <img src="{{site.fpath}}/avatarimage?figure={{user.look}}&head_direction=3&headonly=1"
+                                     alt="{{user.username}}" class="team-avatar-image pixelated">
+                            </div>
+                        </div>
+                        <p>{{user.username}}</p>
+                        <p class="team-user-role">{{user.settings.role}}</p>
+                    </a>
+                    {% endfor %}
+                    {% else %}
+                    <p>{{locale.no_users}}</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
         <div class="flex-body-right">
             <div class="box">
@@ -42,37 +96,6 @@
                 <p class="team-description">{{locale.content_1}}</p>
                 <p class="team-description">{{locale.content_2}}</p>
             </div>
-
-            {% for employee in data|slice(4,data|length) %}
-            <div class="box">
-                <div class="box-title">
-                    {{employee.rank_name}}
-                    <div class="team-title-round">
-                        <img src="/assets/icons/team/{{employee.rank_name}}.svg" alt="{{employee.rank_name}}" class="team-title-badge">
-                    </div>
-                </div>
-
-                <div class="team-users">
-                    {% if employee.users %}
-                    {% for user in employee.users %}
-                    <a href="/profile/{{user.username}}" class="team-user">
-                        <div class="team-avatar-round_1 {% if user.online %}team-online{% endif %}">
-                            <div class="team-avatar-round_2">
-                                <img src="{{site.fpath}}/avatarimage?figure={{user.look}}&head_direction=3&headonly=1"
-                                     alt="{{user.username}}" class="team-avatar-image pixelated">
-                            </div>
-                        </div>
-                        <p>{{user.username}}</p>
-                        <p class="team-user-role">{{user.settings.role}}</p>
-                    </a>
-                    {% endfor %}
-                    {% else %}
-                    <p>{{locale.no_users}}</p>
-                    {% endif %}
-                </div>
-            </div>
-            {% set k = k + 1 %}
-            {% endfor %}
         </div>
     </div>
 </div>

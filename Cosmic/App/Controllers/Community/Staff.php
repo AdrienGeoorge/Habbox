@@ -10,7 +10,7 @@ use Core\View;
 
 class Staff
 {
-    public function index()
+    public function indexOld()
     {
         $direction = Permission::getDirection();
         $admin = Permission::getAdmin();
@@ -28,7 +28,7 @@ class Staff
             $users->settings = Player::getSettings($users->id);
         }
 
-        View::renderTemplate('Community/staff.html', [
+        View::renderTemplate('Community/staff_old.html', [
             'title' => Locale::get('core/title/community/staff'),
             'page' => 'community_staff',
             'action' => 'staff',
@@ -38,7 +38,7 @@ class Staff
         ]);
     }
 
-    public function indexOld()
+    public function index()
     {
         $ranks = Permission::getRanks();
 
@@ -57,7 +57,7 @@ class Staff
             }
         }
 
-        View::renderTemplate('Community/staff_old.html', [
+        View::renderTemplate('Community/staff.html', [
             'title' => Locale::get('core/title/community/staff'),
             'page' => 'community_staff',
             'action' => 'staff',
