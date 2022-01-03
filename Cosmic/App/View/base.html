@@ -476,7 +476,7 @@
             let input = el.parentNode.parentNode.querySelector('input');
             let max = input.max;
             let min = input.min;
-            let value = input.value === '' ? 0 : parseFloat(input.value);
+            let value = input.value === '' ? 0 : parseFloat(input.value).toFixed(2);
 
             if (el.classList.contains('plus')) {
                 if (input.name === 'item-hauteur') {
@@ -507,13 +507,17 @@
     let buildInputs = document.querySelectorAll('#buildTool .inputBox input');
     buildInputs.forEach(el => {
         el.addEventListener('change', () => {
-            if (el.value > el.max) {
-                el.value = el.max;
+            let max = el.max;
+            let min = el.min;
+            let value = el.value === '' ? 0 : parseFloat(el.value).toFixed(2);
+
+            if (value > max) {
+                el.value = max;
                 return true;
             }
 
-            if (el.value > el.min) {
-                el.value = el.min;
+            if (value < min) {
+                el.value = min;
                 return true;
             }
         })
