@@ -451,6 +451,7 @@
 <script src="/assets/js/jquery.wysibb.js"></script>
 <script src="/assets/js/more.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <script>
     $("#buildTool").draggable();
 
@@ -476,7 +477,7 @@
             let input = el.parentNode.parentNode.querySelector('input');
             let max = input.max;
             let min = input.min;
-            let value = input.value === '' ? 0 : parseFloat(input.value).toFixed(2);
+            let value = input.value === '' ? 0 : parseFloat(input.value);
 
             if (el.classList.contains('plus')) {
                 if (input.name === 'item-hauteur') {
@@ -501,6 +502,9 @@
             } else if (el.classList.contains('stop')) {
                 input.value = '';
             }
+
+            let event = new Event('change');
+            input.dispatchEvent(event);
         })
     });
 
@@ -513,13 +517,38 @@
 
             if (value > max) {
                 el.value = max;
-                return true;
             }
 
             if (value < min) {
                 el.value = min;
-                return true;
             }
+
+            $.ajax({
+                type: "POST",
+                data: {type: el.name, value: el.value},
+                url: '/buildtool-ajax',
+                success: result => {
+                    if (!isEmpty(result.status) && !isEmpty(result.message)) {
+                        toastr.options = {
+                            "closeButton": true,
+                            "progressBar": true,
+                            "positionClass": "toast-top-right",
+                            "preventDuplicates": true,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr[result.status](result.message);
+                    }
+                }
+            })
         })
     });
 </script>
