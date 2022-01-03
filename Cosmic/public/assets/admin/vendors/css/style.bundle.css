@@ -42711,14 +42711,13 @@ and (min-width: 1025px) {
 
 #badges {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 1em;
 }
 
 #badges .badge {
     position: relative;
     height: 8em;
-    width: 6em;
     background-color: #1e1e2d;
     border-radius: 1em;
 }
@@ -42767,11 +42766,17 @@ and (min-width: 1025px) {
     #images img {
         width: calc(94%/3);
     }
+    #badges {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     #images img {
         width: calc(94%/2);
+    }
+    #badges {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -42779,11 +42784,17 @@ and (min-width: 1025px) {
     #images img {
         width: 100%;
     }
+    #badges {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen  and (max-width: 320px) {
     #images img {
         width: 100%;
+    }
+    #badges {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

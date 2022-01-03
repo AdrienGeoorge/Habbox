@@ -32,12 +32,17 @@ class UploadBadges
 
     public function add()
     {
-        /* TODO: SWF */
         $imagePath = input()->file('imagesUpload')->filename;
         $code = input()->post('code')->value;
+        $title = input()->post('title')->value;
 
-        if (!empty($imagePath) && !empty($code)) {
+        if (!empty($imagePath) && !empty($code) && !empty($title)) {
             if ($this->imageUpload($imagePath, $code)) {
+                $file = '../public/nitro/gamedata/external_flash_texts.txt';
+                $fp = fopen($file, 'a');
+                fwrite($fp, "\r\nbadge_name_" . $code . "=" . $title . "");
+                fclose($fp);
+
                 Log::addStaffLog('-1', 'Ajout d\'un badge', request()->player->id, 'upload');
                 response()->json(["status" => "success", "message" => "Badge upload avec succès!"]);
             } else {
