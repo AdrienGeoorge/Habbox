@@ -15,11 +15,12 @@ class Locale
      */
     public static function get($path = null, $all = false)
     {
-        if(request()->player){
+        $language = 'FR';
+        if (request()->player) {
             $settings = Player::getSettings(request()->player->id);
-            $language = $settings->language;
-        } else {
-            $language = 'FR';
+            if ($settings) {
+                $language = $settings->language;
+            }
         }
 
         require_once __DIR__.'/../Locale/'.$language.'.php';
