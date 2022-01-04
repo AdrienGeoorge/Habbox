@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="/assets/css/homes.css">
     <link rel="stylesheet" href="/assets/css/selectric.css">
     <link rel="stylesheet" href="/assets/css/circle.css?v=5">
-    <link rel="stylesheet" href="/assets/css/web.christmas.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
+    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
     <script src="https://kit.fontawesome.com/3929b306a6.js" crossorigin="anonymous"></script>
@@ -175,7 +175,7 @@
     </div>
     <div class="habbox-logo">
         <a href="/home">
-            <img src="/assets/images/habbox-candy.png" alt="Habbox Logo" width="100%">
+            <img src="/assets/images/habbox.gif" alt="Habbox Logo" width="100%">
         </a>
     </div>
     {% if player %}

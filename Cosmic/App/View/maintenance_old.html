@@ -15,7 +15,7 @@
     </script>
     <link rel="stylesheet" href="/assets/css/magnific-popup.css">
     <link rel="stylesheet"
-          href="/assets/css/web.christmas.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v=2">
+          href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <script src="/assets/js/jquery-3.2.1.min.js"></script>
@@ -125,7 +125,7 @@
             position: absolute;
             top: 2em;
             left: 100px;
-            background-image: url(/assets/images/habbox-candy.png);
+            background-image: url(/assets/images/habbox.gif);
             background-position: bottom left;
             background-repeat: no-repeat;
             animation-iteration-count: 1;
