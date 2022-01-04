@@ -6973,7 +6973,6 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .more-button {
     text-align: center;
     position: fixed;
-    right: 1em;
     bottom: 1em;
     background: #5c5d71;
     z-index: 1;
@@ -6986,6 +6985,14 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     height: 1.25em;
 }
 
+.social-button {
+    right: 1em;
+}
+
+.lang-button {
+    right: 4.5em;
+}
+
 .more-button img {
     position: absolute;
     left: 50%;
@@ -6994,9 +7001,13 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     width: 1em;
 }
 
+.lang-button img {
+    width: 0.75em;
+    border-radius: 3px;
+}
+
 .more-box {
     position: fixed;
-    right: 2em;
     bottom: 6em;
     background: #5c5d71;
     z-index: 1;
@@ -7010,11 +7021,20 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     font-size: 15px;
 }
 
+.social-box {
+    right: 2em;
+}
+
+.lang-box {
+    right: 9.5em;
+}
+
 .more-row {
     position: relative;
     padding-left: 2.5em;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .more-row img {
@@ -7023,6 +7043,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     transform: translateY(-50%);
     left: 0;
     width: 18px;
+    border-radius: 3px;
 }
 
 /* INDEX */

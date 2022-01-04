@@ -1464,3 +1464,12 @@ $(document).find(".changeLightMode").click(async function () {
     await Web.ajax_manager.post("/settings/preferences/validate", dataString);
     document.location.reload()
 });
+
+let languages = document.querySelectorAll('.changeLanguage');
+
+languages.forEach(el => {
+    el.addEventListener('click', async ev => {
+        await Web.ajax_manager.post("/settings/changeLanguage", {type: 'language', value: ev.target.dataset.lang});
+        document.location.reload()
+    })
+})

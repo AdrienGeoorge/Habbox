@@ -78,7 +78,8 @@ class View
 
                 $twig->addGlobal('player_currency', Player::getCurrencys(request()->player->id));
                 $twig->addGlobal('player', request()->player);
-  
+                $twig->addGlobal('player_settings', Player::getSettings(request()->player->id));
+
                 $twig->addGlobal('player_permissions', Permission::get(request()->player->rank));
               
                 if(request()->getUrl()->contains('/housekeeping')) {

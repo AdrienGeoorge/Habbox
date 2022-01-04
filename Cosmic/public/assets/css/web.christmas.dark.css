@@ -7015,12 +7015,25 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     height: 1.25em;
 }
 
+.social-button {
+    right: 1em;
+}
+
+.lang-button {
+    right: 4.5em;
+}
+
 .more-button img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 1em;
+}
+
+.lang-button img {
+    width: 0.75em;
+    border-radius: 3px;
 }
 
 .more-box {
@@ -7039,11 +7052,20 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     font-size: 15px;
 }
 
+.social-box {
+    right: 2em;
+}
+
+.lang-box {
+    right: 9.5em;
+}
+
 .more-row {
     position: relative;
     padding-left: 2.5em;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .more-row img {
@@ -7052,6 +7074,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     transform: translateY(-50%);
     left: 0;
     width: 18px;
+    border-radius: 3px;
 }
 
 /* INDEX */

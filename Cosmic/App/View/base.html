@@ -284,34 +284,77 @@
         <label class="switch-label">
             <span class="switch-container rounded-radio purple">
                 <input class="changeLightMode" type="checkbox" data-id="themeswitch" {{ player.template == 'dark' ? 'checked' }}>
-                <span><img src="/assets/icons/{{ player.template == 'dark' ? 'light' : 'dark' }}.svg" alt=""></span>
+                <span><img src="/assets/icons/{{ player.template == 'dark' ? 'light' : 'dark' }}.svg" alt="Light mode"></span>
             </span>
         </label>
     </form>
     {% endif %}
-    <div class="more-box" style="display: none;">
+
+    <div class="more-box social-box" style="display: none;">
         <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/twitter.svg">
+            <img src="/assets/icons/social/twitter.svg" alt="Twitter">
             Twitter
         </a>
         <a href="https://www.instagram.com/habboxfrance/" target="_blank" class="more-row">
-            <img src="/assets/icons/social/instagram.svg">
+            <img src="/assets/icons/social/instagram.svg" alt="Instagram">
             Instagram
         </a>
         <a href="https://www.facebook.com/habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/facebook.svg">
+            <img src="/assets/icons/social/facebook.svg" alt="Facebook">
             Facebook
         </a>
         <a href="https://www.tiktok.com/@habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/tiktok.svg">
+            <img src="/assets/icons/social/tiktok.svg" alt="Tiktok">
             Tiktok
         </a>
         <a href="https://discord.habbox.fr/" target="_blank" class="more-row">
-            <img src="/assets/icons/social/discord.svg">
+            <img src="/assets/icons/social/discord.svg" alt="Discord">
             Discord
         </a>
     </div>
-    <div class="more-button"><img src="/assets/icons/social/social.svg" alt=""></div>
+    <div class="more-button social-button"><img src="/assets/icons/social/social.svg" alt=""></div>
+
+    <div class="more-box lang-box" style="display: none;">
+        <div class="more-row changeLanguage" data-lang="FR">
+            <img src="/assets/icons/countries/FR.png" alt="FR">
+            Français
+        </div>
+        <div class="more-row changeLanguage" data-lang="EN">
+            <img src="/assets/icons/countries/EN.png" alt="EN">
+            English
+        </div>
+        <div class="more-row changeLanguage" data-lang="ES">
+            <img src="/assets/icons/countries/ES.png" alt="ES">
+            Español
+        </div>
+        <div class="more-row changeLanguage" data-lang="PT">
+            <img src="/assets/icons/countries/PT.png" alt="PT">
+            Português
+        </div>
+        <div class="more-row changeLanguage" data-lang="NL">
+            <img src="/assets/icons/countries/NL.png" alt="NL">
+            Nederlands
+        </div>
+    </div>
+    <div class="more-button lang-button">
+        {% if player_settings %}
+        {% set language = player_settings.language %}
+        {% if language == 'FR' %}
+        <img src="/assets/icons/countries/FR.png" alt="FR">
+        {% elseif language == 'EN' %}
+        <img src="/assets/icons/countries/EN.png" alt="EN">
+        {% elseif language == 'ES' %}
+        <img src="/assets/icons/countries/ES.png" alt="ES">
+        {% elseif language == 'PT' %}
+        <img src="/assets/icons/countries/PT.png" alt="PT">
+        {% elseif language == 'NL' %}
+        <img src="/assets/icons/countries/NL.png" alt="NL">
+        {% endif %}
+        {% else %}
+        <img src="/assets/icons/countries/FR.png" alt="FR">
+        {% endif %}
+    </div>
+
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">
             <div class="navigation-top-menu">
