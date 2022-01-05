@@ -7067,14 +7067,15 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-hotel-view.valentine {
-    right: -12em;
-    bottom: -24em;
+    right: -6em;
+    bottom: -18em;
+    width: 50%;
 }
 
 .index-hotel-view.summer {
-    right: -4em;
-    bottom: -19em;
-    width: 40%;
+    right: -9em;
+    bottom: -13em;
+    width: 45%;
 }
 
 .index-logo {

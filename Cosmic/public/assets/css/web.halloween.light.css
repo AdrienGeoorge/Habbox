@@ -6898,7 +6898,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .rank-box a {
     display: block;
     text-decoration: none;
-    color: #424354;
+    color: #fff;
     font-size: 15px;
     font-weight: 600;
     width: 8.5em;
@@ -7055,8 +7055,8 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 .index-hotel-view {
     position: fixed;
-    right: -1em;
-    bottom: -8em;
+    right: 0em;
+    bottom: 0em;
     image-rendering: pixelated;
     filter: drop-shadow(2px 4px 6px black);
     z-index: -1;
