@@ -7085,8 +7085,9 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-hotel-view.classic {
-    right: -15em;
-    bottom: -20em;
+    right: -20em;
+    bottom: -15em;
+    width: 70%;
 }
 
 .index-hotel-view.easter {
