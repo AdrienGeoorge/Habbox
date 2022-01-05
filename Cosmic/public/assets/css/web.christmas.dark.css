@@ -5897,7 +5897,7 @@ input:-webkit-autofill {
     width: 80px;
     height: 80px;
     margin: 2em auto 1em auto;
-    border: 2px solid #212131;
+    border: 2px solid #6c323e;
     box-sizing: border-box;
     border-radius: 100px;
     display: flex;
@@ -5908,7 +5908,7 @@ input:-webkit-autofill {
     height: 70px;
     margin: auto;
     border-radius: 100px;
-    background: #292a38;
+    background: #6c323e;
     position: relative;
     overflow: hidden;
 }
@@ -5941,7 +5941,7 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #2f2f3e;
+    background: #6c323e;
     box-shadow: 0 0 9px rgb(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 0.5em;
@@ -5954,7 +5954,8 @@ input:-webkit-autofill {
 }
 
 .user-infos-moneys_one--box {
-    background: #3b3c4a;
+    background: #7d3d4a;
+    color: #fff;
     border-radius: 10px;
     padding: 0.5em 1em;
     margin: 5px;
@@ -6016,7 +6017,7 @@ input:-webkit-autofill {
     width: 20vw;
     height: 100%;
     padding: 1em;
-    background: linear-gradient(180deg, #424354 44.45%, #32233E 155.96%);
+    background: linear-gradient(180deg, #491b24 44.45%, #32233E 155.96%);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     z-index: 5;
     -ms-overflow-style: none;
