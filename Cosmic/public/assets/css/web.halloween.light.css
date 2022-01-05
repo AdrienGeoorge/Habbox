@@ -469,7 +469,7 @@ html {
 }
 
 body {
-    background-color: #fdf3e7;
+    background-color: #f7f2ec;
     min-width: 320px;
     min-height: 100%;
     font-family: "Nunito", Arial, sans-serif;
@@ -828,13 +828,24 @@ input:-webkit-autofill {
 
 .rounded-button.white {
     color: #fff;
-    border-color: #80796c;
+    border-color: white;
 }
 
-.rounded-button.white:not([disabled]):not(.no-hover):hover,
-.rounded-button.white.plain {
-    background-color: #80796c;
+.rounded-button.white.plain, .rounded-button.white.plain:not([disabled]):not(.no-hover):hover {
+    background-color: #c0b9aa;
+    border-color: #c0b9aa;
     color: #fff;
+}
+
+.rounded-button.white.plain:not([disabled]):not(.no-hover):hover {
+    background-color: #a8a190;
+    border-color: #a8a190;
+}
+
+.rounded-button.white:not([disabled]):not(.no-hover):hover{
+    background-color: #333;
+    border-color: #333;
+    color: white;
 }
 
 .rounded-button.blue {
@@ -1066,7 +1077,7 @@ input:-webkit-autofill {
 .login-popup {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    background-color: #aca392;
+    background-color: #c0b9ab;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -1170,7 +1181,7 @@ input:-webkit-autofill {
 /* Payment popup */
 .payment-popup {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #aca392;
+    background-color: #c0b9ab;
     color: #fff;
     border-radius: 10px;
     position: relative;
@@ -1418,7 +1429,7 @@ input:-webkit-autofill {
 /* Dialog popup */
 .dialog-popup {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #aca392;
+    background-color: #c0b9ab;
     border-radius: 10px;
     position: relative;
     padding: 20px;
@@ -3561,7 +3572,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content {
-    background-color: #c0b9ab;
+    background-color: #aca392;
     padding: 18px 16px;
     color: #fff;
     text-decoration: none;
@@ -5146,7 +5157,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="registration"] .avatars-container .tabs-container span {
-    background-color: #c0b9ab;
+    background-color: #aca392;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 5px;
@@ -5842,7 +5853,7 @@ input:-webkit-autofill {
 }
 
 .body-container {
-    background-color: #fdf3e7;
+    background-color: #f7f2ec;
     min-height: 100vh;
     position: relative;
 }
@@ -5960,7 +5971,7 @@ input:-webkit-autofill {
 
 .tooltip .text {
     visibility: hidden;
-    background-color: #c0b9ab;
+    background-color: #80796c;
     color: #fff;
     text-align: center;
     padding: 0.5em 1em;
@@ -6181,7 +6192,7 @@ input:-webkit-autofill {
     height: 2.3em;
     border-radius: 30em;
     width: 2.3em;
-    background: #c0b9ab;
+    background: #d3ccc0;
     color: #fff;
     font-size: 20px;
     font-weight: 900;
@@ -6205,7 +6216,7 @@ input:-webkit-autofill {
 
 .navigation-top-search {
     width: 100%;
-    background: #c0b9ab;
+    background: #d3ccc0;
     color: #fff;
     border-radius: 10px;
     border: none;
@@ -6221,7 +6232,7 @@ input:-webkit-autofill {
 }
 
 .navigation-top-search:hover, .navigation-top-search:focus {
-    background: #aca392;
+    background: #c0b9ab;
     color: #fff;
 }
 
@@ -6241,7 +6252,7 @@ input:-webkit-autofill {
 }
 
 .navigation-top-box {
-    background: #c0b9ab;
+    background: #d3ccc0;
     color: #fff;
     border-radius: 10px;
     width: 100%;
@@ -6256,7 +6267,7 @@ input:-webkit-autofill {
 }
 
 .navigation-top-box:hover, .navigation-top-box:focus, .navigation-top-menu:hover, .navigation-top-menu:focus {
-    background: #aca392;
+    background: #c0b9ab;
     color: #fff;
 }
 
@@ -6322,7 +6333,7 @@ input:-webkit-autofill {
 
 .my-friends {
     width: 100%;
-    background-color: #aca392;
+    background-color: #c0b9aa;
     height: 105px;
     padding: 1em;
     margin-bottom: 2em;
@@ -6345,7 +6356,7 @@ input:-webkit-autofill {
 .one-friend {
     height: 100%;
     width: 80px;
-    background-color: #c2b9aa;
+    background-color: #aba292;
     display: inline-block;
     border-radius: 5em;
     position: relative;
@@ -6464,7 +6475,7 @@ input:-webkit-autofill {
 }
 
 .team-online {
-    border: 4px solid #7fcf7c;
+    border: 4px solid #89ad80;
 }
 
 .team-avatar-image {
@@ -6479,11 +6490,11 @@ input:-webkit-autofill {
 /* GLOBAL */
 
 .box {
-    background: #aca392;
+    background: #c0b9aa;
     border-radius: 30px;
     padding: 1.5em;
     position: relative;
-    box-shadow: 2px 1px 8px #a29888;
+    box-shadow: 2px 1px 8px #dbd2c3;
     color: #fff;
 }
 
@@ -6508,7 +6519,7 @@ input:-webkit-autofill {
 
 input, textarea {
     width: 100%;
-    background: #c0b9ab;
+    background: #aca392;
     color: #fff;
     border-radius: 10px;
     border: none;
@@ -6523,8 +6534,8 @@ input::placeholder, textarea::placeholder {
 }
 
 input:focus, input:hover, textarea:focus, textarea:hover {
-    background: #b6aea1;
-    color: #fff;
+    background: #9d9484;
+    color: #f2f2f2;
 }
 
 .myBtn {
@@ -6575,7 +6586,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .article-author-infos {
-    background-color: #c0b9ab;
+    background-color: #aca392;
     display: inline-block;
     padding: 1em 2em 1em 5em;
     border-radius: 15px;
@@ -6650,7 +6661,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .lastNews {
-    background: #c0b9ab;
+    background: #aca392;
     border-radius: 10px;
     padding: 0.5em !important;
     margin-top: 1em;
@@ -6759,7 +6770,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .profile-badge {
-    background: #c0b9ab;
+    background: #aca392;
     height: 70px;
     width: 70px;
     border-radius: 1em;
@@ -6837,7 +6848,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 /* SETTINGS */
 
 .settingsTitle {
-    background: #aca392;
+    background: #c0b9aa;
     color: #fff;
     width: 100%;
     padding: 1em 2em;
@@ -6848,7 +6859,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .settingsMenu {
-    background: #c0b9ab;
+    background: #aca392;
     padding: 0.5em 0.75em;
     border-radius: 10px;
     position: relative;
@@ -6906,7 +6917,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .rank {
-    background: #c0b9ab;
+    background: #aca392;
     color: white;
     position: absolute;
     right: 1em;
@@ -7086,8 +7097,8 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-form-login input:focus, .index-form-login input:hover {
-    background: #b6aea1;
-    color: #fff;
+    background: #9d9484;
+    color: #f2f2f2;
 }
 
 .index-left .claim-password {
