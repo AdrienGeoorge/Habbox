@@ -5878,10 +5878,14 @@ input:-webkit-autofill {
     width: 80px;
     height: 80px;
     margin: 2em auto 1em auto;
-    border: 2px solid #6c323e;
+    border: 2px solid #DEB48E;
     box-sizing: border-box;
     border-radius: 100px;
     display: flex;
+}
+
+.user-avatar-round_1.christmas {
+    border: 2px solid #6c323e !important;
 }
 
 .user-avatar-round_2 {
@@ -5889,9 +5893,13 @@ input:-webkit-autofill {
     height: 70px;
     margin: auto;
     border-radius: 100px;
-    background: #6c323e;
+    background: #F2E3D4;
     position: relative;
     overflow: hidden;
+}
+
+.user-avatar-round_2.christmas {
+    background: #6c323e !important;
 }
 
 .user-avatar-image {
@@ -5922,10 +5930,14 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #6c323e;
+    background: #FCF2E8;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 0.5em;
+}
+
+.user-infos-moneys.christmas {
+    background: #6c323e !important;
 }
 
 .user-infos-moneys_one {
@@ -5935,8 +5947,7 @@ input:-webkit-autofill {
 }
 
 .user-infos-moneys_one--box {
-    background: #7d3d4a;
-    color: #fff;
+    background: #EBD4BE;
     border-radius: 10px;
     padding: 0.5em 1em;
     margin: 5px;
@@ -5944,6 +5955,11 @@ input:-webkit-autofill {
     height: 2.5em;
     text-align: center;
     position: relative;
+}
+
+.christmas .user-infos-moneys_one--box {
+    background: #7d3d4a !important;
+    color: #fff;
 }
 
 .user-infos-moneys_one--box > p {
@@ -5997,11 +6013,15 @@ input:-webkit-autofill {
     width: 20vw;
     height: 100%;
     padding: 1em;
-    background: linear-gradient(180deg, #491b24 44.45%, #32233E 155.96%);
+    background: linear-gradient(180deg, #424354 44.45%, #32233E 155.96%);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     z-index: 5;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.left-nav.christmas {
+    background: linear-gradient(180deg, #491b24 44.45%, #32233E 155.96%) !important;
 }
 
 .left-nav::-webkit-scrollbar {

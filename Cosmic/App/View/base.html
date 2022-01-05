@@ -167,7 +167,7 @@
 </div>
 {% endif %}
 
-<div class="left-nav">
+<div class="left-nav {{ theme == 'christmas' ? theme }}">
     <div class="absolute-menu">
         <div class="left-nav-menu">
             <img src="/assets/icons/croix.svg" alt="close" class="left-nav-menu-wrapper">
@@ -194,8 +194,8 @@
     </div>
     {% if player %}
     <a href="/profile/{{player.username}}">
-        <div class="user-avatar-round_1">
-            <div class="user-avatar-round_2">
+        <div class="user-avatar-round_1 {{ theme == 'christmas' ? theme }}">
+            <div class="user-avatar-round_2 {{ theme == 'christmas' ? theme }}">
                 <img src="{{site.fpath}}/avatarimage?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="user-avatar-image pixelated">
             </div>
         </div>
@@ -203,7 +203,7 @@
     <div class="user-name">{{player.username}}</div>
     <div class="user-motto">{{player.motto}}</div>
 
-    <div class="user-infos-moneys">
+    <div class="user-infos-moneys {{ theme == 'christmas' ? theme }}">
         <div class="user-infos-moneys_one">
             <div class="user-infos-moneys_one--box">
                 <img src="/assets/icons/credits.svg" alt="credits">

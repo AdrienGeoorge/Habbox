@@ -1036,7 +1036,11 @@ class Admin
         return QueryBuilder::connection()->table('vouchers')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);
     }
 
-    public static function addBadge($imagePath){
-
+    public static function changeTheme($theme){
+        return QueryBuilder::connection()
+            ->table('website_settings')
+            ->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+            ->where('key', 'theme')
+            ->update(['value' => $theme]);
     }
 }
