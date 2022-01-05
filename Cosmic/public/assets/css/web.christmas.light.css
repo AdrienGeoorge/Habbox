@@ -6957,7 +6957,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2.75em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -6981,7 +6981,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 1em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -7017,7 +7017,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2em;
     bottom: 6em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 1em 1.5em;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #242531;
@@ -7066,7 +7066,6 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-logo {
-    width: 11em;
     image-rendering: pixelated;
 }
 

@@ -14,7 +14,19 @@
                             <tr>
                                 <td align="center">
                                     <a href="{{site.domain}}/" target="_blank">
+                                        {% if theme == 'classic' %}
                                         <img src="{{site.domain}}/assets/images/habbox.gif" style="width: 7em;">
+                                        {% elseif theme == 'christmas' %}
+                                        <img src="{{site.domain}}/assets/images/habbox-candy.png" style="width: 7em;">
+                                        {% elseif theme == 'easter' %}
+                                        <img src="{{site.domain}}/assets/images/habbox-easter.png" style="width: 7em;">
+                                        {% elseif theme == 'halloween' %}
+                                        <img src="{{site.domain}}/assets/images/habbox-halloween.png" style="width: 7em;">
+                                        {% elseif theme == 'valentine' %}
+                                        <img src="{{site.domain}}/assets/images/habbox-valentine.png" style="width: 7em;">
+                                        {% elseif theme == 'winter' %}
+                                        <img src="{{site.domain}}/assets/images/habbox-winter.png" style="width: 7em;">
+                                        {% endif %}
                                     </a>
                                 </td>
                             </tr>

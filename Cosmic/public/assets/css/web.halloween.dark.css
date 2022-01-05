@@ -786,8 +786,7 @@ input:-webkit-autofill {
 
 .rounded-button:not(.white):not([disabled]):not(.no-hover):hover,
 .rounded-button:not(.white).plain {
-    background-color: #d14c5e;
-    border: 1px solid #d14c5e;
+    background-color: #333;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -836,8 +835,8 @@ input:-webkit-autofill {
 
 .rounded-button.light:not([disabled]):not(.no-hover):hover,
 .rounded-button.light.plain {
-    background-color: #d14c5e;
-    color: white;
+    background-color: #fff;
+    color: #333;
 }
 
 .rounded-button.white {
@@ -847,9 +846,8 @@ input:-webkit-autofill {
 
 .rounded-button.white:not([disabled]):not(.no-hover):hover,
 .rounded-button.white.plain {
-    background-color: #8ea763;
-    border: 1px solid #8ea763;
-    color: white;
+    background-color: #f6f6f6;
+    color: #333;
 }
 
 .rounded-button.blue {
@@ -6419,8 +6417,8 @@ input:-webkit-autofill {
 }
 
 .team-title-round {
-    background: #8ea763;
-    border: 5px solid #bcd59b;
+    background: #212131;
+    border: 5px solid #3b3c4a;
     position: absolute;
     right: -5px;
     top: 50%;
@@ -6557,11 +6555,11 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .myBtn {
     margin: 1em;
     padding: 0.75em 2em;
-    background: #d14c5e;
+    background: #212131;
     border-radius: 2em;
     cursor: pointer;
     border: none;
-    color: white;
+    color: #c0c1ce;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -6569,7 +6567,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .myBtn:hover {
-    background: #be4152;
+    background: #191926;
     color: #fff;
 }
 
@@ -7005,7 +7003,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 1em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -7081,8 +7079,8 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 .index-hotel-view {
     position: fixed;
-    right: -10em;
-    bottom: -15em;
+    right: -1em;
+    bottom: -8em;
     image-rendering: pixelated;
     filter: grayscale(0.9) drop-shadow(2px 4px 6px black);
     z-index: -1;

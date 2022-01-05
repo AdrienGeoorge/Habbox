@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="/assets/css/homes.css">
     <link rel="stylesheet" href="/assets/css/selectric.css">
     <link rel="stylesheet" href="/assets/css/circle.css?v=5">
-    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
+    <link rel="stylesheet" href="/assets/css/web.{{theme == 'christmas' or theme == 'winter' ? 'christmas.' : theme == 'halloween' ? theme ~ '.' : '' }}{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
     <script src="https://kit.fontawesome.com/3929b306a6.js" crossorigin="anonymous"></script>
@@ -175,7 +175,21 @@
     </div>
     <div class="habbox-logo">
         <a href="/home">
-            <img src="/assets/images/habbox.gif" alt="Habbox Logo" width="100%">
+            {% if theme == 'classic' %}
+            <img src="/assets/images/habbox.gif" class="index-logo classic" alt="logo">
+            {% elseif theme == 'christmas' %}
+            <img src="/assets/images/habbox-candy.png" class="index-logo" alt="logo">
+            {% elseif theme == 'easter' %}
+            <img src="/assets/images/habbox-easter.png" class="index-logo" alt="logo">
+            {% elseif theme == 'halloween' %}
+            <img src="/assets/images/habbox-halloween.png" class="index-logo" alt="logo">
+            {% elseif theme == 'valentine' %}
+            <img src="/assets/images/habbox-valentine.png" class="index-logo" alt="logo">
+            {% elseif theme == 'winter' %}
+            <img src="/assets/images/habbox-winter.png" class="index-logo" alt="logo">
+            {% elseif theme == 'summer' %}
+            <img src="/assets/images/habbox-summer.png" class="index-logo" alt="logo">
+            {% endif %}
         </a>
     </div>
     {% if player %}
@@ -288,31 +302,6 @@
             </span>
         </label>
     </form>
-    {% endif %}
-
-    <div class="more-box social-box" style="display: none;">
-        <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/twitter.svg" alt="Twitter">
-            Twitter
-        </a>
-        <a href="https://www.instagram.com/habboxfrance/" target="_blank" class="more-row">
-            <img src="/assets/icons/social/instagram.svg" alt="Instagram">
-            Instagram
-        </a>
-        <a href="https://www.facebook.com/habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/facebook.svg" alt="Facebook">
-            Facebook
-        </a>
-        <a href="https://www.tiktok.com/@habboxfrance" target="_blank" class="more-row">
-            <img src="/assets/icons/social/tiktok.svg" alt="Tiktok">
-            Tiktok
-        </a>
-        <a href="https://discord.habbox.fr/" target="_blank" class="more-row">
-            <img src="/assets/icons/social/discord.svg" alt="Discord">
-            Discord
-        </a>
-    </div>
-    <div class="more-button social-button"><img src="/assets/icons/social/social.svg" alt=""></div>
 
     <div class="more-box lang-box" style="display: none;">
         <div class="more-row changeLanguage" data-lang="FR">
@@ -354,6 +343,31 @@
         <img src="/assets/icons/countries/FR.png" alt="FR">
         {% endif %}
     </div>
+    {% endif %}
+
+    <div class="more-box social-box" style="display: none;">
+        <a href="https://twitter.com/habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/social/twitter.svg" alt="Twitter">
+            Twitter
+        </a>
+        <a href="https://www.instagram.com/habboxfrance/" target="_blank" class="more-row">
+            <img src="/assets/icons/social/instagram.svg" alt="Instagram">
+            Instagram
+        </a>
+        <a href="https://www.facebook.com/habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/social/facebook.svg" alt="Facebook">
+            Facebook
+        </a>
+        <a href="https://www.tiktok.com/@habboxfrance" target="_blank" class="more-row">
+            <img src="/assets/icons/social/tiktok.svg" alt="Tiktok">
+            Tiktok
+        </a>
+        <a href="https://discord.habbox.fr/" target="_blank" class="more-row">
+            <img src="/assets/icons/social/discord.svg" alt="Discord">
+            Discord
+        </a>
+    </div>
+    <div class="more-button social-button"><img src="/assets/icons/social/social.svg" alt=""></div>
 
     <div class="navigation-top">
         <div class="top-menu" style="flex: 0">

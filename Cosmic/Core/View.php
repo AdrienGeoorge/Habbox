@@ -61,7 +61,8 @@ class View
             
             $twig->addGlobal('site', Config::site); 
             $twig->addGlobal('client', Config::client);
-            
+            $twig->addGlobal('theme', $settings->theme);
+
             $findretros = filter_var($settings->findretros_enabled, FILTER_VALIDATE_BOOLEAN); 
             $twig->addGlobal('findretros', $findretros);
             $twig->addGlobal('cache_timestamp', $settings->cache_timestamp ?? null);
