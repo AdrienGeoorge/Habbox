@@ -23,7 +23,11 @@ class Locale
             }
         }
 
-        require_once __DIR__.'/../Locale/'.$language.'.php';
+        if (file_exists(__DIR__ . '/../Locale/' . $language . '.php')) {
+            require_once __DIR__ . '/../Locale/' . $language . '.php';
+        } else {
+            require_once __DIR__ . '/../Locale/FR.php';
+        }
 
         if ($path) {
             $locale = $GLOBALS['language'];
