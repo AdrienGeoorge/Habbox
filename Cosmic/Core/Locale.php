@@ -26,6 +26,9 @@ class Locale
         if (file_exists(__DIR__ . '/../Locale/' . $language . '.php')) {
             require_once __DIR__ . '/../Locale/' . $language . '.php';
         } else {
+            if (request()->player) {
+                Player::updateSettings(request()->player->id, 'language', 'FR');
+            }
             require_once __DIR__ . '/../Locale/FR.php';
         }
 
