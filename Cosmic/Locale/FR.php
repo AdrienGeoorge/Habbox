@@ -756,7 +756,7 @@ $GLOBALS['language'] = array (
         'user_not_exists'           => 'Ce nom utilisateur ' . Config::site['shortname'] . ' est disponible et n\'existe pas encore!',
         'name_change_saved'         => 'Ton pseudo a bien été modifié, 5 diamants viennent d\'être débités de ton compte. Tu dois désormais te reconnecter!',
         'invalid_secretcode'        => 'L\'Authentification Google via code SECRET est incorrecte.',
-        'enabled_secretcode'        => 'L\'Authentification Google est désormais configurée! Tu dois désormais te reconnecter... A bientôt!',
+        'enabled_secretcode'        => 'Méthode d\'authentification définie! Vous devez vous reconnecter... à bientôt!',
         'disabled_secretcode'       => 'Méthode d\'authentifcation désactivée!'
     ),
     'rcon' => array (

@@ -755,7 +755,7 @@ $GLOBALS['language'] = array (
         'user_not_exists'           => 'Deze '. Config::site['shortname'] . 'naam is beschikbaar en bestaat nog niet!',
         'name_change_saved'         => 'Je naam is gewijzigd! En er zijn 5 diamonden afgeschreven. Je moet nu opnieuw verbinden!',
         'invalid_secretcode'        => 'Google Authenticatie secretcode is onjuist.',
-        'enabled_secretcode'        => 'Authenticatie methode ingesteld! Je zult opnieuw moeten inloggen.. tot zo!',
+        'enabled_secretcode'        => 'Authenticatie methode gedefinieerd! Je moet opnieuw inloggen... tot ziens!',
         'disabled_secretcode'       => 'Authenticatie methode uitgeschakeld!'
     ),
     'rcon' => array (

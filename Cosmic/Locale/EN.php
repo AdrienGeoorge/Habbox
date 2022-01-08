@@ -762,7 +762,7 @@ $GLOBALS['language'] = array (
         'user_not_exists'           => 'This ' . Config::site['shortname'] . 'name is available and does not exist yet!',
         'name_change_saved'         => 'Your application will be processed, 5 diamonds have been debited. You must now reconnect!',
         'invalid_secretcode'        => 'Google Authentication secret code is incorrect.',
-        'enabled_secretcode'        => 'Authentication method set! You will have to log in again... see you soon!',
+        'enabled_secretcode'        => 'Authentication method defined! You need to log in again... see you soon!!',
         'disabled_secretcode'       => 'Authentication method disabled!'
     ),
     'rcon' => array (
