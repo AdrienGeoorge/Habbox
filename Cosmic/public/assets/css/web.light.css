@@ -137,6 +137,12 @@
     cursor: pointer;
 }
 
+.shop-club-grid_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+}
+
 .openBtn {
     background: #f1f1f1;
     border: none;
@@ -5863,7 +5869,7 @@ input:-webkit-autofill {
 }
 
 .habbox-logo {
-    width: 125px;
+    width: -webkit-fit-content;
     margin: auto;
 }
 

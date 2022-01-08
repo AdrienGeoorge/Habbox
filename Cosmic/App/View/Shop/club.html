@@ -9,23 +9,50 @@
 
     <div class="flex-body mt_3">
         <div class="flex-body-left">
-            <div class="box">
-                <div class="box-title">
-                    {{locale.club_benefits}}
-                    <div class="team-title-round">
-                        <img src="/assets/images/web/pages/shop/vip.svg" alt="vip" class="team-title-badge">
-                    </div>
+            <div class="shop-club-grid_2">
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/catalog.png" alt="Furnis" width="40em">
+                    <h2>{{locale.catalog}}</h2>
+                    <p>{{locale.catalog_desc}}</p>
                 </div>
-                <div class="mt_2">
-                    {{content|raw}}
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/king.png" alt="King" width="50em">
+                    <h2 style="margin-top: 1.25em;">{{locale.king}}</h2>
+                    <p>{{locale.king_desc}}</p>
                 </div>
-                <h4>Badges</h4>
-                <div class="profile-badges">
-                    {% for badges in data.vip_badges %}
-                    <div class="profile-badge">
-                        <img src="{{site.cpath}}/c_images/album1584/{{badges|trim('value')}}.gif" class="pixelated">
-                    </div>
-                    {% endfor %}
+            </div>
+            <div class="box text-center">
+                <img src="{{site.cpath}}/c_images/album1584/CVIP.gif" alt="VIP" width="50em">
+                <h2>{{locale.gift}}</h2>
+                <p>{{locale.gift_desc}}</p>
+            </div>
+            <div class="shop-club-grid_2">
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/build.png" alt="Build" width="40em">
+                    <h2>{{locale.build}}</h2>
+                    <p>{{locale.build_desc}}</p>
+                </div>
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/friends.png" alt="Groups" width="40em">
+                    <h2>{{locale.groups}}</h2>
+                    <p>{{locale.groups_desc}}</p>
+                </div>
+            </div>
+            <div class="box text-center">
+                <img src="/assets/images/web/pages/shop/rooms.png" alt="No limit" width="50em">
+                <h2>{{locale.rooms}}</h2>
+                <p>{{locale.rooms_desc}}</p>
+            </div>
+            <div class="shop-club-grid_2">
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/bubble.png" alt="No flood" width="70em">
+                    <h2 style="margin-top: 1.5em;">{{locale.flood}}</h2>
+                    <p>{{locale.flood_desc}}</p>
+                </div>
+                <div class="box text-center">
+                    <img src="/assets/images/web/pages/shop/bubbles.png" alt="Commands" width="35em">
+                    <h2>{{locale.commands}}</h2>
+                    <p>{{locale.commands_desc}}</p>
                 </div>
             </div>
         </div>

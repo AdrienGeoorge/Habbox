@@ -571,7 +571,24 @@ $GLOBALS['language'] = array (
             'help_tool'           => 'Support d\'aide',
             'random_club_users'   => Config::site['shortname'] . ' aléatoire qui fait parti des membres du Club',
             'desc'                => 'Ici tu peux adhérer au VIP Club avec des diamants afin de pouvoir acheter des mobis exclusifs et bien d\'autres choses...',
-            'days'                => 'JOURS'
+            'days'                => 'JOURS',
+
+            'catalog'               => 'Du nouveau au catalogue',
+            'catalog_desc'          => 'Accèdes à plus de 60 nouvelles catégories de mobiliers exclusives aux membres du club',
+            'king'                  => 'C\'est toi le roi',
+            'king_desc'             => 'Profites en avant-première des derniers mobis ajoutés au catalogue',
+            'gift'                  => 'C\'est cadeau',
+            'gift_desc'             => 'Voici un badge qui montrera ton statut au sein de l\'hôtel',
+            'build'                 => 'Tes talents de builders sans limites',
+            'build_desc'            => 'Crées jusqu\'à 1000 appartements au lieu de 150 maximum',
+            'groups'                => 'Les groupes ne seront plus un secret pour toi',
+            'groups_desc'           => 'Crées jusqu\'à 500 groupes au lieu de 150 maximum',
+            'rooms'                 => 'Il y aura toujours de la place pour toi',
+            'rooms_desc'            => 'Fini de se faire refouler à l\'entrée, tu peux visiter les apparts même lorsqu\'ils sont complets',
+            'flood'                 => 'A toi la parole',
+            'flood_desc'            => 'La durée de ton flood est réduite de 30 à 10 secondes, tu ne verras pas le temps passé',
+            'commands'              => 'Tu vas pouvoir t\'amuser',
+            'commands_desc'         => 'Profites de commandes spéciales et exclusives aux membres du club',
         ),
         'shop_history' => array (
             'more_information'    => 'Plus d\'informations',
@@ -771,8 +788,7 @@ $GLOBALS['language'] = array (
         ),
         'club' => array (
             'already_vip'           => 'Tu es un membre permanent du ' . Config::site['shortname'] . ' Club.',
-            'purchase_success'      => 'Félicitations ! Tu es désormais membre du ' . Config::site['shortname'] . ' Club pour 31 jours.'
-
+            'purchase_success'      => 'Félicitations ! Tu es désormais membre du ' . Config::site['shortname'] . ' Club pour 31 jours.',
         ),
         'marketplace' => array(
             'expired'               => 'La vente de ce mobi a expirée, il est impossible de racheter ce mobi pour le moment!',
