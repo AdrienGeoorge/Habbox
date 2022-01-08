@@ -9,30 +9,13 @@
 
     <div class="flex-body mt_3">
         <div class="flex-body-left">
-            <div class="grid_3" style="display: grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 1em;">
+            <div class="shop-grid">
                 {% for offer in data.shop %}
                 <a href="/shop/offers/{{offer.offer_id}}" class="offer-content pixelated">
-                    <img src="/assets/images/web/pages/shop/{{offer.amount}}.png" style="border-radius: 2em; cursor: pointer;">
+                    <img src="/assets/images/web/pages/shop/{{offer.amount}}.png" class="shop-image">
                 </a>
                 {% endfor %}
             </div>
-            <!--<div class="box">
-                <div class="box-title">{{locale.title}}</div>
-
-                <div class="offers-container">
-                    {% for offer in data.shop %}
-                    <div class="offer-container">
-                        <a href="/shop/offers/{{offer.offer_id}}" class="offer-content pixelated">
-                            <div class="offer-label">{{offer.amount ~ ' ' ~ offer.currency}}</div>
-                            {% if offer.amount >= 500 %}<div class="offer-label"></div>{% endif %}
-                            <div class="offer-amount">{{offer.price}} EUR</div>
-                            <img src="/assets/images/web/pages/shop/diamonds.svg"
-                                 style="width: 5em; image-rendering: pixelated;">
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>-->
         </div>
         <div class="flex-body-right">
             <div class="box shop-box">
