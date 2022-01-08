@@ -4355,6 +4355,17 @@ input:-webkit-autofill {
 }
 
 /* Page - Settings */
+.settings-flags {
+    margin-top: 1em;
+}
+
+.settings-flags img {
+    cursor: pointer;
+    border-radius: 0.5em;
+    margin: 0 1em 0 0;
+    width: 3em;
+}
+
 .page-container[data-page ^="settings_"] .page-header {
     background-image: url(../images/web/pages/settings/banner.png?2);
     background-position: 84px center;

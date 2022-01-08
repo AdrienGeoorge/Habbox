@@ -99,16 +99,24 @@
 
                 <div class="settingBox">
                     <div class="centered">
-                        <label class="switch-label" for="language">
-                            <h4 class="label-title">{{locale.language_title}}</h4>
-                            <select name="language" class="form-control" id="language">
-                                <option value="FR" {{data.language == 'FR' ? 'selected' }}>Français</option>
-                                <option value="EN" {{data.language == 'EN' ? 'selected' }}>English</option>
-                                <option value="ES" {{data.language == 'ES' ? 'selected' }}>Español</option>
-                                <option value="PT" {{data.language == 'PT' ? 'selected' }}>Português</option>
-                                <option value="NL" {{data.language == 'NL' ? 'selected' }}>Nederlands</option>
-                            </select>
-                        </label>
+                        <h4 class="label-title">{{locale.language_title}}</h4>
+                        <div class="settings-flags">
+                            <div class="{{data.language == 'FR' ? 'selected' }}">
+                                <img src="/assets/icons/countries/FR.png" alt="FR">
+                            </div>
+                            <div class="{{data.language == 'EN' ? 'selected' }}">
+                                <img src="/assets/icons/countries/EN.png" alt="EN" style="width: 3.25em;">
+                            </div>
+                            <div class="{{data.language == 'ES' ? 'selected' }}">
+                                <img src="/assets/icons/countries/ES.png" alt="ES">
+                            </div>
+                            <div class="{{data.language == 'PT' ? 'selected' }}">
+                                <img src="/assets/icons/countries/PT.png" alt="PT">
+                            </div>
+                            <div class="{{data.language == 'NL' ? 'selected' }}">
+                                <img src="/assets/icons/countries/NL.png" alt="NL">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,15 +124,18 @@
     </form>
 </div>
 <script>
-    document.getElementById('language').addEventListener('change', ev => {
-        let select = ev.target;
-        $.ajax({
-            type: "POST",
-            data: {type: select.id, value: select.value},
-            url: '/settings/changeLanguage',
-            success: () => {
-                location.reload();
-            }
+    let languageSettings = document.querySelectorAll('.settings-flags img');
+
+    languageSettings.forEach(el => {
+        el.addEventListener('click', () => {
+            $.ajax({
+                type: "POST",
+                data: {type: 'language', value: el.alt},
+                url: '/settings/changeLanguage',
+                success: () => {
+                    location.reload();
+                }
+            })
         })
     })
 </script>
