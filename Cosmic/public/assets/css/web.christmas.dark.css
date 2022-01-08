@@ -5903,6 +5903,10 @@ input:-webkit-autofill {
     display: flex;
 }
 
+.user-avatar-round_1.christmas {
+    border: 2px solid #6c323e !important;
+}
+
 .user-avatar-round_2 {
     width: 70px;
     height: 70px;
@@ -5911,6 +5915,10 @@ input:-webkit-autofill {
     background: #292a38;
     position: relative;
     overflow: hidden;
+}
+
+.user-avatar-round_2.christmas {
+    background: #6c323e !important;
 }
 
 .user-avatar-image {
@@ -5947,6 +5955,10 @@ input:-webkit-autofill {
     padding: 0.5em;
 }
 
+.user-infos-moneys.christmas {
+    background: #6c323e !important;
+}
+
 .user-infos-moneys_one {
     flex: 50%;
     display: flex;
@@ -5955,6 +5967,7 @@ input:-webkit-autofill {
 
 .user-infos-moneys_one--box {
     background: #3b3c4a;
+    color: #fff;
     border-radius: 10px;
     padding: 0.5em 1em;
     margin: 5px;
@@ -5963,6 +5976,10 @@ input:-webkit-autofill {
     color: #fff;
     text-align: center;
     position: relative;
+}
+
+.christmas .user-infos-moneys_one--box {
+    background: #7d3d4a !important;
 }
 
 .user-infos-moneys_one--box > p {
@@ -6021,6 +6038,10 @@ input:-webkit-autofill {
     z-index: 5;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.left-nav.christmas {
+    background: linear-gradient(180deg, #491b24 44.45%, #32233E 155.96%) !important;
 }
 
 .left-nav::-webkit-scrollbar {
@@ -6981,7 +7002,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2.75em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -7041,7 +7062,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2em;
     bottom: 6em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 1em 1.5em;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #242531;
@@ -7090,7 +7111,6 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-logo {
-    width: 11em;
     image-rendering: pixelated;
 }
 

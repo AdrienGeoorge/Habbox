@@ -469,7 +469,7 @@ html {
 }
 
 body {
-    background-color: #EBD4BE;
+    background-color: #f7f2ec;
     min-width: 320px;
     min-height: 100%;
     font-family: "Nunito", Arial, sans-serif;
@@ -737,7 +737,7 @@ input:-webkit-autofill {
 
 .radio-container.purple input:checked ~ .radio-button:before,
 .switch-container.purple input:checked ~ .switch-button:before {
-    background-color: #deb48e;
+    background-color: #80796c;
 }
 
 .radio-container.brown input:checked ~ .radio-button:before,
@@ -828,13 +828,24 @@ input:-webkit-autofill {
 
 .rounded-button.white {
     color: #fff;
-    border-color: #fff;
+    border-color: white;
 }
 
-.rounded-button.white:not([disabled]):not(.no-hover):hover,
-.rounded-button.white.plain {
-    background-color: #fff;
-    color: #333;
+.rounded-button.white.plain, .rounded-button.white.plain:not([disabled]):not(.no-hover):hover {
+    background-color: #c0b9aa;
+    border-color: #c0b9aa;
+    color: #fff;
+}
+
+.rounded-button.white.plain:not([disabled]):not(.no-hover):hover {
+    background-color: #a8a190;
+    border-color: #a8a190;
+}
+
+.rounded-button.white:not([disabled]):not(.no-hover):hover{
+    background-color: #333;
+    border-color: #333;
+    color: white;
 }
 
 .rounded-button.blue {
@@ -1066,7 +1077,7 @@ input:-webkit-autofill {
 .login-popup {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    background-color: #FCF2E8;
+    background-color: #c0b9ab;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -1106,6 +1117,7 @@ input:-webkit-autofill {
 
 .login-popup h3 {
     margin-top: 5px;
+    color: #fff;
 }
 
 .login-popup .login-form .username-input,
@@ -1169,7 +1181,8 @@ input:-webkit-autofill {
 /* Payment popup */
 .payment-popup {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #FCF2E8;
+    background-color: #c0b9ab;
+    color: #fff;
     border-radius: 10px;
     position: relative;
     padding: 20px;
@@ -1193,7 +1206,7 @@ input:-webkit-autofill {
 }
 
 .payment-popup .subtitle {
-    color: #00abe4;
+    color: #e40047;
     text-align: center;
 }
 
@@ -1230,7 +1243,7 @@ input:-webkit-autofill {
 .payment-popup .solution-details {
     margin: 12px 0;
     font-size: 12px;
-    color: #8f8f8f;
+    color: #fff;
 }
 
 .payment-popup .obtain-code {
@@ -1239,14 +1252,14 @@ input:-webkit-autofill {
 }
 
 .payment-popup .obtain-code .sms-container {
-    color: #8f8f8f;
+    color: #fff;
     font-size: 12px;
 }
 
 .payment-popup .obtain-code .sms-container span {
     font-size: 17px;
     font-weight: 500;
-    color: #00abe4;
+    color: #e40047;
 }
 
 .payment-popup .obtain-code .sms-container.fr .shortcode:after {
@@ -1416,7 +1429,7 @@ input:-webkit-autofill {
 /* Dialog popup */
 .dialog-popup {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    background-color: #FCF2E8;
+    background-color: #c0b9ab;
     border-radius: 10px;
     position: relative;
     padding: 20px;
@@ -1687,8 +1700,8 @@ input:-webkit-autofill {
 .cookies-accept-container {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background-color: #FCF2E8;
-    color: #75583a;
+    background-color: #5c5d71;
+    color: #fff;
     position: fixed;
     left: 0;
     right: 0;
@@ -3559,7 +3572,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content {
-    background-color: #deb48e;
+    background-color: #aca392;
     padding: 18px 16px;
     color: #fff;
     text-decoration: none;
@@ -3608,7 +3621,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content:hover {
-    background-color: #cfa682;
+    background-color: #b6afa0;
 }
 
 .page-container[data-page="shop"] .offers-container .offer-container .offer-content:before {
@@ -4422,7 +4435,7 @@ input:-webkit-autofill {
 
 .page-container[data-page ^="settings_"] .switch-label .label-description {
     display: block;
-    color: #6e6e6e;
+    color: #F2F2F2;
 }
 
 .form-subcategory {
@@ -5144,7 +5157,7 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="registration"] .avatars-container .tabs-container span {
-    background-color: #ead7c3;
+    background-color: #aca392;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 5px;
@@ -5157,11 +5170,11 @@ input:-webkit-autofill {
 }
 
 .page-container[data-page="registration"] .avatars-container .tabs-container span:not(.selected):hover {
-    background-color: #a0a0a0;
+    background-color: #F2F2F2;
 }
 
 .page-container[data-page="registration"] .avatars-container .tabs-container span.selected:before {
-    background-color: #deb48e;
+    background-color: #989184;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 3px;
@@ -5840,7 +5853,7 @@ input:-webkit-autofill {
 }
 
 .body-container {
-    background-color: #EBD4BE;
+    background-color: #f7f2ec;
     min-height: 100vh;
     position: relative;
 }
@@ -5868,7 +5881,7 @@ input:-webkit-autofill {
     width: 80px;
     height: 80px;
     margin: 2em auto 1em auto;
-    border: 2px solid #DEB48E;
+    border: 2px solid #e6e0d4;
     box-sizing: border-box;
     border-radius: 100px;
     display: flex;
@@ -5879,7 +5892,7 @@ input:-webkit-autofill {
     height: 70px;
     margin: auto;
     border-radius: 100px;
-    background: #F2E3D4;
+    background: #fdf3e7;
     position: relative;
     overflow: hidden;
 }
@@ -5912,7 +5925,7 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #FCF2E8;
+    background: #fdf3e7;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 0.5em;
@@ -5925,7 +5938,7 @@ input:-webkit-autofill {
 }
 
 .user-infos-moneys_one--box {
-    background: #EBD4BE;
+    background: #e6e0d4;
     border-radius: 10px;
     padding: 0.5em 1em;
     margin: 5px;
@@ -5958,8 +5971,8 @@ input:-webkit-autofill {
 
 .tooltip .text {
     visibility: hidden;
-    background-color: #F2E3D4;
-    color: #75583a;
+    background-color: #80796c;
+    color: #fff;
     text-align: center;
     padding: 0.5em 1em;
     width: auto;
@@ -5986,7 +5999,7 @@ input:-webkit-autofill {
     width: 20vw;
     height: 100%;
     padding: 1em;
-    background: linear-gradient(180deg, #424354 44.45%, #32233E 155.96%);
+    background: linear-gradient(180deg, #735f7b 44.45%, #32233E 155.96%);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     z-index: 5;
     -ms-overflow-style: none;
@@ -6179,8 +6192,8 @@ input:-webkit-autofill {
     height: 2.3em;
     border-radius: 30em;
     width: 2.3em;
-    background: #F2E3D4;
-    color: #75583a;
+    background: #d3ccc0;
+    color: #fff;
     font-size: 20px;
     font-weight: 900;
     text-align: center;
@@ -6203,8 +6216,8 @@ input:-webkit-autofill {
 
 .navigation-top-search {
     width: 100%;
-    background: #F2E3D4;
-    color: #75583a;
+    background: #d3ccc0;
+    color: #fff;
     border-radius: 10px;
     border: none;
     padding: 0.5em 0.5em 0.5em 2.5em;
@@ -6214,13 +6227,13 @@ input:-webkit-autofill {
 }
 
 .navigation-top-search::placeholder {
-    color: #75583a;
+    color: #fff;
     font-weight: 200;
 }
 
 .navigation-top-search:hover, .navigation-top-search:focus {
-    background: #FCF2E8;
-    color: #75583a;
+    background: #c0b9ab;
+    color: #fff;
 }
 
 .navigation-top-search_relative {
@@ -6239,8 +6252,8 @@ input:-webkit-autofill {
 }
 
 .navigation-top-box {
-    background: #F2E3D4;
-    color: #75583a;
+    background: #d3ccc0;
+    color: #fff;
     border-radius: 10px;
     width: 100%;
     padding: 0.5em;
@@ -6254,19 +6267,19 @@ input:-webkit-autofill {
 }
 
 .navigation-top-box:hover, .navigation-top-box:focus, .navigation-top-menu:hover, .navigation-top-menu:focus {
-    background: #FCF2E8;
-    color: #424354;
+    background: #c0b9ab;
+    color: #fff;
 }
 
 .navigation-top-game {
-    background: #FFFFFF;
-    color: #48392B;
+    background: #80796c;
+    color: #fff;
     border-radius: 30px;
 }
 
 .navigation-top-game:hover, .navigation-top-game:focus {
-    background: #f6f6f6;
-    color: #48392B;
+    background: #6e685b;
+    color: #fff;
 }
 
 .navigation-top-logo {
@@ -6303,8 +6316,8 @@ input:-webkit-autofill {
 }
 
 .footer-box {
-    background: #424354;
-    color: #fff;
+    background: #e6e0d4;
+    color: #424354;
     text-align: center;
     padding: 0 2em;
     flex: 1;
@@ -6312,7 +6325,7 @@ input:-webkit-autofill {
 
 .footer-box a {
     text-decoration: none;
-    color: #fff;
+    color: #424354;
     font-weight: 200;
 }
 
@@ -6320,7 +6333,7 @@ input:-webkit-autofill {
 
 .my-friends {
     width: 100%;
-    background-color: #E2C6AB;
+    background-color: #c0b9aa;
     height: 105px;
     padding: 1em;
     margin-bottom: 2em;
@@ -6343,12 +6356,12 @@ input:-webkit-autofill {
 .one-friend {
     height: 100%;
     width: 80px;
-    background-color: #F2E3D4;
+    background-color: #aba292;
     display: inline-block;
     border-radius: 5em;
     position: relative;
     margin: 0 1em;
-    border: 3px solid #efd6c0;
+    border: 3px solid #d9d4cb;
 }
 
 .one-friend .user {
@@ -6389,8 +6402,8 @@ input:-webkit-autofill {
 }
 
 .team-title-round {
-    background: #DEB48E;
-    border: 5px solid #F2E3D4;
+    background: #735f7b;
+    border: 5px solid #fdf3e7;
     position: absolute;
     right: -5px;
     top: 50%;
@@ -6418,7 +6431,7 @@ input:-webkit-autofill {
 }
 
 .team-user {
-    color: #424354;
+    color: #fff;
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -6442,7 +6455,7 @@ input:-webkit-autofill {
     height: 90px;
     box-sizing: border-box;
     border-radius: 100px;
-    border: 4px solid #DA8080;
+    border: 4px solid #bd4560;
     position: relative;
     display: block;
     margin: 0 1.25em 1em 1.25em;
@@ -6462,7 +6475,7 @@ input:-webkit-autofill {
 }
 
 .team-online {
-    border: 4px solid #97BE8D;
+    border: 4px solid #89ad80;
 }
 
 .team-avatar-image {
@@ -6477,15 +6490,16 @@ input:-webkit-autofill {
 /* GLOBAL */
 
 .box {
-    background: #FCF2E8;
+    background: #c0b9aa;
     border-radius: 30px;
     padding: 1.5em;
     position: relative;
-    box-shadow: 3px 3px 5px #d6bea6;
+    box-shadow: 2px 1px 8px #dbd2c3;
+    color: #fff;
 }
 
 .box-title {
-    background: #424354;
+    background: #80796c;
     color: #fff;
     border-radius: 15px;
     width: 100%;
@@ -6505,8 +6519,8 @@ input:-webkit-autofill {
 
 input, textarea {
     width: 100%;
-    background: #ebd4bd;
-    color: #75583a;
+    background: #aca392;
+    color: #fff;
     border-radius: 10px;
     border: none;
     padding: 0.5em 1em;
@@ -6516,18 +6530,18 @@ input, textarea {
 }
 
 input::placeholder, textarea::placeholder {
-    color: #75583a;
+    color: #fff;
 }
 
 input:focus, input:hover, textarea:focus, textarea:hover {
-    background: #f2e3d4;
-    color: #75583a;
+    background: #9d9484;
+    color: #f2f2f2;
 }
 
 .myBtn {
     margin: 1em;
     padding: 0.75em 2em;
-    background: #deb48e;
+    background: #80796c;
     border-radius: 2em;
     cursor: pointer;
     border: none;
@@ -6539,7 +6553,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .myBtn:hover {
-    background: #c39b77;
+    background: #736c62;
 }
 
 /* ARTICLE */
@@ -6572,7 +6586,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .article-author-infos {
-    background-color: #ebd4bd;
+    background-color: #aca392;
     display: inline-block;
     padding: 1em 2em 1em 5em;
     border-radius: 15px;
@@ -6581,7 +6595,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     transform: translateX(-50%);
     font-weight: 200;
     font-size: 18px;
-    color: #75583a;
+    color: #fff;
 }
 
 .article-frank {
@@ -6599,7 +6613,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .article-author-name {
-    color: #75583a;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -6647,7 +6661,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .lastNews {
-    background: #ebd4bd;
+    background: #aca392;
     border-radius: 10px;
     padding: 0.5em !important;
     margin-top: 1em;
@@ -6676,6 +6690,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 .lastNews .infosNews {
     align-self: center;
+    color: #fff;
 }
 
 .lastNews .descNews {
@@ -6704,11 +6719,11 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .profile-avatar {
-    background: #fcf2e8;
+    background: #aca392;
     border-radius: 30px;
     height: 15.5em;
     overflow: hidden;
-    box-shadow: 3px 3px 5px #d6bea6;
+    box-shadow: 2px 1px 8px #a29888;
 }
 
 .profile-user-infos {
@@ -6755,7 +6770,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .profile-badge {
-    background: #ebd4bd;
+    background: #aca392;
     height: 70px;
     width: 70px;
     border-radius: 1em;
@@ -6827,14 +6842,14 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     font-size: 15px;
     vertical-align: top;
     font-family: "Nunito";
-    color: #75583a;
+    color: #fff;
 }
 
 /* SETTINGS */
 
 .settingsTitle {
-    background: #f2e3d4;
-    color: #333333;
+    background: #c0b9aa;
+    color: #fff;
     width: 100%;
     padding: 1em 2em;
     font-family: "Nunito";
@@ -6844,7 +6859,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .settingsMenu {
-    background: #ebd4bd;
+    background: #aca392;
     padding: 0.5em 0.75em;
     border-radius: 10px;
     position: relative;
@@ -6861,12 +6876,13 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .settingBox {
-    background: #FCF2E8;
+    background: #aca392;
+    color: #fff;
     margin-top: 1.5em;
     border-radius: 15px;
     padding: 1.5em;
     position: relative;
-    box-shadow: 3px 3px 5px #d6bea6;
+    box-shadow: 2px 1px 8px #a29888;
     min-height: 7.5em;
 }
 
@@ -6893,7 +6909,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .rank-box a {
     display: block;
     text-decoration: none;
-    color: #424354;
+    color: #fff;
     font-size: 15px;
     font-weight: 600;
     width: 8.5em;
@@ -6901,7 +6917,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .rank {
-    background: #efd2b8;
+    background: #aca392;
     color: white;
     position: absolute;
     right: 1em;
@@ -7050,41 +7066,16 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
 .index-hotel-view {
     position: fixed;
+    right: 0em;
+    bottom: 0em;
     image-rendering: pixelated;
     filter: drop-shadow(2px 4px 6px black);
     z-index: -1;
-}
-
-.index-hotel-view.classic {
-    right: -20em;
-    bottom: -15em;
-    width: 70%;
-}
-
-.index-hotel-view.easter {
-    right: 2em;
-    bottom: -13em;
-    width: 35%;
-}
-
-.index-hotel-view.valentine {
-    right: -6em;
-    bottom: -18em;
-    width: 50%;
-}
-
-.index-hotel-view.summer {
-    right: -9em;
-    bottom: -13em;
-    width: 45%;
+    width: 50em;
 }
 
 .index-logo {
     image-rendering: pixelated;
-}
-
-.index-logo.classic{
-    width: 11em;
 }
 
 .index-body {
@@ -7102,12 +7093,12 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-form-login input {
-    background: #e4c6a8;
+    background: #c0b9ab;
 }
 
 .index-form-login input:focus, .index-form-login input:hover {
-    background: #f2e3d4;
-    color: #75583a;
+    background: #9d9484;
+    color: #f2f2f2;
 }
 
 .index-left .claim-password {
@@ -7130,12 +7121,12 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     border-radius: 20px;
     margin: 0 2em;
     text-decoration: none;
-    color: #424354;
+    color: #fff;
 }
 
 .help-box {
     text-decoration: none;
-    color: #333333;
+    color: #fff;
 }
 
 .help-status {
@@ -7190,7 +7181,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     margin-top: 1em;
     font-size: 20px;
     font-weight: 600;
-    color: #424354;
+    color: #fff;
 }
 
 /* JOBS */
@@ -7373,7 +7364,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 /* EVENT BANNER */
 
 .event-banner {
-    background: #f2e3d4;
+    background: #c0b9ab;
     display: flex;
     flex-direction: row;
     min-height: 6em;
@@ -7384,7 +7375,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     margin: 0 auto -1em auto;
     column-gap: 2em;
     padding: 1em !important;
-    color: #424354;
+    color: #fff;
 }
 
 .event-banner .image {

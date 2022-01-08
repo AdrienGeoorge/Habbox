@@ -42750,7 +42750,7 @@ and (min-width: 1025px) {
     display: block;
     float: left;
     flex: 0 0 auto;
-    height: 10em;
+    height: 12em;
     object-fit: cover;
     border-radius: 1em;
     cursor: pointer;
@@ -42758,13 +42758,13 @@ and (min-width: 1025px) {
 
 @media screen and (min-width: 1024px) {
     #images img {
-        width: calc(94%/3);
+        width: calc(94%/2);
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     #images img {
-        width: calc(94%/3);
+        width: calc(94%/2);
     }
     #badges {
         grid-template-columns: repeat(2, 1fr);
@@ -42796,6 +42796,11 @@ and (min-width: 1025px) {
     #badges {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+#images img.theme {
+    object-fit: cover;
+    object-position: center top;
 }
 
 .switch {

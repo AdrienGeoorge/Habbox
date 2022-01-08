@@ -838,6 +838,11 @@ input:-webkit-autofill {
     color: white;
 }
 
+.rounded-button.white.plain:not([disabled]):not(.no-hover):hover {
+    background-color: #778d4f;
+    border-color: #778d4f;
+}
+
 .rounded-button.white:not([disabled]):not(.no-hover):hover{
     background-color: #d14c5e;
     border-color: #d14c5e;
@@ -5873,10 +5878,14 @@ input:-webkit-autofill {
     width: 80px;
     height: 80px;
     margin: 2em auto 1em auto;
-    border: 2px solid #fff;
+    border: 2px solid #DEB48E;
     box-sizing: border-box;
     border-radius: 100px;
     display: flex;
+}
+
+.user-avatar-round_1.christmas {
+    border: 2px solid #6c323e !important;
 }
 
 .user-avatar-round_2 {
@@ -5884,9 +5893,13 @@ input:-webkit-autofill {
     height: 70px;
     margin: auto;
     border-radius: 100px;
-    background: #dedede;
+    background: #F2E3D4;
     position: relative;
     overflow: hidden;
+}
+
+.user-avatar-round_2.christmas {
+    background: #6c323e !important;
 }
 
 .user-avatar-image {
@@ -5917,10 +5930,14 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #f1f1f1;
+    background: #FCF2E8;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 0.5em;
+}
+
+.user-infos-moneys.christmas {
+    background: #6c323e !important;
 }
 
 .user-infos-moneys_one {
@@ -5930,7 +5947,7 @@ input:-webkit-autofill {
 }
 
 .user-infos-moneys_one--box {
-    background: #dedede;
+    background: #EBD4BE;
     border-radius: 10px;
     padding: 0.5em 1em;
     margin: 5px;
@@ -5938,6 +5955,11 @@ input:-webkit-autofill {
     height: 2.5em;
     text-align: center;
     position: relative;
+}
+
+.christmas .user-infos-moneys_one--box {
+    background: #7d3d4a !important;
+    color: #fff;
 }
 
 .user-infos-moneys_one--box > p {
@@ -5996,6 +6018,10 @@ input:-webkit-autofill {
     z-index: 5;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.left-nav.christmas {
+    background: linear-gradient(180deg, #491b24 44.45%, #32233E 155.96%) !important;
 }
 
 .left-nav::-webkit-scrollbar {
@@ -6957,7 +6983,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2.75em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -6981,7 +7007,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 1em;
     bottom: 1em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 0 12px;
     border-radius: 10px;
     font-size: 2.5em;
@@ -7017,7 +7043,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     right: 2em;
     bottom: 6em;
     background: #5c5d71;
-    z-index: 1;
+    z-index: 5;
     padding: 1em 1.5em;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #242531;
@@ -7066,7 +7092,6 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .index-logo {
-    width: 11em;
     image-rendering: pixelated;
 }
 

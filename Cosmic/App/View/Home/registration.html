@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="/assets/css/homes.css">
     <link rel="stylesheet" href="/assets/css/selectric.css">
     <link rel="stylesheet" href="/assets/css/circle.css?v=5">
-    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
+    <link rel="stylesheet" href="/assets/css/web.{{theme == 'christmas' or theme == 'winter' ? 'christmas.' : theme == 'halloween' ? theme ~ '.' : '' }}{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v={{cache_timestamp}}">
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -74,11 +74,39 @@
     {{locale_base.cookies}}
     <a href="/help" target="_blank">{{locale_base.read_more}}</a>
 </div>
-<img src="/assets/images/index_hotel.png" class="index-hotel-view" alt="hotel view">
+
+{% if theme == 'classic' %}
+<img src="/assets/images/index/index.png" class="index-hotel-view classic" alt="hotel view">
+{% elseif theme == 'christmas' or theme == 'winter' %}
+<img src="/assets/images/index/christmas.png" class="index-hotel-view" alt="hotel view">
+{% elseif theme == 'easter' %}
+<img src="/assets/images/index/easter.png" class="index-hotel-view easter" alt="hotel view">
+{% elseif theme == 'halloween' %}
+<img src="/assets/images/index/halloween.png" class="index-hotel-view" alt="hotel view">
+{% elseif theme == 'valentine' %}
+<img src="/assets/images/index/valentine.png" class="index-hotel-view valentine" alt="hotel view">
+{% elseif theme == 'summer' %}
+<img src="/assets/images/index/summer.png" class="index-hotel-view summer" alt="hotel view">
+{% endif %}
+
 <div class="index-left">
     <div class="index-logo-center">
         <a href="/" target="_self">
-            <img src="/assets/images/habbox.gif" class="index-logo" alt="logo">
+            {% if theme == 'classic' %}
+            <img src="/assets/images/habbox.gif" class="index-logo classic" alt="logo">
+            {% elseif theme == 'christmas' %}
+            <img src="/assets/images/habbox-candy.png" class="index-logo" alt="logo">
+            {% elseif theme == 'easter' %}
+            <img src="/assets/images/habbox-easter.png" class="index-logo" alt="logo">
+            {% elseif theme == 'halloween' %}
+            <img src="/assets/images/habbox-halloween.png" class="index-logo" alt="logo">
+            {% elseif theme == 'valentine' %}
+            <img src="/assets/images/habbox-valentine.png" class="index-logo" alt="logo">
+            {% elseif theme == 'winter' %}
+            <img src="/assets/images/habbox-winter.png" class="index-logo" alt="logo">
+            {% elseif theme == 'summer' %}
+            <img src="/assets/images/habbox-summer.png" class="index-logo" alt="logo">
+            {% endif %}
         </a>
     </div>
     <h1 class="mt_1 index-logo-center">{{locale.register}}</h1>

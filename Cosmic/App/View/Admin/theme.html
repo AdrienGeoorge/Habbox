@@ -1,0 +1,59 @@
+{% extends "Admin/base.html" %}
+{% set set_permission_page = 'housekeeping_config' %}
+
+{% block page %}Thème du site{% endblock %}
+{% block jsfile %}home{% endblock %}
+
+{% block body %}
+<div class="notifications-container"></div>
+<div class="kt-portlet__body  kt-portlet__body--fit">
+    <h3 class="kt-portlet__head-title mb-4 position-relative">
+        Thème du site
+    </h3>
+
+    <div id="images">
+        <img src="/assets/images/themes/classic.png" alt="Classique" class="theme" data-theme="classic">
+        <img src="/assets/images/themes/valentine.png" alt="Saint-Valentin" class="theme" data-theme="valentine">
+        <img src="/assets/images/themes/easter.png" alt="Pâques" class="theme" data-theme="easter">
+        <img src="/assets/images/themes/summer.png" alt="Eté" class="theme" data-theme="summer">
+        <img src="/assets/images/themes/halloween.png" alt="Halloween" class="theme" data-theme="halloween">
+        <img src="/assets/images/themes/winter.png" alt="Hiver" class="theme" data-theme="winter">
+        <img src="/assets/images/themes/christmas.png" alt="Noël" class="theme" data-theme="christmas">
+    </div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script>
+    let themes = document.querySelectorAll('.theme');
+
+    themes.forEach(el => {
+        el.addEventListener('click', () => {
+            $.ajax({
+                type: "POST",
+                data: {theme: el.getAttribute('data-theme')},
+                url: '/housekeeping/theme/change',
+                success: result => {
+                    if (!isEmpty(result.status) && !isEmpty(result.message)) {
+                        toastr.options = {
+                            "closeButton": true,
+                            "progressBar": true,
+                            "positionClass": "toast-top-right",
+                            "preventDuplicates": true,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr[result.status](result.message);
+                    }
+                }
+            })
+        })
+    })
+</script>
+{% endblock %}

@@ -25,7 +25,7 @@
             </div>
             {% for key, user in currencys %}
             <div class="box rank-box">
-                <a href="/profile/{{user.player.look}}">
+                <a href="/profile/{{user.player.username}}">
                     <img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{user.player.look}}" class="pixelated rank-look">
                     {{user.player.username}}
