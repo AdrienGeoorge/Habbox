@@ -422,7 +422,7 @@ $GLOBALS['language'] = array (
         ),
         'stats' => array(
             'title'                 => 'Mis estadísticas',
-            'winwin'                => 'Resultado positivo para todos',
+            'winwin'                => 'Win-win',
             'respects_received'     => 'Respetos recibidos',
             'respects_given'        => 'Se envían respetos',
             'friends'               => 'Número de amigos',
@@ -650,7 +650,7 @@ $GLOBALS['language'] = array (
         )
     ),
     'core' => array (
-        'belcredits' => 'Game Points',
+        'belcredits' => 'diamants',
         'hotelapi' => array (
             'disabled' => 'No se puede procesar la solicitud porque esta función está desactivada en este momento.'
         ),

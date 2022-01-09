@@ -656,7 +656,7 @@ $GLOBALS['language'] = array (
         )
     ),
     'core' => array (
-        'belcredits' => 'GOTW-Points',
+        'belcredits' => 'diamants',
         'hotelapi' => array (
             'disabled' => 'Cannot process request because the hotelapi is turned off!'
         ),

@@ -23,12 +23,19 @@
                 {% endif %}
             </div>
             {% if history is not empty %}
+            <div class="history-grid">
             {% for row in history %}
-            <div class="box help-faq">
-                <div class="title">{{row.data}} - <small>{{locale.buy_on ~ ' ' ~ row.timestamp|date("d/m/Y")}}</small>
+                <div class="box text-center">
+                    {% if 'VIP' in row.data %}
+                    <img src="{{site.cpath}}/c_images/album1584/CVIP.gif" alt="VIP" width="50em">
+                    {% else %}
+                    <img src="{{site.domain}}/assets/icons/diamonds.svg" alt="Diamants" width="45em">
+                    {% endif %}
+                    <div class="title" style="margin-top: 1em;">{{row.data}}</div>
+                    <span>{{locale.buy_on ~ ' ' ~ row.timestamp|date("d/m/Y")}}</span>
                 </div>
-            </div>
             {% endfor %}
+            </div>
             {% endif %}
         </div>
         <div class="flex-body-right">

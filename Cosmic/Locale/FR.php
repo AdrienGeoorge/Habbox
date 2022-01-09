@@ -650,7 +650,7 @@ $GLOBALS['language'] = array (
         )
     ),
     'core' => array (
-        'belcredits' => 'Game Points',
+        'belcredits' => 'diamants',
         'hotelapi' => array (
             'disabled' => 'Impossible de traiter la demande car cette fonctionnalité est désactivée pour le moment!'
         ),

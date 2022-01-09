@@ -3548,6 +3548,12 @@ input:-webkit-autofill {
 }
 
 /* Page - Shop */
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+}
+
 .page-container[data-page="shop"] .page-header,
 .page-container[data-page="shop_offers"] .page-header {
     background-image: url(../images/web/pages/shop/banner.png);

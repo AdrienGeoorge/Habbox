@@ -422,7 +422,7 @@ $GLOBALS['language'] = array (
         ),
         'stats' => array(
             'title'                 => 'Mijn statistieken',
-            'winwin'                => 'Win-win score',
+            'winwin'                => 'Win-win',
             'respects_received'     => 'Respecten ontvangen',
             'respects_given'        => 'Respecten verzonden',
             'friends'               => 'Aantal vrienden',
@@ -649,7 +649,7 @@ $GLOBALS['language'] = array (
         )
     ),
     'core' => array (
-        'belcredits' => 'Bel-Credits',
+        'belcredits' => 'diamants',
         'hotelapi' => array (
             'disabled' => 'Kan vezoek niet verwerken omdat de hotelapi staat uitgeschakeld!'
         ),
