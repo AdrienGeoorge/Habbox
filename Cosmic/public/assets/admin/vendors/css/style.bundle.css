@@ -22925,11 +22925,11 @@ and (max-width: 768px) {
 
 .kt-portlet .kt-portlet__foot.kt-portlet__foot--top {
     border-top: 0;
-    border-bottom: 1px solid #ebedf2
+    border-bottom: 1px solid #212131
 }
 
 .kt-portlet .kt-portlet__foot.kt-portlet__foot--solid {
-    background-color: #f7f8fa;
+    background-color: #212131;
     border-top: 0
 }
 
