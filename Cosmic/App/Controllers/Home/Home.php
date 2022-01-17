@@ -29,19 +29,30 @@ class Home
             $currencys = Player::getCurrencys(request()->player->id);
         }
 
-        $dirnameBadges = './../public/nitro/c_images/album1584/';
-        $dirBadges = array_slice(preg_grep('~\.gif$~', scandir($dirnameBadges, SCANDIR_SORT_DESCENDING)), 0, 6);
+        $files = glob('./../public/nitro/c_images/album1584/*.*');
+
+        usort($files, function($a, $b) {
+            return filemtime($b) - filemtime($a);
+        });
+
+        $dirBadges = array_slice(preg_grep('~\.gif$~', $files), 0, 6);
         $badges = [];
+
         foreach ($dirBadges as $file) {
-            $badges[filemtime($dirnameBadges . '/' . $file)] = $file;
+            $badges[] = basename($file);
         }
 
-        $dirnameItems = './../public/nitro/c_images/catalogue/';
-        $dirItems = array_slice(preg_grep('~\.(jpeg|jpg|png|gif)$~', scandir($dirnameItems, SCANDIR_SORT_DESCENDING)), 0, 6);
+        $files = glob('./../public/nitro/c_images/catalogue/*.*');
+
+        usort($files, function($a, $b) {
+            return filemtime($b) - filemtime($a);
+        });
+
+        $dirItems = array_slice(preg_grep('~\.(jpeg|jpg|png|gif)$~', $files), 0, 6);
         $items = [];
         foreach ($dirItems as $file) {
-            if (strpos($file, 'icon_') !== false) {
-                $items[filemtime($dirnameItems . '/' . $file)] = $file;
+            if (strpos(basename($file), 'icon_') !== false) {
+                $items[] = basename($file);
             }
         }
 
@@ -72,13 +83,13 @@ class Home
                 $type = explode('-', $type)[1];
 
                 if ($type === 'hauteur') {
-                    HotelApi::execute('setz', array('user_id' => $player->id, 'height' => $value));
+                    HotelApi::execute('BuildHeight', array('user_id' => $player->id, 'buildheight' => $value));
                     response()->json(["status" => "success", "message" => 'Hauteur mise à jour']);
                 } elseif ($type === 'rotation') {
-                    HotelApi::execute('setr', array('user_id' => $player->id, 'rot' => $value));
+                    HotelApi::execute('SetRotation', array('user_id' => $player->id, 'rot' => $value));
                     response()->json(["status" => "success", "message" => 'Rotation mise à jour']);
                 } elseif ($type === 'etat') {
-                    HotelApi::execute('sets', array('user_id' => $player->id, 'extra_data' => $value));
+                    HotelApi::execute('SetState', array('user_id' => $player->id, 'ss' => $value));
                     response()->json(["status" => "success", "message" => 'Etat mis à jour']);
                 }
             }
