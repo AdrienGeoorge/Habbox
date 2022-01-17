@@ -29,32 +29,30 @@ class Home
             $currencys = Player::getCurrencys(request()->player->id);
         }
 
-        $files = glob('./../public/nitro/c_images/album1584/*.*');
-
-        usort($files, function($a, $b) {
-            return filemtime($b) - filemtime($a);
-        });
-
-        $dirBadges = array_slice(preg_grep('~\.gif$~', $files), 0, 6);
+        $dirnameBadges = './../public/nitro/c_images/album1584/';
+        $dirBadges = scandir($dirnameBadges, SCANDIR_SORT_DESCENDING);
         $badges = [];
-
         foreach ($dirBadges as $file) {
-            $badges[] = basename($file);
-        }
-
-        $files = glob('./../public/nitro/c_images/catalogue/*.*');
-
-        usort($files, function($a, $b) {
-            return filemtime($b) - filemtime($a);
-        });
-
-        $dirItems = array_slice(preg_grep('~\.(jpeg|jpg|png|gif)$~', $files), 0, 6);
-        $items = [];
-        foreach ($dirItems as $file) {
-            if (strpos(basename($file), 'icon_') !== false) {
-                $items[] = basename($file);
+            if(pathinfo($file, PATHINFO_EXTENSION) === 'gif'){
+                $badges[$file] = filemtime($dirnameBadges . '/' . $file);
             }
         }
+
+        arsort($badges);
+
+        $dirnameItems = './../public/nitro/c_images/catalogue/';
+        $dirItems = scandir($dirnameItems, SCANDIR_SORT_DESCENDING);
+        $items = [];
+        foreach ($dirItems as $file) {
+            $ext = pathinfo($file, PATHINFO_EXTENSION);
+            if ($ext === 'jpeg' || $ext === 'jpg' || $ext === 'png' || $ext === 'gif') {
+                if (strpos($file, 'icon_') !== false) {
+                    $items[$file] = filemtime($dirnameItems . '/' . $file);
+                }
+            }
+        }
+
+        arsort($items);
 
         View::renderTemplate('Home/home.html', [
             'title' => !request()->player ? Locale::get('core/title/home') : request()->player->username,

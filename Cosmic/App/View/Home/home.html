@@ -108,7 +108,7 @@
                 <div class="profile-badges home-badges mt_2">
                     {% for key, badge in badges|slice(0,6) %}
                     <div class="profile-badge">
-                        <img src="{{site.cpath}}/c_images/album1584/{{badge}}" class="pixelated">
+                        <img src="{{site.cpath}}/c_images/album1584/{{key}}" class="pixelated">
                     </div>
                     {% endfor %}
                 </div>
@@ -123,7 +123,7 @@
                 <div class="profile-badges home-badges mt_2">
                     {% for key, item in items|slice(0,6) %}
                     <div class="profile-badge">
-                        <img src="{{site.cpath}}/c_images/catalogue/{{item}}" class="pixelated" width="40em">
+                        <img src="{{site.cpath}}/c_images/catalogue/{{key}}" class="pixelated" width="40em">
                     </div>
                     {% endfor %}
                 </div>
