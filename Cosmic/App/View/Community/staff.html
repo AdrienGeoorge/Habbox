@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="team-users text-center">
+                <div class="team-users">
                     {% if employee.users %}
                     {% for user in employee.users %}
                     <a href="/profile/{{user.username}}" class="team-user">
@@ -29,7 +29,7 @@
                     </a>
                     {% endfor %}
                     {% else %}
-                    <p class="mt_2">{{locale.no_users}}</p>
+                    <p class="mt_2 text-center">{{locale.no_users}}</p>
                     {% endif %}
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="team-users text-center">
+                <div class="team-users">
                     {% if employee.users %}
                     {% for user in employee.users %}
                     <a href="/profile/{{user.username}}" class="team-user">
@@ -73,7 +73,7 @@
                     </a>
                     {% endfor %}
                     {% else %}
-                    <p class="mt_2">{{locale.no_users}}</p>
+                    <p class="mt_2 text-center">{{locale.no_users}}</p>
                     {% endif %}
                 </div>
             </div>

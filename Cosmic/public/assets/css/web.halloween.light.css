@@ -7613,4 +7613,8 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     .btn-index {
         margin-left: unset;
     }
+
+    .team-users {
+        text-align: center;
+    }
 }
