@@ -5,11 +5,13 @@
     <div class="settingsTitle">
         {{locale.title}}
         <div class="settings-panel">
-            <a href="/ranking/wealth" class="settingsMenu {% if nav == 'wealth' %}selected{% endif %}">
+            <a href="/ranking/wealth" class="settingsMenu {% if nav == 'wealth' %}selected{% endif %} tooltip">
                 <img src="/assets/icons/wealth.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_ranking_wealth }}</span>
             </a>
-            <a href="/ranking/games" class="settingsMenu {% if nav == 'games' %}selected{% endif %}">
+            <a href="/ranking/games" class="settingsMenu {% if nav == 'games' %}selected{% endif %} tooltip">
                 <img src="/assets/icons/games.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_ranking_games }}</span>
             </a>
         </div>
     </div>

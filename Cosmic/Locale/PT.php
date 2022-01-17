@@ -79,7 +79,27 @@ $GLOBALS['language'] = array (
             'text_1'                => 'Nuestro hotel se encuentra actualmente en mantenimiento mientras realizamos actualizaciones. No te preocupes, volveremos muy pronto.',
             'text_2'                => 'Puedes seguir el progreso del trabajo o venir a discutir con nosotros en nuestra comunidad discord.',
             'follow_discord'        => 'Únase a la discordia',
-            'staff'                 => 'Área del equipo'
+            'staff'                 => 'Área del equipo',
+
+            'panel_articles'        => 'Artigos',
+            'panel_jobs'            => 'Recrutamento',
+
+            'panel_faq'             => 'Perguntas mais frequentes',
+            'panel_tickets'         => 'Os meus bilhetes',
+
+            'panel_ranking_wealth'  => 'Jogos',
+            'panel_ranking_games'   => 'Riqueza',
+
+            'panel_settings'        => 'As minhas preferências',
+            'panel_password'        => 'A minha palavra-chave',
+            'panel_verification'    => 'Autenticação segura',
+            'panel_mail'            => 'O meu endereço electrónico',
+            'panel_username'        => 'Mudar o meu apelido',
+            'panel_history'         => 'Compras',
+
+            'panel_shop'            => 'Compra de diamantes',
+            'panel_vip'             => 'VIP Club',
+            'panel_badge'           => 'Criação de crachás',
         ),
 
         /*     public/assets/js/web     */
@@ -281,7 +301,7 @@ $GLOBALS['language'] = array (
             'help_label'                => 'Encuentre aquí todas las respuestas a sus preguntas.',
             'help_other_questions'      => 'Más preguntas',
             'help_content_1'            => '¿No encuentra respuesta a su pregunta?',
-            'help_contact'              => 'Póngase en contacto con nosotros en',
+            'help_contact'              => 'Contacte-nos',
             'title'                     => 'Soporte',
             'desc'                      => 'Aquí encontrará todas las respuestas a sus preguntas. Si no encuentra respuesta a su pregunta, no dude en ponerse en contacto con nosotros.',
 

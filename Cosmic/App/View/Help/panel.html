@@ -1,10 +1,12 @@
 <div class="settings-panel">
-    <a href="/help" class="settingsMenu {% if nav == 'help' %}selected{% endif %}">
+    <a href="/help" class="settingsMenu {% if nav == 'help' %}selected{% endif %} tooltip">
         <img src="/assets/icons/faq.svg" alt="">
+        <span class="text" style="font-size: 13px;">{{ locale_base.panel_faq }}</span>
     </a>
     {% if player %}
-    <a href="/help/requests/view" class="settingsMenu {% if nav == 'view' %}selected{% endif %}">
+    <a href="/help/requests/view" class="settingsMenu {% if nav == 'view' %}selected{% endif %} tooltip">
         <img src="/assets/icons/ticket.svg" alt="">
+        <span class="text" style="font-size: 13px;">{{ locale_base.panel_tickets }}</span>
     </a>
     {% endif %}
 </div>

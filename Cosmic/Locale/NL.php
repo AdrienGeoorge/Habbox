@@ -79,7 +79,27 @@ $GLOBALS['language'] = array (
             'text_1'                => 'Ons hotel ondergaat momenteel onderhoud terwijl we updates maken. Maak je geen zorgen, we zijn zo terug.',
             'text_2'                => 'U kunt de voortgang van de werkzaamheden volgen of met ons komen discussiëren op onze community discord.',
             'follow_discord'        => 'Word lid van discord',
-            'staff'                 => 'Team ruimte'
+            'staff'                 => 'Team ruimte',
+
+            'panel_articles'        => 'Artikelen',
+            'panel_jobs'            => 'Aanwerving',
+
+            'panel_faq'             => 'Vaak gestelde vragen',
+            'panel_tickets'         => 'Mijn tickets',
+
+            'panel_ranking_wealth'  => 'Spelletjes',
+            'panel_ranking_games'   => 'Rijkdom',
+
+            'panel_settings'        => 'Mijn voorkeuren',
+            'panel_password'        => 'Mijn wachtwoord',
+            'panel_verification'    => 'Veilige authenticatie',
+            'panel_mail'            => 'Mijn e-mail adres',
+            'panel_username'        => 'Verander mijn bijnaam',
+            'panel_history'         => 'Mijn aankopen',
+
+            'panel_shop'            => 'Aankoop van diamanten',
+            'panel_vip'             => 'VIP Club',
+            'panel_badge'           => 'Badges maken',
         ),
 
         /*     public/assets/js/web     */

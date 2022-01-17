@@ -1,20 +1,26 @@
 <div class="settings-panel">
-    <a href="/settings/preferences" class="settingsMenu {% if nav == 'preferences' %}selected{% endif %}" data-label="{{locale.preferences}}">
+    <a href="/settings/preferences" class="settingsMenu {% if nav == 'preferences' %}selected{% endif %} tooltip" data-label="{{locale.preferences}}">
         <img src="/assets/icons/settings/preferences.svg" alt="">
+        <span class="text" style="font-size: 13px;">{{ locale_base.panel_settings }}</span>
     </a>
-    <a href="/settings/password" class="settingsMenu {% if nav == 'password' %}selected{% endif %}" data-label="{{locale.password}}">
+    <a href="/settings/password" class="settingsMenu {% if nav == 'password' %}selected{% endif %} tooltip" data-label="{{locale.password}}">
         <img src="/assets/icons/settings/password.svg" alt="">
+                        <span class="text" style="font-size: 13px;">{{ locale_base.panel_password }}</span>
     </a>
-    <a href="/settings/verification" class="settingsMenu {% if nav == 'verification' %}selected{% endif %}" data-label="{{locale.verification}}">
+    <a href="/settings/verification" class="settingsMenu {% if nav == 'verification' %}selected{% endif %} tooltip" data-label="{{locale.verification}}">
         <img src="/assets/icons/settings/verification.svg" alt="">
+                        <span class="text" style="font-size: 13px;">{{ locale_base.panel_verification }}</span>
     </a>
-    <a href="/settings/email" class="settingsMenu {% if nav == 'email' %}selected{% endif %}" data-label="{{locale.email}}">
+    <a href="/settings/email" class="settingsMenu {% if nav == 'email' %}selected{% endif %} tooltip" data-label="{{locale.email}}">
         <img src="/assets/icons/settings/mail.svg" alt="">
+                        <span class="text" style="font-size: 13px;">{{ locale_base.panel_mail }}</span>
     </a>
-    <a href="/settings/namechange" class="settingsMenu {% if nav == 'namechange' %}selected{% endif %}" data-label="{{locale.namechange}}">
+    <a href="/settings/namechange" class="settingsMenu {% if nav == 'namechange' %}selected{% endif %} tooltip" data-label="{{locale.namechange}}">
         <img src="/assets/icons/settings/namechange.svg" alt="">
+                        <span class="text" style="font-size: 13px;">{{ locale_base.panel_username }}</span>
     </a>
-    <a href="/shop/history" class="settingsMenu">
+    <a href="/shop/history" class="settingsMenu tooltip">
         <img src="/assets/icons/settings/boutique.svg" alt="">
+                        <span class="text" style="font-size: 13px;">{{ locale_base.panel_history }}</span>
     </a>
 </div>

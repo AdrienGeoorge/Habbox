@@ -79,7 +79,27 @@ $GLOBALS['language'] = array (
             'text_1'                => 'Notre hôtel est actuellement en maintenance, le temps d\'effectuer des mises à jour. Ne t\'en fais pas, nous revenons très rapidement.',
             'text_2'                => 'Tu peux suivre l\'avancement des travaux ou venir discuter avec nous sur notre discord communautaire.',
             'follow_discord'        => 'Rejoindre discord',
-            'staff'                 => 'Espace équipe'
+            'staff'                 => 'Espace équipe',
+
+            'panel_articles'        => 'Articles',
+            'panel_jobs'            => 'Recrutements',
+
+            'panel_faq'             => 'Foire aux questions',
+            'panel_tickets'         => 'Mes tickets',
+
+            'panel_ranking_wealth'  => 'Jeux',
+            'panel_ranking_games'   => 'Richesse',
+
+            'panel_settings'        => 'Mes préférences',
+            'panel_password'        => 'Mot de passe',
+            'panel_verification'    => 'Authentification sécurisée',
+            'panel_mail'            => 'Adresse mail',
+            'panel_username'        => 'Changer de pseudo',
+            'panel_history'         => 'Mes achats',
+
+            'panel_shop'            => 'Achat de diamants',
+            'panel_vip'             => 'VIP Club',
+            'panel_badge'           => 'Création de badges',
         ),
 
         /*     public/assets/js/web     */

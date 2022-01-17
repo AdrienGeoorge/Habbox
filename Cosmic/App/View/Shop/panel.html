@@ -1,14 +1,18 @@
 <div class="settings-panel">
-    <a href="/shop" class="settingsMenu {% if nav == 'shop' %}selected{% endif %}">
+    <a href="/shop" class="settingsMenu {% if nav == 'shop' %}selected{% endif %} tooltip">
         <img src="/assets/icons/shop/index.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_shop }}</span>
     </a>
-    <a href="/shop/club" class="settingsMenu {% if nav == 'club' %}selected{% endif %}">
+    <a href="/shop/club" class="settingsMenu {% if nav == 'club' %}selected{% endif %} tooltip">
         <img src="/assets/icons/shop/vip.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_vip }}</span>
     </a>
-    <a href="/shop/drawbadge" class="settingsMenu {% if nav == 'badge' %}selected{% endif %}">
+    <a href="/shop/drawbadge" class="settingsMenu {% if nav == 'badge' %}selected{% endif %} tooltip">
         <img src="/assets/icons/shop/draw_badge.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_badge }}</span>
     </a>
-    <a href="/shop/history" class="settingsMenu {% if nav == 'history' %}selected{% endif %}">
+    <a href="/shop/history" class="settingsMenu {% if nav == 'history' %}selected{% endif %} tooltip">
         <img src="/assets/icons/shop/history.svg" alt="">
+                <span class="text" style="font-size: 13px;">{{ locale_base.panel_history }}</span>
     </a>
 </div>
