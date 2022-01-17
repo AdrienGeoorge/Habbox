@@ -697,6 +697,10 @@ $GLOBALS['language'] = array (
             'registration'      => 'Inscris-toi gratuitement!',
             'hotel'             => 'Hôtel',
 
+            'casino'            => array (
+                'rules'    => 'Règles du casino',
+            ),
+
             'password' => array (
                 'claim'    => 'Mot de passe oublié?',
                 'reset'    => 'Changer mot de passe',

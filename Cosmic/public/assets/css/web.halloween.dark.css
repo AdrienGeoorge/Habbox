@@ -4365,10 +4365,21 @@ input:-webkit-autofill {
     margin-top: 1em;
 }
 
-.settings-flags img {
+.settings-flags div {
+    display: inline-block;
+    background: #2a6066;
+    margin: 0 1em 0 0;
+    padding: 0.5em 0.5em 0.15em 0.5em;
+    border-radius: 0.5em;
+}
+
+.settings-flags div.selected {
+    background-color: #1d2a34;
+}
+
+.settings-flags div img {
     cursor: pointer;
     border-radius: 0.5em;
-    margin: 0 1em 0 0;
     width: 3em;
 }
 
