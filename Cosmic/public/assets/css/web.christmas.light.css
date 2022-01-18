@@ -6101,11 +6101,12 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    row-gap: 1em;
     padding: 0 1.5em;
 }
 
 .navigation-item {
-    flex: 50%;
+    flex: 33%;
     text-align: center;
 }
 
@@ -6142,6 +6143,16 @@ input:-webkit-autofill {
 
 .nav-team.selected {
     background: url(/assets/icons/team1.svg) no-repeat center;
+    background-size: contain;
+}
+
+.nav-casino {
+    background: url(/assets/icons/casino1.svg) no-repeat center;
+    background-size: contain;
+}
+
+.nav-casino.selected {
+    background: url(/assets/icons/casino.svg) no-repeat center;
     background-size: contain;
 }
 
@@ -7456,9 +7467,138 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     margin: 0;
 }
 
+/* CASINO */
+
+.casino-rules-title-box {
+    margin: 0 2em;
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+    background: #a8a28e;
+    color: #fff;
+}
+
+.casino-rules-title-box .casino-image {
+    flex: 0.75;
+}
+
+.casino-rules-title-box .casino-image img {
+    position: absolute;
+    left: 0;
+    top: -15em;
+    width: 34em;
+}
+
+.dice-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -3em;
+    width: 8em;
+}
+
+.casino-arrow {
+    position: absolute;
+    bottom: -5em;
+    right: 10em;
+    width: 4em;
+}
+
+.casino-shapes {
+    width: 25em;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.example-text {
+    position: absolute;
+    left: 0;
+    top: 2em;
+    font-size: 2em;
+    font-weight: 100;
+    transform: rotate(-90deg);
+}
+
+.casino-rules-J1 {
+    position: absolute;
+    top: -1em;
+    left: -2em;
+    width: 28em;
+}
+
+.casino-rules-J2 {
+    position: absolute;
+    top: -1em;
+    right: -2em;
+    width: 28em;
+}
+
+.shape-floating-left {
+    float: left;
+    margin-left: 8em;
+}
+
+.shape-floating-right {
+    float: right;
+    margin-right: 8em;
+}
+
+.line_1 {
+    width: 36em;
+    border: 5px solid #f1f1f1;
+    position: absolute;
+    top: 7em;
+    left: 50%;
+}
+
+.line_2 {
+    width: 36em;
+    border: 5px solid #f1f1f1;
+    position: absolute;
+    top: 12em;
+    left: 67%;
+    transform: rotate(-25deg);
+
+}
+
+.line_3 {
+    width: 36em;
+    border: 5px solid #f1f1f1;
+    position: absolute;
+    top: 19.5em;
+    left: 50%;
+}
+
+.line_4 {
+    width: 36em;
+    border: 5px solid #f1f1f1;
+    position: absolute;
+    top: 26em;
+    left: 67%;
+    transform: rotate(-32deg);
+}
+
+.line_5 {
+    width: 36em;
+    border: 5px solid #f1f1f1;
+    position: absolute;
+    top: 35.5em;
+    left: 50%;
+}
+
 /* MOBILE */
 
 @media (max-width: 1024px) {
+    .casino-rules-title-box .casino-image {
+        display: none;
+    }
+
+    .casino-arrow {
+        display: none;
+    }
+
     .page-container {
         padding-top: 0;
         padding-bottom: 9em;
@@ -7471,7 +7611,8 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     }
 
     .navigation-links {
-        padding: 2em 6em !important;
+        padding: 2em !important;
+        flex-wrap: unset;
     }
 
     .margin-body {
@@ -7633,5 +7774,16 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 
     .team-users {
         text-align: center;
+    }
+
+    .shop-grid {
+        overflow-y: scroll;
+        width: 92vw;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .shop-grid::-webkit-scrollbar {
+        display: none;
     }
 }

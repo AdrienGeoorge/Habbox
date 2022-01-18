@@ -82,6 +82,8 @@ class Routes extends Router
 
 //                parent::get('/community/fansites', 'Community\Fansites@index');
 
+                parent::get('/casino/rules', 'Casino\Rules@index');
+
                 parent::get('/help', 'Help\Help@index');
                 parent::get('/help/{slug}', 'Help\Help@index', ['defaultParameterRegex' => '[\w\-]+']);
 
