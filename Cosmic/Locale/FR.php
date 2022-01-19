@@ -671,6 +671,7 @@ $GLOBALS['language'] = array (
             'online'            => 'Temps en ligne'
         ),
         'casino' => array (
+            'normal_rules_title'    => 'Les règles au casino',
             'rules_title'       => 'Le casino, c\'est quoi?',
             'rules_desc'        => 'Le casino est un lieu généralement où il y a des mises d\'extras, d\'ultras, de LTD, de collectors ou encore de diamants.',
 

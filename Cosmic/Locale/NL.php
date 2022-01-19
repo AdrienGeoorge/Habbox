@@ -670,6 +670,7 @@ $GLOBALS['language'] = array (
             'online'            => 'Tijd online'
         ),
         'casino' => array (
+            'normal_rules_title'    => 'Casino regels',
             'rules_title'       => 'Wat is het casino?',
             'rules_desc'        => 'Het casino is over het algemeen een plaats waar er weddenschappen zijn van extra\'s, ultras, LTD, verzamelaars of zelfs diamanten.',
 

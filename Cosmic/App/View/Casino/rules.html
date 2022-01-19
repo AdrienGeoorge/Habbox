@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% set nav = "help" %}
 {% block body %}
 <div class="page-content">
     <div class="settingsTitle">
-        Les règles au casino
+        {{locale.casino.normal_rules_title}}
         {% include "Shop/panel.html" %}
     </div>
 

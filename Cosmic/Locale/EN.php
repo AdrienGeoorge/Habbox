@@ -677,6 +677,7 @@ $GLOBALS['language'] = array (
             'online'            => 'Online as hours'
         ),
         'casino' => array (
+            'normal_rules_title'    => 'Casino rules',
             'rules_title'       => 'What\'s the casino?',
             'rules_desc'        => 'The casino is generally a place where there are bets of extras, ultras, LTD, collectors or even diamonds.',
 

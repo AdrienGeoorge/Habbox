@@ -7553,7 +7553,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .line_1 {
-    width: 36em;
+    width: 45em;
     border: 5px solid #424354;
     position: absolute;
     top: 7em;
@@ -7571,7 +7571,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .line_3 {
-    width: 36em;
+    width: 45em;
     border: 5px solid #424354;
     position: absolute;
     top: 19.5em;
@@ -7588,7 +7588,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 .line_5 {
-    width: 36em;
+    width: 45em;
     border: 5px solid #424354;
     position: absolute;
     top: 35.5em;
