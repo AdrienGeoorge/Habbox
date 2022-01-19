@@ -26,6 +26,8 @@ $GLOBALS['language'] = array (
 
             'nav_forum'             => 'My Groups',
 
+            'nav_casino'            => 'Casino',
+
             'nav_helptool'          => 'Help Tool',
             'nav_helptickets'       => 'Help Tickets',
 
@@ -673,6 +675,33 @@ $GLOBALS['language'] = array (
             'desc'              => 'On this you find all the high scores of our players!',
             'achievements'      => 'Achievements',
             'online'            => 'Online as hours'
+        ),
+        'casino' => array (
+            'rules_title'       => 'What\'s the casino?',
+            'rules_desc'        => 'The casino is generally a place where there are bets of extras, ultras, LTD, collectors or even diamonds.',
+
+            'rules_how_title'   => 'How to play at the casino?',
+            'rules_how_1'       => 'Playing at the casino is easy, just bet with an available dealer. Once the bet is made, you will have to propose your game.',
+            'rules_how_2'       => 'There are two types of games: <b>13</b> or <b>21</b>.<br>You will also have to say how many dice you want in your game. (From 1 to 5)',
+            'rules_how_3'       => 'If you are at least 13.3, the dealer will first roll 2 dice. If there are 8 or more 8, he will have to wait for your "<b>+</b>" to turn the 3rd dice.',
+            'rules_how_4'       => 'If you are at least 21.4, the dealer will roll 3 dice first. If there are 16 or more he will have to wait for your "<b>+</b>" to turn the 4th dice.',
+            'rules_how_5'       => 'The goal is simple, it is not to exceed <b>13</b> or <b>21</b> depending on the game you have chosen.',
+
+            'rules_more_title'  => 'To know more',
+            'rules_more_1'      => 'Before each game, it is very important to close the dice before moving on.<br>You must place the bet before the game starts. (Except in the case of the Bet-Remise, see TOS)',
+            'rules_more_2'      => 'In case of a tie between the two players, we start again with the same game as at the beginning.<br>And so on... until there is a winner..',
+            'rules_more_3'      => 'The rules are identical for the game in 21',
+
+            'example_title'     => 'Example',
+            'example_J1'        => 'Player 1',
+            'example_J2'        => 'Player 2',
+            'example_part_1'    => 'He bets 5 extras to player 2<br>and chose his game by saying : "<b>13.5</b>"',
+            'example_part_2'    => 'He must choose between stopping at 8 or continuing his game by saying "<b>+</b>"<br><b>He must not exceed 13 so at 8 he has a chance on 6 to lose on his game</b><br>He chooses to say "<b>+</b>"',
+            'example_part_3'    => 'He says "<b>12.</b>"<br><b>The dot means that the player wants to stop his game here</b>',
+            'example_part_4'    => 'He will thus throw 2 dice which give 5 + 3<br>He will ask player 1 : "<b>8+?</b>"',
+            'example_part_5'    => 'He will roll a 3rd dice that falls on 4<br>We will then have 5 + 3 + 4 = 12<br>He will ask the player 1 : "<b>12+?</b>"',
+            'example_part_6'    => 'He closes the dice and rolls his game,<br>He rolls 2 dice, which are 5 + 5<br>He rolls a 3rd dice which makes 2<br>So 5 + 5 + 2 = 12',
+            'example_same'      => 'EQUALITY'
         )
     ),
     'core' => array (

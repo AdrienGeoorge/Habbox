@@ -7580,7 +7580,21 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     left: 50%;
 }
 
+.show-mobile {
+    display: none;
+}
+
 /* MOBILE */
+
+@media (max-width: 1200px) {
+    .hide-mobile {
+        display: none;
+    }
+    
+    .show-mobile {
+        display: block;
+    }
+}
 
 @media (max-width: 1024px) {
     .casino-rules-title-box .casino-image {

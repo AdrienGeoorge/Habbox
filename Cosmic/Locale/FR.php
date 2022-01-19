@@ -26,6 +26,8 @@ $GLOBALS['language'] = array (
 
             'nav_forum'             => 'Mes groupes',
 
+            'nav_casino'            => 'Casino',
+
             'nav_helptool'          => 'Centre d\'aide',
             'nav_helptickets'       => 'Mes tickets',
 
@@ -667,6 +669,33 @@ $GLOBALS['language'] = array (
             'desc'              => 'Tu trouveras ici les meilleurs scores de nos joueurs!',
             'achievements'      => 'Win-win',
             'online'            => 'Temps en ligne'
+        ),
+        'casino' => array (
+            'rules_title'       => 'Le casino, c\'est quoi?',
+            'rules_desc'        => 'Le casino est un lieu généralement où il y a des mises d\'extras, d\'ultras, de LTD, de collectors ou encore de diamants.',
+
+            'rules_how_title'   => 'Comment jouer au casino?',
+            'rules_how_1'       => 'Pour jouer au casino rien de plus simple, il suffit de miser à un croupier disponible. Une fois la mise faite, vous devrez proposer votre jeu.',
+            'rules_how_2'       => 'Il y a deux types de jeu: le <b>13</b> ou le <b>21</b>.<br>Il faudra aussi dire le nombre de dés que vous voulez dans votre partie. (De 1 à 5)',
+            'rules_how_3'       => 'Si vous êtes en minimum 13.3, le croupier lancera d\'abord 2 dés. S\'il y a 8 ou + de 8, il devra attendre votre "<b>+</b>" pour tourner le 3ème dé.',
+            'rules_how_4'       => 'Si vous êtes en minimum 21.4, le croupier lancera d\'abord 3 dés. S\'il y a 16 ou + de 16 il devra attendre votre "<b>+</b>" pour tourner le 4ème dé.',
+            'rules_how_5'       => 'Le but est simple, c\'est de ne pas dépasser <b>13</b> ou <b>21</b> selon le jeu que vous avez choisi.',
+
+            'rules_more_title'  => 'A savoir',
+            'rules_more_1'      => 'Avant chaque partie, il est très important de fermer les dés avant de passer à la suite.<br>Il faut donner la mise avant que le jeu commence. (Sauf cas du Mise-Remise, Cf. CGU)',
+            'rules_more_2'      => 'En cas d\'égalité entre les deux joueurs, on recommence avec le même jeu qu\'au départ.<br>Et ainsi de suite... jusqu\'à ce qu\'il y ait un gagnant.',
+            'rules_more_3'      => 'Les règles sont identiques pour le jeu en 21',
+
+            'example_title'     => 'Exemple',
+            'example_J1'        => 'Joueur 1',
+            'example_J2'        => 'Joueur 2',
+            'example_part_1'    => 'Il mise 5 extras au joueur 2<br>et choisi son jeu en disant : "<b>13.5</b>"',
+            'example_part_2'    => 'Il doit choisir entre se stopper à 8 ou continuer son jeu en disant "<b>+</b>"<br><b>Il ne doit pas dépasser 13 donc à 8 il a une chance sur 6 de perdre sur son jeu</b><br>Il choisit de dire "<b>+</b>"',
+            'example_part_3'    => 'Il dit "<b>12.</b>"<br><b>Le point signifie que le joueur veut arrêter son jeu ici</b>',
+            'example_part_4'    => 'Il lancera donc 2 dés qui donnent 5 + 3<br>Il demandera au joueur 1 : "<b>8+?</b>"',
+            'example_part_5'    => 'Il lancera un 3ème dé qui tombe sur 4<br>On aura alors 5 + 3 + 4 = 12<br>Il demandera au joueur 1 : "<b>12+?</b>"',
+            'example_part_6'    => 'Il ferme les dés et lance donc sa partie,<br>Il lance 2 dés, qui font 5 + 5<br>Il lance un 3ème dé qui fait 2<br>Donc 5 + 5 + 2 = 12',
+            'example_same'      => 'EGALIT&Eacute;'
         )
     ),
     'core' => array (

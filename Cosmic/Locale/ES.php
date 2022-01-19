@@ -26,6 +26,8 @@ $GLOBALS['language'] = array (
 
             'nav_forum'             => 'Mis grupos',
 
+            'nav_casino'            => 'Casino',
+
             'nav_helptool'          => 'Centro de ayuda',
             'nav_helptickets'       => 'Mis entradas',
 
@@ -667,6 +669,33 @@ $GLOBALS['language'] = array (
             'desc'              => '¡Aquí encontrarás las mejores puntuaciones de nuestros jugadores!',
             'achievements'      => 'Ganar-ganar',
             'online'            => 'Tiempo en línea'
+        ),
+        'casino' => array (
+            'rules_title'       => '¿Qué es el casino?',
+            'rules_desc'        => 'El casino es generalmente un lugar donde hay apuestas de extras, ultras, LTDs, coleccionistas o diamantes.',
+
+            'rules_how_title'   => '¿Cómo jugar al casino?',
+            'rules_how_1'       => 'Jugar en el casino es fácil, sólo hay que apostar a un crupier disponible. Una vez hecha la apuesta, tendrás que proponer tu juego.',
+            'rules_how_2'       => 'Hay dos tipos de juegos: el <b>13</b> o el <b>21</b>.<br>También tendrás que decir cuántos dados quieres en tu juego. (De 1 a 5)',
+            'rules_how_3'       => 'Si está en 13.3 o más, el crupier tirará primero dos dados. Si hay 8 o más 8\'s, tendrá que esperar su "<b>+</b>" para girar el tercer dado.',
+            'rules_how_4'       => 'Si tienes al menos 21.4, el crupier tirará primero 3 dados. Si hay 16 o más tendrá que esperar a su "<b>+</b>" para girar el cuarto dado.',
+            'rules_how_5'       => 'El objetivo es sencillo, no superar los <b>13</b> o <b>21</b> dependiendo del juego que hayas elegido.',
+
+            'rules_more_title'  => 'Para saber más',
+            'rules_more_1'      => 'Antes de cada partida, es muy importante cerrar los dados antes de seguir adelante.<br>La apuesta debe realizarse antes de que comience el juego. (Excepto en el caso del Bet-Remise, ver GTC)',
+            'rules_more_2'      => 'En caso de empate entre los dos jugadores, la partida se reinicia con el mismo juego que al principio..<br>Y así sucesivamente... hasta que haya un ganador.',
+            'rules_more_3'      => 'Las reglas son las mismas para el juego en 21',
+
+            'example_title'     => 'Ejemplo',
+            'example_J1'        => 'Jugador 1',
+            'example_J2'        => 'Jugador 2',
+            'example_part_1'    => 'Apuesta 5 extras al jugador 2<br>y eligió su juego diciendo : "<b>13.5</b>"',
+            'example_part_2'    => 'Debe elegir entre parar a las 8 o continuar su juego diciendo "<b>+</b>"<br><b>No debe superar los 13, así que con 8 tiene posibilidades de perder en su juego</b><br>Él opta por decir "<b>+</b>"',
+            'example_part_3'    => 'Dijo "<b>12.</b>"<br><b>El punto significa que el jugador quiere parar el juego aquí</b>',
+            'example_part_4'    => 'Por lo tanto, tirará 2 dados que dan 5 + 3<br>Le pedirá al jugador 1 : "<b>8+?</b>"',
+            'example_part_5'    => 'Lanzará un tercer dado que caerá en 4<br>Esto da 5 + 3 + 4 = 12<br>Le pedirá al jugador 1 : "<b>12+?</b>"',
+            'example_part_6'    => 'Cierra los dados y lanza su juego,<br>Tira 2 dados, que salen 5 + 5<br>Tira un tercer dado que es 2<br>Así que 5 + 5 + 2 = 12',
+            'example_same'      => 'IGUALDAD'
         )
     ),
     'core' => array (

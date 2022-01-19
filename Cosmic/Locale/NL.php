@@ -26,6 +26,8 @@ $GLOBALS['language'] = array (
 
             'nav_forum'             => 'Groepen',
 
+            'nav_casino'            => 'Casino',
+
             'nav_helptool'          => 'Help Tool',
             'nav_helptickets'       => 'Help Tickets',
 
@@ -666,6 +668,33 @@ $GLOBALS['language'] = array (
             'desc'              => 'Bekijk hier onze spelers met de meeste punten of scores!',
             'achievements'      => 'Win-win',
             'online'            => 'Tijd online'
+        ),
+        'casino' => array (
+            'rules_title'       => 'Wat is het casino?',
+            'rules_desc'        => 'Het casino is over het algemeen een plaats waar er weddenschappen zijn van extra\'s, ultras, LTD, verzamelaars of zelfs diamanten.',
+
+            'rules_how_title'   => 'Hoe speel je in het casino?',
+            'rules_how_1'       => 'Spelen in het casino is eenvoudig, gewoon inzetten bij een beschikbare dealer. Zodra de inzet gedaan is, moet u uw spel voorstellen.',
+            'rules_how_2'       => 'Er zijn twee soorten spel: <b>13</b> of <b>21</b>.<br>U zult ook moeten zeggen hoeveel dobbelstenen u in uw spel wilt hebben. (Van 1 tot 5)',
+            'rules_how_3'       => 'Als u in 13.3 of hoger bent, zal de dealer eerst twee dobbelstenen gooien. Als er 8 of meer 8\'s zijn, zal hij moeten wachten op uw "<b>+</b>" om de 3e dobbelsteen te draaien.',
+            'rules_how_4'       => 'Als u tenminste 21.4 bent, zal de dealer eerst 3 dobbelstenen gooien. Als er 16 of meer dan 16 zijn zal hij moeten wachten op uw "<b>+</b>" om de 4e dobbelsteen te draaien.',
+            'rules_how_5'       => 'Het doel is simpel, niet meer dan <b>13</b> of <b>21</b> afhankelijk van het spel dat u gekozen hebt.',
+
+            'rules_more_title'  => 'Om meer te weten',
+            'rules_more_1'      => 'Voor elk spel, is het zeer belangrijk om de dobbelstenen te sluiten alvorens verder te gaan.<br>De inzet moet geplaatst worden voordat het spel begint. (Behalve in het geval van de Bet-Remise, zie AV)',
+            'rules_more_2'      => 'Bij een gelijke stand tussen de twee spelers, wordt het spel hervat met hetzelfde spel als bij de start.<br>En zo verder... tot er een winnaar is.',
+            'rules_more_3'      => 'De regels zijn hetzelfde voor het spel in 21',
+
+            'example_title'     => 'Voorbeeld',
+            'example_J1'        => 'Speler 1',
+            'example_J2'        => 'Speler 2',
+            'example_part_1'    => 'Hij zet 5 extra\'s in voor speler 2<br>en koos zijn spel door te zeggen : "<b>13.5</b>"',
+            'example_part_2'    => 'Hij moet kiezen tussen stoppen bij 8 of doorgaan met zijn spel door te zeggen "<b>+</b>"<br><b>Hij mag niet boven de 13 komen dus met 8 heeft hij kans op verlies op zijn spel</b><br>Hij kiest ervoor om te zeggen "<b>+</b>"',
+            'example_part_3'    => 'Hij zei "<b>12.</b>"<br><b>De punt betekent dat de speler hier het spel wil stoppen</b>',
+            'example_part_4'    => 'Hij zal dus 2 dobbelstenen gooien die 5 + 3 geven<br>Het zal de speler vragen 1 : "<b>8+?</b>"',
+            'example_part_5'    => 'Hij zal een 3e dobbelsteen gooien die op 4 valt<br>Dit zal resulteren in 5 + 3 + 4 = 12<br>Het zal de speler vragen 1 : "<b>12+?</b>"',
+            'example_part_6'    => 'Hij sluit de dobbelstenen en gooit zijn spel,<br>Hij gooit met 2 dobbelstenen, die uitkomen op 5 + 5<br>Hij gooit een 3de dobbelsteen en dat is 2<br>Dus 5 + 5 + 2 = 12',
+            'example_same'      => 'GELIJKHEID'
         )
     ),
     'core' => array (

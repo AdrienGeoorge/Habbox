@@ -12,58 +12,50 @@
                 <img src="/assets/images/web/pages/casino/rules.png" alt="Casino">
             </div>
             <div class="flex_1">
-                <h1>Le casino, c'est quoi?</h1>
-                <p>Le casino est un lieu généralement où il y a des mises d'extras, d’ultras, de LTD,
-                    de collectors ou encore de diamants.</p>
+                <h1>{{locale.casino.rules_title}}</h1>
+                <p>{{locale.casino.rules_desc}}</p>
             </div>
         </div>
         <div class="flex-body mt_2">
             <div class="flex-body-left">
                 <div class="box">
-                    <h2>Comment jouer au casino?</h2>
+                    <h2>{{locale.casino.rules_how_title}}</h2>
                     <p>
-                        Pour jouer au casino rien de plus simple, il suffit de miser à un croupier disponible.
-                        Une fois la mise faite, vous devrez proposer votre jeu.
+                        {{locale.casino.rules_how_1}}
                     </p>
                     <p>
-                        Il y a deux types de jeu: le <b>13</b> ou le <b>21</b>.<br>
-                        Il faudra aussi dire le nombre de dés que vous voulez dans votre partie. (De 1 à 5)
+                        {{locale.casino.rules_how_2|raw}}
                     </p>
                     <p>
                         <b>
-                            Si vous êtes en minimum 13.3, le croupier lancera d'abord 2 dés. S’il y a 8 ou + de 8, il devra
-                            attendre votre + pour tourner le 3ème dé.
+                            {{locale.casino.rules_how_3|raw}}
                         </b>
                     </p>
                     <p>
                         <b>
-                            Si vous êtes en minimum 21.4, le croupier lancera d'abord 3 dés. S’il y a 16 ou + de 16 il devra
-                            attendre votre + pour tourner le 4ème dé.
+                            {{locale.casino.rules_how_4|raw}}
                         </b>
                     </p>
 
                     <p>
-                        Le but est simple, c'est de ne pas dépasser <b>13</b> ou <b>21</b> selon le jeu que vous avez
-                        choisi.
+                        {{locale.casino.rules_how_5|raw}}
                     </p>
-                    <img src="/assets/images/web/pages/casino/arrow-{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="More" class="casino-arrow">
+                    <img src="/assets/images/web/pages/casino/arrow-{{theme == 'christmas' or theme == 'winter' ? 'christmas-' : theme == 'halloween' ? theme ~ '-' : '' }}{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="More" class="casino-arrow">
                 </div>
             </div>
             <div class="flex-body-right">
                 <div class="box">
-                    <h2>A savoir</h2>
+                    <h2>{{locale.casino.rules_more_title}}</h2>
                     <p>
                         <b>
-                            Avant chaque partie, il est très important de fermer les dés avant de passer à la suite.<br>
-                            Il faut donner la mise avant que le jeu commence. (Sauf cas du Mise-Remise, Cf. CGU)
+                            {{locale.casino.rules_more_1|raw}}
                         </b>
                     </p>
                     <p>
-                        En cas d'égalité entre les deux joueurs, on recommence avec le même jeu qu'au départ.<br>
-                        Et ainsi de suite... jusqu'à ce qu'il y ai un gagnant.<br>
+                        {{locale.casino.rules_more_2|raw}}
                     </p>
                     <p style="margin-bottom: 4em;">
-                        <b>Les règles sont identiques pour le jeu en 21</b>
+                        <b>{{locale.casino.rules_more_3}}</b>
                     </p>
                     <img src="/assets/images/web/pages/casino/dice.png" alt="Dé" class="dice-image">
                 </div>
@@ -72,180 +64,116 @@
 
         <div class="flex-body" style="margin-top: 8em;">
             <div class="flex_1 position-relative">
-                <span class="example-text">Exemple</span>
-                <div class="position-relative shape-floating-left">
-                    <img src="/assets/images/web/pages/casino/shape_one-{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="J1" class="casino-shapes">
+                <span class="example-text">{{locale.casino.example_title}}</span>
+                <div class="position-relative shape-floating-left hide-mobile">
+                    <img src="/assets/images/web/pages/casino/shape_one-{{theme == 'christmas' or theme == 'winter' ? 'christmas-' : theme == 'halloween' ? theme ~ '-' : '' }}{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="J1" class="casino-shapes">
                     <img src="/assets/images/web/pages/casino/joueur1.svg" alt="J1" class="casino-rules-J1">
                 </div>
             </div>
             <div class="flex_1">
-                <div class="position-relative shape-floating-right">
-                    <img src="/assets/images/web/pages/casino/shape_two-{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="J2" class="casino-shapes">
+                <div class="position-relative shape-floating-right hide-mobile">
+                    <img src="/assets/images/web/pages/casino/shape_two-{{theme == 'christmas' or theme == 'winter' ? 'christmas-' : theme == 'halloween' ? theme ~ '-' : '' }}{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.png" alt="J2" class="casino-shapes">
                     <img src="/assets/images/web/pages/casino/joueur2.svg" alt="J2" class="casino-rules-J2">
                 </div>
             </div>
         </div>
 
-        <div class="flex-body mt_3">
-            <div class="flex_1 position-relative" style="padding: 0 10em;">
-                <div class="line_1"></div>
-                <div class="line_2"></div>
-                <div class="line_3"></div>
-                <div class="line_4"></div>
-                <div class="line_5"></div>
+        <div class="flex-body mt_3 hide-mobile">
+            <div class="flex_1 position-relative" style="padding: 0 8em;">
+                <div class="line_1 hide-mobile"></div>
+                <div class="line_2 hide-mobile"></div>
+                <div class="line_3 hide-mobile"></div>
+                <div class="line_4 hide-mobile"></div>
+                <div class="line_5 hide-mobile"></div>
                 <div class="box text-center mt_2">
-                    <h2>Joueur 1</h2>
-                    <p>Il mise 5 extras au joueur B<br>et choisi son jeu en disant : "<b>13.5</b>"</p>
+                    <h2>{{locale.casino.example_J1}}</h2>
+                    <p>{{locale.casino.example_part_1|raw}}</p>
                 </div>
 
                 <div class="box text-center mt_2">
-                    <h2>Joueur 1</h2>
+                    <h2>{{locale.casino.example_J1}}</h2>
                     <p>
-                        Il doit choisir entre se stopper à 8 ou continuer son jeu en disant "<b>+</b>"<br>
-                        <b>Il ne doit pas dépasser 13 donc à 8 il a une chance sur 6 de perdre sur son jeu</b><br>
-                        Il choisit de dire "<b>+</b>"
+                        {{locale.casino.example_part_2|raw}}
                     </p>
                 </div>
 
                 <div class="box text-center mt_2">
-                    <h2>Joueur 1</h2>
+                    <h2>{{locale.casino.example_J1}}</h2>
                     <p>
-                        Il dit "<b>12.</b>"<br>
-                        <b>Le point signifie que le joueur veut arrêter son jeu ici</b>
+                        {{locale.casino.example_part_3|raw}}
                     </p>
                 </div>
             </div>
-            <div class="flex_1" style="padding: 0 10em;">
+            <div class="flex_1" style="padding: 0 8em;">
                 <div class="box text-center mt_2">
-                    <h2>Joueur 2</h2>
+                    <h2>{{locale.casino.example_J2}}</h2>
                     <p>
-                        Il lancera donc 2 dés qui donnent 5 + 3<br>
-                        Il demandera au joueur A : "<b>8+?</b>"
+                        {{locale.casino.example_part_4|raw}}
                     </p>
                 </div>
 
                 <div class="box text-center mt_2">
-                    <h2>Joueur 2</h2>
+                    <h2>{{locale.casino.example_J2}}</h2>
                     <p>
-                        Il lancera un 3ème dé qui tombe sur 4<br>
-                        On aura alors 5 + 3 + 4 = 12<br>
-                        Il demandera au joueur A : "<b>12+?</b>"
+                        {{locale.casino.example_part_5|raw}}
                     </p>
                 </div>
 
                 <div class="box text-center mt_2">
-                    <h2>Joueur 2</h2>
+                    <h2>{{locale.casino.example_J2}}</h2>
                     <p>
-                        Il ferme les dés et lance donc sa partie,<br>
-                        Il lance 2 dés, qui font 5+5<br>
-                        Il lance un 3ème dé qui fait 2<br>
-                        Donc 5 + 5 + 2 = 12
+                        {{locale.casino.example_part_6|raw}}
                     </p>
                     <p>
-                        <b>EGALIT&Eacute;</b>
+                        <b>{{locale.casino.example_same|raw}}</b>
                     </p>
                 </div>
             </div>
         </div>
-        <!--<div class="flex-body-left" style="flex: 1;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1em;">
+        <div class="show-mobile" style="padding: 0 8em;">
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J1}}</h2>
+                <p>{{locale.casino.example_part_1|raw}}</p>
+            </div>
 
-                    <div class="box text-center">
-                        <span style="color: #8ea763;">Joueur B</span>
-                        <p>
-                            Il ferme les dés et lance donc sa partie,<br>
-                            Il lance 2 dés, qui font 5+5<br>
-                            Il lance un 3ème dé qui fait 2<br>
-                            Donc 5 + 5 + 2 = 12
-                        </p>
-                        <p>
-                            <b>EGALIT&Eacute;</b>
-                        </p>
-                    </div>
-                </div>
-&lt;!&ndash;                <div class="box text-center">
-                    <h2>Exemple de déroulement</h2>
-                    <p style="font-weight: bold; color: #7d3d4a;">
-                        <b style="color: #7d3d4a;">Le joueur A est le miseur</b><br>
-                        <b style="color: #8ea763;">Le joueur B est le croupier</b>
-                    </p>
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J2}}</h2>
+                <p>
+                    {{locale.casino.example_part_4|raw}}
+                </p>
+            </div>
 
-                    <p>
-                        <span style="color: #7d3d4a;">
-                            Le joueur A mise 5 extras au joueur B<br>
-                            Le joueur A choisit donc son jeu il dit : "13.5"<br>
-                        </span>
-                    </p>
-                    <p>
-                        <span style="color: #8ea763;">
-                            Le joueur B lancera donc 2 dés qui font 5+3<br>
-                            Le joueur B vous demande "8+?"<br>
-                        </span>
-                    </p>
-                    <p>
-                        <span style="color: #7d3d4a;">
-                            Le joueur A doit choisir entre se stopper à 8 ou continuer son jeu en disant + (Sachant qu'il ne doit pas dépasser 13 donc à 8 il a une chance sur 6 de perdre sur son jeu)<br>
-                            Le joueur A dit +, le joueur B lance un 3ème dés, ce dé fait 4<br>
-                            Donc 5+3+4 = 12<br>
-                        </span>
-                    </p>
-                    <p>
-                        <span style="color: #8ea763;">
-                            Le joueur B dit : "12+?"<br>
-                        </span>
-                    </p>
-                    <p>
-                        <span style="color: #7d3d4a;">
-                            Le joueur A dit "12." (Le "." signifie stop)<br>
-                        </span>
-                    </p>
-                    <p>
-                        <span style="color: #8ea763;">
-                            Le joueur B ferme les dés et lance donc sa partie,<br>
-                            Il lance 2 dés, qui font 5+5<br>
-                            Il lance un 3ème dé qui fait 2<br>
-                            Donc 5+5+2 = 12<br>
-                        </span>
-                    </p>
-                    <p>
-                        <b>
-                            Il y a égalité entre les deux joueurs. Le jeu recommence avec le même jeu (donc 13.5)<br>
-                            Et ainsi de suite...<br>
-                            Les règles sont identiques pour le jeu en 21
-                        </b>
-                    </p>
-                </div>&ndash;&gt;
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J1}}</h2>
+                <p>
+                    {{locale.casino.example_part_2|raw}}
+                </p>
             </div>
-            <div class="shop-club-grid_2">
-                <div class="box text-center">
-                    <img src="/assets/images/web/pages/shop/build.png" alt="Build" width="40em">
-                    <h2>{{locale.build}}</h2>
-                    <p>{{locale.build_desc}}</p>
-                </div>
-                <div class="box text-center">
-                    <img src="/assets/images/web/pages/shop/friends.png" alt="Groups" width="40em">
-                    <h2>{{locale.groups}}</h2>
-                    <p>{{locale.groups_desc}}</p>
-                </div>
+
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J2}}</h2>
+                <p>
+                    {{locale.casino.example_part_5|raw}}
+                </p>
             </div>
-            <div class="box text-center">
-                <img src="/assets/images/web/pages/shop/rooms.png" alt="No limit" width="50em">
-                <h2>{{locale.rooms}}</h2>
-                <p>{{locale.rooms_desc}}</p>
+
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J1}}</h2>
+                <p>
+                    {{locale.casino.example_part_3|raw}}
+                </p>
             </div>
-            <div class="shop-club-grid_2">
-                <div class="box text-center">
-                    <img src="/assets/images/web/pages/shop/bubble.png" alt="No flood" width="70em">
-                    <h2 style="margin-top: 1.5em;">{{locale.flood}}</h2>
-                    <p>{{locale.flood_desc}}</p>
-                </div>
-                <div class="box text-center">
-                    <img src="/assets/images/web/pages/shop/bubbles.png" alt="Commands" width="35em">
-                    <h2>{{locale.commands}}</h2>
-                    <p>{{locale.commands_desc}}</p>
-                </div>
+
+            <div class="box text-center mt_2">
+                <h2>{{locale.casino.example_J2}}</h2>
+                <p>
+                    {{locale.casino.example_part_6|raw}}
+                </p>
+                <p>
+                    <b>{{locale.casino.example_same|raw}}</b>
+                </p>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
 {% endblock %}

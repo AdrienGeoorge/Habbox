@@ -6130,12 +6130,12 @@ input:-webkit-autofill {
 
 .nav-casino {
     background: url(/assets/icons/casino1.svg) no-repeat center;
-    background-size: contain;
+    background-size: 3.5em;
 }
 
 .nav-casino.selected {
     background: url(/assets/icons/casino.svg) no-repeat center;
-    background-size: contain;
+    background-size: 3.5em;
 }
 
 .nav-shop {
@@ -7572,7 +7572,21 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     left: 50%;
 }
 
+.show-mobile {
+    display: none;
+}
+
 /* MOBILE */
+
+@media (max-width: 1200px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+}
 
 @media (max-width: 1024px) {
     .casino-rules-title-box .casino-image {
