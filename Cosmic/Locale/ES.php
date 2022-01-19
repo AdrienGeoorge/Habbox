@@ -107,7 +107,7 @@ $GLOBALS['language'] = array (
         /*     public/assets/js/web     */
         'javascript' => array(
             'web_customforms_markedfields'                  => 'Todos los campos marcados con un * son obligatorios.',
-            'web_customforms_loadingform'                   => 'Cambiar la forma...',
+            'web_customforms_loadingform'                   => 'Carga del formulario...',
             'web_customforms_next'                          => 'Siguiente',
             'web_customforms_close'                         => 'Cerrar',
             'web_customforms_participation'                 => 'Gracias por su participación.',
@@ -121,18 +121,18 @@ $GLOBALS['language'] = array (
             'web_hotel_backto'                              => 'Volver a ' . Config::site['shortname'] . ' Hôtel',
 
             'web_fill_pincode'                              => 'Introduce el código PIN que especificaste al crear tu cuenta en Habbox. ¿Y si olvidaste tu PIN? Póngase en contacto con el servicio de asistencia a través de la página web ' . Config::site['shortname'] . ' Ayuda de soporte',
-            'web_twostep'                                   => 'Autorización en dos fases!',
+            'web_twostep'                                   => 'Autenticación en dos pasos',
             'web_login'                                     => 'Debes estar conectado para reportar este mensaje.',
-            'web_loggedout'                                 => 'Cerrar la sesión :(',
+            'web_loggedout'                                 => 'Desconectado :(',
 
-            'web_notifications_success'                     => 'Éxito!',
-            'web_notifications_error'                       => 'Error!',
-            'web_notifications_info'                        => 'Información!',
+            'web_notifications_success'                     => '¡Éxito!',
+            'web_notifications_error'                       => '¡Error!',
+            'web_notifications_info'                        => '¡Información!',
 
-            'web_page_article_login'                        => 'Debes estar conectado para publicar un comentario!',
+            'web_page_article_login'                        => '¡Debes estar conectado para publicar un comentario!',
 
-            'web_page_community_photos_login'               => 'Debes estar conectado para que te gusten estas fotos!',
-            'web_page_community_photos_loggedout'           => 'Cerrar la sesión :(',
+            'web_page_community_photos_login'               => '¡Tienes que estar conectado para que te guste!',
+            'web_page_community_photos_loggedout'           => 'Desconectado :(',
 
             'web_page_forum_change'                         => 'Cambiar',
             'web_page_forum_cancel'                         => 'Ríndete',
@@ -140,17 +140,17 @@ $GLOBALS['language'] = array (
             'web_page_forum_topic_closed'                   => 'Este tema está cerrado y no se puede responder en este momento.',
             'web_page_forum_login_toreact'                  => 'Debes estar conectado para responder.',
             'web_page_forum_login_tolike'                   => 'Debes estar conectado para que te guste este post.',
-            'web_page_forum_loggedout'                      => 'Cierre de sesión :(',
+            'web_page_forum_loggedout'                      => 'Desconectado :(',
 
-            'web_page_profile_login'                        => 'Tienes que estar conectado para que te gusten estas fotos!',
-            'web_page_profile_loggedout'                    => 'Cierre de sesión :(',
+            'web_page_profile_login'                        => '¡Tienes que estar conectado para que te gusten estas fotos!',
+            'web_page_profile_loggedout'                    => 'Desconectado :(',
 
             'web_page_settings_namechange_request'          => 'Solicitar',
             'web_page_settings_namechange_not_available'    => 'No disponible',
             'web_page_settings_namechange_choose_name'      => 'Elige un apodo',
 
             'web_page_settings_verification_oops'           => 'Slim...',
-            'web_page_settings_verification_fill_password'  => 'Introduzca su contraseña!',
+            'web_page_settings_verification_fill_password'  => '¡Introduzca su contraseña!',
             'web_page_settings_verification_2fa_on'         => 'La autenticación de Google está actualmente configurada en tu cuenta. Para utilizar otro método de verificación, primero debe eliminar su antiguo método de verificación.',
             'web_page_settings_verification_2fa_secretkey'  => '¿Has escaneado el código QR en tu móvil? A continuación, introduzca la clave secreta para asegurar su cuenta.',
             'web_page_settings_verification_2fa_authcode'   => 'Código de autentificación',
@@ -173,14 +173,14 @@ $GLOBALS['language'] = array (
             'web_page_shop_offers_audiotel_description'     => 'Marque y llame a este número una o más veces para recibir sus Diamantes en la cantidad que usted elija.',
             'web_page_shop_offers_audiotel_dialog'          => 'Introduce el código que has recibido durante la llamada para recibir tus Diamantes.',
             'web_page_shop_offers_pay_with'                 => 'Pagar con',
-            'web_page_shop_offers_points_for'               => 'Puntos de diamante para',
+            'web_page_shop_offers_points_for'               => 'Diamentes para',
             'web_page_shop_offers_get_code'                 => 'Obtenga un código para conseguir Diamantes',
             'web_page_shop_offers_fill_code'                => 'Introduzca su código para conseguir Diamantes',
             'web_page_shop_offers_fill_code_desc'           => '¡Introduzca su código a continuación para recibir sus Diamantes inmediatamente!',
             'web_page_shop_offers_submit'                   => 'Comprar',
             'web_page_shop_offers_success'                  => '¡Compra exitosa!',
             'web_page_shop_offers_received'                 => 'Gracias por su compra. Ahora tienes',
-            'web_page_shop_offers_received2'                => 'Puntos de diamante.',
+            'web_page_shop_offers_received2'                => 'Diamentes.',
             'web_page_shop_offers_close'                    => 'Cerrar',
             'web_page_shop_offers_failed'                   => '¡Compra fallida!',
             'web_page_shop_offers_failed_desc'              => 'Su compra ha fracasado. Por favor, inténtelo de nuevo o póngase en contacto con nosotros a través de nuestro equipo de soporte.',
@@ -197,7 +197,7 @@ $GLOBALS['language'] = array (
             'web_page_hotel_sometinhg_wrong_3'              => 'O puede crear un ticket a través de la Ayuda de Soporte',
             'web_page_hotel_welcome_at'                     => 'Bienvenido a',
             'web_page_hotel_soon'                           => 'Tómese una copa, el hotel está pronto a abrirse ante sus ojos...',
-            'web_hotel_active_flash_1'                      => 'Ya casi has llegado ' . Config::site['shortname'] .'!',
+            'web_hotel_active_flash_1'                      => '¡Ya casi has llegado ' . Config::site['shortname'] .'!',
             'web_hotel_active_flash_2'                      => 'Haga clic aquí',
             'web_hotel_active_flash_3'                      => 'y luego haga clic en la parte izquierda para permitir la activación del reproductor flash.',
 
@@ -213,9 +213,9 @@ $GLOBALS['language'] = array (
             'reactions_fill'            => 'Introduzca su comentario aquí...',
             'reactions_post'            => 'Publicar en',
             'latest_news'               => 'Últimos artículos',
-            'reaction_hidden_yes'       => 'Comentario invisible!',
-            'reaction_hidden_no'        => 'Comentario visible de nuevo!',
-            'forbidden_words'           => 'A su comentario le faltan palabras!',
+            'reaction_hidden_yes'       => '¡Comentario invisible!',
+            'reaction_hidden_no'        => '¡Comentario visible de nuevo!',
+            'forbidden_words'           => '¡A su comentario le faltan palabras!',
             'published_on'              => 'Publicado en'
         ),
         'forum' => array (
@@ -251,12 +251,12 @@ $GLOBALS['language'] = array (
             'topic_posts'               => 'Publicado en:',
             'topic_topic'               => 'Tema:',
             'topic_reaction'            => 'Comentario escrito sobre:',
-            'topic_closed'              => 'Pay attention! This topic is closed, do you disagree? Then contact us via the',
+            'topic_closed'              => '¡Pay attention! ¿Este tema está cerrado, ¿está usted en desacuerdo? Entonces, póngase en contacto con nosotros a través del',
             'topic_helptool'            => 'soporte',
             'topic_and'                 => 'y',
-            'topic_likes_1'             => 'Otros jugadores así!',
-            'topic_likes_2'             => 'Les gusta!',
-            'topic_likes_3'             => 'Me gusta!'
+            'topic_likes_1'             => '¡Otros jugadores así!',
+            'topic_likes_2'             => '¡Les gusta!',
+            'topic_likes_3'             => '¡Me gusta!'
         ),
 
         /*     App/View/Community     */
@@ -268,7 +268,7 @@ $GLOBALS['language'] = array (
             'load_more'   => 'Ver más fotos'
         ),
         'community_staff' => array (
-            'title'       => 'Cómo formar parte del equipo en ' . Config::site['shortname'] . ' ?',
+            'title'       => '¿Cómo formar parte del equipo en ' . Config::site['shortname'] . ' ?',
             'desc'        => 'Nuestro equipo está a su disposición para ayudarle y guiarle por el hotel si lo necesita para que tenga la mejor experiencia de juego posible.',
             'content_1'   => 'Por supuesto, todo el mundo sueña con ser funcionario, pero desgraciadamente no todos pueden hacerlo. Convertirse en personal un día en ' . Config::site['shortname'] . ' tendrá que presentar su solicitud en la página de contratación del sitio.',
             'content_2'   => 'Esto será posible cuando se produzcan vacantes, por lo que le rogamos que lea nuestros artículos con regularidad para estar al día del periodo de contratación.',
@@ -276,7 +276,7 @@ $GLOBALS['language'] = array (
         ),
         'community_value' => array (
             'title_header'      => 'Catálogo mercado mobis',
-            'decs_header'       => 'Todos los mobis exclusivos a precios excepcionales que puedes comprar con créditos se encuentran aquí!',
+            'decs_header'       => '¡Todos los mobis exclusivos a precios excepcionales que puedes comprar con créditos se encuentran aquí!',
             'furni_name'        => 'Nombre del mobi',
             'furni_type'        => 'Tipo',
             'furni_costs'       => 'Precio actual',
@@ -289,7 +289,7 @@ $GLOBALS['language'] = array (
             'nav_my'            => 'Mi mercado',
             'nav_shop'          => 'El mercado de los mobis',
             'nav_catalogue'     => 'Catálogo',
-            'marketplace_desc'  => 'Les vendeurs de ' . Config::site['shortname'] . ' Hôtel vous propose la vente de leur mobis exclusifs en échange de crédits. Peut-être que tu trouveras ici des mobis introuvables dans le catalogue et que tu aimerais acheter!'
+            'marketplace_desc'  => 'Los vendedores de ' . Config::site['shortname'] . ' El hotel te ofrece la venta de sus mobis exclusivos a cambio de créditos. Tal vez encuentres aquí algún mobis que no encuentres en el catálogo y que te apetezca comprar.'
         ),
         /*     App/View/Games     */
         'games_ranking' => array (
@@ -346,9 +346,9 @@ $GLOBALS['language'] = array (
             'friends_online'          => 'Amigos en línea',
             'now_in'                  => 'Actualmente en',
             'latest_news'             => 'Últimos artículos',
-            'latest_facts'            => 'Las últimas noticias sobre ' . Config::site['shortname'] . '!',
+            'latest_facts'            => '¡Las últimas noticias sobre ' . Config::site['shortname'] . '!',
             'popular_rooms'           => 'Apartamentos populares',
-            'popular_rooms_label'     => 'Los apartamentos más modernos de '. Config::site['shortname'] . '!',
+            'popular_rooms_label'     => '¡Los apartamentos más modernos de '. Config::site['shortname'] . '!',
             'popular_no_rooms'        => '¡No hay nadie dentro del hotel en este momento!',
             'goto_room'               => 'Únete a l\'appart',
             'popular_groups'          => 'Grupos populares',
@@ -430,7 +430,7 @@ $GLOBALS['language'] = array (
             'found_choose_3'        => 'A través de otro juego',
             'found_choose_4'        => 'A través de Facebook',
             'found_choose_5'        => 'Otros',
-            'create_user'           => 'Crea tu avatar ' . Config::site['shortname'] . '!',
+            'create_user'           => '¡Crea tu avatar ' . Config::site['shortname'] . '!',
             'username'              => 'Nombre de usuario Habbox',
             'username_fill'         => 'Nombre de usuario...',
             'username_help'         => 'Su apodo único en ' . Config::site['shortname'] . ' Hotel.',
@@ -460,7 +460,7 @@ $GLOBALS['language'] = array (
 
         /*     App/View/Jobs     */
         'apply' => array (
-            'title'               => 'Solicitar ahora!',
+            'title'               => '¡Solicitar ahora!',
             'content_1'           => 'GGracias por su interés en ' . Config::site['shortname'] . ' Hotel, le daremos una respuesta lo antes posible.',
             'content_2'           => 'Intenta responder a las preguntas con la mayor sinceridad posible.',
             'description'         => 'Descripción del trabajo',
@@ -499,7 +499,7 @@ $GLOBALS['language'] = array (
             'username'              => 'Mi nombre de usuario',
             'email'                 => 'Mi dirección de correo electrónico',
             'send'                  => 'Enviar un correo electrónico',
-            'wrong_page'            => 'Falsa alarma !',
+            'wrong_page'            => '¡Falsa alarma !',
             'wrong_page_content_1'  => 'Si recuerda su contraseña o ha solicitado accidentalmente una contraseña olvidada, puede utilizar el siguiente enlace para volver a la página de inicio.',
             'back_to_home'          => 'Volver a la página de inicio'
         ),
@@ -548,7 +548,7 @@ $GLOBALS['language'] = array (
         ),
         'settings_preferences' => array (
             'title'               => 'Mis preferencias',
-            'follow_title'        => 'Configuración de seguimiento - ¿Quién puede seguirme?' ,
+            'follow_title'        => '¿Configuración de seguimiento - ¿Quién puede seguirme?' ,
             'follow_label'        => 'No quiero que me rastreen en ' . Config::site['shortname'],
             'friends_title'       => 'Solicitud de amigos',
             'friends_label'       => '¿Permitir que otros miembros se hagan amigos míos?',
@@ -712,7 +712,7 @@ $GLOBALS['language'] = array (
             'message_deleted'       => 'Tu mensaje ha sido borrado.',
             'invisible'             => 'Esto es ahora invisible.',
             'profile_invisible'     => 'El jugador de ' . Config::site['shortname'] . ' ha hecho invisible su perfil.',
-            'profile_notfound'      => 'Desgraciadamente... no pudimos encontrar el ' . Config::site['shortname'] . '!',
+            'profile_notfound'      => '¡Desgraciadamente... no pudimos encontrar el ' . Config::site['shortname'] . '!',
             'no_permissions'        => 'No tienes permiso para hacerlo.',
             'already_liked'         => '¡Ya te ha gustado esto!',
             'liked'                 => '¡Te gusta esto!',
@@ -732,9 +732,9 @@ $GLOBALS['language'] = array (
             'can_be'                => 'Máximo a',
             'must_be'               => 'Un mínimo de',
             'characters_long'       => 'demasiados personajes.',
-            'invalid'               => 'No cumple los requisitos!',
-            'invalid_characters'    => 'Contiene caracteres no válidos!',
-            'is_required'           => 'Rellena todos los campos!',
+            'invalid'               => '¡No cumple los requisitos!',
+            'invalid_characters'    => '¡Contiene caracteres no válidos!',
+            'is_required'           => '¡Rellena todos los campos!',
             'not_same'              => 'no coinciden',
             'captcha'               => '¡Recaptcha entrada incorrecta!',
             'numeric'               => '¡Debe contener números!',
@@ -827,7 +827,7 @@ $GLOBALS['language'] = array (
         'name_change_saved'         => 'Su nombre de usuario ha sido cambiado, 5 diamantes acaban de ser cargados en su cuenta. Ahora debes volver a conectarte.',
         'invalid_secretcode'        => 'La autenticación de Google a través del código SECRET es incorrecta.',
         'enabled_secretcode'        => '¡Método de autenticación definido! Tienes que volver a conectarte... ¡hasta pronto!',
-        'disabled_secretcode'       => 'Método de autenticación desactivado!'
+        'disabled_secretcode'       => '¡Método de autenticación desactivado!'
     ),
     'rcon' => array (
         'exception'                 => 'RCON no puede proceder porque el emulador está apagado.'
@@ -837,11 +837,11 @@ $GLOBALS['language'] = array (
             'invalid_transaction'   => '¡La transacción ha fallado!',
             'invalid_code'          => 'El código introducido es incorrecto.',
             'success_1'             => 'Gracias por su compra. Acaba de recibir',
-            'success_2'             => '¡PUNTOS DE JUGADOR GANADOS!'
+            'success_2'             => 'diamantes.'
         ),
         'club' => array (
-            'already_vip'           => 'Usted es un miembro permanente de la ' . Config::site['shortname'] . ' Club.',
-            'purchase_success'      => 'Enhorabuena. Ahora es usted miembro de la ' . Config::site['shortname'] . ' Club durante 31 días.'
+            'already_vip'           => 'Usted es un miembro permanente de la ' . Config::site['shortname'] . ' VIP Club.',
+            'purchase_success'      => 'Enhorabuena. Ahora es usted miembro de la ' . Config::site['shortname'] . ' VIP Club durante 31 días.'
 
         ),
         'marketplace' => array(

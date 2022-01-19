@@ -107,7 +107,7 @@ $GLOBALS['language'] = array (
         /*     public/assets/js/web     */
         'javascript' => array(
             'web_customforms_markedfields'                  => 'Alle velden gemarkeerd met een * zijn verplicht.',
-            'web_customforms_loadingform'                   => 'Formulier laden...',
+            'web_customforms_loadingform'                   => 'Laden van het formulier...',
             'web_customforms_next'                          => 'Volgende',
             'web_customforms_close'                         => 'Sluiten',
             'web_customforms_participation'                 => 'Bedankt voor uw deelname!',
@@ -126,9 +126,9 @@ $GLOBALS['language'] = array (
             'web_hotel_backto'                              => 'Terug naar '. Config::site['shortname'] . ' Hotel',
 
             'web_fill_pincode'                              => 'Vul de pincode in die je hebt opgegeven tijdens het aanmaken van de extra beveiliging op jouw account. Nou, ik ben deze vergeten? Neem dan contact op via de '. Config::site['shortname'] . ' Helpcentrum',
-            'web_twostep'                                   => 'Twee-staps autorisatie!',
+            'web_twostep'                                   => 'Authenticatie in twee stappen',
             'web_login'                                     => 'Je moet ingelogd zijn om dit bericht te rapporteren!',
-            'web_loggedout'                                 => 'Uitgelogd :(',
+            'web_loggedout'                                 => 'Afgesloten :(',
 
             'web_notifications_success'                     => 'Gelukt!',
             'web_notifications_error'                       => 'Error!',
@@ -136,8 +136,8 @@ $GLOBALS['language'] = array (
 
             'web_page_article_login'                        => 'Je dient ingelogd te zijn om een reactie te plaatsen!',
 
-            'web_page_community_photos_login'               => 'Je moet ingelogd zijn om foto\'s te kunnen liken!',
-            'web_page_community_photos_loggedout'           => 'Uitgelogd :(',
+            'web_page_community_photos_login'               => 'Je moet verbonden zijn om het leuk te vinden!',
+            'web_page_community_photos_loggedout'           => 'Afgesloten :(',
 
             'web_page_forum_change'                         => 'Aanpassen',
             'web_page_forum_cancel'                         => 'Annuleren',
@@ -145,10 +145,10 @@ $GLOBALS['language'] = array (
             'web_page_forum_topic_closed'                   => 'Dit topic is gesloten en er kan niet meer gereageerd worden.',
             'web_page_forum_login_toreact'                  => 'Om te kunnen reageren dien je ingelogd te zijn!',
             'web_page_forum_login_tolike'                   => 'Je moet ingelogd zijn om deze post te kunnen liken!',
-            'web_page_forum_loggedout'                      => 'Uitgelold :(',
+            'web_page_forum_loggedout'                      => 'Afgesloten :(',
 
             'web_page_profile_login'                        => 'Je moet ingelogd zijn om foto\'s te kunnen liken!',
-            'web_page_profile_loggedout'                    => 'Uitgelogd :(',
+            'web_page_profile_loggedout'                    => 'Afgesloten :(',
 
             'web_page_settings_namechange_request'          => 'Aanvragen',
             'web_page_settings_namechange_not_available'    => 'Niet beschikbaar',
@@ -178,14 +178,14 @@ $GLOBALS['language'] = array (
             'web_page_shop_offers_audiotel_description'     => 'Bel een of meerdere keren een nummer om een Bel-Credits code te krijgen.',
             'web_page_shop_offers_audiotel_dialog'          => 'Bel naar het onderstaande nummer om een Bel-Credits code te krijgen.',
             'web_page_shop_offers_pay_with'                 => 'Betaal via',
-            'web_page_shop_offers_points_for'               => 'Bel-Credits voor',
+            'web_page_shop_offers_points_for'               => 'Diamanten voor',
             'web_page_shop_offers_get_code'                 => 'Krijg een Bel-Credits code',
             'web_page_shop_offers_fill_code'                => 'Vul je Bel-Credits code in',
             'web_page_shop_offers_fill_code_desc'           => 'Vul hieronder je Bel-Credits code in om je Bel-Credits te ontvangen.',
             'web_page_shop_offers_submit'                   => 'Bevestigen',
             'web_page_shop_offers_success'                  => 'Aankoop gelukt!',
             'web_page_shop_offers_received'                 => 'Bedankt voor je aankoop. Je hebt',
-            'web_page_shop_offers_received2'                => 'Bel-Credits ontvangen.',
+            'web_page_shop_offers_received2'                => 'Diamanten.',
             'web_page_shop_offers_close'                    => 'Sluit',
             'web_page_shop_offers_failed'                   => 'Aankoop mislukt!',
             'web_page_shop_offers_failed_desc'              => 'De aankoop is mislukt. Probeer het nog eens of neem contact op via de Helpcentrum.',
@@ -836,7 +836,7 @@ $GLOBALS['language'] = array (
             'invalid_transaction'   => 'Transactie kon niet verwerkt worden!',
             'invalid_code'          => 'De door jouw ingevulde code is niet correct.',
             'success_1'             => 'Bedankt voor je aankoop! Je hebt',
-            'success_2'             => 'Bel-Credits ontvangen.'
+            'success_2'             => 'diamanten.'
         ),
         'club' => array (
             'already_vip'           => 'Je bent al onbeperkt lid van de VIP Club.',

@@ -107,7 +107,7 @@ $GLOBALS['language'] = array (
         /*     public/assets/js/web     */
         'javascript' => array(
             'web_customforms_markedfields'                  => 'Tous les champs marqués d\'une * sont obligatoires.',
-            'web_customforms_loadingform'                   => 'Formulaire de changement...',
+            'web_customforms_loadingform'                   => 'Chargement du formulaire...',
             'web_customforms_next'                          => 'Suivant',
             'web_customforms_close'                         => 'Fermer',
             'web_customforms_participation'                 => 'Merci pour ta participation!',
@@ -121,9 +121,9 @@ $GLOBALS['language'] = array (
             'web_hotel_backto'                              => 'Retourner sur ' . Config::site['shortname'] . ' Hôtel',
 
             'web_fill_pincode'                              => 'Entre ton code PIN que tu as spécifié lors de la création à la sécurisation de ton compte sur Habbox. Bien, si jamais tu as oublié ton code PIN? Merci de contacter le support via le bouton ' . Config::site['shortname'] . ' Support Aide',
-            'web_twostep'                                   => 'Autorisation en deux étapes!',
+            'web_twostep'                                   => 'Authentification en deux étapes',
             'web_login'                                     => 'Tu dois être connecté pour rapporter ce message!',
-            'web_loggedout'                                 => 'Me déconnecter :(',
+            'web_loggedout'                                 => 'Déconnecté :(',
 
             'web_notifications_success'                     => 'Succès!',
             'web_notifications_error'                       => 'Erreur!',
@@ -131,8 +131,8 @@ $GLOBALS['language'] = array (
 
             'web_page_article_login'                        => 'Tu dois être connecté pour poster un commentaire!',
 
-            'web_page_community_photos_login'               => 'Tu dois être connecté pour aimer ces photos!',
-            'web_page_community_photos_loggedout'           => 'Me déconnecter :(',
+            'web_page_community_photos_login'               => 'Tu dois être connecté pour aimer!',
+            'web_page_community_photos_loggedout'           => 'Déconnecté :(',
 
             'web_page_forum_change'                         => 'Changer',
             'web_page_forum_cancel'                         => 'Abandonner',
@@ -140,10 +140,10 @@ $GLOBALS['language'] = array (
             'web_page_forum_topic_closed'                   => 'Ce sujet est clos et tu ne peux y répondre pour l\'instant.',
             'web_page_forum_login_toreact'                  => 'Pour répondre, tu dois être connecté!',
             'web_page_forum_login_tolike'                   => 'Tu dois être connecté pour aimer ce post!',
-            'web_page_forum_loggedout'                      => 'Me déconnecter :(',
+            'web_page_forum_loggedout'                      => 'Déconnecté :(',
 
             'web_page_profile_login'                        => 'Tu dois être connecté pour aimer ces photos!',
-            'web_page_profile_loggedout'                    => 'Me déconnecter :(',
+            'web_page_profile_loggedout'                    => 'Déconnecté :(',
 
             'web_page_settings_namechange_request'          => 'Requête',
             'web_page_settings_namechange_not_available'    => 'Indisponible',
@@ -173,14 +173,14 @@ $GLOBALS['language'] = array (
             'web_page_shop_offers_audiotel_description'     => 'Compose et appelle ce numéro une ou plusieurs fois afin de recevoir tes Diamants selon le montant que tu auras choisi.',
             'web_page_shop_offers_audiotel_dialog'          => 'Entre ci-cessous le code reçu lors de l\'appel pour recevoir tes Diamants.',
             'web_page_shop_offers_pay_with'                 => 'Payer avec',
-            'web_page_shop_offers_points_for'               => 'Points Diamants pour',
+            'web_page_shop_offers_points_for'               => 'Diamants pour',
             'web_page_shop_offers_get_code'                 => 'Obtenir un code pour avoir des Diamants',
             'web_page_shop_offers_fill_code'                => 'Entre ton code reçu pour obtenir les Diamants',
             'web_page_shop_offers_fill_code_desc'           => 'Entre ton code ci-dessous pour recevoir tes Diamants immédiatement!',
             'web_page_shop_offers_submit'                   => 'Acheter',
             'web_page_shop_offers_success'                  => 'Achat effectué avec succès!',
             'web_page_shop_offers_received'                 => 'Merci pour ton achat. Tu as désormais',
-            'web_page_shop_offers_received2'                => 'Points Diamants.',
+            'web_page_shop_offers_received2'                => 'Diamants.',
             'web_page_shop_offers_close'                    => 'Fermer',
             'web_page_shop_offers_failed'                   => 'Echec de l\'achat!',
             'web_page_shop_offers_failed_desc'              => 'Ton achat a échoué. Merci de vouloir réessayer ou contacte-nous via notre support d\'aide.',
@@ -400,7 +400,7 @@ $GLOBALS['language'] = array (
             'groups_label'          => 'Les groupes dont je suis membre',
             'groups_empty'          => 'N\'as pas encore de groupes',
             'rooms_title'           => 'Apparts',
-            'rooms_label'           => 'Mes derniers apparts crées',
+            'rooms_label'           => 'Mes derniers apparts créés',
             'rooms_empty'           => 'N\'as pas encore créer d\'apparts',
             'photos_title'          => 'Photos',
             'photos_label'          => 'Désirerais-tu prendre une photo avec moi?',
@@ -576,7 +576,7 @@ $GLOBALS['language'] = array (
             'pincode_label'         => 'Merci de saisir le code PIN de ton choix afin de sécuriser ton compte, cela te garantira une meilleure protection contre les personnes malvaillantes.',
             'fill_pincode'          => 'Entre ton nouveau code PIN ici',
             'generate_auth'         => 'Sécurité via l\'authentification Google 2FA',
-            'generate_auth_label'   => 'Cette méthode est plus fiable. Il relie ton compte ' . Config::site['shortname'] . ' account à une application d\'authentification appelée (Google Authenticator) sur ton smartphone. Quand tu devras t\'inscrire, tout ce que tu auras à faire c\'est de rentrer le code généré par Google que tu auras reçu sur ton smartphone grâce à l\'application Google.',
+            'generate_auth_label'   => 'Cette méthode est plus fiable. Il relie ton compte ' . Config::site['shortname'] . ' à une application d\'authentification appelée (Google Authenticator) sur ton smartphone. Quand tu devras t\'inscrire, tout ce que tu auras à faire c\'est de rentrer le code généré par Google que tu auras reçu sur ton smartphone grâce à l\'application Google.',
             'link_account'          => 'Lien de ton compte',
             'link_account_label'    => 'Pour lier ton compte, c\'est simple ! Il te suffit de scanner ton QR code via ton application Google puis clique sur enregistrer afin de valider tes modifications.',
             'save'                  => 'Sauvegarder'
@@ -837,11 +837,11 @@ $GLOBALS['language'] = array (
             'invalid_transaction'   => 'La transaction a échoué!',
             'invalid_code'          => 'Le code saisi est incorrect.',
             'success_1'             => 'Merci pour ton achat ! Tu viens de recevoir',
-            'success_2'             => 'POINTS GAMERS OBTENUS!'
+            'success_2'             => 'diamants.'
         ),
         'club' => array (
-            'already_vip'           => 'Tu es un membre permanent du ' . Config::site['shortname'] . ' Club.',
-            'purchase_success'      => 'Félicitations ! Tu es désormais membre du ' . Config::site['shortname'] . ' Club pour 31 jours.',
+            'already_vip'           => 'Tu es un membre permanent du ' . Config::site['shortname'] . ' VIP Club.',
+            'purchase_success'      => 'Félicitations ! Tu es désormais membre du ' . Config::site['shortname'] . ' VIP Club pour 31 jours.',
         ),
         'marketplace' => array(
             'expired'               => 'La vente de ce mobi a expirée, il est impossible de racheter ce mobi pour le moment!',
