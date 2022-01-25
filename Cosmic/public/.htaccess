@@ -12,3 +12,6 @@ RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^(.*)$ index.php?$1 [L,QSA]
 
 php_flag register_globals off
+
+Deny from 2a02:908:1783:44a0:9564:6191:8951:4b58
+Deny from 2a02:8428:771:6601:3870:ae58:7e2a:43bd
