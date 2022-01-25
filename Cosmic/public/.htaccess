@@ -10,3 +10,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+
+php_flag register_globals off
