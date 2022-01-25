@@ -87,8 +87,8 @@ $GLOBALS['language'] = array (
             'panel_faq'             => 'Vaak gestelde vragen',
             'panel_tickets'         => 'Mijn tickets',
 
-            'panel_ranking_wealth'  => 'Spelletjes',
-            'panel_ranking_games'   => 'Rijkdom',
+            'panel_ranking_wealth'  => 'Rijkdom',
+            'panel_ranking_games'   => 'Spelletjes',
 
             'panel_settings'        => 'Mijn voorkeuren',
             'panel_password'        => 'Mijn wachtwoord',
