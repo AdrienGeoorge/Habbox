@@ -196,7 +196,7 @@
     <a href="/profile/{{player.username}}">
         <div class="user-avatar-round_1 {{ theme == 'christmas' ? theme }}">
             <div class="user-avatar-round_2 {{ theme == 'christmas' ? theme }}">
-                <img src="{{site.fpath}}/avatarimage?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="user-avatar-image pixelated">
+                <img src="{{site.fpath}}/?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="user-avatar-image pixelated">
             </div>
         </div>
     </a>
@@ -391,7 +391,7 @@
         <div class="navigation-top-item">
             <a href="/profile/{{player.username}}" class="navigation-top-box">
                 <div class="flex_1">
-                    <img src="{{site.fpath}}/avatarimage?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="navigation-top-logo navigation-top-logo-user pixelated">
+                    <img src="{{site.fpath}}/?figure={{player.look}}&head_direction=3&headonly=1" alt="Avatar" class="navigation-top-logo navigation-top-logo-user pixelated">
                 </div>
                 <span class="flex_3 navigation-top-text">{{locale_base.user_profile}}</span>
             </a>

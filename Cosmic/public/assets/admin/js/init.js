@@ -265,7 +265,7 @@ var showOnlinePlayers = function() {
                             var output = '\
                                     <div class="kt-user-card-v2">\
                                         <div class="kt-user-card-v2__pic">\
-                                            <div class="kt-badge kt-badge--xl"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/avatarimage?figure=' + data.look + '&headonly=1&head_direction=3&size=s" alt="image"></span></div>\
+                                            <div class="kt-badge kt-badge--xl"><span class="kt-portlet__head-icon"><img src="' + Site.figure_url + '/?figure=' + data.look + '&headonly=1&head_direction=3&size=s" alt="image"></span></div>\
                                         </div>\
                                         <div class="kt-user-card-v2__details">\
                                             <a href="#" class="kt-user-card-v2__name" data-toggle="modal" data-target="#actionModal" data-id="' + data.username + '">' + data.username + '</a>\

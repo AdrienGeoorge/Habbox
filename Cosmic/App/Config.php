@@ -25,7 +25,7 @@ class Config
     const site = [
       "domain"      => "https://habbox.fr",
       "cpath"       => "https://habbox.fr/nitro",
-      "fpath"       => "https://images.habbox.fr/habbox-imaging",
+      "fpath"       => "https://images.habbox.fr/",
       "gpath"       => "https://habbox.fr/habbo-imaging",
       "shortname"   => "Habbox",
       "sitename"    => "Habbox"
@@ -43,7 +43,7 @@ class Config
     const mailHost      = "smtp.gmail.com";
     const mailFrom      = "habbox.helpcenter@gmail.com";
     const mailUser      = "habbox.helpcenter@gmail.com";
-    const mailPass      = "habboxhotel0294";
+    const mailPass      = "myhabboxfrance025994";
     const mailPort      = 587;
 
     /**
