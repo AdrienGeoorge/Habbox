@@ -8,16 +8,20 @@
     </div>
     <div class="photos-container" id="photos-container">
         {% for photo in data %}
-        <a href="{{photo.url}}" class="photo-picture" target="_blank" style="background-image: url({{photo.url}});" data-id="{{photo.id}}" data-title="{{photo.author}}">
-            <span class="photo-avatar tooltip">
-                <img src="{{site.fpath}}/?figure={{photo.figure}}&gesture=sml&headonly=1" alt="{{photo.author}}" class="pixelated">
+        <div>
+            <div href="{{photo.url}}" class="photo-picture" style="background-image: url({{photo.url}});"
+                 data-id="{{photo.id}}" data-title="{{photo.author}}">
+            </div>
+            <a href="/profile/{{photo.author}}" class="photo-avatar tooltip">
+                <img src="{{site.fpath}}/?figure={{photo.figure}}&gesture=sml&headonly=1" alt="{{photo.author}}"
+                     class="pixelated">
                 <span class="text">{{photo.author}}</span>
-            </span>
+            </a>
             <span class="photo-like">
                 <span class="likes-count fc-like" data-id="{{photo.id}}">{{photo.likes}}</span>
                 <i class="fa fa-heart" data-id="{{photo.id}}" style="color: #D67979;"></i>
             </span>
-        </a>
+        </div>
         {% endfor %}
     </div>
     <div class="load-more-button">

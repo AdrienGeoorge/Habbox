@@ -576,16 +576,17 @@ function WebPageCommunityPhotosInterface(main_page) {
 
     this.main_page = main_page;
     this.photo_template = [
-        '<a href="{story}" class="photo-picture" target="_blank" style="background-image: url({story});" data-title="{creator.username}">\n' +
-        '  <span class="photo-avatar tooltip">\n' +
-        '     <img src="/imaging/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated">\n' +
-        '     <span class="text">{creator.username}</span>\n' +
-        '  </span>\n' +
-        '  <span class="photo-like">\n' +
-        '     <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span>' +
-        '     <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>' +
-        '  </span>\n' +
-        '</a>\n'
+        '<div>\n' +
+        '   <div href="{story}" class="photo-picture" style="background-image: url({story});" data-id="{photo._id}" data-title="{creator.username}"></div>\n' +
+        '   <a href="/profile/{creator.username}" class="photo-avatar tooltip">\n' +
+        '       <img src="https://images.habbox.fr/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated">\n' +
+        '       <span class="text">{creator.username}</span>\n' +
+        '   </a>\n' +
+        '   <span class="photo-like">\n' +
+        '       <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span>' +
+        '       <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>' +
+        '   </span>\n' +
+        '</div>'
     ].join("");
     this.current_page = 1;
 
@@ -598,7 +599,7 @@ function WebPageCommunityPhotosInterface(main_page) {
 
         // Init photos gallery
         page_container.find(".photos-container").magnificPopup({
-            delegate: "a.photo-picture",
+            delegate: ".photo-picture",
             type: "image",
             closeOnContentClick: true,
             closeBtnInside: false,
@@ -642,7 +643,8 @@ function WebPageCommunityPhotosInterface(main_page) {
                 if (result.photos.length > 0) {
                     for (var i = 0; i < result.photos.length; i++) {
                         var photo_data = result.photos[i];
-                        var photo_template = $(self.photo_template.replace(/{story}/g, photo_data.url).replace(/{photo._id}/g, photo_data.id).replace(/{photo.likes}/g, photo_data.likes).replace(/{photo.date.full}/g, photo_data.timestamp).replace(/{photo.date.min}/g, photo_data.timestamp).replace(/{creator.username}/g, photo_data.author).replace(/{creator.figure}/g, photo_data.look));
+                        console.log(photo_data)
+                        var photo_template = $(self.photo_template.replace(/{story}/g, photo_data.url).replace(/{photo._id}/g, photo_data.id).replace(/{photo.likes}/g, photo_data.likes).replace(/{photo.date.full}/g, photo_data.timestamp).replace(/{photo.date.min}/g, photo_data.timestamp).replace(/{creator.username}/g, photo_data.author).replace(/{creator.figure}/g, photo_data.figure));
                         page_container.find(".photos-container").append(photo_template);
                         photo_template.fadeIn();
 

@@ -3024,24 +3024,38 @@ input:-webkit-autofill {
     padding: 0 2em;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-picture {
+.page-container[data-page="community_photos"] .page-content .photos-container div {
     width: 100%;
     height: 20em;
+    position: relative;
+    cursor: pointer;
+}
+
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-picture {
     background-size: cover;
     border-radius: 2em;
     position: relative;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-picture .photo-avatar {
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-avatar {
     position: absolute;
     bottom: 1em;
     left: 1em;
-    background-color: white;
-    border-radius: 4em;
+    background-color: rgb(251, 251, 251);
+    border-radius: 2em;
     padding: 0.5em;
+    width: 6em;
+    height: 6em;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-picture .photo-like {
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-avatar img {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-like {
     position: absolute;
     bottom: 1em;
     right: 1em;
