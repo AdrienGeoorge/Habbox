@@ -30,11 +30,6 @@
         padding: 0 10px;
     }
 
-    /* Page - Photos */
-    .page-container[data-page="community_photos"] .page-content .photos-container{
-        margin: -9px 9px 40px;
-    }
-
     .page-container[data-page="community_photos"] .page-content .photos-container .photo-container{
         width: 33.33%;
     }

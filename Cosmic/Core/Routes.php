@@ -76,7 +76,7 @@ class Routes extends Router
                 parent::get('/articles', 'Community\Articles@index');
                 parent::get('/article/{slug}', 'Community\Articles@index', ['defaultParameterRegex' => '[\w\-]+']);
 
-//                parent::get('/community/photos', 'Community\Photos@index');
+                parent::get('/community/photos', 'Community\Photos@index');
                 parent::get('/community/staff', 'Community\Staff@index');
 //                parent::get('/community/team', 'Community\Staff@team');
 

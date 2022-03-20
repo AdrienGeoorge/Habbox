@@ -37,13 +37,13 @@ class Photos
 
     public function more()
     {
-        $this->index(input('offset'), true);
+        $this->index(input()->post('offset')->value, true);
         response()->json(['photos' => $this->data->photos]);
     }
 
     public function index($offset = 0, $request = false)
     {
-        if(is_array($offset)) {
+        if($offset === 0) {
             $photos = Community::getPhotos(12);
         } else {
             $photos = Community::getPhotos(12, $offset);

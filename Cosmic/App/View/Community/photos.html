@@ -6,27 +6,18 @@
         {{locale.title}}
         {% include "Community/panel.html" %}
     </div>
-    <header class="page-header flex-container flex-vertical-center">
-        <div class="page-header-content">
-            <h1>{{locale.photos_by}} {{site.shortname}}'s</h1>
-            {{locale.photos_desc}} {{site.shortname}}'s.
-        </div>
-    </header>
-    <div class="photos-container mt_3">
+    <div class="photos-container" id="photos-container">
         {% for photo in data %}
-        <div class="photo-container">
-            <div class="photo-content">
-                <a href="{{photo.url}}" class="photo-picture" target="_blank" style="background-image: url({{photo.url}});" data-id="{{photo.id}}" data-title="{{photo.timestamp|date("d-M H:i")}} {{locale.by}} {{photo.author}}"></a>
-                <a href="#" class="photo-meta flex-container flex-vertical-center">
-                    <div class="photo-meta-left-side"><img src="{{site.fpath}}/?figure={{photo.figure}}&gesture=sml&headonly=1" alt="{{photo.author}}" class="pixelated"></div>
-                    <div class="photo-meta-right-side">
-                        <div class="creator-name">{{photo.author}}</div>
-                        <div class="published-date">{{photo.timestamp|date("d-M H:i")}}</div>
-                        <span class="likes-count fc-like" data-id="{{photo.id}}">{{photo.likes}}</span> <i class="fa fa-heart" data-id="{{photo.id}}" style="color: #D67979;"></i></i>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <a href="{{photo.url}}" class="photo-picture" target="_blank" style="background-image: url({{photo.url}});" data-id="{{photo.id}}" data-title="{{photo.author}}">
+            <span class="photo-avatar tooltip">
+                <img src="{{site.fpath}}/?figure={{photo.figure}}&gesture=sml&headonly=1" alt="{{photo.author}}" class="pixelated">
+                <span class="text">{{photo.author}}</span>
+            </span>
+            <span class="photo-like">
+                <span class="likes-count fc-like" data-id="{{photo.id}}">{{photo.likes}}</span>
+                <i class="fa fa-heart" data-id="{{photo.id}}" style="color: #D67979;"></i>
+            </span>
+        </a>
         {% endfor %}
     </div>
     <div class="load-more-button">

@@ -576,19 +576,16 @@ function WebPageCommunityPhotosInterface(main_page) {
 
     this.main_page = main_page;
     this.photo_template = [
-        '<div class="photo-container" style="display: none;">\n' +
-        '    <div class="photo-content">\n' +
-        '        <a href="{story}" class="photo-picture" target="_blank" style="background-image: url({story});" data-title="{photo.date.min} door {creator.username}"></a>\n' +
-        '        <a href="#" class="photo-meta flex-container flex-vertical-center">\n' +
-        '            <div class="photo-meta-left-side"><img src="/imaging/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated"></div>\n' +
-        '            <div class="photo-meta-right-side">\n' +
-        '                <div class="creator-name">{creator.username}</div>\n' +
-        '                <div class="published-date">{photo.date.full}</div>\n' +
-        '                <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span> <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>  <i class="fa fa-flag" data-id="{photo._id}" data-report="photo" style="color: #7B7777;"></i>' +
-        '            </div>\n' +
-        '        </a>\n' +
-        '    </div>\n' +
-        '</div>'
+        '<a href="{story}" class="photo-picture" target="_blank" style="background-image: url({story});" data-title="{creator.username}">\n' +
+        '  <span class="photo-avatar tooltip">\n' +
+        '     <img src="/imaging/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated">\n' +
+        '     <span class="text">{creator.username}</span>\n' +
+        '  </span>\n' +
+        '  <span class="photo-like">\n' +
+        '     <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span>' +
+        '     <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>' +
+        '  </span>\n' +
+        '</a>\n'
     ].join("");
     this.current_page = 1;
 
@@ -603,21 +600,17 @@ function WebPageCommunityPhotosInterface(main_page) {
         page_container.find(".photos-container").magnificPopup({
             delegate: "a.photo-picture",
             type: "image",
-            closeOnContentClick: false,
+            closeOnContentClick: true,
             closeBtnInside: false,
             mainClass: "mfp-with-zoom mfp-img-mobile",
             image: {
                 verticalFit: true,
                 titleSrc: function (item) {
-                    if (User.is_logged == true) {
-                        return '<i class="fa fa-flag" data-value="photos" data-id="' + item.el.attr("data-id") + '" data-report="photo" style="color: #fff;"></i> ' + item.el.attr("data-title");
-                    } else {
-                        return item.el.attr("data-title");
-                    }
+                    return item.el.attr("data-title");
                 }
             },
             gallery: {
-                enabled: true
+                enabled: false
             },
             zoom: {
                 enabled: true,
@@ -639,7 +632,8 @@ function WebPageCommunityPhotosInterface(main_page) {
         page_container.find(".load-more-button button").click(function () {
 
             var csrftoken = $("[name=csrftoken]").val();
-            var countdivs = $('.photo-container').length;
+            let container = document.getElementById('photos-container');
+            var countdivs = container.childElementCount;
             Web.ajax_manager.post("/community/photos/more", {
                 current_page: self.current_page,
                 offset: countdivs,
@@ -658,6 +652,8 @@ function WebPageCommunityPhotosInterface(main_page) {
                     }
 
                     self.current_page = result.current_page;
+                } else {
+                    page_container.find(".load-more-button button").html('Il n\'y a plus de photos').unbind();
                 }
             });
         });
