@@ -244,7 +244,7 @@ var help = function() {
                             class: " kt-badge--danger"
                         },
                         "wait_reply": {
-                            title: "WAITING",
+                            title: "En attente",
                             class: " kt-badge--info"
                         }
                     };
