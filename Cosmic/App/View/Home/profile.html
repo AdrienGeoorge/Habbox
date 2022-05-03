@@ -3,7 +3,7 @@
 <div class="page-content">
     <div class="flex-body profile">
         <div class="profile-avatar">
-            <img src="{{site.fpath}}/avatarimage?figure={{data.player.look}}&direction=2&gesture=sml&size=l"
+            <img src="{{site.fpath}}/?figure={{data.player.look}}&direction=2&gesture=sml&size=l"
                  alt="{{data.player.username}}" class="pixelated">
         </div>
         <div class="box flex_3 profile-user-infos">
@@ -75,7 +75,7 @@
                         <div class="flex-body profile-feed" data-id="{{feed.id}}" id="{{feed.id}}">
                             <div class="comment-avatar-flex">
                                 <a href="/profile/{{feed.username}}" class="comment-avatar">
-                                    <img src="{{site.fpath}}/avatarimage?figure={{feed.look}}&head_direction=2&size=m&headonly=1"
+                                    <img src="{{site.fpath}}/?figure={{feed.look}}&head_direction=2&size=m&headonly=1"
                                          alt="" class="flex_1 pixelated" style="width: 5em;">
                                 </a>
                             </div>
@@ -178,7 +178,7 @@
                     {% if data.player.friends %}
                     {% for row in data.player.friends %}
                     <a href="/profile/{{row.username}}" class="profile-badge tooltip">
-                        <img src="{{site.fpath}}/avatarimage?figure={{row.look}}&head_direction=3&headonly=1&size=m"
+                        <img src="{{site.fpath}}/?figure={{row.look}}&head_direction=3&headonly=1&size=m"
                              alt="" class="pixelated" style="top: 83%;">
                         <span class="text">{{row.username}}</span>
                     </a>

@@ -177,8 +177,8 @@ function WebPageArticleInterface(main_page) {
             ['<div class="flex-body comment" data-id="{{post.id}}">\n' +
             '    <div class="comment-avatar-flex">\n' +
             '       <a href="/profile/' + User.username + '" class="comment-avatar">\n' +
-            '           <img src="' + Site.figure_url + '/avatarimage?figure={{figure}}&head_direction=2&size=m&headonly=1"\n' +
-            '                                     alt="" class="flex_1">\n' +
+            '           <img src="' + Site.figure_url + '/?figure={{figure}}&head_direction=2&size=m&headonly=1"\n' +
+            '                                     alt="" class="flex_1 pixelated">\n' +
             '       </a>\n' +
             '    </div>\n' +
             '    <div class="flex_5 comment-user-flex">\n' +
@@ -580,7 +580,7 @@ function WebPageCommunityPhotosInterface(main_page) {
         '    <div class="photo-content">\n' +
         '        <a href="{story}" class="photo-picture" target="_blank" style="background-image: url({story});" data-title="{photo.date.min} door {creator.username}"></a>\n' +
         '        <a href="#" class="photo-meta flex-container flex-vertical-center">\n' +
-        '            <div class="photo-meta-left-side"><img src="/imaging/avatarimage?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated"></div>\n' +
+        '            <div class="photo-meta-left-side"><img src="/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated"></div>\n' +
         '            <div class="photo-meta-right-side">\n' +
         '                <div class="creator-name">{creator.username}</div>\n' +
         '                <div class="published-date">{photo.date.full}</div>\n' +
@@ -853,7 +853,7 @@ function WebPageRegistrationInterface(main_page) {
         var page_container = this.main_page.get_page_container();
         var avatars_preload = page_container.find(".avatars-preload");
         var avatar_preload = avatars_preload.find("." + this.gender + "-avatar" + avatar).attr("src");
-        var avatar_figure = avatar_preload.replace(Site.figure_url + "/avatarimage?figure=", "").replace("&direction=4&size=l", "");
+        var avatar_figure = avatar_preload.replace(Site.figure_url + "/?figure=", "").replace("&direction=4&size=l", "");
 
         page_container.find(".avatars-container input[name = 'figure']").val(avatar_figure);
         page_container.find(".avatars-container .avatar-container img").attr("src", avatar_preload);

@@ -80,11 +80,6 @@ class Articles
             response()->json(["status" => "error", "message" => Locale::get('website/article/forbidden_words')]);
           }
         }
-      
-        $latestReaction = Community::latestArticleReaction($article->id);
-        if(!empty($latestReaction) && $latestReaction->player_id == request()->player->id) {
-            response()->json(["status" => "error", "message" => Locale::get('core/notification/something_wrong')]);
-        }
 
         Community::addNewsReaction($article->id, request()->player->id, $message);
         response()->json(["status" => "success", "message" => Locale::get('core/notification/message_placed'), "bericht" => $message, "figure" => request()->player->look]);

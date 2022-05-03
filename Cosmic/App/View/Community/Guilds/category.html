@@ -39,7 +39,7 @@
                     <tbody>
                     {% for topic in forums.topic %}
                     <tr {% if topic.pinned == 1 %}style="background: #dff0d8;"{% endif %}>
-                        <td><img src="{{site.fpath}}/avatarimage?figure={{topic.author.look}}&gesture=sml&headonly=1" alt="{{topic.author.username}}" class="pixelated"></td>
+                        <td><img src="{{site.fpath}}/?figure={{topic.author.look}}&gesture=sml&headonly=1" alt="{{topic.author.username}}" class="pixelated"></td>
                         <td>
                             {% if topic.pinned == 1 %}<img src="/assets/images/web/pages/forum/sticky_icon.gif" data-toggle="tooltip" title="Dit topic is een sticky">{% endif %}
                             {% if topic.locked == 1 %}<img src="/assets/images/web/pages/forum/locked_icon.gif" data-toggle="tooltip" title="Dit topic is een sticky">{% endif %}

@@ -7,7 +7,7 @@
         <div class="scroll">
             {% for friend in friends %}
             <a href="/profile/{{friend.username}}" class="one-friend">
-                <img src="{{site.fpath}}/avatarimage?figure={{friend.look}}&head_direction=3&headonly=1" alt="Avatar"
+                <img src="{{site.fpath}}/?figure={{friend.look}}&head_direction=3&headonly=1" alt="Avatar"
                      class="user pixelated {% if not friend.online %}offline{% endif %}">
             </a>
             {% endfor %}

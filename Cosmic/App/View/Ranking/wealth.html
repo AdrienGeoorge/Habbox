@@ -28,7 +28,7 @@
             {% for key, credits in credits %}
             <div class="box rank-box">
                 <a href="/profile/{{credits.player.username}}">
-                    <img src="{{site.fpath}}/avatarimage?figure={{credits.player.look}}&head_direction=3&headonly=1&size=l"
+                    <img src="{{site.fpath}}/?figure={{credits.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{credits.player.look}}" class="pixelated rank-look">
                     {{credits.player.username}}
                 </a>
@@ -53,7 +53,7 @@
             {% for key, user in currency %}
             <div class="box rank-box">
                 <a href="/profile/{{user.player.username}}">
-                    <img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
+                    <img src="{{site.fpath}}/?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{user.player.look}}" class="pixelated rank-look">
                     {{user.player.username}}
                 </a>

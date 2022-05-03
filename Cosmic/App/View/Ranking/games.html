@@ -28,7 +28,7 @@
             {% for key, user in currencys %}
             <div class="box rank-box">
                 <a href="/profile/{{user.player.username}}">
-                    <img src="{{site.fpath}}/avatarimage?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
+                    <img src="{{site.fpath}}/?figure={{user.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{user.player.look}}" class="pixelated rank-look">
                     {{user.player.username}}
                 </a>
@@ -51,7 +51,7 @@
             {% for key, achievements in achievements %}
             <div class="box rank-box">
                 <a href="/profile/{{achievements.player.username}}">
-                    <img src="{{site.fpath}}/avatarimage?figure={{achievements.player.look}}&head_direction=3&headonly=1&size=l"
+                    <img src="{{site.fpath}}/?figure={{achievements.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{achievements.player.look}}" class="pixelated rank-look">
                     {{achievements.player.username}}
                 </a>
@@ -74,7 +74,7 @@
             {% for key, online in online %}
             <div class="box rank-box">
                 <a href="/profile/{{online.player.username}}">
-                    <img src="{{site.fpath}}/avatarimage?figure={{online.player.look}}&head_direction=3&headonly=1&size=l"
+                    <img src="{{site.fpath}}/?figure={{online.player.look}}&head_direction=3&headonly=1&size=l"
                          alt="{{online.player.look}}" class="pixelated rank-look">
                     {{online.player.username}}
                 </a>
