@@ -188,7 +188,7 @@ class Player
         return QueryBuilder::connection()->query('SELECT * FROM rooms WHERE owner_id = "' . $player_id . '" AND state != "INVISIBLE" ORDER BY RAND() LIMIT ' . $limit)->get();
     }
 
-    public static function getPhotos($player_id, $limit = 6)
+    public static function getPhotos($player_id, $limit = 4)
     {
         return QueryBuilder::connection()->query('SELECT * FROM camera_web WHERE user_id = "' . $player_id . '" ORDER BY RAND() LIMIT  ' . $limit)->get();
     }

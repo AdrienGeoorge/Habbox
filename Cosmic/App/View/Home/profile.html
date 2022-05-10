@@ -225,7 +225,7 @@
             </div>
         </div>
     </div>
-    <!--<div class="flex-body profile mt_2">
+    <div class="flex-body profile mt_2">
         <div class="flex_1">
             <div class="box">
                 <div class="box-title">
@@ -234,12 +234,12 @@
                         <img src="/assets/icons/profile/photos.svg" alt="" class="team-title-badge">
                     </div>
                 </div>
-                <div class="profile-badges" style="flex-wrap: wrap">
+                <div class="profile-photos">
                     {% if data.player.photos %}
                     {% for row in data.player.photos %}
-                    <a href="{{row.url}}" class="item-container photos" target="_blank" style="flex: 1 0 30%;">
-                        <img src="{{row.url}}" alt="" class="pixelated" style="width:100%; border-radius: 15px;">
-                    </a>
+                    <div href="{{row.url}}" class="profile-photo">
+                        <img src="{{row.url}}" alt="" class="pixelated">
+                    </div>
                     {% endfor %}
                     {% else %}
                     <p class="text-center w-100">{{locale.photos_empty}}</p>
@@ -247,6 +247,6 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 </div>
 {% endblock %}

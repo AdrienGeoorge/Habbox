@@ -6804,6 +6804,18 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     transform: translate(-50%, -50%);
 }
 
+.profile-photos {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+}
+
+.profile-photo img {
+    width: 100%;
+    border-radius: 15px;
+}
+
 .profile-connect-infos {
     text-align: center;
     display: flex;
