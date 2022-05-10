@@ -3005,80 +3005,53 @@ input:-webkit-autofill {
 }
 
 /* Page - Photos */
-.page-container[data-page="community_photos"] .page-header {
-    background-image: url(../images/web/pages/photos/banner.png);
-    background-color: #917557;
-}
-
 .page-container[data-page="community_photos"] .page-content .photos-container {
-    margin: -9px -9px 40px;
+    margin: 3em 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    padding: 0 2em;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container {
-    width: 25%;
-    float: left;
+.page-container[data-page="community_photos"] .page-content .photos-container div {
+    width: 100%;
+    height: 20em;
+    position: relative;
+    cursor: pointer;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content {
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    width: 250px;
-    height: 250px;
-    margin: 9px auto;
-    position: sticky;
-    overflow: hidden;
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-picture {
+    background-size: cover;
+    border-radius: 2em;
+    position: relative;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-picture {
-    background-position: center;
-    background-repeat: no-repeat;
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-avatar {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-    z-index: 1;
-    display: block;
+    bottom: 1em;
+    left: 1em;
+    background-color: rgb(251, 251, 251);
+    border-radius: 2em;
+    padding: 0.5em;
+    width: 6em;
+    height: 6em;
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-meta {
-    background-color: rgba(255, 255, 255, 0.8);
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-avatar img {
     position: absolute;
-    left: 2px;
-    right: 2px;
-    bottom: -85px;
-    z-index: 2;
-    color: #333;
-    text-decoration: none;
-    -webkit-transition: bottom 0.2s ease 0s;
-    transition: bottom 0.2s ease 0s;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
 }
 
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content:hover .photo-meta {
-    bottom: 2px;
-}
-
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-meta .photo-meta-left-side {
-    width: 70px;
-    height: 78px;
-    text-align: center;
-    font-size: 0;
-    padding: 8px 0;
-}
-
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-meta .photo-meta-right-side {
-    padding-right: 10px;
-}
-
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-meta .photo-meta-right-side .creator-name {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.page-container[data-page="community_photos"] .page-content .photos-container .photo-container .photo-content .photo-meta .photo-meta-right-side .published-date {
-    font-size: 12px;
-    font-weight: 400;
+.page-container[data-page="community_photos"] .page-content .photos-container div .photo-like {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    color: #424354;
 }
 
 /* Page - Forums */

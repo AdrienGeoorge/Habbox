@@ -124,7 +124,7 @@ $GLOBALS['language'] = array (
             'web_hotel_backto'                              => 'Back to ' . Config::site['shortname'] . ' Hotel',
 
             'web_fill_pincode'                              => 'Enter the pin code that you specified when creating the extra security on your account. Well, I forgot this one? Then contact us via the ' . Config::site['shortname'] . ' Help Tool',
-            'web_twostep'                                   => 'Two-step authorization!',
+            'web_twostep'                                   => 'Two-step authentification!',
             'web_login'                                     => 'You must be logged in to report this message!',
             'web_loggedout'                                 => 'Logged out :(',
 
@@ -134,7 +134,7 @@ $GLOBALS['language'] = array (
 
             'web_page_article_login'                        => 'You must be logged in to post a comment!',
 
-            'web_page_community_photos_login'               => 'You must be logged in to like photos!',
+            'web_page_community_photos_login'               => 'You have to be connected to like it!',
             'web_page_community_photos_loggedout'           => 'Logged out :(',
 
             'web_page_forum_change'                         => 'Change',
@@ -145,7 +145,7 @@ $GLOBALS['language'] = array (
             'web_page_forum_login_tolike'                   => 'You must be logged in to like this post!',
             'web_page_forum_loggedout'                      => 'Logged out :(',
 
-            'web_page_profile_login'                        => 'You must be logged in to like photos!',
+            'web_page_profile_login'                        => 'You have to be connected to like it!',
             'web_page_profile_loggedout'                    => 'Logged out :(',
 
             'web_page_settings_namechange_request'          => 'Request',
@@ -164,26 +164,26 @@ $GLOBALS['language'] = array (
             'web_page_settings_verification_switch'         => 'Select the switch button to enable an authentication method!',
 
             'web_page_shop_offers_neosurf_name'             => 'Neosurf',
-            'web_page_shop_offers_neosurf_description'      => 'Pay easily with Paypal and your GOTW-Points will be topped up immediately.',
+            'web_page_shop_offers_neosurf_description'      => 'Pay easily with Paypal and your diamonds will be topped up immediately.',
             'web_page_shop_offers_neosurf_dialog'           => 'Enter your Paypal e-mailaddress below to continue.',
             'web_page_shop_offers_paypal_name'              => 'Paypal',
-            'web_page_shop_offers_paypal_description'       => 'Pay easily with Paypal and your GOTW-Points will be topped up immediately.',
+            'web_page_shop_offers_paypal_description'       => 'Pay easily with Paypal and your diamonds will be topped up immediately.',
             'web_page_shop_offers_paypal_dialog'            => 'Enter your Paypal e-mailaddress below to continue.',
             'web_page_shop_offers_sms_name'                 => 'SMS',
-            'web_page_shop_offers_sms_description'          => 'Send a code by SMS and receive a GOTW-Points code.',
-            'web_page_shop_offers_sms_dialog'               => 'Send the code below in an SMS to get a GOTW-Points code.',
+            'web_page_shop_offers_sms_description'          => 'Send a code by SMS and receive a diamonds code.',
+            'web_page_shop_offers_sms_dialog'               => 'Send the code below in an SMS to get a diamonds code.',
             'web_page_shop_offers_audiotel_name'            => 'Audiotel',
-            'web_page_shop_offers_audiotel_description'     => 'Call a number one or more times to get a GOTW-Points code.',
-            'web_page_shop_offers_audiotel_dialog'          => 'Call the number below to get a GOTW-Points code.',
+            'web_page_shop_offers_audiotel_description'     => 'Call a number one or more times to get a diamonds code.',
+            'web_page_shop_offers_audiotel_dialog'          => 'Call the number below to get a diamonds code.',
             'web_page_shop_offers_pay_with'                 => 'Pay with',
-            'web_page_shop_offers_points_for'               => 'GOTW-Points for',
-            'web_page_shop_offers_get_code'                 => 'Get a GOTW-Points code',
-            'web_page_shop_offers_fill_code'                => 'Enter your GOTW-Points code',
-            'web_page_shop_offers_fill_code_desc'           => 'Enter your GOTW-Points code below to receive your GOTW-Points.',
+            'web_page_shop_offers_points_for'               => 'diamonds for',
+            'web_page_shop_offers_get_code'                 => 'Get a diamonds code',
+            'web_page_shop_offers_fill_code'                => 'Enter your diamonds code',
+            'web_page_shop_offers_fill_code_desc'           => 'Enter your diamonds code below to receive your diamonds.',
             'web_page_shop_offers_submit'                   => 'Submit',
             'web_page_shop_offers_success'                  => 'Purchase successful!',
             'web_page_shop_offers_received'                 => 'Thank you for your purchase. You got',
-            'web_page_shop_offers_received2'                => 'GOTW-Points.',
+            'web_page_shop_offers_received2'                => 'diamonds.',
             'web_page_shop_offers_close'                    => 'Close',
             'web_page_shop_offers_failed'                   => 'Purchase failed!',
             'web_page_shop_offers_failed_desc'              => 'The purchase failed. Try again or contact us via the Help Tool.',
@@ -817,8 +817,8 @@ $GLOBALS['language'] = array (
             'success_2'             => 'gotw-points.'
         ),
         'club' => array (
-            'already_vip'           => 'You are an unlimited member of the ' . Config::site['shortname'] . ' Club.',
-            'purchase_success'      => 'Yeah! You are now a member of the ' . Config::site['shortname'] . ' Club for 31 days.'
+            'already_vip'           => 'You are an unlimited member of the ' . Config::site['shortname'] . ' VIP Club.',
+            'purchase_success'      => 'Yeah! You are now a member of the ' . Config::site['shortname'] . ' VIP Club for 31 days.'
 
         ),
         'marketplace' => array(

@@ -52,7 +52,36 @@ function WebHotelManagerInterface() {
             if (container.find(".client-frame").length === 0)
 
                 Web.ajax_manager.get("/api/ssoTicket", function(result) {
-                    container.prepend('<iframe class="client-frame nitro" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
+                    container.prepend('<iframe id="nitro" class="client-frame" src="' + Client.nitro_path + '/?sso=' + result.ticket + '"></iframe>');
+
+                    let frame = document.getElementById('nitro');
+
+                    window.FlashExternalInterface = {};
+                    window.FlashExternalInterface.disconnect = () => {
+                        Web.notifications_manager.create("error", "Tu as été déconnecté de l'hôtel!");
+                        Web.pages_manager.load('/home');
+                    };
+
+                    if (frame && frame.contentWindow) {
+                        window.addEventListener("message", ev => {
+                            if (!frame || ev.source !== frame.contentWindow) return;
+                            const legacyInterface = "Nitro_LegacyExternalInterface";
+                            if (typeof ev.data !== "string") return;
+                            if (ev.data.startsWith(legacyInterface)) {
+                                const {
+                                    method,
+                                    params
+                                } = JSON.parse(
+                                    ev.data.substr(legacyInterface.length)
+                                );
+                                if (!("FlashExternalInterface" in window)) return;
+                                const fn = window.FlashExternalInterface[method];
+                                if (!fn) return;
+                                fn(...params);
+                                return;
+                            }
+                        });
+                    }
                 });
 
             document.title = 'Hotel - ' + Site.name;
@@ -576,18 +605,16 @@ function WebPageCommunityPhotosInterface(main_page) {
 
     this.main_page = main_page;
     this.photo_template = [
-        '<div class="photo-container" style="display: none;">\n' +
-        '    <div class="photo-content">\n' +
-        '        <a href="{story}" class="photo-picture" target="_blank" style="background-image: url({story});" data-title="{photo.date.min} door {creator.username}"></a>\n' +
-        '        <a href="#" class="photo-meta flex-container flex-vertical-center">\n' +
-        '            <div class="photo-meta-left-side"><img src="/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated"></div>\n' +
-        '            <div class="photo-meta-right-side">\n' +
-        '                <div class="creator-name">{creator.username}</div>\n' +
-        '                <div class="published-date">{photo.date.full}</div>\n' +
-        '                <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span> <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>  <i class="fa fa-flag" data-id="{photo._id}" data-report="photo" style="color: #7B7777;"></i>' +
-        '            </div>\n' +
-        '        </a>\n' +
-        '    </div>\n' +
+        '<div>\n' +
+        '   <div href="{story}" class="photo-picture" style="background-image: url({story});" data-id="{photo._id}" data-title="{creator.username}"></div>\n' +
+        '   <a href="/profile/{creator.username}" class="photo-avatar tooltip">\n' +
+        '       <img src="https://images.habbox.fr/?figure={creator.figure}&gesture=sml&headonly=1" alt="{creator.username}" class="pixelated">\n' +
+        '       <span class="text">{creator.username}</span>\n' +
+        '   </a>\n' +
+        '   <span class="photo-like">\n' +
+        '       <span class="likes-count fc-like" data-id="{photo._id}">{photo.likes}</span>' +
+        '       <i class="fa fa-heart" data-id="{photo._id}" style="color: #D67979;"></i>' +
+        '   </span>\n' +
         '</div>'
     ].join("");
     this.current_page = 1;
@@ -601,23 +628,19 @@ function WebPageCommunityPhotosInterface(main_page) {
 
         // Init photos gallery
         page_container.find(".photos-container").magnificPopup({
-            delegate: "a.photo-picture",
+            delegate: ".photo-picture",
             type: "image",
-            closeOnContentClick: false,
+            closeOnContentClick: true,
             closeBtnInside: false,
             mainClass: "mfp-with-zoom mfp-img-mobile",
             image: {
                 verticalFit: true,
                 titleSrc: function (item) {
-                    if (User.is_logged == true) {
-                        return '<i class="fa fa-flag" data-value="photos" data-id="' + item.el.attr("data-id") + '" data-report="photo" style="color: #fff;"></i> ' + item.el.attr("data-title");
-                    } else {
-                        return item.el.attr("data-title");
-                    }
+                    return item.el.attr("data-title");
                 }
             },
             gallery: {
-                enabled: true
+                enabled: false
             },
             zoom: {
                 enabled: true,
@@ -639,7 +662,8 @@ function WebPageCommunityPhotosInterface(main_page) {
         page_container.find(".load-more-button button").click(function () {
 
             var csrftoken = $("[name=csrftoken]").val();
-            var countdivs = $('.photo-container').length;
+            let container = document.getElementById('photos-container');
+            var countdivs = container.childElementCount;
             Web.ajax_manager.post("/community/photos/more", {
                 current_page: self.current_page,
                 offset: countdivs,
@@ -648,7 +672,7 @@ function WebPageCommunityPhotosInterface(main_page) {
                 if (result.photos.length > 0) {
                     for (var i = 0; i < result.photos.length; i++) {
                         var photo_data = result.photos[i];
-                        var photo_template = $(self.photo_template.replace(/{story}/g, photo_data.url).replace(/{photo._id}/g, photo_data.id).replace(/{photo.likes}/g, photo_data.likes).replace(/{photo.date.full}/g, photo_data.timestamp).replace(/{photo.date.min}/g, photo_data.timestamp).replace(/{creator.username}/g, photo_data.author).replace(/{creator.figure}/g, photo_data.look));
+                        var photo_template = $(self.photo_template.replace(/{story}/g, photo_data.url).replace(/{photo._id}/g, photo_data.id).replace(/{photo.likes}/g, photo_data.likes).replace(/{photo.date.full}/g, photo_data.timestamp).replace(/{photo.date.min}/g, photo_data.timestamp).replace(/{creator.username}/g, photo_data.author).replace(/{creator.figure}/g, photo_data.figure));
                         page_container.find(".photos-container").append(photo_template);
                         photo_template.fadeIn();
 
@@ -658,6 +682,8 @@ function WebPageCommunityPhotosInterface(main_page) {
                     }
 
                     self.current_page = result.current_page;
+                } else {
+                    page_container.find(".load-more-button button").html('Il n\'y a plus de photos').unbind();
                 }
             });
         });

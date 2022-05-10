@@ -12,7 +12,7 @@ class Community
 
     public static function getPhotos($limit = 10, $offset = 0)
     {
-        return QueryBuilder::connection()->table('camera_web')->offset($offset)->limit($limit)->orderBy('id', 'desc')->get();
+        return QueryBuilder::connection()->table('camera_web')->offset($offset)->limit($limit)->orderBy('id', 'asc')->get();
     }
 
     public static function getPhotoById($id)
