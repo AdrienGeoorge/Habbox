@@ -7611,4 +7611,10 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     .team-users {
         text-align: center;
     }
+
+    .shop-grid {
+        width: 88vw;
+        overflow-y: scroll;
+        margin: auto;
+    }
 }
