@@ -2,6 +2,12 @@
     display: none !important;
 }
 
+.room-thumbnail {
+    width: 80%;
+    height: 80%;
+    border-radius: 0.5em;
+}
+
 /* BUILD TOOL */
 
 #buildTool {

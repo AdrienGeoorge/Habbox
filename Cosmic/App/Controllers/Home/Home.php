@@ -29,6 +29,12 @@ class Home
             $currencys = Player::getCurrencys(request()->player->id);
         }
 
+        foreach ($rooms as $room) {
+            if (file_exists('./../public/nitro/camera/thumbnails/' . $room->id . '.png')) {
+                $room->thumbnail = true;
+            }
+        }
+
         $dirnameBadges = './../public/nitro/c_images/album1584/';
         $dirBadges = scandir($dirnameBadges, SCANDIR_SORT_DESCENDING);
         $badges = [];

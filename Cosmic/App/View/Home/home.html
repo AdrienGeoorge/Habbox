@@ -63,14 +63,20 @@
                         {% for row in rooms %}
                         {% if player %}
                         <a href="/api/room/{{row.id}}" class="profile-badge tooltip">
-                            <!-- <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">&ndash;&gt;-->
+                            {% if row.thumbnail %}
+                             <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated room-thumbnail">
+                            {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
+                            {% endif %}
                             <div class="text">{{row.name}}</div>
                         </a>
                         {% else %}
                         <div class="profile-badge tooltip">
-                            <!-- <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">&ndash;&gt;-->
+                            {% if row.thumbnail %}
+                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">
+                            {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
+                            {% endif %}
                             <div class="text">{{row.name}}</div>
                         </div>
                         {% endif %}

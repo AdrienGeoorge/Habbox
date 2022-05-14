@@ -203,16 +203,22 @@
                     {% if player %}
                     <a href="/api/room/{{row.id}}" class="item-container">
                         <div class="profile-badge tooltip">
-                            <!--                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">-->
+                            {% if row.thumbnail %}
+                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated room-thumbnail">
+                            {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
+                            {% endif %}
                             <span class="text">{{row.name}}</span>
                         </div>
                     </a>
                     {% else %}
                     <div class="item-container">
                         <div class="profile-badge tooltip">
-                            <!--                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">-->
+                            {% if row.thumbnail %}
+                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated room-thumbnail">
+                            {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
+                            {% endif %}
                             <span class="text">{{row.name}}</span>
                         </div>
                     </div>

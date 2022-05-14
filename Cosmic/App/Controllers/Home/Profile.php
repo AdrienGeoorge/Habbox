@@ -48,6 +48,13 @@ class Profile
 
         $this->data->player->groups = Player::getGroups($player->id, 7);
         $this->data->player->rooms = Player::getRooms($player->id);
+
+        foreach ($this->data->player->rooms as $room) {
+            if (file_exists('./../public/nitro/camera/thumbnails/' . $room->id . '.png')) {
+                $room->thumbnail = true;
+            }
+        }
+
         $this->data->player->photos = Player::getPhotos($player->id);
 
         $this->data->player->feeds = Community::getFeedsByUserid($player->id);
