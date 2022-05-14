@@ -3037,6 +3037,7 @@ input:-webkit-autofill {
     background-size: cover;
     border-radius: 2em;
     position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.75);
 }
 
 .page-container[data-page="community_photos"] .page-content .photos-container div .photo-avatar {

@@ -147,8 +147,7 @@ class Routes extends Router
                 parent::get('/help/requests/new', 'Help\Ticket@index');
                 parent::get('/help/requests/{ticket}/view', 'Help\Requests@ticket', ['defaultParameterRegex' => '[0-9]+']);
 
-//                parent::get('/events', 'Events\Event@index');
-                /* SQUIsD GAME */
+                /* SQUID GAME */
                 parent::get('/events/squid-game', 'Events\SquidGame@index');
                 parent::get('/events/squid-game/more-infos', 'Events\SquidGame@moreInfos');
                 parent::get('/events/squid-game/go', 'Events\SquidGame@go');

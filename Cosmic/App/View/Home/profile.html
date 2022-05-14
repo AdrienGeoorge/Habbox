@@ -234,17 +234,17 @@
                         <img src="/assets/icons/profile/photos.svg" alt="" class="team-title-badge">
                     </div>
                 </div>
+                {% if data.player.photos %}
                 <div class="profile-photos">
-                    {% if data.player.photos %}
                     {% for row in data.player.photos %}
                     <div href="{{row.url}}" class="profile-photo">
                         <img src="{{row.url}}" alt="" class="pixelated">
                     </div>
                     {% endfor %}
-                    {% else %}
-                    <p class="text-center w-100">{{locale.photos_empty}}</p>
-                    {% endif %}
                 </div>
+                {% else %}
+                <p class="text-center w-100" style="margin-top: 3em;">{{locale.photos_empty}}</p>
+                {% endif %}
             </div>
         </div>
     </div>
