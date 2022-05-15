@@ -30,7 +30,7 @@ class Home
         }
 
         foreach ($rooms as $room) {
-            if (file_exists('./../public/nitro/camera/thumbnails/' . $room->id . '.png')) {
+            if (file_exists('./../public/nitro/camera/thumbnail/' . $room->id . '.png')) {
                 $room->thumbnail = true;
             }
         }

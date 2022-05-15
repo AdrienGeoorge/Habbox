@@ -64,7 +64,7 @@
                         {% if player %}
                         <a href="/api/room/{{row.id}}" class="profile-badge tooltip">
                             {% if row.thumbnail %}
-                             <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated room-thumbnail">
+                             <img src="{{site.cpath}}/camera/thumbnail/{{row.id}}.png" alt="" class="pixelated room-thumbnail">
                             {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
                             {% endif %}
@@ -73,7 +73,7 @@
                         {% else %}
                         <div class="profile-badge tooltip">
                             {% if row.thumbnail %}
-                            <img src="{{site.cpath}}/camera/thumbnails/{{row.id}}.png" alt="" class="pixelated">
+                            <img src="{{site.cpath}}/camera/thumbnail/{{row.id}}.png" alt="" class="pixelated">
                             {% else %}
                             <img src="/assets/icons/profile/apparts.svg" alt="" class="pixelated">
                             {% endif %}

@@ -50,7 +50,7 @@ class Profile
         $this->data->player->rooms = Player::getRooms($player->id);
 
         foreach ($this->data->player->rooms as $room) {
-            if (file_exists('./../public/nitro/camera/thumbnails/' . $room->id . '.png')) {
+            if (file_exists('./../public/nitro/camera/thumbnail/' . $room->id . '.png')) {
                 $room->thumbnail = true;
             }
         }
