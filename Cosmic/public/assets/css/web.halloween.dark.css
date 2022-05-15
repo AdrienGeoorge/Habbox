@@ -7614,6 +7614,10 @@ input:focus, input:hover, textarea:focus, textarea:hover {
     .settingsMenu {
         height: 100%
     }
+
+    .page-container[data-page="community_photos"] .page-content .photos-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 950px) {
@@ -7656,5 +7660,9 @@ input:focus, input:hover, textarea:focus, textarea:hover {
         width: 88vw;
         overflow-y: scroll;
         margin: auto;
+    }
+
+    .page-container[data-page="community_photos"] .page-content .photos-container {
+        grid-template-columns: 1fr;
     }
 }
