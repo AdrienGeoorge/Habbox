@@ -3037,7 +3037,7 @@ input:-webkit-autofill {
     position: absolute;
     bottom: 1em;
     left: 1em;
-    background-color: rgb(251, 251, 251);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 2em;
     padding: 0.5em;
     width: 6em;
@@ -3055,7 +3055,7 @@ input:-webkit-autofill {
     position: absolute;
     bottom: 1em;
     right: 1em;
-    background-color: white;
+    background-color: rgba(255,255,255,0.75);
     padding: 0.5em;
     border-radius: 1em;
     color: #424354;
@@ -6806,6 +6806,7 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 .profile-photo img {
     width: 100%;
     border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
 }
 
 .profile-connect-infos {
