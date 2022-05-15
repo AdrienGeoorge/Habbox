@@ -7,3 +7,5 @@
          url("../fonts/UbuntuHabbo/ubuntuhabbo-webfont.woff") format("woff");
     unicode-range: U+007C,U+2020,U+2022,U+00B6,U+00B1,U+00A5,U+00B5,U+00AA,U+00BA,U+00AC,U+0192,U+00BB,U+2014,U+2018,U+2021;
 }
+
+@font-face{font-family:Ubuntu;src:url("../fonts/Ubuntu-C.ttf")}
