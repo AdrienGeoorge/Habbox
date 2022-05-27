@@ -125,6 +125,23 @@
         </div>
     </div>
     <div class="flex-body profile mt_2">
+        <div class="flex_1">
+            <div class="box">
+                <div class="box-title">
+                    {{locale['AllTimeHotelPresence']}}
+                    <div class="team-title-round">
+                        <img src="/assets/icons/stats/alltimehotelpresence.svg" alt=""
+                             class="team-title-badge">
+                    </div>
+                </div>
+                <div class="stats-text">
+                    {% set onlineHours = data.player.online.online_time / 3600 %}
+                    {% set cut = onlineHours|split('.') %}
+                    {% set minutes = ('0.' ~ cut[1]) * 60 %}
+                    {{onlineHours|round(0, 'floor') ~ 'h' ~ (minutes > 0 ? minutes|round|length > 1 ? minutes|round : '0' ~ minutes|round) }} {{ onlineHours|round > 24 ? '(' ~ (data.player.online.online_time//86400|round) ~ 'j)' }}
+                </div>
+            </div>
+        </div>
         {% for achievement in data.player.achievements %}
         <div class="flex_1">
             <div class="box">
@@ -136,12 +153,7 @@
                     </div>
                 </div>
                 <div class="stats-text">
-                    {% if achievement.achievement_name == 'AllTimeHotelPresence' %}
-                    {% set onlineHours = achievement.progress // 60 %}
-                    {{onlineHours|round}}h {{ onlineHours|round > 24 ? '(' ~ (achievement.progress//1440|round) ~ 'j)' }}
-                    {% else %}
                     {{achievement.progress|number_format(0, '.', ' ')}}
-                    {% endif %}
                 </div>
             </div>
         </div>

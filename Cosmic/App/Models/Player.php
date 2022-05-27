@@ -304,8 +304,7 @@ class Player
                 JOIN users ON users_achievements.user_id = users.id
                 WHERE users.id = "' . $player_id . '"
                 AND (
-                    users_achievements.achievement_name = "AllTimeHotelPresence"
-                    OR users_achievements.achievement_name = "GiftGiver"
+                    users_achievements.achievement_name = "GiftGiver"
                     OR users_achievements.achievement_name = "GiftReceiver"
                 )
                 '

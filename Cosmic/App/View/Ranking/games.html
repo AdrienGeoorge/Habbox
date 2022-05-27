@@ -78,8 +78,10 @@
                          alt="{{online.player.look}}" class="pixelated rank-look">
                     {{online.player.username}}
                 </a>
-                {% set onlineHours = online.progress // 60 %}
-                <span>{{onlineHours|round}}h {{ onlineHours|round > 24 ? '(' ~ (online.progress//1440|round) ~ 'j)' }}</span>
+                {% set onlineHours = online.online_time / 3600 %}
+                {% set cut = onlineHours|split('.') %}
+                {% set minutes = ('0.' ~ cut[1]) * 60 %}
+                <span>{{onlineHours|round(0, 'floor') ~ 'h' ~ (minutes > 0 ? minutes|round|length > 1 ? minutes|round : '0' ~ minutes|round) }} {{ onlineHours|round > 24 ? '(' ~ (online.online_time//86400|round) ~ 'j)' }}</span>
                 <div class="rank {{ key + 1 == 1 ? 'or' : key + 1 == 2 ? 'argent' : key + 1 == 3 ? 'bronze' : '' }}">
                     <span>{{ key + 1 }}</span>
                 </div>

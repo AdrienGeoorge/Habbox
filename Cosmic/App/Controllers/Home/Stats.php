@@ -25,6 +25,7 @@ class Stats
             $this->data->player->nbVisitedRooms = count(Player::getVisitedRooms(request()->player->id));
             $this->data->player->nbMessages = count(Player::getMessages(request()->player->id));
             $this->data->player->achievements = Player::getAchievements(request()->player->id);
+            $this->data->player->online = Player::getSettingsById(request()->player->id, array('online_time'));
         } else {
             redirect('/');
             exit;

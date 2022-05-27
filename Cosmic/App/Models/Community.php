@@ -206,10 +206,9 @@ class Community
 
     public static function getOnlineTime($limit = 10)
     {
-        return QueryBuilder::connection()->table('users_achievements')->selectDistinct('users.id')->select('users_achievements.*')
-                ->join('users', 'users_achievements.user_id', '=', 'users.id')
-                ->where('users_achievements.achievement_name', 'AllTimeHotelPresence')
-                ->orderBy('progress', 'desc')->limit($limit)->get();
+        return QueryBuilder::connection()->table('users_settings')->selectDistinct('user_id')->select('online_time')->orderBy('online_time', 'desc')
+            ->join('users', 'users_settings.user_id', '=', 'users.id')
+            ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->limit($limit)->get();
     }
 
     public static function getCredits($limit = 10)
