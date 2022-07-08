@@ -7652,6 +7652,10 @@ input:focus, input:hover, textarea:focus, textarea:hover {
 }
 
 @media (max-width: 820px) {
+    .client-buttons {
+        display: none !important;
+    }
+
     .index-hotel-view {
         display: none;
     }
