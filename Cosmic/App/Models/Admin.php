@@ -325,6 +325,31 @@ class Admin
         return QueryBuilder::connection()->table('catalog_items')->count();
     }
 
+    public static function countCatalogPages()
+    {
+        return QueryBuilder::connection()->table('catalog_pages')->count();
+    }
+
+    public static function getBoughtPets()
+    {
+        return QueryBuilder::connection()->table('users_pets')->count();
+    }
+
+    public static function getPhotos()
+    {
+        return QueryBuilder::connection()->table('camera_web')->count();
+    }
+
+    public static function getBots()
+    {
+        return QueryBuilder::connection()->table('bots')->count();
+    }
+
+    public static function getClothes()
+    {
+        return QueryBuilder::connection()->table('catalog_clothing')->count();
+    }
+
     public static function getRooms()
     {
         return QueryBuilder::connection()->table('rooms')->count();

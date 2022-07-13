@@ -71,14 +71,90 @@
                     <div class="kt-widget24__details">
                         <div class="kt-widget24__info">
                             <h4 class="kt-widget24__title">
-                                Appartements créés
+                                Pages au catalogue
                             </h4>
                             <span class="kt-widget24__desc">
-                                          Nombre de d'appartements créés sur l'hôtel
+                                          Nombre de pages au catalogue
+                                          </span>
+                        </div>
+                        <span class="kt-widget24__stats infos-server darkpink">
+                                       {{data.pages|number_format(0, '.', ',')}}
+                                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="kt-portlet">
+                <div class="kt-widget24">
+                    <div class="kt-widget24__details">
+                        <div class="kt-widget24__info">
+                            <h4 class="kt-widget24__title">
+                                Animaux achetés
+                            </h4>
+                            <span class="kt-widget24__desc">
+                                          Nombre d'animaux achetés sur l'hôtel
                                           </span>
                         </div>
                         <span class="kt-widget24__stats infos-server indian">
-                                       {{data.rooms|number_format(0, '.', ',')}}
+                                       {{data.pets|number_format(0, '.', ',')}}
+                                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="kt-portlet">
+                <div class="kt-widget24">
+                    <div class="kt-widget24__details">
+                        <div class="kt-widget24__info">
+                            <h4 class="kt-widget24__title">
+                                Photos prises
+                            </h4>
+                            <span class="kt-widget24__desc">
+                                          Nombre de photos prises par les joueurs
+                                          </span>
+                        </div>
+                        <span class="kt-widget24__stats infos-server bluegray">
+                                       {{data.photos|number_format(0, '.', ',')}}
+                                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="kt-portlet">
+                <div class="kt-widget24">
+                    <div class="kt-widget24__details">
+                        <div class="kt-widget24__info">
+                            <h4 class="kt-widget24__title">
+                                Bots achetés
+                            </h4>
+                            <span class="kt-widget24__desc">
+                                          Nombre de bots achetés sur l'hôtel
+                                          </span>
+                        </div>
+                        <span class="kt-widget24__stats infos-server blackpink">
+                                       {{data.bots|number_format(0, '.', ',')}}
+                                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="kt-portlet">
+                <div class="kt-widget24">
+                    <div class="kt-widget24__details">
+                        <div class="kt-widget24__info">
+                            <h4 class="kt-widget24__title">
+                                Vêtements au catalogue
+                            </h4>
+                            <span class="kt-widget24__desc">
+                                          Nombre de vêtements disponibles dans le catalogue
+                                          </span>
+                        </div>
+                        <span class="kt-widget24__stats infos-server bronze">
+                                       {{data.clothes|number_format(0, '.', ',')}}
                                        </span>
                     </div>
                 </div>

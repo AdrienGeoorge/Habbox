@@ -42604,6 +42604,26 @@ and (min-width: 1025px) {
     background-color: indianred;
 }
 
+.infos-server.bronze{
+    background-color: #cdaa5c;
+}
+
+.infos-server.bluegray{
+    background-color: #6c989b;
+}
+
+.infos-server.blackpink{
+    background-color: #7a385a;
+}
+
+.infos-server.darkblue{
+    background-color: #1f4482;
+}
+
+.infos-server.darkpink{
+    background-color: #9b6c84;
+}
+
 .infos-server.or {
     background: #f1c40f;
     color: white;

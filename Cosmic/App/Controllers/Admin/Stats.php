@@ -23,7 +23,11 @@ class Stats
         $this->data->players = Admin::getPlayers();
         $this->data->guilds = Admin::getGuilds();
         $this->data->bans = Admin::getBans();
-        $this->data->rooms = Admin::getRooms();
+        $this->data->pages = Admin::countCatalogPages();
+        $this->data->pets = Admin::getBoughtPets();
+        $this->data->photos = Admin::getPhotos();
+        $this->data->bots = Admin::getBots();
+        $this->data->clothes = Admin::getClothes();
 
         View::renderTemplate('Admin/stats.html',
             [
